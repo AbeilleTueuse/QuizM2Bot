@@ -1,0 +1,7 @@
+{
+    "default": {
+        "mode": "strict",
+        "time_between_hint": "5",
+        "max_hint": "6"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "fr": {
+        "default": "défaut",
+        "mode": "mode",
+        "strict": "strict",
+        "permissive": "permissif",
+        "time_between_hint": "temps entre les indices",
+        "max_hint": "nombre maximum d'indice"
+    }
+}
