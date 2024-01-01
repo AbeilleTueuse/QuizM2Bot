@@ -171,12 +171,22 @@ class QuizCog(Cog):
             choices=CONFIGURATION_MANAGER.get_mode_choices(),
             required=True,
         ),
+        time_between_hint: int = nextcord.SlashOption(
+            name="temps_indice",
+            description="Temps en secondes entre les indices.",
+            required=True,
+        ),
+        max_hint: int = nextcord.SlashOption(
+            name="nombre_indice",
+            description="Nombre maximum d'indice.",
+            required=True,
+        ),
     ):
         """Permet de créer une nouvelle configuration."""
         config_name = config_name.lower()
 
         try:
-            CONFIGURATION_MANAGER.create_new_config(config_name, mode)
+            CONFIGURATION_MANAGER.create_new_config(config_name, mode, time_between_hint, max_hint)
 
         except MissingConfiguration:
             embed = Embed(
@@ -192,7 +202,9 @@ class QuizCog(Cog):
                 description=f"La configuration **{config_name}** a été créé",
                 color=0x7AFF33,
             )
-            embed.add_field(name="Mode", value=mode)
+            embed.add_field(name="Mode", value=mode, inline=False)
+            embed.add_field(name="Temps entre les indices", value=time_between_hint, inline=False)
+            embed.add_field(name="Nombre maximum d'indice", value=max_hint, inline=False)
             await interaction.send(embed=embed)
 
     @configuration.subcommand(name="supprimer")

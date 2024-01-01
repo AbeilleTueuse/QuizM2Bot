@@ -13,12 +13,12 @@ class MissingConfiguration(Exception):
 
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
-    TIME_BETWEEN_HINT = "time_between_hint"
-    MAX_HINT = "max_hint"
     LANG = "fr"
 
     DEFAULT = "default"
     MODE = "mode"
+    TIME_BETWEEN_HINT = "time_between_hint"
+    MAX_HINT = "max_hint"
     STRICT = "strict"
     PERMISSIVE = "permissive"
 
@@ -73,14 +73,17 @@ class ConfigurationManager:
     def _get_mode(self):
         return self.config[self.MODE]
     
-    def create_new_config(self, name: str, mode: str):
+    def create_new_config(self, name: str, mode: str, time_between_hint: int, max_hint: int):
         if name in self.saved_config:
             raise MissingConfiguration
         
         if mode not in self.PARAMS[self.MODE]:
             mode = self.STRICT
 
-        self.saved_config[name] = {self.MODE: mode}
+        time_between_hint = max(0, time_between_hint)
+        max_hint = max(0, max_hint)
+
+        self.saved_config[name] = {self.MODE: mode, self.TIME_BETWEEN_HINT: time_between_hint, self.MAX_HINT: max_hint}
         self._save()
 
     def delete_config(self, name: str):

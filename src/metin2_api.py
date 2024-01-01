@@ -30,8 +30,12 @@ class Page:
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
+        ig_name: str = item_names.loc[vnum][0]
 
-        self.ig_name = item_names.loc[vnum][0]
+        if ig_name.endswith("+0"):
+            ig_name = ig_name[:-2]
+
+        self.ig_name = ig_name
 
     def add_image_name(self):
         image_parameter: Parameter = self.template.get("Image")
