@@ -113,7 +113,7 @@ class QuizCog(Cog):
                 question.get_hint()
                 embed = Embed(
                     title=f"Indice {question.hint_shown} sur {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
-                    description="".join(question.hint),
+                    description=" ".join(question.hint),
                     color=0xEDF02A,
                 )
                 await channel.send(embed=embed)

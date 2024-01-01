@@ -161,7 +161,7 @@ class Question:
         return self.config_manager.formatted_answer(answer)
 
     def _get_default_hint(self):
-        return ["＿"] * len(self.answer)
+        return ["\u200B \u200B" if char == " " else "\_" for char in self.answer]
 
     def _get_hint_shuffle(self):
         char_position = list(enumerate(self.answer))
@@ -195,17 +195,7 @@ class Question:
             if char == " ":
                 continue
 
-            if pos >= 1 and self.hint[pos - 1] != "＿":
-                char_before = " "
-            else:
-                char_before = ""
-
-            if pos < self.answer_len - 1 and self.hint[pos + 1] != "＿":
-                char_after = " "
-            else:
-                char_after = ""
-
-            self.hint[pos] = char_before + "__" + char + "__" + char_after
+            self.hint[pos] = f"__{char}__"
 
         self.hint_shown += 1
 
