@@ -63,6 +63,9 @@ class ConfigurationManager:
 
     async def autocomplete_configuration(self, cog, interaction, user_input: str):
         return list(self.saved_config.keys())[:25]
+    
+    async def autocomplete_configuration_delete(self, cog, interaction, user_input: str):
+        return list(self.saved_config.keys())[1:25]
 
     def _strict(self, answer: str):
         return answer

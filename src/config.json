@@ -3,20 +3,5 @@
         "mode": "strict",
         "time_between_hint": "5",
         "max_hint": "6"
-    },
-    "arc": {
-        "mode": "permissive",
-        "time_between_hint": 0,
-        "max_hint": 0
-    },
-    "arc2": {
-        "mode": "permissive",
-        "time_between_hint": 0,
-        "max_hint": 0
-    },
-    "arc3": {
-        "mode": "permissive",
-        "time_between_hint": 30,
-        "max_hint": 0
     }
 }

@@ -20,4 +20,4 @@ class ItemName:
 
         item_names[self.LOCAL_NAME] = item_names[self.LOCAL_NAME].str.replace(chr(160), " ")
 
-        return item_names
+        return item_names[self.LOCAL_NAME]

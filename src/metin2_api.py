@@ -26,11 +26,11 @@ class Page:
     def _get_template(self) -> Template:
         return self.content.filter(forcetype=Template)[0]
 
-    def add_ig_name(self, item_names: pd.DataFrame):
+    def add_ig_name(self, item_names: pd.Series):
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
-        ig_name: str = item_names.loc[vnum][0]
+        ig_name: str = item_names.at[vnum]
 
         if ig_name.endswith("+0"):
             ig_name = ig_name[:-2]

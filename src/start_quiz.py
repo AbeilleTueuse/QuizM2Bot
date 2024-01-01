@@ -214,11 +214,15 @@ class QuizCog(Cog):
         config_name: str = nextcord.SlashOption(
             name="configuration",
             description="Non de la configuration à supprimer.",
-            autocomplete_callback=CONFIGURATION_MANAGER.autocomplete_configuration,
+            autocomplete_callback=CONFIGURATION_MANAGER.autocomplete_configuration_delete,
             required=True,
         ),
     ):
         """Permet de supprimer une configuration."""
+        if config_name == CONFIGURATION_MANAGER.DEFAULT:
+            await interaction.send("Vous ne pouvez pas supprimer la configuration par défaut.")
+            return
+        
         try:
             CONFIGURATION_MANAGER.delete_config(config_name)
 
