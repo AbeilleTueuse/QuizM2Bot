@@ -24,26 +24,26 @@ class QuizCog(Cog):
     async def quiz(self, interaction: Interaction):
         pass
 
-    @quiz.subcommand(name="lancer")
+    @quiz.subcommand(name="start")
     async def start_quiz(
         self,
         interaction: Interaction,
         number_of_question: int = nextcord.SlashOption(
             name="questions",
-            description="Choisir le nombre de questions à poser.",
+            description="Choose the number of questions to ask.",
             choices=[5, 10, 20, 40],
             required=True,
         ),
         config_name: str = nextcord.SlashOption(
-            name="difficulté",
-            description="Choisir la difficulté du quiz.",
-            choices=CONFIGURATION_MANAGER.config_names(),
+            name="difficulty",
+            description="Choose the quiz difficulty.",
+            choices=CONFIGURATION_MANAGER.saved_config.keys(),
             required=True,
         ),
     ):
-        """Lance un quiz."""
+        """Start a quiz."""
         if self.quiz_manager.quiz_is_running():
-            await interaction.send("Un quiz est déjà en cours.")
+            await interaction.send("A quiz is already in progress.")
             return
 
         channel = interaction.channel
@@ -52,8 +52,8 @@ class QuizCog(Cog):
         self.quiz_manager.start_quiz(config_manager=CONFIGURATION_MANAGER)
 
         embed = Embed(
-            title="Lancement du quiz !",
-            description=f"Les paramètres du quiz sont les suivants :\n- {number_of_question} questions,\n- difficulté {CONFIGURATION_MANAGER.translate(config_name)}.",
+            title="Launch of the quiz!",
+            description=f"The quiz settings are as follows:\n- {number_of_question} questions,\n- difficulty {config_name}.",
             color=0x7AFF33,
         )
         await interaction.send(embed=embed)
@@ -85,8 +85,8 @@ class QuizCog(Cog):
         number_of_question: int,
     ):
         embed = Embed(
-            title=f"Question {question_index + 1} sur {number_of_question}",
-            description=f"Quel est le nom de cet objet ?",
+            title=f"Question {question_index + 1} of {number_of_question}",
+            description=f"What is the name of this item?",
             color=0x7AFF33,
         )
         embed.set_image(url=question.image_url)
@@ -109,7 +109,7 @@ class QuizCog(Cog):
             if question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(
-                    f"Bien joué ! La réponse exacte est **{question.answer}**."
+                    f"Good game! The correct answer is **{question.answer}**."
                 )
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
@@ -120,52 +120,53 @@ class QuizCog(Cog):
                 return
             
             if question.exceed_max_hint():
-                question.get_hint()
-                embed = Embed(
-                    title=f"Indice {question.hint_shown} sur {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
-                    description=" ".join(question.hint),
-                    color=0xEDF02A,
-                )
-                await channel.send(embed=embed)
+                pass
+                # question.get_hint()
+                # embed = Embed(
+                #     title=f"Indice {question.hint_shown} sur {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                #     description=" ".join(question.hint),
+                #     color=0xEDF02A,
+                # )
+                # await channel.send(embed=embed)
                 
             else:
                 self.quiz_manager.end_question()
                 await channel.send(
-                    f"Trop tard ! La réponse était : **{question.answer}**."
+                    f"Too late! The answer was: **{question.answer}**."
                 )
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
-        await channel.send("Le quiz est terminé, merci d'avoir joué !")
+        await channel.send("The quiz is over, thanks for playing!")
         ranking = "\n".join(
             f"{self.quiz_manager.leaderboard.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
             for rank, (name, score) in enumerate(self.quiz_manager.leaderboard)
         )
-        embed = Embed(title="Classement", description=ranking, color=0x33A5FF)
+        embed = Embed(title="Ranking", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
-        """Arrête brusquement le quiz en cours."""
+        """Suddenly stops the current quiz."""
         if not self.quiz_manager.quiz_is_running():
-            await interaction.send("Il n'y a pas de quiz en cours.")
+            await interaction.send("There are no quizzes in progress.")
             return
 
         self.quiz_manager.end_quiz()
-        await interaction.send("Le quiz a été arrêté.")
+        await interaction.send("The quiz has been stopped.")
 
     @quiz.subcommand(name="skip")
     async def skip_question(self, interaction: Interaction):
-        """Permet d'annuler la question en cours et de passer à la suivante."""
+        """Allows you to cancel the current question and move on to the next one."""
         if not self.quiz_manager.quiz_is_running():
-            await interaction.send("Il n'y a pas de quiz en cours.")
+            await interaction.send("There are no quizzes in progress.")
             return
 
         if not self.quiz_manager.waiting_for_answer():
-            await interaction.send("Il n'y a pas de question en cours.")
+            await interaction.send("There are no questions in progress.")
             return
 
         self.quiz_manager.end_question()
-        await interaction.send("La question a été annulée.")
+        await interaction.send("The question was canceled.")
 
 
 def setup(bot: Bot):

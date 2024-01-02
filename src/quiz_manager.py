@@ -62,7 +62,7 @@ class ConfigurationManager:
         return unidecode(answer.lower())
 
     def _very_permissive(self, answer: str):
-        answer = answer.replace("-", " ").replace("de", "du")
+        answer = answer.replace("-", " ")
         formatted_answer = "".join(
             letter
             for letter in self._permissive(answer)
@@ -166,7 +166,6 @@ class Question:
         self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        print(self.config_manager.fuzz_threshold)
         return fuzz.ratio(self._formatted_answer(user_answer), self.formatted_answer) >= self.config_manager.fuzz_threshold
     
     def change_last_message(self, message):
