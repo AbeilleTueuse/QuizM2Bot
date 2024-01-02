@@ -3,7 +3,12 @@ from nextcord.ext.commands import Bot, Cog
 from nextcord import Interaction, Embed, slash_command
 import asyncio
 
-from quiz_manager import QuizManager, ConfigurationManager, Question, MissingConfiguration
+from quiz_manager import (
+    QuizManager,
+    ConfigurationManager,
+    Question,
+    MissingConfiguration,
+)
 from metin2_api import M2Wiki
 
 
@@ -129,7 +134,7 @@ class QuizCog(Cog):
             f"{self.quiz_manager.leaderboard.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
             for rank, (name, score) in enumerate(self.quiz_manager.leaderboard)
         )
-        embed = Embed(title="Classemenet", description=ranking, color=0x33A5FF)
+        embed = Embed(title="Classement", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
     @quiz.subcommand(name="stop")
@@ -186,7 +191,9 @@ class QuizCog(Cog):
         config_name = config_name.lower()
 
         try:
-            CONFIGURATION_MANAGER.create_new_config(config_name, mode, time_between_hint, max_hint)
+            CONFIGURATION_MANAGER.create_new_config(
+                config_name, mode, time_between_hint, max_hint
+            )
 
         except MissingConfiguration:
             embed = Embed(
@@ -202,9 +209,15 @@ class QuizCog(Cog):
                 description=f"La configuration **{config_name}** a été créé",
                 color=0x7AFF33,
             )
-            embed.add_field(name="Mode", value=mode, inline=False)
-            embed.add_field(name="Temps entre les indices", value=time_between_hint, inline=False)
-            embed.add_field(name="Nombre maximum d'indice", value=max_hint, inline=False)
+            embed.add_field(
+                name="Mode", value=CONFIGURATION_MANAGER.translate(mode), inline=False
+            )
+            embed.add_field(
+                name="Temps entre les indices", value=time_between_hint, inline=False
+            )
+            embed.add_field(
+                name="Nombre maximum d'indice", value=max_hint, inline=False
+            )
             await interaction.send(embed=embed)
 
     @configuration.subcommand(name="supprimer")
@@ -220,9 +233,11 @@ class QuizCog(Cog):
     ):
         """Permet de supprimer une configuration."""
         if config_name == CONFIGURATION_MANAGER.DEFAULT:
-            await interaction.send("Vous ne pouvez pas supprimer la configuration par défaut.")
+            await interaction.send(
+                "Vous ne pouvez pas supprimer la configuration par défaut."
+            )
             return
-        
+
         try:
             CONFIGURATION_MANAGER.delete_config(config_name)
 
