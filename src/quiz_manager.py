@@ -58,12 +58,12 @@ class ConfigurationManager:
         return unidecode(answer.lower())
 
     def _very_permissive(self, answer: str):
+        answer = answer.replace("-", " ").replace("de", "du")
         formatted_answer = "".join(
             letter
             for letter in self._permissive(answer)
             if letter.isalnum() or letter == " "
-        ).replace("de", "du")
-
+        )
         return " ".join(formatted_answer.split())
 
     def get_config(self, name: str) -> dict[str, str]:
