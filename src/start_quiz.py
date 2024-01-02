@@ -1,7 +1,8 @@
+import asyncio
+
 import nextcord
 from nextcord.ext.commands import Bot, Cog
 from nextcord import Interaction, Embed, slash_command
-import asyncio
 
 from quiz_manager import (
     QuizManager,
