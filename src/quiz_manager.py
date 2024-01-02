@@ -4,6 +4,7 @@ import json
 import os
 
 from unidecode import unidecode
+from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
 from src.data.read_files import ItemName
@@ -23,9 +24,16 @@ class ConfigurationManager:
     CONFIG_PATH = os.path.join("src", "config.json")
     TRANSLATION_PATH = os.path.join("src", "translation.json")
 
+    FUZZ_THRESHOLD = {
+        STRICT: 100,
+        PERMISSIVE: 97,
+        VERY_PERMISSIVE: 95,
+    }
+
     def __init__(self):
         self.config = None
         self.formatted_answer = None
+        self.fuzz_threshold = 100
         self.saved_config = self._open(self.CONFIG_PATH)
         self.translation = self._open(self.TRANSLATION_PATH)
 
@@ -39,6 +47,7 @@ class ConfigurationManager:
 
     def _get_formatted_answer(self):
         mode = self.config[self.MODE]
+        self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
             return self._strict
@@ -48,8 +57,6 @@ class ConfigurationManager:
 
         elif mode == self.VERY_PERMISSIVE:
             return self._very_permissive
-
-        return self._strict
 
     def _strict(self, answer: str):
         return answer
@@ -174,7 +181,8 @@ class Question:
         self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        return self._formatted_answer(user_answer) == self.formatted_answer
+        print(self.config_manager.fuzz_threshold)
+        return fuzz.ratio(self._formatted_answer(user_answer), self.formatted_answer) >= self.config_manager.fuzz_threshold
     
     def change_last_message(self, message):
         self.last_message = message
