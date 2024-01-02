@@ -65,12 +65,12 @@ class QuizCog(Cog):
             if not self.quiz_manager.quiz_is_running():
                 break
 
-            message = await self.ask_question(
+            first_message = await self.ask_question(
                 channel, question_index, question, number_of_question
             )
 
             while self.quiz_manager.waiting_for_answer():
-                await self.wait_for_answer(message, channel, question)
+                await self.wait_for_answer(first_message, channel, question)
 
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
@@ -104,7 +104,7 @@ class QuizCog(Cog):
         question: Question,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
-
+        print(message)
         async for message in channel.history(
             limit=None, after=message, oldest_first=True
         ):
