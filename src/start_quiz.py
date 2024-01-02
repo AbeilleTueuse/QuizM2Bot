@@ -304,8 +304,8 @@ class QuizCog(Cog):
 
             for key, value in config.items():
                 embed.add_field(
-                    name=CONFIGURATION_MANAGER.convert(key).capitalize(),
-                    value=CONFIGURATION_MANAGER.convert(value),
+                    name=CONFIGURATION_MANAGER.translate(key).capitalize(),
+                    value=CONFIGURATION_MANAGER.translate(value),
                     inline=False,
                 )
 
