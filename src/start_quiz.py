@@ -25,10 +25,6 @@ class QuizCog(Cog):
     async def quiz(self, interaction: Interaction):
         pass
 
-    @slash_command(name="configuration")
-    async def configuration(self, interaction: Interaction):
-        pass
-
     @quiz.subcommand(name="lancer")
     async def start_quiz(
         self,
@@ -36,14 +32,14 @@ class QuizCog(Cog):
         number_of_question: int = nextcord.SlashOption(
             name="questions",
             description="Choisir le nombre de questions à poser.",
-            choices=[1, 5, 10, 20, 40],
+            choices=[5, 10, 20, 40],
             required=True,
         ),
         config_name: str = nextcord.SlashOption(
-            name="configuration",
-            description="Configuration du quiz. Utiliser `/quiz configuration` pour en créer une nouvelle.",
-            autocomplete_callback=CONFIGURATION_MANAGER.autocomplete_configuration,
-            required=False,
+            name="difficulté",
+            description="Choisir la difficulté du quiz.",
+            choices=CONFIGURATION_MANAGER.config_names(),
+            required=True,
         ),
     ):
         """Lance un quiz."""
@@ -56,7 +52,13 @@ class QuizCog(Cog):
 
         self.quiz_manager.start_quiz(config_manager=CONFIGURATION_MANAGER)
 
-        await interaction.send("Lancement du quiz !")
+        embed = Embed(
+            title="Lancement du quiz !",
+            description=f"Les paramètres du quiz sont les suivants :\n- {number_of_question} questions,\n- difficulté {CONFIGURATION_MANAGER.translate(config_name)}.",
+            color=0x7AFF33,
+        )
+        await interaction.send(embed=embed)
+
         questions = self.quiz_manager.get_questions(number_of_question)
 
         for question_index, question in enumerate(questions):
@@ -161,156 +163,6 @@ class QuizCog(Cog):
 
         self.quiz_manager.end_question()
         await interaction.send("La question a été annulée.")
-
-    @configuration.subcommand(name="créer")
-    async def create_configuration(
-        self,
-        interaction: Interaction,
-        config_name: str = nextcord.SlashOption(
-            name="nom",
-            description="Nom de la configuration.",
-            required=True,
-        ),
-        mode: str = nextcord.SlashOption(
-            name="mode",
-            description="Liberté de réponse.",
-            choices=CONFIGURATION_MANAGER.get_mode_choices(),
-            required=True,
-        ),
-        time_between_hint: int = nextcord.SlashOption(
-            name="temps_indice",
-            description="Temps en secondes entre les indices.",
-            required=True,
-        ),
-        max_hint: int = nextcord.SlashOption(
-            name="nombre_indice",
-            description="Nombre maximum d'indice.",
-            required=True,
-        ),
-    ):
-        """Permet de créer une nouvelle configuration."""
-        config_name = config_name.lower()
-
-        try:
-            CONFIGURATION_MANAGER.create_new_config(
-                config_name, mode, time_between_hint, max_hint
-            )
-
-        except MissingConfiguration:
-            embed = Embed(
-                title="Erreur",
-                description=f"Le nom de configuration **{config_name}** est déjà utilisé. Veuillez en choisir un autre.",
-                color=0xC02020,
-            )
-            await interaction.send(embed=embed)
-
-        else:
-            embed = Embed(
-                title="Nouvelle configuration",
-                description=f"La configuration **{config_name}** a été créé",
-                color=0x7AFF33,
-            )
-            embed.add_field(
-                name="Mode", value=CONFIGURATION_MANAGER.translate(mode), inline=False
-            )
-            embed.add_field(
-                name="Temps entre les indices", value=time_between_hint, inline=False
-            )
-            embed.add_field(
-                name="Nombre maximum d'indice", value=max_hint, inline=False
-            )
-            await interaction.send(embed=embed)
-
-    @configuration.subcommand(name="supprimer")
-    async def delete_configuration(
-        self,
-        interaction: Interaction,
-        config_name: str = nextcord.SlashOption(
-            name="configuration",
-            description="Non de la configuration à supprimer.",
-            autocomplete_callback=CONFIGURATION_MANAGER.autocomplete_configuration_delete,
-            required=True,
-        ),
-    ):
-        """Permet de supprimer une configuration."""
-        if config_name == CONFIGURATION_MANAGER.DEFAULT:
-            await interaction.send(
-                "Vous ne pouvez pas supprimer la configuration par défaut."
-            )
-            return
-
-        try:
-            CONFIGURATION_MANAGER.delete_config(config_name)
-
-        except MissingConfiguration:
-            embed = Embed(
-                title="Erreur",
-                description=f"Le nom de configuration **{config_name}** n'existe pas.",
-                color=0xC02020,
-            )
-            await interaction.send(embed=embed)
-
-        else:
-            await interaction.send(
-                f"La configuration **{config_name}** a été supprimée avec succès."
-            )
-
-    @configuration.subcommand(name="liste")
-    async def configuration_list(
-        self,
-        interaction: Interaction,
-    ):
-        """Liste des configurations ajoutés."""
-        embed = Embed(
-            title="Liste des configurations",
-            color=0x7AFF33,
-            description="* "
-            + "\n* ".join(
-                config_name for config_name in CONFIGURATION_MANAGER.saved_config.keys()
-            ),
-        )
-
-        await interaction.send(embed=embed)
-
-    @configuration.subcommand(name="détails")
-    async def configuration_info(
-        self,
-        interaction: Interaction,
-        config_name: str = nextcord.SlashOption(
-            name="configuration",
-            description="Non de la configuration.",
-            autocomplete_callback=CONFIGURATION_MANAGER.autocomplete_configuration,
-            required=True,
-        ),
-    ):
-        """Affiche les paramètres d'une configuration."""
-        try:
-            config = CONFIGURATION_MANAGER.get_config(config_name)
-
-        except MissingConfiguration:
-            embed = Embed(
-                title="Erreur",
-                description=f"Le nom de configuration **{config_name}** n'existe pas.",
-                color=0xC02020,
-            )
-            await interaction.send(embed=embed)
-
-        else:
-            embed = Embed(
-                title="Détails de la configuration",
-                description=f"La configuration **{config_name}** possède les paramètres suivants.",
-                color=0x7AFF33,
-            )
-
-            for key, value in config.items():
-                embed.add_field(
-                    name=CONFIGURATION_MANAGER.translate(key).capitalize(),
-                    value=CONFIGURATION_MANAGER.translate(value),
-                    inline=False,
-                )
-
-            await interaction.send(embed=embed)
-
 
 def setup(bot: Bot):
     bot.add_cog(QuizCog(bot))

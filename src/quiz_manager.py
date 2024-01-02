@@ -17,15 +17,12 @@ class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
     LANG = "fr"
 
-    DEFAULT = "default"
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"
     STRICT = "strict"
     PERMISSIVE = "permissive"
     VERY_PERMISSIVE = "very permissive"
-
-    PARAMS = {MODE: [STRICT, PERMISSIVE, VERY_PERMISSIVE]}
 
     CONFIG_PATH = os.path.join("src", "config.json")
     TRANSLATION_PATH = os.path.join("src", "translation.json")
@@ -40,21 +37,12 @@ class ConfigurationManager:
         with open(path, "r", encoding="utf-8") as config_file:
             return json.load(config_file)
 
-    def _save(self):
-        with open(self.CONFIG_PATH, "w", encoding="utf-8") as config_file:
-            config_file.write(json.dumps(self.saved_config, indent=4))
-
     def set_config(self, config_name: str):
-        if config_name is not None and config_name in self.saved_config:
-            self.config = self.saved_config[config_name]
-
-        else:
-            self.config = self.saved_config[self.DEFAULT]
-
+        self.config = self.saved_config[config_name]
         self.formatted_answer = self._get_formatted_answer()
 
     def _get_formatted_answer(self):
-        mode = self._get_mode()
+        mode = self.config[self.MODE]
 
         if mode == self.STRICT:
             return self._strict
@@ -66,14 +54,6 @@ class ConfigurationManager:
             return self._very_permissive
 
         return self._strict
-
-    async def autocomplete_configuration(self, cog, interaction, user_input: str):
-        return list(self.saved_config.keys())[:25]
-
-    async def autocomplete_configuration_delete(
-        self, cog, interaction, user_input: str
-    ):
-        return list(self.saved_config.keys())[1:25]
 
     def _strict(self, answer: str):
         return answer
@@ -88,39 +68,7 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         ).replace("de", "du")
 
-    def _get_mode(self):
-        return self.config[self.MODE]
-
-    def create_new_config(
-        self, name: str, mode: str, time_between_hint: int, max_hint: int
-    ):
-        if name in self.saved_config:
-            raise MissingConfiguration
-
-        if mode not in self.PARAMS[self.MODE]:
-            mode = self.STRICT
-
-        time_between_hint = max(0, time_between_hint)
-        max_hint = max(0, max_hint)
-
-        self.saved_config[name] = {
-            self.MODE: mode,
-            self.TIME_BETWEEN_HINT: time_between_hint,
-            self.MAX_HINT: max_hint,
-        }
-        self._save()
-
-    def delete_config(self, name: str):
-        if name not in self.saved_config:
-            raise MissingConfiguration
-
-        del self.saved_config[name]
-        self._save()
-
     def get_config(self, name: str) -> dict[str, str]:
-        if name not in self.saved_config:
-            raise MissingConfiguration
-
         return self.saved_config[name]
 
     def translate(self, value: str) -> str:
@@ -131,9 +79,9 @@ class ConfigurationManager:
             print(f"{value} can't be translated.")
 
         return value
-
-    def get_mode_choices(self):
-        return {self.translate(key): key for key in self.PARAMS[self.MODE]}
+    
+    def config_names(self):
+        return {self.translate(key): key for key in self.saved_config}
 
 
 class Leaderboard:
@@ -231,7 +179,7 @@ class Question:
 
 
 class QuizManager:
-    TIME_BETWEEN_QUESTION = 1
+    TIME_BETWEEN_QUESTION = 5
 
     def __init__(self, m2_wiki: M2Wiki):
         self._started = False

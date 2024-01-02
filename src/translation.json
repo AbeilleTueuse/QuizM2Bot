@@ -1,6 +1,8 @@
 {
     "fr": {
-        "default": "défaut",
+        "hardcore": "hardcore",
+        "medium": "moyenne",
+        "easy": "facile",
         "mode": "mode",
         "strict": "strict",
         "permissive": "permissif",

@@ -1,12 +1,17 @@
 {
-    "default": {
+    "hardcore": {
         "mode": "strict",
-        "time_between_hint": "5",
+        "time_between_hint": "30",
+        "max_hint": "0"
+    },
+    "medium": {
+        "mode": "permissive",
+        "time_between_hint": "10",
         "max_hint": "6"
     },
-    "test": {
+    "easy": {
         "mode": "very permissive",
-        "time_between_hint": 5,
-        "max_hint": 6
+        "time_between_hint": "5",
+        "max_hint": "4"
     }
 }
