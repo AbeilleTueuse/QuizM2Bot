@@ -8,7 +8,6 @@ from src.quiz_manager import (
     QuizManager,
     ConfigurationManager,
     Question,
-    MissingConfiguration,
 )
 from src.metin2_api import M2Wiki
 
@@ -65,12 +64,12 @@ class QuizCog(Cog):
             if not self.quiz_manager.quiz_is_running():
                 break
 
-            first_message = await self.ask_question(
+            await self.ask_question(
                 channel, question_index, question, number_of_question
             )
 
             while self.quiz_manager.waiting_for_answer():
-                await self.wait_for_answer(first_message, channel, question)
+                await self.wait_for_answer(channel, question)
 
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
@@ -94,17 +93,16 @@ class QuizCog(Cog):
 
         message = await channel.send(embed=embed)
         self.quiz_manager.start_question()
-
-        return message
+        question.change_last_message(message)
 
     async def wait_for_answer(
         self,
-        message: nextcord.message.Message,
         channel: nextcord.channel.TextChannel,
         question: Question,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
-        print(message)
+        message = question.last_message
+
         async for message in channel.history(
             limit=None, after=message, oldest_first=True
         ):
@@ -115,8 +113,12 @@ class QuizCog(Cog):
                 )
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
+        else:
+            question.change_last_message(message)
 
-        if question.show_hint():
+            if not question.show_hint():
+                return
+            
             if question.exceed_max_hint():
                 question.get_hint()
                 embed = Embed(
@@ -125,6 +127,7 @@ class QuizCog(Cog):
                     color=0xEDF02A,
                 )
                 await channel.send(embed=embed)
+                
             else:
                 self.quiz_manager.end_question()
                 await channel.send(
@@ -163,6 +166,7 @@ class QuizCog(Cog):
 
         self.quiz_manager.end_question()
         await interaction.send("La question a été annulée.")
+
 
 def setup(bot: Bot):
     bot.add_cog(QuizCog(bot))

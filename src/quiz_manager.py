@@ -9,10 +9,6 @@ from src.metin2_api import M2Wiki, Page
 from src.data.read_files import ItemName
 
 
-class MissingConfiguration(Exception):
-    pass
-
-
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
     LANG = "fr"
@@ -128,6 +124,7 @@ class Question:
         self.answer_len = len(answer)
         self.check_answer_count = 0
         self.hint_shown = 0
+        self.last_message = None
 
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
@@ -178,6 +175,9 @@ class Question:
 
     def is_correct_answer(self, user_answer: str):
         return self._formatted_answer(user_answer) == self.formatted_answer
+    
+    def change_last_message(self, message):
+        self.last_message = message
 
 
 class QuizManager:
