@@ -4,13 +4,13 @@ import nextcord
 from nextcord.ext.commands import Bot, Cog
 from nextcord import Interaction, Embed, slash_command
 
-from quiz_manager import (
+from src.quiz_manager import (
     QuizManager,
     ConfigurationManager,
     Question,
     MissingConfiguration,
 )
-from metin2_api import M2Wiki
+from src.metin2_api import M2Wiki
 
 
 CONFIGURATION_MANAGER = ConfigurationManager()

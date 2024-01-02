@@ -1,5 +1,3 @@
-import os
-
 from nextcord import Intents
 from nextcord.ext.commands import Bot
 
@@ -11,6 +9,6 @@ if __name__ == "__main__":
     intents.message_content = True
 
     bot = Bot(intents=intents)
-    bot.load_extension("start_quiz")
+    bot.load_extension("src.start_quiz")
 
     bot.run(TOKEN)

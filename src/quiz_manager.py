@@ -5,8 +5,8 @@ import os
 
 from unidecode import unidecode
 
-from metin2_api import M2Wiki, Page
-from data.read_files import ItemName
+from src.metin2_api import M2Wiki, Page
+from src.data.read_files import ItemName
 
 
 class MissingConfiguration(Exception):
