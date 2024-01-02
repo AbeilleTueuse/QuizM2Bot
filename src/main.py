@@ -5,7 +5,7 @@ from nextcord.ext.commands import Bot
 
 
 if __name__ == "__main__":
-    TOKEN = input("Enter the token: ")
+    TOKEN = input("Enter the discord bot token: ")
     
     intents = Intents.default()
     intents.message_content = True
