@@ -12,7 +12,6 @@ from src.data.read_files import ItemName
 
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
-    LANG = "fr"
 
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
@@ -22,7 +21,6 @@ class ConfigurationManager:
     VERY_PERMISSIVE = "very permissive"
 
     CONFIG_PATH = os.path.join("src", "config.json")
-    TRANSLATION_PATH = os.path.join("src", "translation.json")
 
     FUZZ_THRESHOLD = {
         STRICT: 100,
@@ -35,7 +33,6 @@ class ConfigurationManager:
         self.formatted_answer = None
         self.fuzz_threshold = 100
         self.saved_config = self._open(self.CONFIG_PATH)
-        self.translation = self._open(self.TRANSLATION_PATH)
 
     def _open(self, path) -> dict[str, dict]:
         with open(path, "r", encoding="utf-8") as config_file:
@@ -75,18 +72,6 @@ class ConfigurationManager:
 
     def get_config(self, name: str) -> dict[str, str]:
         return self.saved_config[name]
-
-    def translate(self, value: str) -> str:
-        if value in self.translation[self.LANG]:
-            return self.translation[self.LANG][value]
-
-        if not value.isnumeric():
-            print(f"{value} can't be translated.")
-
-        return value
-    
-    def config_names(self):
-        return {self.translate(key): key for key in self.saved_config}
 
 
 class Leaderboard:
