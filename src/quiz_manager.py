@@ -13,8 +13,9 @@ from src.data.read_files import ItemName
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
 
-    DISPLAYED_LANGS = ["fr", "en"]
+    DISPLAYED_LANGS = ["en", "fr", "ro"]
 
+    HARDCORE = "hardcore"
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"

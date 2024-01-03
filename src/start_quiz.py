@@ -56,6 +56,9 @@ class QuizCog(Cog):
             description=f"The quiz settings are as follows:\n- {number_of_question} questions,\n- difficulty {config_name}.",
             color=0x7AFF33,
         )
+        if config_name != CONFIGURATION_MANAGER.HARDCORE:
+            embed.add_field(name="Hints langags", value=", ".join(CONFIGURATION_MANAGER.DISPLAYED_LANGS))
+
         await interaction.send(embed=embed)
 
         questions = self.quiz_manager.get_questions(number_of_question)
@@ -70,6 +73,9 @@ class QuizCog(Cog):
 
             while self.quiz_manager.waiting_for_answer():
                 await self.wait_for_answer(channel, question)
+
+            if question_index + 1 != number_of_question:
+                await interaction.send(f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!")
 
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
@@ -111,6 +117,7 @@ class QuizCog(Cog):
                 await message.reply(
                     f"Good game!"
                 )
+                self.show_answer(channel, question)
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
         else:
@@ -123,9 +130,12 @@ class QuizCog(Cog):
                 question.get_hints()
                 embed = Embed(
                     title=f"Indice {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
-                    description="\n".join(f"**{lang}: ** " + " ".join(hint) for lang, hint in question.hints.items()),
                     color=0xEDF02A,
                 )
+
+                for lang, hint in question.hints.items():
+                    embed.add_field(name=lang, value=hint)
+
                 await channel.send(embed=embed)
                 
             else:
@@ -133,6 +143,15 @@ class QuizCog(Cog):
                 await channel.send(
                     f"Too late!"
                 )
+                self.show_answer(channel, question)
+
+    async def show_answer(self, channel: nextcord.channel.TextChannel, question: Question):
+        embed = Embed(
+            title="Answer",
+            description="\n".join(f"**{lang}**: {answer}" for lang, answer in question.answers.items()),
+            color=0x7AFF33,
+        )
+        await channel.send(embed=embed)
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
         await channel.send("The quiz is over, thanks for playing!")
