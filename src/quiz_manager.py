@@ -100,7 +100,7 @@ class Ranking:
         self.__init__()
 
     def __iter__(self):
-        return iter(self.scores)
+        return iter(self.scores.items())
     
 
 class GeneralRanking:
