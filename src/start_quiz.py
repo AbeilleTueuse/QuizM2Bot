@@ -135,7 +135,7 @@ class QuizCog(Cog):
             if question.exceed_max_hint():
                 question.get_hints()
                 embed = Embed(
-                    title=f"Indice {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                    title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
                     color=0xEDF02A,
                 )
 
