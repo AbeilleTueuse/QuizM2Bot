@@ -129,7 +129,7 @@ class QuizCog(Cog):
                 self.quiz_manager.end_question()
                 await message.reply(f"Good game!")
                 await self.show_answer(channel, question)
-                self.quiz_manager.leaderboard.increment_score(message.author.name)
+                self.quiz_manager.ranking.increment_score(message.author.name)
                 break
         else:
             question.change_last_message(message)
@@ -178,9 +178,10 @@ class QuizCog(Cog):
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
         await channel.send("The quiz is over, thanks for playing!")
+        self.quiz_manager.ranking.sort()
         ranking = "\n".join(
-            f"{self.quiz_manager.leaderboard.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
-            for rank, (name, score) in enumerate(self.quiz_manager.leaderboard)
+            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
+            for rank, (name, score) in enumerate(self.quiz_manager.ranking)
         )
         embed = Embed(title="Ranking", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
@@ -208,6 +209,22 @@ class QuizCog(Cog):
 
         self.quiz_manager.end_question()
         await interaction.send("The question was canceled.")
+
+    @quiz.subcommand(name="ranking")
+    async def start_quiz(
+        self,
+        interaction: Interaction,
+        config_name: str = nextcord.SlashOption(
+            name="difficulty",
+            description="Choose the ranking.",
+            choices=CONFIGURATION_MANAGER.saved_config.keys(),
+            required=True,
+        ),
+    ):
+        """Show general ranking."""
+        await interaction.send("Command not added.")
+
+        print(self.quiz_manager.general_ranking.scores)
 
 
 def setup(bot: Bot):

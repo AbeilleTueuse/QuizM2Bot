@@ -77,10 +77,7 @@ class ConfigurationManager:
         return self.saved_config[name]
 
 
-class Leaderboard:
-    PSEUDO_COLUMN = "Pseudo"
-    SCORE_COLUMN = "Score"
-
+class Ranking:
     def __init__(self):
         self.scores = defaultdict(int)
 
@@ -88,7 +85,7 @@ class Leaderboard:
         self.scores[name] += 1
 
     def sort(self):
-        self.scores = sorted(self.scores, key=lambda player: player[self.SCORE_COLUMN])
+        self.scores = sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
 
     def convert_rank(self, rank):
         if rank == 1:
@@ -103,7 +100,35 @@ class Leaderboard:
         self.__init__()
 
     def __iter__(self):
-        return iter(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+        return iter(self.scores)
+    
+
+class GeneralRanking:
+    DATA_PATH = os.path.join("src", "ranking.json")
+
+    def __init__(self):
+        self.scores = defaultdict(int)
+        self._update_scores()
+
+    def _update_scores(self):
+        try:
+            with open(self.DATA_PATH, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            data = {}
+
+        for name, score in data.items():
+            self.scores[name] += int(score)
+
+    def update(self, ranking: Ranking):
+        for name, score in ranking:
+            self.scores[name] += score
+
+        self._save()
+
+    def _save(self):
+        with open(self.DATA_PATH, "w") as file:
+            file.write(json.dump(self.scores, indent=4))
 
 
 class Question:
@@ -228,7 +253,8 @@ class QuizManager:
         self._waiting_for_answer = False
         self.m2_wiki = m2_wiki
         self.config = None
-        self.leaderboard = Leaderboard()
+        self.ranking = Ranking()
+        self.general_ranking = GeneralRanking()
         self.game_names = GameNames()
 
     def start_quiz(self, config_manager: ConfigurationManager):
@@ -272,7 +298,8 @@ class QuizManager:
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
-        self.leaderboard.reset()
+        self.general_ranking.update(self.ranking)
+        self.ranking.reset()
 
     def end_question(self):
         self._waiting_for_answer = False
