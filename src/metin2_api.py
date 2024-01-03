@@ -1,6 +1,5 @@
 import requests
 
-import pandas as pd
 import mwparserfromhell
 from mwparserfromhell.wikicode import Wikicode
 from mwparserfromhell.nodes.template import Template
