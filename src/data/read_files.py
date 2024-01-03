@@ -1,66 +1,46 @@
 import os
+import json
 
 import pandas as pd
 
 
-class ItemNames:
-    # cz
-    LANGS = ["ae", "de", "dk", "en", "fr", "gr", "hu", "it", "nl", "pl", "pt", "ro", "ru", "tr"]
-    PATH = os.path.join("src", "data")
-    FILENAME = "item_names.txt"
+class GameNames:
+    ENCODING_PATH = os.path.join("src", "data", "lang_encoding.json")
+    DATA_PATH = os.path.join("src", "data")
 
-    VNUM = "VNUM"
+    MOB_NAMES = "mob_names.txt"
+    ITEM_NAMES = "item_names.txt"
 
-    def __init__(self):
-        self.data = self._create_data()
-
-    def _read_csv(self, lang: str):
-        path = os.path.join(self.PATH, lang, self.FILENAME)
-
-        item_names = pd.read_csv(
-            filepath_or_buffer=path,
-            index_col=0,
-            usecols=[0, 1],
-            names=[self.VNUM, lang],
-            encoding="Windows-1252",
-            sep="\t",
-            skiprows=1
-        )
-
-        return item_names[lang].str.replace(chr(160), " ")
-    
-    def _create_data(self):
-        return pd.concat((self._read_csv(lang) for lang in self.LANGS), axis=1)
-    
-
-class MobNames:
-    # cz
-    LANGS = ["ae", "de", "dk", "en", "fr", "gr", "hu", "it", "nl", "pl", "pt", "ro", "ru", "tr"]
-    PATH = os.path.join("src", "data")
-    FILENAME = "mob_names.txt"
-
-    VNUM = "VNUM"
+    INDEX_NAME = "vnnum"
+    SEPARATOR = "\t"
 
     def __init__(self):
-        self.data = self._create_data()
+        self.encoding = self._get_encoding()
+        self.mob_names = self._get_data(self.MOB_NAMES)
+        self.item_names = self._get_data(self.ITEM_NAMES)
 
-    def _read_csv(self, lang: str):
-        path = os.path.join(self.PATH, lang, self.FILENAME)
+    def _get_encoding(self) -> dict[str, str]:
+        with open(self.ENCODING_PATH, "r") as file:
+            return json.load(file)
 
-        encoding = "Windows-1252" if lang != "ro" else "ISO-8859-2"
-
-        mob_names = pd.read_csv(
-            filepath_or_buffer=path,
+    def _read_csv(self, filename: str, lang: str, encoding: str):
+        names = pd.read_csv(
+            filepath_or_buffer=os.path.join(self.DATA_PATH, lang, filename),
             index_col=0,
             usecols=[0, 1],
-            names=[self.VNUM, lang],
+            names=[self.INDEX_NAME, lang],
             encoding=encoding,
-            sep="\t",
-            skiprows=1
+            sep=self.SEPARATOR,
+            skiprows=1,
         )
 
-        return mob_names[lang].str.replace(chr(160), " ")
-    
-    def _create_data(self):
-        return pd.concat((self._read_csv(lang) for lang in self.LANGS), axis=1)
+        return names[lang].str.replace(chr(160), " ")
 
+    def _get_data(self, filename: str):
+        return pd.concat(
+            (
+                self._read_csv(filename, lang, encoding)
+                for lang, encoding in self.encoding.items()
+            ),
+            axis=1,
+        )
