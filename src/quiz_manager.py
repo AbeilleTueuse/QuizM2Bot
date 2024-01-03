@@ -128,7 +128,7 @@ class GeneralRanking:
 
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
-            file.write(json.dump(self.scores, indent=4))
+            file.write(json.dumps(self.scores, indent=4))
 
 
 class Question:
