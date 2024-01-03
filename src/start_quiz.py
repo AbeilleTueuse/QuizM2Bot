@@ -160,7 +160,7 @@ class QuizCog(Cog):
         embed = Embed(
             title="Answers",
             description="\n".join(
-                f"**{lang}**: {answer}" for lang, answer in question.answers.items()
+                f":flag_{lang.replace('en', 'gb')}: {answer}" for lang, answer in question.answers.items()
             ),
             color=0x5E296B,
         )
