@@ -122,7 +122,7 @@ class Question:
         self.check_answer_count = 0
         self.hint_shown = 0
         self._last_message = None
-        self._list_hint_message = None
+        self._last_hint_message = None
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
