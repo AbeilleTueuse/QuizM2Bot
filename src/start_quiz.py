@@ -109,7 +109,7 @@ class QuizCog(Cog):
             if question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(
-                    f"Good game!."
+                    f"Good game!"
                 )
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
