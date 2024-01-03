@@ -147,7 +147,7 @@ class QuizCog(Cog):
 
     async def show_answer(self, channel: nextcord.channel.TextChannel, question: Question):
         embed = Embed(
-            title="Answer",
+            title="Answers",
             description="\n".join(f"**{lang}**: {answer}" for lang, answer in question.answers.items()),
             color=0x5e296b,
         )
