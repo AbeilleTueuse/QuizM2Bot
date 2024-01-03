@@ -59,7 +59,10 @@ class QuizCog(Cog):
         if config_name != CONFIGURATION_MANAGER.HARDCORE:
             embed.add_field(
                 name="Allowed languages",
-                value=", ".join(CONFIGURATION_MANAGER.ALLOWED_LANGS),
+                value=" ".join(
+                    f":flag_{lang.replace('en', 'gb')}:"
+                    for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
+                ),
             )
 
         await interaction.send(embed=embed)
@@ -137,7 +140,11 @@ class QuizCog(Cog):
                 )
 
                 for lang, hint in question.hints.items():
-                    embed.add_field(name=f"{lang}:", value=" ".join(hint), inline=False)
+                    embed.add_field(
+                        name=f":flag_{lang.replace('en', 'gb')}:",
+                        value=" ".join(hint),
+                        inline=False,
+                    )
 
                 last_hint_message: nextcord.message.Message = (
                     question.get_last_hint_message()
@@ -160,7 +167,8 @@ class QuizCog(Cog):
         embed = Embed(
             title="Answers",
             description="\n".join(
-                f":flag_{lang.replace('en', 'gb')}: {answer}" for lang, answer in question.answers.items()
+                f":flag_{lang.replace('en', 'gb')}: \u200B {answer}"
+                for lang, answer in question.answers.items()
             ),
             color=0x5E296B,
         )
