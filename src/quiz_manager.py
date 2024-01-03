@@ -7,7 +7,7 @@ from unidecode import unidecode
 from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
-from src.data.read_files import ItemNames, MobNames
+from src.data.read_files import GameNames
 
 
 class ConfigurationManager:
@@ -219,8 +219,7 @@ class QuizManager:
         self.m2_wiki = m2_wiki
         self.config = None
         self.leaderboard = Leaderboard()
-        self.item_names = ItemNames().data
-        self.mob_names = MobNames().data
+        self.game_names = GameNames()
 
     def start_quiz(self, config_manager: ConfigurationManager):
         self.config_manager = config_manager
@@ -246,18 +245,14 @@ class QuizManager:
         pages = self.m2_wiki.get_pages_content(pages_info)
 
         for page in pages:
-            if page.type == "Monstres":
-                page.add_ig_name(self.mob_names)
-            else:
-                page.add_ig_name(self.item_names)
-
+            page.add_ingame_name(self.game_names)
             page.add_image_name()
 
         pages: list[Page] = sorted(pages, key=lambda page: page.image_name)
         image_urls = self.m2_wiki.get_image_urls(pages)
 
         questions = [
-            Question(page.ig_names, image_url, self.config_manager)
+            Question(page.ingame_names, image_url, self.config_manager)
             for page, image_url in zip(pages, image_urls)
         ]
         rd.shuffle(questions)

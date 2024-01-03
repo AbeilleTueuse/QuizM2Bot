@@ -6,6 +6,8 @@ from mwparserfromhell.wikicode import Wikicode
 from mwparserfromhell.nodes.template import Template
 from mwparserfromhell.nodes.extras.parameter import Parameter
 
+from src.data.read_files import GameNames
+
 
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 ALPHABET += ALPHABET.upper()
@@ -13,10 +15,12 @@ BASE = len(ALPHABET)
 
 
 class Page:
+    MONSTER = "Monstres"
+
     def __init__(self, title: str, content: Wikicode):
         self.title = title
         self.content = mwparserfromhell.parse(content)
-        self.ig_names: list[str] = None
+        self.ingame_names: list[str] = None
         self.image_name = None
         self.template = self._get_template()
         self.type = self._get_type()
@@ -30,17 +34,23 @@ class Page:
     def _get_type(self):
         return str(self.template.name).strip()
 
-    def add_ig_name(self, names: pd.DataFrame):
+    def add_ingame_name(self, game_names: GameNames):
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
-        ig_names: dict[str, str] = names.loc[vnum].to_dict()
 
-        for lang, ig_name in ig_names.items():
+        if self.type == self.MONSTER:
+            names = game_names.mob_names
+        else:
+            names = game_names.item_names
+        
+        ingame_names: dict[str, str] = names.loc[vnum].to_dict()
+
+        for lang, ig_name in ingame_names.items():
             if ig_name.endswith("+0"):
-                ig_names[lang] = ig_name[:-2]
+                ingame_names[lang] = ig_name[:-2]
 
-        self.ig_names = ig_names
+        self.ingame_names = ingame_names
 
     def add_image_name(self):
         image_parameter: Parameter = self.template.get("Image")
