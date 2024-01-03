@@ -57,7 +57,7 @@ class QuizCog(Cog):
             color=0x7AFF33,
         )
         if config_name != CONFIGURATION_MANAGER.HARDCORE:
-            embed.add_field(name="Hints langags", value=", ".join(CONFIGURATION_MANAGER.DISPLAYED_LANGS))
+            embed.add_field(name="Hints languages", value=", ".join(CONFIGURATION_MANAGER.DISPLAYED_LANGS))
 
         await interaction.send(embed=embed)
 
@@ -75,7 +75,7 @@ class QuizCog(Cog):
                 await self.wait_for_answer(channel, question)
 
             if question_index + 1 != number_of_question:
-                await interaction.send(f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!")
+                await channel.send(f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!")
 
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
@@ -117,7 +117,7 @@ class QuizCog(Cog):
                 await message.reply(
                     f"Good game!"
                 )
-                self.show_answer(channel, question)
+                await self.show_answer(channel, question)
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
         else:
@@ -134,7 +134,7 @@ class QuizCog(Cog):
                 )
 
                 for lang, hint in question.hints.items():
-                    embed.add_field(name=lang, value=hint)
+                    embed.add_field(name=lang, value=" ".join(hint), inline=False)
 
                 await channel.send(embed=embed)
                 
@@ -143,7 +143,7 @@ class QuizCog(Cog):
                 await channel.send(
                     f"Too late!"
                 )
-                self.show_answer(channel, question)
+                await self.show_answer(channel, question)
 
     async def show_answer(self, channel: nextcord.channel.TextChannel, question: Question):
         embed = Embed(
