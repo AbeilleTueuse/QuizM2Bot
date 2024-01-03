@@ -13,6 +13,8 @@ from src.data.read_files import ItemName
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
 
+    DISPLAYED_LANGS = ["fr", "en"]
+
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"
@@ -105,36 +107,45 @@ class Leaderboard:
 
 class Question:
     def __init__(
-        self, answers: list[str], image_url: str, config_manager: ConfigurationManager
+        self, answers: dict[str, str], image_url: str, config_manager: ConfigurationManager
     ):
         self.answers = answers
         self.image_url = image_url
         self.config_manager = config_manager
-        self.formatted_answers = self._formatted_answers(answers)
-        # self.hint = self._get_default_hint()
-        # self.hint_shuffle = self._get_hint_shuffle()
-        # self.answer_len = len(answer)
+        self.displayed_hints = self._get_displayed_hints()
+        self.formatted_answers = self._formatted_answers()
+        self.hints = self._get_default_hints()
+        self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
         self.hint_shown = 0
         self.last_message = None
+
+    def _get_displayed_hints(self):
+        return {lang: answer for lang, answer in self.answers.items() if lang in self.config_manager.DISPLAYED_LANGS}
     
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
     
-    def _formatted_answers(self, answers: str):
-        return [self._formatted_answer(answer) for answer in answers]
+    def _formatted_answers(self):
+        return [self._formatted_answer(answer) for answer in self.answers.values()]
 
-    # def _get_default_hint(self):
-    #     return [
-    #         "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
-    #         for char in self.answer
-    #     ]
+    def _get_default_hint(self, answer: str):
+        return [
+            "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
+            for char in answer
+        ]
+    
+    def _get_default_hints(self):
+        return {lang: self._get_default_hint(answer) for lang, answer in self.displayed_hints.items()}
 
-    # def _get_hint_shuffle(self):
-    #     char_position = list(enumerate(self.answer))
-    #     rd.shuffle(char_position)
+    def _get_hint_shuffle(self, answer: str):
+        char_position = list(enumerate(answer))
+        rd.shuffle(char_position)
 
-    #     return char_position
+        return char_position
+    
+    def _get_hints_shuffle(self):
+        return {lang: self._get_hint_shuffle(answer) for lang, answer in self.displayed_hints.items()}
 
     def show_hint(self):
         self.check_answer_count += 1
@@ -152,21 +163,25 @@ class Question:
             self.config_manager.config[self.config_manager.MAX_HINT]
         )
 
-    # def get_hint(self):
-    #     char_to_show_number = len(self.hint_shuffle) // (
-    #         int(self.config_manager.config[self.config_manager.MAX_HINT])
-    #         - self.hint_shown
-    #     )
+    def _get_hint(self, lang):
+        char_to_show_number = len(self.hints_shuffle[lang]) // (
+            int(self.config_manager.config[self.config_manager.MAX_HINT])
+            - self.hint_shown
+        )
 
-    #     for _ in range(char_to_show_number):
-    #         pos, char = self.hint_shuffle.pop()
+        for _ in range(char_to_show_number):
+            pos, char = self.hints_shuffle[lang].pop()
 
-    #         if char == " ":
-    #             continue
+            if char == " ":
+                continue
 
-    #         self.hint[pos] = f"__{char}__"
+            self.hints[lang][pos] = f"__{char}__"
 
-    #     self.hint_shown += 1
+    def get_hints(self):
+        for lang in self.hints:
+            self._get_hint(lang)
+
+        self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
         formatted_user_answer = self._formatted_answer(user_answer)

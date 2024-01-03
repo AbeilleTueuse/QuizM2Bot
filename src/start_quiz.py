@@ -120,19 +120,18 @@ class QuizCog(Cog):
                 return
             
             if question.exceed_max_hint():
-                pass
-                # question.get_hint()
-                # embed = Embed(
-                #     title=f"Indice {question.hint_shown} sur {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
-                #     description=" ".join(question.hint),
-                #     color=0xEDF02A,
-                # )
-                # await channel.send(embed=embed)
+                question.get_hints()
+                embed = Embed(
+                    title=f"Indice {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                    description="\n".join(f"**{lang}: ** " + " ".join(hint) for lang, hint in question.hints.items()),
+                    color=0xEDF02A,
+                )
+                await channel.send(embed=embed)
                 
             else:
                 self.quiz_manager.end_question()
                 await channel.send(
-                    f"Too late!."
+                    f"Too late!"
                 )
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):

@@ -30,11 +30,11 @@ class Page:
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
-        ig_names: str = item_names.loc[vnum].tolist()
+        ig_names: dict[str, str] = item_names.loc[vnum].to_dict()
 
-        for index, ig_name in enumerate(ig_names):
+        for lang, ig_name in ig_names.items():
             if ig_name.endswith("+0"):
-                ig_names[index] = ig_name[:-2]
+                ig_names[lang] = ig_name[:-2]
 
         self.ig_names = ig_names
 
