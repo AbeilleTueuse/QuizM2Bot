@@ -16,7 +16,7 @@ class Page:
     def __init__(self, title: str, content: Wikicode):
         self.title = title
         self.content = mwparserfromhell.parse(content)
-        self.ig_name: str = None
+        self.ig_names: list[str] = None
         self.image_name = None
         self.template = self._get_template()
 
@@ -26,16 +26,17 @@ class Page:
     def _get_template(self) -> Template:
         return self.content.filter(forcetype=Template)[0]
 
-    def add_ig_name(self, item_names: pd.Series):
+    def add_ig_name(self, item_names: pd.DataFrame):
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
-        ig_name: str = item_names.at[vnum]
+        ig_names: str = item_names.loc[vnum].tolist()
 
-        if ig_name.endswith("+0"):
-            ig_name = ig_name[:-2]
+        for index, ig_name in enumerate(ig_names):
+            if ig_name.endswith("+0"):
+                ig_names[index] = ig_name[:-2]
 
-        self.ig_name = ig_name
+        self.ig_names = ig_names
 
     def add_image_name(self):
         image_parameter: Parameter = self.template.get("Image")

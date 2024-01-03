@@ -105,33 +105,36 @@ class Leaderboard:
 
 class Question:
     def __init__(
-        self, answer: str, image_url: str, config_manager: ConfigurationManager
+        self, answers: list[str], image_url: str, config_manager: ConfigurationManager
     ):
-        self.answer = answer
+        self.answers = answers
         self.image_url = image_url
         self.config_manager = config_manager
-        self.formatted_answer = self._formatted_answer(answer)
-        self.hint = self._get_default_hint()
-        self.hint_shuffle = self._get_hint_shuffle()
-        self.answer_len = len(answer)
+        self.formatted_answers = self._formatted_answers(answers)
+        # self.hint = self._get_default_hint()
+        # self.hint_shuffle = self._get_hint_shuffle()
+        # self.answer_len = len(answer)
         self.check_answer_count = 0
         self.hint_shown = 0
         self.last_message = None
-
+    
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
+    
+    def _formatted_answers(self, answers: str):
+        return [self._formatted_answer(answer) for answer in answers]
 
-    def _get_default_hint(self):
-        return [
-            "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
-            for char in self.answer
-        ]
+    # def _get_default_hint(self):
+    #     return [
+    #         "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
+    #         for char in self.answer
+    #     ]
 
-    def _get_hint_shuffle(self):
-        char_position = list(enumerate(self.answer))
-        rd.shuffle(char_position)
+    # def _get_hint_shuffle(self):
+    #     char_position = list(enumerate(self.answer))
+    #     rd.shuffle(char_position)
 
-        return char_position
+    #     return char_position
 
     def show_hint(self):
         self.check_answer_count += 1
@@ -149,24 +152,28 @@ class Question:
             self.config_manager.config[self.config_manager.MAX_HINT]
         )
 
-    def get_hint(self):
-        char_to_show_number = len(self.hint_shuffle) // (
-            int(self.config_manager.config[self.config_manager.MAX_HINT])
-            - self.hint_shown
-        )
+    # def get_hint(self):
+    #     char_to_show_number = len(self.hint_shuffle) // (
+    #         int(self.config_manager.config[self.config_manager.MAX_HINT])
+    #         - self.hint_shown
+    #     )
 
-        for _ in range(char_to_show_number):
-            pos, char = self.hint_shuffle.pop()
+    #     for _ in range(char_to_show_number):
+    #         pos, char = self.hint_shuffle.pop()
 
-            if char == " ":
-                continue
+    #         if char == " ":
+    #             continue
 
-            self.hint[pos] = f"__{char}__"
+    #         self.hint[pos] = f"__{char}__"
 
-        self.hint_shown += 1
+    #     self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        return fuzz.ratio(self._formatted_answer(user_answer), self.formatted_answer) >= self.config_manager.fuzz_threshold
+        formatted_user_answer = self._formatted_answer(user_answer)
+        for formatted_answer in self.formatted_answers:
+            if fuzz.ratio(formatted_user_answer, formatted_answer) >= self.config_manager.fuzz_threshold:
+                return True
+        return False
     
     def change_last_message(self, message):
         self.last_message = message
@@ -213,7 +220,7 @@ class QuizManager:
         image_urls = self.m2_wiki.get_image_urls(pages)
 
         questions = [
-            Question(page.ig_name, image_url, self.config_manager)
+            Question(page.ig_names, image_url, self.config_manager)
             for page, image_url in zip(pages, image_urls)
         ]
         rd.shuffle(questions)

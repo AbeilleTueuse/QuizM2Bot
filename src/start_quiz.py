@@ -109,7 +109,7 @@ class QuizCog(Cog):
             if question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(
-                    f"Good game! The correct answer is **{question.answer}**."
+                    f"Good game!."
                 )
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
@@ -132,7 +132,7 @@ class QuizCog(Cog):
             else:
                 self.quiz_manager.end_question()
                 await channel.send(
-                    f"Too late! The answer was: **{question.answer}**."
+                    f"Too late!."
                 )
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
