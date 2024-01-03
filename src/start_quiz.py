@@ -54,7 +54,7 @@ class QuizCog(Cog):
         embed = Embed(
             title="Launch of the quiz!",
             description=f"The quiz settings are as follows:\n- {number_of_question} questions,\n- difficulty {config_name}.",
-            color=0x3974aa,
+            color=0x5e296b,
         )
         if config_name != CONFIGURATION_MANAGER.HARDCORE:
             embed.add_field(name="Allowed languages", value=", ".join(CONFIGURATION_MANAGER.ALLOWED_LANGS))
@@ -149,7 +149,7 @@ class QuizCog(Cog):
         embed = Embed(
             title="Answer",
             description="\n".join(f"**{lang}**: {answer}" for lang, answer in question.answers.items()),
-            color=0x3974aa,
+            color=0x5e296b,
         )
         await channel.send(embed=embed)
 

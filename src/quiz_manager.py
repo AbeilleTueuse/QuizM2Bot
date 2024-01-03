@@ -110,9 +110,9 @@ class Question:
     def __init__(
         self, answers: dict[str, str], image_url: str, config_manager: ConfigurationManager
     ):
+        self.config_manager = config_manager
         self.answers = self._filter_answer(answers)
         self.image_url = image_url
-        self.config_manager = config_manager
         self.formatted_answers = self._formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
