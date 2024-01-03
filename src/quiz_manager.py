@@ -13,7 +13,7 @@ from src.data.read_files import ItemName
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
 
-    DISPLAYED_LANGS = ["en", "fr", "ro"]
+    ALLOWED_LANGS = ["en", "fr", "ro"]
 
     HARDCORE = "hardcore"
     MODE = "mode"
@@ -110,10 +110,9 @@ class Question:
     def __init__(
         self, answers: dict[str, str], image_url: str, config_manager: ConfigurationManager
     ):
-        self.answers = answers
+        self.answers = self._filter_answer(answers)
         self.image_url = image_url
         self.config_manager = config_manager
-        self.displayed_hints = self._get_displayed_hints()
         self.formatted_answers = self._formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
@@ -121,8 +120,8 @@ class Question:
         self.hint_shown = 0
         self.last_message = None
 
-    def _get_displayed_hints(self):
-        return {lang: answer for lang, answer in self.answers.items() if lang in self.config_manager.DISPLAYED_LANGS}
+    def _filter_answer(self, answers: dict[str, str]):
+        return {lang: answer for lang, answer in answers.items() if lang in self.config_manager.ALLOWED_LANGS}
     
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
@@ -137,7 +136,7 @@ class Question:
         ]
     
     def _get_default_hints(self):
-        return {lang: self._get_default_hint(answer) for lang, answer in self.displayed_hints.items()}
+        return {lang: self._get_default_hint(answer) for lang, answer in self.answers.items()}
 
     def _get_hint_shuffle(self, answer: str):
         char_position = list(enumerate(answer))
@@ -146,7 +145,7 @@ class Question:
         return char_position
     
     def _get_hints_shuffle(self):
-        return {lang: self._get_hint_shuffle(answer) for lang, answer in self.displayed_hints.items()}
+        return {lang: self._get_hint_shuffle(answer) for lang, answer in self.answers.items()}
 
     def show_hint(self):
         self.check_answer_count += 1
