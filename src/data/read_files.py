@@ -47,17 +47,20 @@ class MobNames:
     def _read_csv(self, lang: str):
         path = os.path.join(self.PATH, lang, self.FILENAME)
 
-        item_names = pd.read_csv(
+        encoding = "Windows-1252" if lang != "ro" else "ISO-8859-2"
+
+        mob_names = pd.read_csv(
             filepath_or_buffer=path,
             index_col=0,
             usecols=[0, 1],
             names=[self.VNUM, lang],
-            encoding="Windows-1252",
+            encoding=encoding,
             sep="\t",
             skiprows=1
         )
 
-        return item_names[lang].str.replace(chr(160), " ")
+        return mob_names[lang].str.replace(chr(160), " ")
     
     def _create_data(self):
         return pd.concat((self._read_csv(lang) for lang in self.LANGS), axis=1)
+
