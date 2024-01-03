@@ -3,7 +3,7 @@ import logging
 from nextcord import Intents
 from nextcord.ext.commands import Bot
 
-
+# test
 if __name__ == "__main__":
     logging.basicConfig(
         filename="logs.log",
