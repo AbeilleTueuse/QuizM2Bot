@@ -19,18 +19,22 @@ class Page:
         self.ig_names: list[str] = None
         self.image_name = None
         self.template = self._get_template()
+        self.type = self._get_type()
 
     def __str__(self):
         return f"(Page: {self.title})"
 
     def _get_template(self) -> Template:
         return self.content.filter(forcetype=Template)[0]
+    
+    def _get_type(self):
+        return str(self.template.name).strip()
 
-    def add_ig_name(self, item_names: pd.DataFrame):
+    def add_ig_name(self, names: pd.DataFrame):
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
-        ig_names: dict[str, str] = item_names.loc[vnum].to_dict()
+        ig_names: dict[str, str] = names.loc[vnum].to_dict()
 
         for lang, ig_name in ig_names.items():
             if ig_name.endswith("+0"):
@@ -42,7 +46,10 @@ class Page:
         image_parameter: Parameter = self.template.get("Image")
         image_name = str(image_parameter.value).strip()
 
-        self.image_name = f"Fichier:{image_name}.png"
+        if self.type == "Monstres":
+            self.image_name = f"Fichier:{image_name}-min.png"
+        else:
+            self.image_name = f"Fichier:{image_name}.png"
 
     def code_to_vnum(self, letters: str) -> int:
         number = 0

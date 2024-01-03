@@ -7,7 +7,7 @@ from unidecode import unidecode
 from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
-from src.data.read_files import ItemName
+from src.data.read_files import ItemNames, MobNames
 
 
 class ConfigurationManager:
@@ -108,7 +108,10 @@ class Leaderboard:
 
 class Question:
     def __init__(
-        self, answers: dict[str, str], image_url: str, config_manager: ConfigurationManager
+        self,
+        answers: dict[str, str],
+        image_url: str,
+        config_manager: ConfigurationManager,
     ):
         self.config_manager = config_manager
         self.answers = self._filter_answer(answers)
@@ -121,11 +124,15 @@ class Question:
         self.last_message = None
 
     def _filter_answer(self, answers: dict[str, str]):
-        return {lang: answer for lang, answer in answers.items() if lang in self.config_manager.ALLOWED_LANGS}
-    
+        return {
+            lang: answer
+            for lang, answer in answers.items()
+            if lang in self.config_manager.ALLOWED_LANGS
+        }
+
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
-    
+
     def _formatted_answers(self):
         return [self._formatted_answer(answer) for answer in self.answers.values()]
 
@@ -134,18 +141,24 @@ class Question:
             "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
             for char in answer
         ]
-    
+
     def _get_default_hints(self):
-        return {lang: self._get_default_hint(answer) for lang, answer in self.answers.items()}
+        return {
+            lang: self._get_default_hint(answer)
+            for lang, answer in self.answers.items()
+        }
 
     def _get_hint_shuffle(self, answer: str):
         char_position = list(enumerate(answer))
         rd.shuffle(char_position)
 
         return char_position
-    
+
     def _get_hints_shuffle(self):
-        return {lang: self._get_hint_shuffle(answer) for lang, answer in self.answers.items()}
+        return {
+            lang: self._get_hint_shuffle(answer)
+            for lang, answer in self.answers.items()
+        }
 
     def show_hint(self):
         self.check_answer_count += 1
@@ -186,10 +199,13 @@ class Question:
     def is_correct_answer(self, user_answer: str):
         formatted_user_answer = self._formatted_answer(user_answer)
         for formatted_answer in self.formatted_answers:
-            if fuzz.ratio(formatted_user_answer, formatted_answer) >= self.config_manager.fuzz_threshold:
+            if (
+                fuzz.ratio(formatted_user_answer, formatted_answer)
+                >= self.config_manager.fuzz_threshold
+            ):
                 return True
         return False
-    
+
     def change_last_message(self, message):
         self.last_message = message
 
@@ -203,7 +219,8 @@ class QuizManager:
         self.m2_wiki = m2_wiki
         self.config = None
         self.leaderboard = Leaderboard()
-        self.item_names = ItemName().data
+        self.item_names = ItemNames().data
+        self.mob_names = MobNames().data
 
     def start_quiz(self, config_manager: ConfigurationManager):
         self.config_manager = config_manager
@@ -222,13 +239,18 @@ class QuizManager:
         pages_info = rd.choices(
             self.m2_wiki.category(
                 category="Objets (temporaire)", exclude_category="Objets multiples"
-            ),
+            )
+            + self.m2_wiki.category(category="Monstres (temporaire)"),
             k=number_of_question,
         )
         pages = self.m2_wiki.get_pages_content(pages_info)
 
         for page in pages:
-            page.add_ig_name(self.item_names)
+            if page.type == "Monstres":
+                page.add_ig_name(self.mob_names)
+            else:
+                page.add_ig_name(self.item_names)
+
             page.add_image_name()
 
         pages: list[Page] = sorted(pages, key=lambda page: page.image_name)
