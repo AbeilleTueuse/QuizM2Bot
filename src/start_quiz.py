@@ -54,10 +54,13 @@ class QuizCog(Cog):
         embed = Embed(
             title="Launch of the quiz!",
             description=f"The quiz settings are as follows:\n- {number_of_question} questions,\n- difficulty {config_name}.",
-            color=0x5e296b,
+            color=0x5E296B,
         )
         if config_name != CONFIGURATION_MANAGER.HARDCORE:
-            embed.add_field(name="Allowed languages", value=", ".join(CONFIGURATION_MANAGER.ALLOWED_LANGS))
+            embed.add_field(
+                name="Allowed languages",
+                value=", ".join(CONFIGURATION_MANAGER.ALLOWED_LANGS),
+            )
 
         await interaction.send(embed=embed)
 
@@ -75,7 +78,9 @@ class QuizCog(Cog):
                 await self.wait_for_answer(channel, question)
 
             if question_index + 1 != number_of_question:
-                await channel.send(f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!")
+                await channel.send(
+                    f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!"
+                )
 
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
@@ -107,25 +112,23 @@ class QuizCog(Cog):
         question: Question,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
-        message = question.last_message
+        message = question.get_last_message()
 
         async for message in channel.history(
             limit=None, after=message, oldest_first=True
         ):
             if question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
-                await message.reply(
-                    f"Good game!"
-                )
+                await message.reply(f"Good game!")
                 await self.show_answer(channel, question)
                 self.quiz_manager.leaderboard.increment_score(message.author.name)
                 break
         else:
             question.change_last_message(message)
 
-            if not question.show_hint():
+            if not question.show_hint() or not self.quiz_manager.waiting_for_answer():
                 return
-            
+
             if question.exceed_max_hint():
                 question.get_hints()
                 embed = Embed(
@@ -136,20 +139,30 @@ class QuizCog(Cog):
                 for lang, hint in question.hints.items():
                     embed.add_field(name=lang, value=" ".join(hint), inline=False)
 
-                await channel.send(embed=embed)
-                
+                last_hint_message: nextcord.message.Message = (
+                    question.get_last_hint_message()
+                )
+
+                new_hint_message = await channel.send(embed=embed)
+                question.change_last_hint_message(new_hint_message)
+
+                if last_hint_message is not None:
+                    await last_hint_message.delete()
+
             else:
                 self.quiz_manager.end_question()
-                await channel.send(
-                    f"Too late!"
-                )
+                await channel.send(f"Too late!")
                 await self.show_answer(channel, question)
 
-    async def show_answer(self, channel: nextcord.channel.TextChannel, question: Question):
+    async def show_answer(
+        self, channel: nextcord.channel.TextChannel, question: Question
+    ):
         embed = Embed(
             title="Answers",
-            description="\n".join(f"**{lang}**: {answer}" for lang, answer in question.answers.items()),
-            color=0x5e296b,
+            description="\n".join(
+                f"**{lang}**: {answer}" for lang, answer in question.answers.items()
+            ),
+            color=0x5E296B,
         )
         await channel.send(embed=embed)
 

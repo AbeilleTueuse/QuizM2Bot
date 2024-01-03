@@ -121,7 +121,8 @@ class Question:
         self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
         self.hint_shown = 0
-        self.last_message = None
+        self._last_message = None
+        self._list_hint_message = None
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
@@ -207,7 +208,16 @@ class Question:
         return False
 
     def change_last_message(self, message):
-        self.last_message = message
+        self._last_message = message
+
+    def get_last_message(self):
+        return self._last_message
+
+    def change_last_hint_message(self, message):
+        self._last_hint_message = message
+
+    def get_last_hint_message(self):
+        return self._last_hint_message
 
 
 class QuizManager:
