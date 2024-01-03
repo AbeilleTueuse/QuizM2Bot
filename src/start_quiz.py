@@ -137,7 +137,7 @@ class QuizCog(Cog):
                 )
 
                 for lang, hint in question.hints.items():
-                    embed.add_field(name=lang, value=" ".join(hint), inline=False)
+                    embed.add_field(name=f"{lang}:", value=" ".join(hint), inline=False)
 
                 last_hint_message: nextcord.message.Message = (
                     question.get_last_hint_message()
