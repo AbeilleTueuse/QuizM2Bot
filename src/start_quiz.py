@@ -211,7 +211,7 @@ class QuizCog(Cog):
         await interaction.send("The question was canceled.")
 
     @quiz.subcommand(name="ranking")
-    async def show_ranking(
+    async def show_general_ranking(
         self,
         interaction: Interaction,
         config_name: str = nextcord.SlashOption(
