@@ -92,7 +92,7 @@ class QuizCog(Cog):
     ):
         embed = Embed(
             title=f"Question {question_index + 1} of {number_of_question}",
-            description=f"What is the name of this item?",
+            description=f"What is the name of this?",
             color=0x7AFF33,
         )
         embed.set_image(url=question.image_url)
