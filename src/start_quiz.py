@@ -1,4 +1,5 @@
 import asyncio
+import logging
 
 import nextcord
 from nextcord.ext.commands import Bot, Cog
@@ -46,6 +47,7 @@ class QuizCog(Cog):
             await interaction.send("A quiz is already in progress.")
             return
 
+        logging.info("Launch of the quiz.")
         channel = interaction.channel
         CONFIGURATION_MANAGER.set_config(config_name)
 
