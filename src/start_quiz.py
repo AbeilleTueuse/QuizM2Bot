@@ -82,7 +82,10 @@ class QuizCog(Cog):
             while self.quiz_manager.waiting_for_answer():
                 await self.wait_for_answer(channel, question)
 
-            if question_index + 1 != number_of_question:
+            if (
+                question_index + 1 != number_of_question
+                and self.quiz_manager.quiz_is_running()
+            ):
                 await channel.send(
                     f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!"
                 )
@@ -138,15 +141,12 @@ class QuizCog(Cog):
                 question.get_hints()
                 embed = Embed(
                     title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                    description="\n".join(
+                        f":flag_{lang.replace('en', 'gb')}: ┊ {' '.join(hint)}"
+                        for lang, hint in question.hints.items()
+                    ),
                     color=0xEDF02A,
                 )
-
-                for lang, hint in question.hints.items():
-                    embed.add_field(
-                        name=f":flag_{lang.replace('en', 'gb')}:",
-                        value=" ".join(hint),
-                        inline=False,
-                    )
 
                 last_hint_message: nextcord.message.Message = (
                     question.get_last_hint_message()
@@ -169,7 +169,7 @@ class QuizCog(Cog):
         embed = Embed(
             title="Answers",
             description="\n".join(
-                f":flag_{lang.replace('en', 'gb')}: \u200B {answer}"
+                f":flag_{lang.replace('en', 'gb')}: ┊ {answer}"
                 for lang, answer in question.answers.items()
             ),
             color=0x5E296B,
