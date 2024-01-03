@@ -3,7 +3,8 @@ from nextcord.ext.commands import Bot
 
 
 if __name__ == "__main__":
-    TOKEN = input("Enter the discord bot token: ")
+    with open("token.txt", "r") as file:
+        token = file.readline()
     
     intents = Intents.default()
     intents.message_content = True
@@ -11,4 +12,4 @@ if __name__ == "__main__":
     bot = Bot(intents=intents)
     bot.load_extension("src.start_quiz")
 
-    bot.run(TOKEN)
+    bot.run(token)
