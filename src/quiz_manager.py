@@ -13,7 +13,7 @@ from src.data.read_files import GameNames
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
 
-    ALLOWED_LANGS = ["en", "fr", "ro"]
+    ALLOWED_LANGS = ["en", "fr", "ro", "it"]
 
     HARDCORE = "hardcore"
     MODE = "mode"
