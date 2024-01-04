@@ -85,7 +85,7 @@ class Ranking:
         self.scores[name] += 1
 
     def sort(self):
-        self.scores = sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
+        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
 
     def convert_rank(self, rank):
         if rank == 1:
