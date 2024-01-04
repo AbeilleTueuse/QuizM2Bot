@@ -120,6 +120,9 @@ class GeneralRanking:
         for name, score in data.items():
             self.scores[name] += int(score)
 
+    def sort(self):
+        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+
     def update(self, ranking: Ranking):
         for name, score in ranking:
             self.scores[name] += score
@@ -129,6 +132,9 @@ class GeneralRanking:
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
             file.write(json.dumps(self.scores, indent=4))
+
+    def __iter__(self):
+        return iter(self.scores.items())
 
 
 class Question:

@@ -222,9 +222,13 @@ class QuizCog(Cog):
         ),
     ):
         """Show general ranking."""
-        await interaction.send("Command not added.")
-
-        print(self.quiz_manager.general_ranking.scores)
+        self.quiz_manager.general_ranking.sort()
+        ranking = "\n".join(
+            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
+            for rank, (name, score) in enumerate(self.quiz_manager.general_ranking)
+        )
+        embed = Embed(title=f"General ranking ({config_name})", description=ranking, color=0x33A5FF)
+        await interaction.send(embed=embed)
 
 
 def setup(bot: Bot):
