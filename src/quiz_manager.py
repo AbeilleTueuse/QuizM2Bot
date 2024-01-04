@@ -103,38 +103,38 @@ class Ranking:
         return iter(self.scores.items())
     
 
-class GeneralRanking:
-    DATA_PATH = os.path.join("src", "ranking.json")
+# class GeneralRanking:
+#     DATA_PATH = os.path.join("src", "ranking.json")
 
-    def __init__(self):
-        self.scores = defaultdict(int)
-        self._update_scores()
+#     def __init__(self):
+#         self.scores = defaultdict(int)
+#         self._update_scores()
 
-    def _update_scores(self):
-        try:
-            with open(self.DATA_PATH, "r") as file:
-                data = json.load(file)
-        except FileNotFoundError:
-            data = {}
+#     def _update_scores(self):
+#         try:
+#             with open(self.DATA_PATH, "r") as file:
+#                 data = json.load(file)
+#         except FileNotFoundError:
+#             data = {}
 
-        for name, score in data.items():
-            self.scores[name] += int(score)
+#         for name, score in data.items():
+#             self.scores[name] += int(score)
 
-    def sort(self):
-        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+#     def sort(self):
+#         self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
 
-    def update(self, ranking: Ranking):
-        for name, score in ranking:
-            self.scores[name] += score
+#     def update(self, ranking: Ranking):
+#         for name, score in ranking:
+#             self.scores[name] += score
 
-        self._save()
+#         self._save()
 
-    def _save(self):
-        with open(self.DATA_PATH, "w") as file:
-            file.write(json.dumps(self.scores, indent=4))
+#     def _save(self):
+#         with open(self.DATA_PATH, "w") as file:
+#             file.write(json.dumps(self.scores, indent=4))
 
-    def __iter__(self):
-        return iter(self.scores.items())
+#     def __iter__(self):
+#         return iter(self.scores.items())
 
 
 class Question:
@@ -260,7 +260,7 @@ class QuizManager:
         self.m2_wiki = m2_wiki
         self.config = None
         self.ranking = Ranking()
-        self.general_ranking = GeneralRanking()
+        # self.general_ranking = GeneralRanking()
         self.game_names = GameNames()
 
     def start_quiz(self, config_manager: ConfigurationManager):
@@ -304,7 +304,7 @@ class QuizManager:
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
-        self.general_ranking.update(self.ranking)
+        # self.general_ranking.update(self.ranking)
         self.ranking.reset()
 
     def end_question(self):

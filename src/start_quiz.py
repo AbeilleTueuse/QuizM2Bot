@@ -210,25 +210,25 @@ class QuizCog(Cog):
         self.quiz_manager.end_question()
         await interaction.send("The question was canceled.")
 
-    @quiz.subcommand(name="ranking")
-    async def show_general_ranking(
-        self,
-        interaction: Interaction,
-        config_name: str = nextcord.SlashOption(
-            name="difficulty",
-            description="Choose the ranking.",
-            choices=CONFIGURATION_MANAGER.saved_config.keys(),
-            required=True,
-        ),
-    ):
-        """Show general ranking."""
-        self.quiz_manager.general_ranking.sort()
-        ranking = "\n".join(
-            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
-            for rank, (name, score) in enumerate(self.quiz_manager.general_ranking)
-        )
-        embed = Embed(title=f"General ranking ({config_name})", description=ranking, color=0x33A5FF)
-        await interaction.send(embed=embed)
+    # @quiz.subcommand(name="ranking")
+    # async def show_general_ranking(
+    #     self,
+    #     interaction: Interaction,
+    #     config_name: str = nextcord.SlashOption(
+    #         name="difficulty",
+    #         description="Choose the ranking.",
+    #         choices=CONFIGURATION_MANAGER.saved_config.keys(),
+    #         required=True,
+    #     ),
+    # ):
+    #     """Show general ranking."""
+    #     self.quiz_manager.general_ranking.sort()
+    #     ranking = "\n".join(
+    #         f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
+    #         for rank, (name, score) in enumerate(self.quiz_manager.general_ranking)
+    #     )
+    #     embed = Embed(title=f"General ranking ({config_name})", description=ranking, color=0x33A5FF)
+    #     await interaction.send(embed=embed)
 
 
 def setup(bot: Bot):
