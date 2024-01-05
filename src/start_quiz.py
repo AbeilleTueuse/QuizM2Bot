@@ -34,7 +34,9 @@ class RegistrationButton(nextcord.ui.View):
     async def timer(self, message: nextcord.message.Message):
         plural = "s" * (self.count >= 2)
 
-        self.embed.set_footer(text=self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural))
+        self.embed.set_footer(
+            text=self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural)
+        )
         await message.edit(embed=self.embed, view=self)
 
         if not self.count:
@@ -45,7 +47,8 @@ class RegistrationButton(nextcord.ui.View):
 
         self.count -= 1
 
-    @nextcord.ui.button(label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
+    @nextcord.ui.button(
+        label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
     async def button_callback(self, _, interaction: nextcord.Interaction):
         user = interaction.user
 
@@ -53,7 +56,12 @@ class RegistrationButton(nextcord.ui.View):
             return
 
         self.players[user.id] = user.name
-        self.embed.set_field_at(2, name="Participants", value="\n".join(f"- {name}" for name in self.players.values()), inline=False)
+        self.embed.set_field_at(
+            index=2,
+            name="Participants",
+            value="\n".join(f"- {name}" for name in self.players.values()),
+            inline=False,
+        )
 
 
 class QuizCog(Cog):
@@ -106,7 +114,7 @@ class QuizCog(Cog):
         )
         embed.add_field(
             name="Settings",
-            value=f"- **{number_of_question}** questions\n- difficulty **{config_name}**\n- category **{game_category}**",
+            value=f"- questions: **{number_of_question}**\n- difficulty: **{config_name}**\n- category: **{game_category}**",
         )
         embed.add_field(
             name="Allowed languages",
@@ -114,17 +122,21 @@ class QuizCog(Cog):
                 f":flag_{lang.replace('en', 'gb')}:"
                 for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
             ),
-            inline=False
+            inline=False,
         )
 
         if self.quiz_manager.is_ranked_quiz(game_category):
-            embed.add_field(name="Participants", value="No one is registered.", inline=False)
+            embed.add_field(
+                name="Participants", value="No one is registered.", inline=False
+            )
             registration_button = RegistrationButton(embed=embed)
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
             if len(registration_button.players.keys()) <= 1:
-                await channel.send("There are not enough players registered, the quiz is canceled.")
+                await channel.send(
+                    "There are not enough players registered, the quiz is canceled."
+                )
                 self.quiz_manager.end_quiz()
                 return
 
