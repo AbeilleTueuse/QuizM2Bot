@@ -12,7 +12,7 @@ from src.data.read_files import GameNames
 
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
-    REGISTRATION_TIME = 10
+    REGISTRATION_TIME = 30
 
     NUMBER_OF_QUESTION = [5, 10, 20, 40]
     FRIENDYLY = "friendly"

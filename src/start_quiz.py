@@ -21,30 +21,27 @@ class RegistrationButton(nextcord.ui.View):
     MESSAGE_OPEN = "Registrations will close in {remaining_time} second{plural}."
     MESSAGE_CLOSE = "Registrations are closed."
 
-    def __init__(self):
+    def __init__(self, embed: Embed):
         super().__init__()
-        self.count = CONFIGURATION_MANAGER.REGISTRATION_TIME
+        self.embed = embed
+        self.count = 10
         self.players = {}
 
-    async def send(self, channel: nextcord.channel.TextChannel):
-        self.message = await channel.send(view=self)
-        timer_message = await channel.send(
-            self.MESSAGE_OPEN.format(remaining_time=self.count, plural="s")
-        )
-        await self.timer.start(timer_message)
+    async def update(self, message: nextcord.message.Message):
+        await self.timer.start(message)
 
-    @tasks.loop(seconds=1, count=CONFIGURATION_MANAGER.REGISTRATION_TIME + 1)
+    @tasks.loop(seconds=1)
     async def timer(self, message: nextcord.message.Message):
         plural = "s" * (self.count >= 2)
 
-        await message.edit(
-            self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural)
-        )
+        self.embed.set_footer(text=self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural))
+        await message.edit(embed=self.embed, view=self)
 
         if not self.count:
             self.children[0].disabled = True
-            await self.message.edit(view=self)
-            await message.edit(self.MESSAGE_CLOSE)
+            self.embed.set_footer(text=self.MESSAGE_CLOSE)
+            await message.edit(embed=self.embed, view=self)
+            self.timer.stop()
 
         self.count -= 1
 
@@ -56,7 +53,7 @@ class RegistrationButton(nextcord.ui.View):
             return
 
         self.players[user.id] = user.name
-        await interaction.channel.send(f"{user.mention} is registered!")
+        self.embed.set_field_at(2, name="Participants", value="\n".join(f"- {name}" for name in self.players.values()), inline=False)
 
 
 class QuizCog(Cog):
@@ -105,8 +102,11 @@ class QuizCog(Cog):
 
         embed = Embed(
             title="Launch of the quiz!",
-            description=f"The quiz settings are as follows:\n- **{number_of_question}** questions,\n- difficulty **{config_name}**,\n- category **{game_category}**.",
             color=0x5E296B,
+        )
+        embed.add_field(
+            name="Settings",
+            value=f"- **{number_of_question}** questions\n- difficulty **{config_name}**\n- category **{game_category}**",
         )
         embed.add_field(
             name="Allowed languages",
@@ -114,30 +114,28 @@ class QuizCog(Cog):
                 f":flag_{lang.replace('en', 'gb')}:"
                 for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
             ),
+            inline=False
         )
 
-        await interaction.send(embed=embed)
-
         if self.quiz_manager.is_ranked_quiz(game_category):
-            registration_button = RegistrationButton()
-            await registration_button.send(channel)
+            embed.add_field(name="Participants", value="No one is registered.", inline=False)
+            registration_button = RegistrationButton(embed=embed)
+            message = await interaction.send(embed=embed, view=registration_button)
+            await registration_button.update(message)
 
             if len(registration_button.players.keys()) <= 1:
                 await channel.send("There are not enough players registered, the quiz is canceled.")
                 self.quiz_manager.end_quiz()
                 return
 
-            embed = Embed(
-                title="Participants",
-                description="\n".join(
-                    f"- {player_name} ({self.quiz_manager.get_elo(interaction.guild_id, player_id, player_name)} elo)"
-                    for player_id, player_name in registration_button.players.items()
-                ),
-                color=0x5E296B,
-            )
+            # f"- {player_name} ({self.quiz_manager.get_elo(interaction.guild_id, player_id, player_name)} elo)"
+            # for player_id, player_name in registration_button.players.items()
 
             await channel.send(embed=embed)
             await channel.send("The quiz will start soon!")
+
+        else:
+            await interaction.send(embed=embed)
 
         questions = self.quiz_manager.get_questions(number_of_question)
 
@@ -257,7 +255,7 @@ class QuizCog(Cog):
             f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
             for rank, (name, score) in enumerate(self.quiz_manager.ranking)
         )
-        embed = Embed(title="Ranking", description=ranking, color=0x33A5FF)
+        embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
     async def show_ranked_ranking(self, channel: nextcord.channel.TextChannel):
