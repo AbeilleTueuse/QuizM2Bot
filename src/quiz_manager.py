@@ -83,8 +83,8 @@ class Ranking:
     def __init__(self):
         self.scores = defaultdict(int)
 
-    def increment_score(self, name: str):
-        self.scores[name] += 1
+    def increment_score(self, user_id: str):
+        self.scores[user_id] += 1
 
     def sort(self):
         self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
@@ -123,7 +123,7 @@ class EloRanking:
 
         return data
     
-    def get_elo(self, guild_id, player_id, player_name):
+    def get_elo(self, guild_id, player_id, player_name=None):
         if not guild_id in self.data:
             self.data[guild_id] = {}
 
@@ -134,23 +134,46 @@ class EloRanking:
     
     def default_info(self, player_name: str):
         return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
+    
+    def _update_elo(self, guild_id, player_id, additionnal_elo):
+        self.data[guild_id][player_id][self.ELO] += additionnal_elo
 
-    def sort(self):
-        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+    def update(self, guild_id, ranking: Ranking):
+        current_elo = {player_id: self.get_elo(guild_id, player_id) for player_id, _ in ranking}
+        
+        for player_id, player_score in ranking:
+            player_elo = current_elo[player_id]
+            additionnal_elo = 0 
 
-    def update(self, ranking: Ranking):
-        for name, score in ranking:
-            self.scores[name] += score
+            for opponent_id, opponent_score in ranking:
+                if player_id == opponent_id:
+                    continue
+                
+                opponent_elo = current_elo[opponent_id]
+                additionnal_elo += self.elo_formula(player_elo, player_score, opponent_elo, opponent_score)
+
+            self._update_elo(guild_id, player_id, additionnal_elo)
 
         self._save()
 
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
-            file.write(json.dumps(self.scores, indent=4))
+            file.write(json.dumps(self.data, indent=4))
 
-    def __iter__(self):
-        return iter(self.scores.items())
+    @staticmethod
+    def elo_formula(player_elo, player_score, opponent_elo, opponent_score):
+        score_difference = min(400, player_elo - opponent_elo)
+        p_coeff = 1 / (1 + 10**(-score_difference / 400))
 
+        if player_score > opponent_score:
+            W_coeff = 1
+        elif player_score < opponent_score:
+            W_coeff = 0
+        else:
+            W_coeff = 0.5
+
+        return round(20 * (W_coeff - p_coeff))
+    
 
 class Question:
     def __init__(
@@ -334,4 +357,4 @@ class QuizManager:
         return self.elo_ranking.get_elo(guild_id, player_id, player_name)
     
     def update_ranked_ranking(self):
-        pass
+        self.elo_ranking.update(self.ranking)

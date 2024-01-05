@@ -21,11 +21,11 @@ class RegistrationButton(nextcord.ui.View):
     MESSAGE_OPEN = "Registrations will close in {remaining_time} second{plural}."
     MESSAGE_CLOSE = "Registrations are closed."
 
-    def __init__(self, quiz_manager: QuizManager, embed: Embed):
+    def __init__(self, quiz_manager: QuizManager, embed: Embed, registration_time: int):
         super().__init__()
         self.quiz_manager = quiz_manager
         self.embed = embed
-        self.count = 10
+        self.count = registration_time
         self.players = {}
 
     async def update(self, message: nextcord.message.Message):
@@ -48,8 +48,7 @@ class RegistrationButton(nextcord.ui.View):
 
         self.count -= 1
 
-    @nextcord.ui.button(
-        label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
+    @nextcord.ui.button(label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
     async def button_callback(self, _, interaction: nextcord.Interaction):
         user = interaction.user
 
@@ -108,7 +107,6 @@ class QuizCog(Cog):
             return
 
         CONFIGURATION_MANAGER.set_config(config_name)
-
         channel = interaction.channel
         self.quiz_manager.start_quiz()
 
@@ -134,17 +132,19 @@ class QuizCog(Cog):
                 name="Participants", value="No one is registered.", inline=False
             )
             registration_button = RegistrationButton(
-                quiz_manager=self.quiz_manager, embed=embed
+                quiz_manager=self.quiz_manager,
+                embed=embed,
+                registration_time=CONFIGURATION_MANAGER.REGISTRATION_TIME,
             )
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
-            if len(registration_button.players.keys()) <= 1:
-                await channel.send(
-                    "There are not enough players registered, the quiz is canceled."
-                )
-                self.quiz_manager.end_quiz()
-                return
+            # if len(registration_button.players.keys()) <= 1:
+            #     await channel.send(
+            #         "There are not enough players registered, the quiz is canceled."
+            #     )
+            #     self.quiz_manager.end_quiz()
+            #     return
 
             await channel.send("The quiz will start soon!")
 
@@ -218,7 +218,7 @@ class QuizCog(Cog):
                 self.quiz_manager.end_question()
                 await message.reply(f"Good game!")
                 await self.show_answer(channel, question)
-                self.quiz_manager.ranking.increment_score(message.author.name)
+                self.quiz_manager.ranking.increment_score(message.author.id)
                 break
         else:
             question.change_last_message(message)
@@ -268,8 +268,8 @@ class QuizCog(Cog):
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
         self.quiz_manager.ranking.sort()
         ranking = "\n".join(
-            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
-            for rank, (name, score) in enumerate(self.quiz_manager.ranking)
+            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{self.user_id_to_name(channel, user_id)}** ({score} point{'s' * (score > 1)})"
+            for rank, (user_id, score) in enumerate(self.quiz_manager.ranking)
         )
         embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
@@ -277,11 +277,22 @@ class QuizCog(Cog):
     async def show_ranked_ranking(self, channel: nextcord.channel.TextChannel):
         self.quiz_manager.ranking.sort()
         ranking = "\n".join(
-            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
-            for rank, (name, score) in enumerate(self.quiz_manager.ranking)
+            self.user_row(channel, user_id, rank, score)
+            for rank, (user_id, score) in enumerate(self.quiz_manager.ranking)
         )
         embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
+
+    def user_row(self, channel: nextcord.channel.TextChannel, user_id: int, rank: int, score: int):
+        rank = self.quiz_manager.ranking.convert_rank(rank + 1)
+        user_name = self.user_id_to_name(channel, user_id)
+        elo = self.quiz_manager.get_elo(channel.guild.id, user_id, user_name)
+        
+        return f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)}, {elo} elo)"
+
+    @staticmethod
+    def user_id_to_name(channel: nextcord.channel.TextChannel, user_id: int):
+        return channel.guild.get_member(user_id).name
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
