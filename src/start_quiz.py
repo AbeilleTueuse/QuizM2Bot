@@ -41,7 +41,8 @@ class RegistrationButton(nextcord.ui.View):
         await message.edit(embed=self.embed, view=self)
 
         if not self.count:
-            self.children[0].disabled = True
+            button: nextcord.ui.Button = self.children[0]
+            button.disabled = True
             self.embed.set_footer(text=self.MESSAGE_CLOSE)
             await message.edit(embed=self.embed, view=self)
             self.timer.stop()
