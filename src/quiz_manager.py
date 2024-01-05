@@ -12,7 +12,12 @@ from src.data.read_files import GameNames
 
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
+    REGISTRATION_TIME = 10
 
+    NUMBER_OF_QUESTION = [5, 10, 20, 40]
+    FRIENDYLY = "friendly"
+    RANKED = "ranked"
+    GAME_CATEGORIES = [FRIENDYLY, RANKED]
     ALLOWED_LANGS = ["en", "fr", "ro", "it"]
 
     HARDCORE = "hardcore"
@@ -72,10 +77,7 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         )
         return " ".join(formatted_answer.split())
-
-    def get_config(self, name: str) -> dict[str, str]:
-        return self.saved_config[name]
-
+    
 
 class Ranking:
     def __init__(self):
@@ -103,38 +105,51 @@ class Ranking:
         return iter(self.scores.items())
     
 
-# class GeneralRanking:
-#     DATA_PATH = os.path.join("src", "ranking.json")
+class EloRanking:
+    DATA_PATH = os.path.join("src", "ranking.json")
+    ELO = "elo"
+    NAME = "name"
+    DEFAULT_ELO = 1000
 
-#     def __init__(self):
-#         self.scores = defaultdict(int)
-#         self._update_scores()
+    def __init__(self):
+        self.data = self._get_data()
 
-#     def _update_scores(self):
-#         try:
-#             with open(self.DATA_PATH, "r") as file:
-#                 data = json.load(file)
-#         except FileNotFoundError:
-#             data = {}
+    def _get_data(self) -> dict:
+        try:
+            with open(self.DATA_PATH, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            data = {}
 
-#         for name, score in data.items():
-#             self.scores[name] += int(score)
+        return data
+    
+    def get_elo(self, guild_id, player_id, player_name):
+        if not guild_id in self.data:
+            self.data[guild_id] = {}
 
-#     def sort(self):
-#         self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+        if not player_id in self.data[guild_id]:
+            self.data[guild_id][player_id] = self.default_info(player_name)
 
-#     def update(self, ranking: Ranking):
-#         for name, score in ranking:
-#             self.scores[name] += score
+        return self.data[guild_id][player_id][self.ELO]
+    
+    def default_info(self, player_name: str):
+        return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
 
-#         self._save()
+    def sort(self):
+        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
 
-#     def _save(self):
-#         with open(self.DATA_PATH, "w") as file:
-#             file.write(json.dumps(self.scores, indent=4))
+    def update(self, ranking: Ranking):
+        for name, score in ranking:
+            self.scores[name] += score
 
-#     def __iter__(self):
-#         return iter(self.scores.items())
+        self._save()
+
+    def _save(self):
+        with open(self.DATA_PATH, "w") as file:
+            file.write(json.dumps(self.scores, indent=4))
+
+    def __iter__(self):
+        return iter(self.scores.items())
 
 
 class Question:
@@ -254,17 +269,17 @@ class Question:
 class QuizManager:
     TIME_BETWEEN_QUESTION = 5
 
-    def __init__(self, m2_wiki: M2Wiki):
+    def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
         self._started = False
         self._waiting_for_answer = False
+        self.ranked_quiz = False
         self.m2_wiki = m2_wiki
-        self.config = None
-        self.ranking = Ranking()
-        # self.general_ranking = GeneralRanking()
-        self.game_names = GameNames()
-
-    def start_quiz(self, config_manager: ConfigurationManager):
         self.config_manager = config_manager
+        self.ranking = Ranking()
+        self.elo_ranking = EloRanking()
+        self.game_names = GameNames(config_manager.ALLOWED_LANGS)
+
+    def start_quiz(self):
         self._started = True
 
     def quiz_is_running(self):
@@ -309,3 +324,14 @@ class QuizManager:
 
     def end_question(self):
         self._waiting_for_answer = False
+
+    def is_ranked_quiz(self, game_category: str):
+        is_ranked = game_category == self.config_manager.RANKED
+        self.ranked_quiz = is_ranked
+        return is_ranked
+
+    def get_elo(self, guild_id: int, player_id: int, player_name: str):
+        return self.elo_ranking.get_elo(guild_id, player_id, player_name)
+    
+    def update_ranked_ranking(self):
+        pass

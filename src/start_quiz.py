@@ -1,8 +1,9 @@
 import asyncio
-import logging
+from datetime import datetime
 
 import nextcord
 from nextcord.ext.commands import Bot, Cog
+from nextcord.ext import tasks
 from nextcord import Interaction, Embed, slash_command
 
 from src.quiz_manager import (
@@ -16,10 +17,54 @@ from src.metin2_api import M2Wiki
 CONFIGURATION_MANAGER = ConfigurationManager()
 
 
+class RegistrationButton(nextcord.ui.View):
+    MESSAGE_OPEN = "Registrations will close in {remaining_time} second{plural}."
+    MESSAGE_CLOSE = "Registrations are closed."
+
+    def __init__(self):
+        super().__init__()
+        self.count = CONFIGURATION_MANAGER.REGISTRATION_TIME
+        self.players = {}
+
+    async def send(self, channel: nextcord.channel.TextChannel):
+        self.message = await channel.send(view=self)
+        timer_message = await channel.send(
+            self.MESSAGE_OPEN.format(remaining_time=self.count, plural="s")
+        )
+        await self.timer.start(timer_message)
+
+    @tasks.loop(seconds=1, count=CONFIGURATION_MANAGER.REGISTRATION_TIME + 1)
+    async def timer(self, message: nextcord.message.Message):
+        plural = "s" * (self.count >= 2)
+
+        await message.edit(
+            self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural)
+        )
+
+        if not self.count:
+            self.children[0].disabled = True
+            await self.message.edit(view=self)
+            await message.edit(self.MESSAGE_CLOSE)
+
+        self.count -= 1
+
+    @nextcord.ui.button(label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
+    async def button_callback(self, _, interaction: nextcord.Interaction):
+        user = interaction.user
+
+        if user.id in self.players:
+            return
+
+        self.players[user.id] = user.name
+        await interaction.channel.send(f"{user.mention} is registered!")
+
+
 class QuizCog(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
-        self.quiz_manager = QuizManager(m2_wiki=M2Wiki())
+        self.quiz_manager = QuizManager(
+            m2_wiki=M2Wiki(), config_manager=CONFIGURATION_MANAGER
+        )
 
     @slash_command(name="quiz")
     async def quiz(self, interaction: Interaction):
@@ -32,7 +77,7 @@ class QuizCog(Cog):
         number_of_question: int = nextcord.SlashOption(
             name="questions",
             description="Choose the number of questions to ask.",
-            choices=[5, 10, 20, 40],
+            choices=CONFIGURATION_MANAGER.NUMBER_OF_QUESTION,
             required=True,
         ),
         config_name: str = nextcord.SlashOption(
@@ -41,33 +86,58 @@ class QuizCog(Cog):
             choices=CONFIGURATION_MANAGER.saved_config.keys(),
             required=True,
         ),
+        game_category: str = nextcord.SlashOption(
+            name="type",
+            description="Choose the type of the quiz.",
+            choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
+            required=True,
+        ),
     ):
         """Start a quiz."""
         if self.quiz_manager.quiz_is_running():
             await interaction.send("A quiz is already in progress.")
             return
 
-        logging.info("Launch of the quiz.")
-        channel = interaction.channel
         CONFIGURATION_MANAGER.set_config(config_name)
 
-        self.quiz_manager.start_quiz(config_manager=CONFIGURATION_MANAGER)
+        channel = interaction.channel
+        self.quiz_manager.start_quiz()
 
         embed = Embed(
             title="Launch of the quiz!",
-            description=f"The quiz settings are as follows:\n- {number_of_question} questions,\n- difficulty {config_name}.",
+            description=f"The quiz settings are as follows:\n- **{number_of_question}** questions,\n- difficulty **{config_name}**,\n- category **{game_category}**.",
             color=0x5E296B,
         )
-        if config_name != CONFIGURATION_MANAGER.HARDCORE:
-            embed.add_field(
-                name="Allowed languages",
-                value=" ".join(
-                    f":flag_{lang.replace('en', 'gb')}:"
-                    for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
-                ),
-            )
+        embed.add_field(
+            name="Allowed languages",
+            value=" ".join(
+                f":flag_{lang.replace('en', 'gb')}:"
+                for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
+            ),
+        )
 
         await interaction.send(embed=embed)
+
+        if self.quiz_manager.is_ranked_quiz(game_category):
+            registration_button = RegistrationButton()
+            await registration_button.send(channel)
+
+            if len(registration_button.players.keys()) <= 1:
+                await channel.send("There are not enough players registered, the quiz is canceled.")
+                self.quiz_manager.end_quiz()
+                return
+
+            embed = Embed(
+                title="Participants",
+                description="\n".join(
+                    f"- {player_name} ({self.quiz_manager.get_elo(interaction.guild_id, player_id, player_name)} elo)"
+                    for player_id, player_name in registration_button.players.items()
+                ),
+                color=0x5E296B,
+            )
+
+            await channel.send(embed=embed)
+            await channel.send("The quiz will start soon!")
 
         questions = self.quiz_manager.get_questions(number_of_question)
 
@@ -93,7 +163,11 @@ class QuizCog(Cog):
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
         if self.quiz_manager.quiz_is_running():
-            await self.show_ranking(channel)
+            if self.quiz_manager.ranked_quiz:
+                self.quiz_manager.update_ranked_ranking()
+                await self.show_ranked_ranking(channel)
+            else:
+                await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
 
     async def ask_question(
@@ -185,6 +259,9 @@ class QuizCog(Cog):
         )
         embed = Embed(title="Ranking", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
+
+    async def show_ranked_ranking(self, channel: nextcord.channel.TextChannel):
+        channel.send("Not added.")
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
