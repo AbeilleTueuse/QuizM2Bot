@@ -21,8 +21,9 @@ class RegistrationButton(nextcord.ui.View):
     MESSAGE_OPEN = "Registrations will close in {remaining_time} second{plural}."
     MESSAGE_CLOSE = "Registrations are closed."
 
-    def __init__(self, embed: Embed):
+    def __init__(self, quiz_manager: QuizManager, embed: Embed):
         super().__init__()
+        self.quiz_manager = quiz_manager
         self.embed = embed
         self.count = 10
         self.players = {}
@@ -59,7 +60,10 @@ class RegistrationButton(nextcord.ui.View):
         self.embed.set_field_at(
             index=2,
             name="Participants",
-            value="\n".join(f"- {name}" for name in self.players.values()),
+            value="\n".join(
+                f"- {player_name} ({self.quiz_manager.get_elo(interaction.guild_id, player_id, player_name)})"
+                for player_id, player_name in self.players.items()
+            ),
             inline=False,
         )
 
@@ -129,7 +133,9 @@ class QuizCog(Cog):
             embed.add_field(
                 name="Participants", value="No one is registered.", inline=False
             )
-            registration_button = RegistrationButton(embed=embed)
+            registration_button = RegistrationButton(
+                quiz_manager=self.quiz_manager, embed=embed
+            )
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
@@ -140,10 +146,6 @@ class QuizCog(Cog):
                 self.quiz_manager.end_quiz()
                 return
 
-            # f"- {player_name} ({self.quiz_manager.get_elo(interaction.guild_id, player_id, player_name)} elo)"
-            # for player_id, player_name in registration_button.players.items()
-
-            await channel.send(embed=embed)
             await channel.send("The quiz will start soon!")
 
         else:
@@ -173,11 +175,14 @@ class QuizCog(Cog):
             await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
 
         if self.quiz_manager.quiz_is_running():
+            await channel.send("The quiz is over, thanks for playing!")
+
             if self.quiz_manager.ranked_quiz:
                 self.quiz_manager.update_ranked_ranking()
                 await self.show_ranked_ranking(channel)
             else:
                 await self.show_ranking(channel)
+
             self.quiz_manager.end_quiz()
 
     async def ask_question(
@@ -261,7 +266,6 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
-        await channel.send("The quiz is over, thanks for playing!")
         self.quiz_manager.ranking.sort()
         ranking = "\n".join(
             f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
@@ -271,7 +275,13 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     async def show_ranked_ranking(self, channel: nextcord.channel.TextChannel):
-        channel.send("Not added.")
+        self.quiz_manager.ranking.sort()
+        ranking = "\n".join(
+            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{name}** ({score} point{'s' * (score > 1)})"
+            for rank, (name, score) in enumerate(self.quiz_manager.ranking)
+        )
+        embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
+        await channel.send(embed=embed)
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
