@@ -139,12 +139,12 @@ class QuizCog(Cog):
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
-            # if len(registration_button.players.keys()) <= 1:
-            #     await channel.send(
-            #         "There are not enough players registered, the quiz is canceled."
-            #     )
-            #     self.quiz_manager.end_quiz()
-            #     return
+            if not len(registration_button.players.keys()):
+                await channel.send(
+                    "There are not registered players, the quiz is canceled."
+                )
+                self.quiz_manager.end_quiz()
+                return
 
             await channel.send("The quiz will start soon!")
 
@@ -178,7 +178,7 @@ class QuizCog(Cog):
             await channel.send("The quiz is over, thanks for playing!")
 
             if self.quiz_manager.ranked_quiz:
-                self.quiz_manager.update_ranked_ranking()
+                self.quiz_manager.update_ranked_ranking(channel.guild.id)
                 await self.show_ranked_ranking(channel)
             else:
                 await self.show_ranking(channel)

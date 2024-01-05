@@ -342,7 +342,6 @@ class QuizManager:
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
-        # self.general_ranking.update(self.ranking)
         self.ranking.reset()
 
     def end_question(self):
@@ -356,5 +355,5 @@ class QuizManager:
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
         return self.elo_ranking.get_elo(guild_id, player_id, player_name)
     
-    def update_ranked_ranking(self):
-        self.elo_ranking.update(self.ranking)
+    def update_ranked_ranking(self, guild_id):
+        self.elo_ranking.update(guild_id, self.ranking)
