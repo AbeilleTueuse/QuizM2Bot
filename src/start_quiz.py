@@ -1,5 +1,4 @@
 import asyncio
-from datetime import datetime
 
 import nextcord
 from nextcord.ext.commands import Bot, Cog
