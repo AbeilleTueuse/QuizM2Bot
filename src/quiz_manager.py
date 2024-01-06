@@ -353,6 +353,7 @@ class QuizManager:
         return is_ranked
 
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
+        print(guild_id, player_id, player_name)
         return self.elo_ranking.get_elo(guild_id, player_id, player_name)
     
     def update_ranked_ranking(self, guild_id):
