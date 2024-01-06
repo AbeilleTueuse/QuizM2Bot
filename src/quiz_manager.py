@@ -117,7 +117,7 @@ class EloRanking:
     def _get_data(self) -> dict:
         try:
             with open(self.DATA_PATH, "r") as file:
-                data = json.load(file)
+                data = json.load(file, parse_int=True)
         except FileNotFoundError:
             data = {}
 
@@ -353,7 +353,6 @@ class QuizManager:
         return is_ranked
 
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
-        print(guild_id, player_id, player_name)
         return self.elo_ranking.get_elo(guild_id, player_id, player_name)
     
     def update_ranked_ranking(self, guild_id):
