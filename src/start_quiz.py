@@ -203,7 +203,7 @@ class QuizCog(Cog):
         embed.set_image(url=question.image_url)
 
         if self.quiz_manager.ranked_quiz:
-            embed.set_footer("Only registered players can participate.")
+            embed.set_footer(text="Only registered players can participate.")
 
         message = await channel.send(embed=embed)
         self.quiz_manager.start_question()
