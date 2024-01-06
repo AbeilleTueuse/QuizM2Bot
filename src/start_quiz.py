@@ -139,7 +139,9 @@ class QuizCog(Cog):
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
-            if not len(registration_button.players.keys()):
+            allowed_players = registration_button.players.keys()
+
+            if not len(allowed_players):
                 await channel.send(
                     "There are not registered players, the quiz is canceled."
                 )
@@ -149,6 +151,7 @@ class QuizCog(Cog):
             await channel.send("The quiz will start soon!")
 
         else:
+            allowed_players = []
             await interaction.send(embed=embed)
 
         questions = self.quiz_manager.get_questions(number_of_question)
@@ -162,7 +165,7 @@ class QuizCog(Cog):
             )
 
             while self.quiz_manager.waiting_for_answer():
-                await self.wait_for_answer(channel, question)
+                await self.wait_for_answer(channel, question, allowed_players)
 
             if (
                 question_index + 1 != number_of_question
@@ -199,6 +202,9 @@ class QuizCog(Cog):
         )
         embed.set_image(url=question.image_url)
 
+        if self.quiz_manager.ranked_quiz:
+            embed.set_footer("Only registered players can participate.")
+
         message = await channel.send(embed=embed)
         self.quiz_manager.start_question()
         question.change_last_message(message)
@@ -207,6 +213,7 @@ class QuizCog(Cog):
         self,
         channel: nextcord.channel.TextChannel,
         question: Question,
+        allowed_players: list,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
         message = question.get_last_message()
@@ -214,7 +221,9 @@ class QuizCog(Cog):
         async for message in channel.history(
             limit=None, after=message, oldest_first=True
         ):
-            if question.is_correct_answer(message.content):
+            if (
+                not allowed_players or message.author.id in allowed_players
+            ) and question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(f"Good game!")
                 await self.show_answer(channel, question)
@@ -283,12 +292,14 @@ class QuizCog(Cog):
         embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
-    def user_row(self, channel: nextcord.channel.TextChannel, user_id: int, rank: int, score: int):
+    def user_row(
+        self, channel: nextcord.channel.TextChannel, user_id: int, rank: int, score: int
+    ):
         rank = self.quiz_manager.ranking.convert_rank(rank + 1)
         user_name = self.user_id_to_name(channel, user_id)
         elo = self.quiz_manager.get_elo(channel.guild.id, user_id, user_name)
-        
-        return f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)}, {elo} elo)"
+
+        return f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)}) ┊ {elo}"
 
     @staticmethod
     def user_id_to_name(channel: nextcord.channel.TextChannel, user_id: int):
