@@ -8,6 +8,7 @@ from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
 from src.data.read_files import GameNames
+from src.utils.utils import json_converter
 
 
 class ConfigurationManager:
@@ -117,7 +118,7 @@ class EloRanking:
     def _get_data(self) -> dict:
         try:
             with open(self.DATA_PATH, "r") as file:
-                data = json.load(file, parse_int=True)
+                data = json.load(file, object_hook=json_converter)
         except FileNotFoundError:
             data = {}
 
