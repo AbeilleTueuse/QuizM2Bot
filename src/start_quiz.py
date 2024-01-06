@@ -147,6 +147,8 @@ class QuizCog(Cog):
                 )
                 self.quiz_manager.end_quiz()
                 return
+            
+            self.quiz_manager.ranking.initialize(allowed_players)
 
             await channel.send("The quiz will start soon!")
 

@@ -84,6 +84,10 @@ class Ranking:
     def __init__(self):
         self.scores = defaultdict(int)
 
+    def initialize(self, players_id: list[int]):
+        for player_id in players_id:
+            self.scores[player_id] = 0
+
     def increment_score(self, user_id: str):
         self.scores[user_id] += 1
 
