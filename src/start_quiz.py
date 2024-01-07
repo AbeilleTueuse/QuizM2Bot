@@ -271,25 +271,28 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
+        if self.quiz_manager.ranked_quiz:
+            elo_augmentation = self.quiz_manager.get_new_elo(channel.guild.id)
+        else:
+            elo_augmentation = None
+
         ranking = "\n".join(
-            self.user_row(channel, user_id, rank, score)
+            self.user_row(channel, user_id, rank, score, elo_augmentation)
             for rank, user_id, score in self.quiz_manager.ranking.get_ranking()
         )
         embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
     def user_row(
-        self, channel: nextcord.channel.TextChannel, user_id: int, rank: str, score: int
+        self, channel: nextcord.channel.TextChannel, user_id: int, rank: str, score: int, elo_augmentation: dict
     ):
         user_name = self.user_id_to_name(channel, user_id)
 
         row = f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)})"
 
-        if self.quiz_manager.ranked_quiz:
-            guild_id = channel.guild.id
-            self.quiz_manager.update_ranked_ranking(guild_id)
-            elo = self.quiz_manager.get_elo(guild_id, user_id, user_name)
-            row += f" ┊ {elo}"
+        if elo_augmentation is not None:
+            new_elo, elo_augmentation = elo_augmentation[user_id]
+            row += f" ┊ {new_elo} ({elo_augmentation})"
 
         return row
 

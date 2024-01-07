@@ -8,7 +8,7 @@ from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
 from src.data.read_files import GameNames
-from src.utils.utils import json_converter
+from src.utils.utils import json_converter, format_number_with_sign, elo_formula
 
 
 class ConfigurationManager:
@@ -78,7 +78,7 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         )
         return " ".join(formatted_answer.split())
-    
+
 
 class Ranking:
     def __init__(self):
@@ -92,7 +92,9 @@ class Ranking:
         self.scores[user_id] += 1
 
     def sort(self):
-        self.scores = dict(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+        self.scores = dict(
+            sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
+        )
 
     def convert_rank(self, rank):
         if rank == 1:
@@ -108,25 +110,25 @@ class Ranking:
 
     def __iter__(self):
         return iter(self.scores.items())
-    
+
     def __len__(self):
         return len(self.scores.keys())
-    
+
     def get_ranking(self):
         sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
-        
+
         ranking = []
         current_rank = 1
         current_score = None
-        
+
         for index, (player_id, score) in enumerate(sorted_players):
             if score != current_score:
                 current_rank = index + 1
                 current_score = score
             ranking.append((self.convert_rank(current_rank), player_id, score))
-        
+
         return ranking
-    
+
 
 class EloRanking:
     DATA_PATH = os.path.join("src", "ranking.json")
@@ -145,7 +147,7 @@ class EloRanking:
             data = {}
 
         return data
-    
+
     def get_elo(self, guild_id, player_id, player_name=None):
         if not guild_id in self.data:
             self.data[guild_id] = {}
@@ -154,49 +156,41 @@ class EloRanking:
             self.data[guild_id][player_id] = self.default_info(player_name)
 
         return self.data[guild_id][player_id][self.ELO]
-    
+
     def default_info(self, player_name: str):
         return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
-    
+
     def _update_elo(self, guild_id, player_id, additionnal_elo):
         self.data[guild_id][player_id][self.ELO] += additionnal_elo
 
-    def update(self, guild_id, ranking: Ranking):
-        current_elo = {player_id: self.get_elo(guild_id, player_id) for player_id, _ in ranking}
-        
+    def get_new_elo(self, guild_id: int, ranking: Ranking):
+        current_elo = {
+            player_id: self.get_elo(guild_id, player_id) for player_id, _ in ranking
+        }
+        new_elo = {}
+
         for player_id, player_score in ranking:
             player_elo = current_elo[player_id]
-            additionnal_elo = 0 
-
-            for opponent_id, opponent_score in ranking:
-                if player_id == opponent_id:
-                    continue
-                
-                opponent_elo = current_elo[opponent_id]
-                additionnal_elo += self.elo_formula(player_elo, player_score, opponent_elo, opponent_score)
-
+            additionnal_elo = sum(
+                elo_formula(
+                    player_elo, player_score, current_elo[opponent_id], opponent_score
+                )
+                for opponent_id, opponent_score in ranking
+                if player_id != opponent_id
+            )
+            new_elo[player_id] = [
+                player_elo + additionnal_elo,
+                format_number_with_sign(additionnal_elo),
+            ]
             self._update_elo(guild_id, player_id, additionnal_elo)
-
         self._save()
+
+        return new_elo
 
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
             file.write(json.dumps(self.data, indent=4))
 
-    @staticmethod
-    def elo_formula(player_elo, player_score, opponent_elo, opponent_score):
-        score_difference = min(400, player_elo - opponent_elo)
-        p_coeff = 1 / (1 + 10**(-score_difference / 400))
-
-        if player_score > opponent_score:
-            W_coeff = 1
-        elif player_score < opponent_score:
-            W_coeff = 0
-        else:
-            W_coeff = 0.5
-
-        return round(20 * (W_coeff - p_coeff))
-    
 
 class Question:
     def __init__(
@@ -377,6 +371,6 @@ class QuizManager:
 
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
         return self.elo_ranking.get_elo(guild_id, player_id, player_name)
-    
-    def update_ranked_ranking(self, guild_id):
-        self.elo_ranking.update(guild_id, self.ranking)
+
+    def get_new_elo(self, guild_id: int):
+        return self.elo_ranking.get_new_elo(guild_id, self.ranking)
