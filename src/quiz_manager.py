@@ -19,7 +19,9 @@ class ConfigurationManager:
     FRIENDYLY = "friendly"
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
-    ALLOWED_LANGS = ["en", "fr", "ro", "it"]
+    ALLOWED_LANGS = {
+        507732107036983297: ["en", "fr", "ro", "it"], # Metin2Dev
+    }
 
     HARDCORE = "hardcore"
     MODE = "mode"
@@ -40,6 +42,7 @@ class ConfigurationManager:
     def __init__(self):
         self.config = None
         self.formatted_answer = None
+        self.allowed_langs = ["fr"]
         self.fuzz_threshold = 100
         self.saved_config = self._open(self.CONFIG_PATH)
 
@@ -47,9 +50,12 @@ class ConfigurationManager:
         with open(path, "r", encoding="utf-8") as config_file:
             return json.load(config_file)
 
-    def set_config(self, config_name: str):
+    def set_config(self, config_name: str, guild_id: int):
         self.config = self.saved_config[config_name]
         self.formatted_answer = self._get_formatted_answer()
+
+        if guild_id in self.ALLOWED_LANGS:
+            self.allowed_langs = self.ALLOWED_LANGS[guild_id]
 
     def _get_formatted_answer(self):
         mode = self.config[self.MODE]
@@ -214,7 +220,7 @@ class Question:
         return {
             lang: answer
             for lang, answer in answers.items()
-            if lang in self.config_manager.ALLOWED_LANGS
+            if lang in self.config_manager.allowed_langs
         }
 
     def _formatted_answer(self, answer: str):
@@ -317,7 +323,7 @@ class QuizManager:
         self.config_manager = config_manager
         self.ranking = Ranking()
         self.elo_ranking = EloRanking()
-        self.game_names = GameNames(config_manager.ALLOWED_LANGS)
+        self.game_names = GameNames(config_manager.allowed_langs)
 
     def start_quiz(self):
         self._started = True

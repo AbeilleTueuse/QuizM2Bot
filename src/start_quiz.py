@@ -106,7 +106,7 @@ class QuizCog(Cog):
             await interaction.send("A quiz is already in progress.")
             return
 
-        CONFIGURATION_MANAGER.set_config(config_name)
+        CONFIGURATION_MANAGER.set_config(config_name, interaction.guild_id)
         channel = interaction.channel
         self.quiz_manager.start_quiz()
 
@@ -122,7 +122,7 @@ class QuizCog(Cog):
             name="Allowed languages",
             value=" ".join(
                 f":flag_{lang.replace('en', 'gb')}:"
-                for lang in CONFIGURATION_MANAGER.ALLOWED_LANGS
+                for lang in CONFIGURATION_MANAGER.allowed_langs
             ),
             inline=False,
         )
