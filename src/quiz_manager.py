@@ -109,6 +109,24 @@ class Ranking:
     def __iter__(self):
         return iter(self.scores.items())
     
+    def __len__(self):
+        return len(self.scores.keys())
+    
+    def get_ranking(self):
+        sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
+        
+        ranking = []
+        current_rank = 1
+        current_score = None
+        
+        for index, (player_id, score) in enumerate(sorted_players):
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+            ranking.append((self.convert_rank(current_rank), player_id, score))
+        
+        return ranking
+    
 
 class EloRanking:
     DATA_PATH = os.path.join("src", "ranking.json")

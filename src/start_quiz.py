@@ -181,13 +181,7 @@ class QuizCog(Cog):
 
         if self.quiz_manager.quiz_is_running():
             await channel.send("The quiz is over, thanks for playing!")
-
-            if self.quiz_manager.ranked_quiz:
-                self.quiz_manager.update_ranked_ranking(channel.guild.id)
-                await self.show_ranked_ranking(channel)
-            else:
-                await self.show_ranking(channel)
-
+            await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
 
     async def ask_question(
@@ -277,31 +271,27 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
-        self.quiz_manager.ranking.sort()
-        ranking = "\n".join(
-            f"{self.quiz_manager.ranking.convert_rank(rank + 1)} : **{self.user_id_to_name(channel, user_id)}** ({score} point{'s' * (score > 1)})"
-            for rank, (user_id, score) in enumerate(self.quiz_manager.ranking)
-        )
-        embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
-        await channel.send(embed=embed)
-
-    async def show_ranked_ranking(self, channel: nextcord.channel.TextChannel):
-        self.quiz_manager.ranking.sort()
         ranking = "\n".join(
             self.user_row(channel, user_id, rank, score)
-            for rank, (user_id, score) in enumerate(self.quiz_manager.ranking)
+            for rank, user_id, score in self.quiz_manager.ranking.get_ranking()
         )
         embed = Embed(title="Ranking 🏆", description=ranking, color=0x33A5FF)
         await channel.send(embed=embed)
 
     def user_row(
-        self, channel: nextcord.channel.TextChannel, user_id: int, rank: int, score: int
+        self, channel: nextcord.channel.TextChannel, user_id: int, rank: str, score: int
     ):
-        rank = self.quiz_manager.ranking.convert_rank(rank + 1)
         user_name = self.user_id_to_name(channel, user_id)
-        elo = self.quiz_manager.get_elo(channel.guild.id, user_id, user_name)
 
-        return f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)}) ┊ {elo}"
+        row = f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)})"
+
+        if self.quiz_manager.ranked_quiz:
+            guild_id = channel.guild.id
+            self.quiz_manager.update_ranked_ranking(guild_id)
+            elo = self.quiz_manager.get_elo(guild_id, user_id, user_name)
+            row += f" ┊ {elo}"
+
+        return row
 
     @staticmethod
     def user_id_to_name(channel: nextcord.channel.TextChannel, user_id: int):
