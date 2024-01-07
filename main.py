@@ -1,6 +1,6 @@
 import logging
 
-from nextcord import Intents
+from nextcord import Intents, Game
 from nextcord.ext.commands import Bot
 
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     intents.message_content = True
     intents.members = True
 
-    bot = Bot(intents=intents)
+    bot = Bot(intents=intents, activity=Game(name="/quiz"))
     bot.load_extension("src.start_quiz")
 
     bot.run(token)
