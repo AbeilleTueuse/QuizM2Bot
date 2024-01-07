@@ -323,7 +323,7 @@ class QuizManager:
         self.config_manager = config_manager
         self.ranking = Ranking()
         self.elo_ranking = EloRanking()
-        self.game_names = GameNames(config_manager.allowed_langs)
+        self.game_names = GameNames()
 
     def start_quiz(self):
         self._started = True

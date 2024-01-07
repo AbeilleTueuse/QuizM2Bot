@@ -14,8 +14,7 @@ class GameNames:
     INDEX_NAME = "vnnum"
     SEPARATOR = "\t"
 
-    def __init__(self, allowed_langs: list[str]):
-        self.allowed_langs = allowed_langs
+    def __init__(self):
         self.encoding = self._get_encoding()
         self.mob_names = self._get_data(self.MOB_NAMES)
         self.item_names = self._get_data(self.ITEM_NAMES)
@@ -42,7 +41,6 @@ class GameNames:
             (
                 self._read_csv(filename, lang, encoding)
                 for lang, encoding in self.encoding.items()
-                if lang in self.allowed_langs
             ),
             axis=1,
         )
