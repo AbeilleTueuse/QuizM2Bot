@@ -23,7 +23,7 @@ class Page:
         self.ingame_names: list[str] = None
         self.image_name = None
         self.template = self._get_template()
-        self.type = self._get_type()
+        self._type = self._get_type()
 
     def __str__(self):
         return f"(Page: {self.title})"
@@ -39,7 +39,7 @@ class Page:
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
 
-        if self.type == self.MONSTER:
+        if self._type == self.MONSTER:
             names = game_names.mob_names
         else:
             names = game_names.item_names
@@ -55,7 +55,7 @@ class Page:
         self.ingame_names = ingame_names
 
     def add_image_name(self, appearance_prob: float):
-        if self.template.has("Apparence"):
+        if self.template.has("Apparence") and self._type != "Bijoux":
             if rd.random() > appearance_prob:
                 image_parameter: Parameter = self.template.get("Image")
             else:
@@ -65,7 +65,7 @@ class Page:
 
         image_name = str(image_parameter.value).strip()
 
-        if self.type == "Monstres":
+        if self._type == "Monstres":
             self.image_name = f"Fichier:{image_name}-min.png"
         else:
             self.image_name = f"Fichier:{image_name}.png"
