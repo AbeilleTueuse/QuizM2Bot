@@ -334,6 +334,19 @@ class QuizCog(Cog):
 
         await interaction.send(f"You have {elo} elo.")
 
+    @quiz.subcommand(name="ranking")
+    async def show_elo_ranking(
+        self,
+        interaction: Interaction,
+    ):
+        """Show elo ranking."""
+        ranking = "\n".join(
+            f"{rank} ┊ **{user_name}** ({elo})"
+            for rank, user_name, elo in self.quiz_manager.get_elo_ranking(interaction.guild_id)
+        )
+        embed = Embed(title="Elo ranking 🏆", description=ranking, color=0x33A5FF)
+        await interaction.send(embed=embed)
+
 
 def setup(bot: Bot):
     bot.add_cog(QuizCog(bot))

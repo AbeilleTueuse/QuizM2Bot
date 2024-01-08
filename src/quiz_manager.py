@@ -8,7 +8,7 @@ from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
 from src.data.read_files import GameNames
-from src.utils.utils import json_converter, format_number_with_sign, elo_formula
+from src.utils.utils import json_converter, format_number_with_sign, elo_formula, convert_rank
 
 
 class ConfigurationManager:
@@ -20,9 +20,9 @@ class ConfigurationManager:
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
     ALLOWED_LANGS = {
-        507732107036983297: ["en", "fr", "ro", "it"], # Metin2Dev
-        719469557647147018: ["fr"], # Shaaky
-        970626513131147264: ["ae", "en", "fr", "pt"], # Wiki
+        507732107036983297: ["en", "fr", "ro", "it"],  # Metin2Dev
+        719469557647147018: ["fr"],  # Shaaky
+        970626513131147264: ["ae", "en", "fr", "pt"],  # Wiki
     }
 
     HARDCORE = "hardcore"
@@ -104,15 +104,6 @@ class Ranking:
             sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
         )
 
-    def convert_rank(self, rank):
-        if rank == 1:
-            return "🥇"
-        if rank == 2:
-            return "🥈"
-        if rank == 3:
-            return "🥉"
-        return f"{rank}e"
-
     def reset(self):
         self.__init__()
 
@@ -133,7 +124,7 @@ class Ranking:
             if score != current_score:
                 current_rank = index + 1
                 current_score = score
-            ranking.append((self.convert_rank(current_rank), player_id, score))
+            ranking.append((convert_rank(current_rank), player_id, score))
 
         return ranking
 
@@ -143,6 +134,7 @@ class EloRanking:
     ELO = "elo"
     NAME = "name"
     DEFAULT_ELO = 1000
+    RANKING_MAX_DISPLAY = 20
 
     def __init__(self):
         self.data = self._get_data()
@@ -195,6 +187,35 @@ class EloRanking:
 
         return new_elo
 
+    def get_player_score(self, players_score: dict, player_id: int):
+        player_score = players_score[player_id]
+        return player_score[self.NAME], player_score[self.ELO]
+
+    def get_ranking(self, guild_id: int):
+        players_score = self.data[guild_id]
+        sorted_players = sorted(
+            [
+                self.get_player_score(players_score, player_id)
+                for player_id in players_score
+            ],
+            key=lambda item: item[1],
+            reverse=True,
+        )
+
+        ranking = []
+        current_rank = 1
+        current_score = None
+
+        for index, (player_name, score) in enumerate(sorted_players):
+            if index == self.RANKING_MAX_DISPLAY:
+                break
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+            ranking.append((convert_rank(current_rank), player_name, score))
+
+        return ranking
+    
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
             file.write(json.dumps(self.data, indent=4))
@@ -382,3 +403,6 @@ class QuizManager:
 
     def get_new_elo(self, guild_id: int):
         return self.elo_ranking.get_new_elo(guild_id, self.ranking)
+    
+    def get_elo_ranking(self, guild_id: int):
+        return self.elo_ranking.get_ranking(guild_id)
