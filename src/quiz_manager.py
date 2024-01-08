@@ -20,9 +20,10 @@ class ConfigurationManager:
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
     ALLOWED_LANGS = {
-        507732107036983297: ["en", "fr", "ro", "it"],  # Metin2Dev
-        719469557647147018: ["fr"],  # Shaaky
-        970626513131147264: ["ae", "en", "fr", "pt"],  # Wiki
+        507732107036983297: ["en", "fr", "ro", "it"], # Metin2Dev
+        719469557647147018: ["fr"], # Shaaky
+        970626513131147264: ["ae", "en", "fr", "pt"], # Wiki
+        963091224988889088: ["fr"], #JusQuoBou
     }
 
     HARDCORE = "hardcore"
