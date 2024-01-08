@@ -27,7 +27,7 @@ def elo_formula(player_elo, player_score, opponent_elo, opponent_score):
 
     return round(20 * (W_coeff - p_coeff))
 
-def convert_rank(self, rank):
+def convert_rank(rank):
     if rank == 1:
         return "🥇"
     if rank == 2:
