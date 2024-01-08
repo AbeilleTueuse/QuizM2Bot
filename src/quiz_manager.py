@@ -371,7 +371,6 @@ class QuizManager:
             + self.m2_wiki.category(category="Monstres (temporaire)"),
             k=number_of_question,
         )
-        pages_info = [{"pageid": 3516, "title": "Bracelet saphir"}]
         pages = self.m2_wiki.get_pages_content(pages_info)
 
         for page in pages:
