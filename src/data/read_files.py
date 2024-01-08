@@ -34,7 +34,7 @@ class GameNames:
             skiprows=1,
         )
 
-        return names[lang].str.replace(chr(160), " ")
+        return names[lang]
 
     def _get_data(self, filename: str):
         return pd.concat(

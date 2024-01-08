@@ -315,6 +315,7 @@ class Question:
 
     def is_correct_answer(self, user_answer: str):
         formatted_user_answer = self._formatted_answer(user_answer)
+
         for formatted_answer in self.formatted_answers:
             if (
                 fuzz.ratio(formatted_user_answer, formatted_answer)
@@ -370,6 +371,7 @@ class QuizManager:
             + self.m2_wiki.category(category="Monstres (temporaire)"),
             k=number_of_question,
         )
+        pages_info = [{"pageid": 3516, "title": "Bracelet saphir"}]
         pages = self.m2_wiki.get_pages_content(pages_info)
 
         for page in pages:

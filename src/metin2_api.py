@@ -50,6 +50,8 @@ class Page:
             if ig_name.endswith("+0"):
                 ingame_names[lang] = ig_name[:-2]
 
+            ingame_names[lang] = ingame_names[lang].replace(chr(160), " ").strip()
+
         self.ingame_names = ingame_names
 
     def add_image_name(self, appearance_prob: float):
