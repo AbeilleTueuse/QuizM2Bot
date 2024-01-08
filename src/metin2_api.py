@@ -1,4 +1,5 @@
 import requests
+import random as rd
 
 import mwparserfromhell
 from mwparserfromhell.wikicode import Wikicode
@@ -51,8 +52,15 @@ class Page:
 
         self.ingame_names = ingame_names
 
-    def add_image_name(self):
-        image_parameter: Parameter = self.template.get("Image")
+    def add_image_name(self, apparence_prob: float):
+        if self.template.has("Apparence"):
+            if rd.random() > apparence_prob:
+                image_parameter: Parameter = self.template.get("Image")
+            else:
+                image_parameter: Parameter = self.template.get("Apparence")
+        else:
+            image_parameter: Parameter = self.template.get("Image")
+
         image_name = str(image_parameter.value).strip()
 
         if self.type == "Monstres":

@@ -338,6 +338,7 @@ class Question:
 
 class QuizManager:
     TIME_BETWEEN_QUESTION = 5
+    APPARENCE_PROB = .5
 
     def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
         self._started = False
@@ -373,7 +374,7 @@ class QuizManager:
 
         for page in pages:
             page.add_ingame_name(self.game_names)
-            page.add_image_name()
+            page.add_image_name(self.APPARENCE_PROB)
 
         pages: list[Page] = sorted(pages, key=lambda page: page.image_name)
         image_urls = self.m2_wiki.get_image_urls(pages)
