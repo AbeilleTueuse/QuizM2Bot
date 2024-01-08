@@ -52,9 +52,9 @@ class Page:
 
         self.ingame_names = ingame_names
 
-    def add_image_name(self, apparence_prob: float):
+    def add_image_name(self, appearance_prob: float):
         if self.template.has("Apparence"):
-            if rd.random() > apparence_prob:
+            if rd.random() > appearance_prob:
                 image_parameter: Parameter = self.template.get("Image")
             else:
                 image_parameter: Parameter = self.template.get("Apparence")
