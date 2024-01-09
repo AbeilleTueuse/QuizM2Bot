@@ -338,7 +338,7 @@ class Question:
 
 
 class QuizManager:
-    TIME_BETWEEN_QUESTION = 5
+    TIME_BETWEEN_QUESTION = 10
     APPEARANCE_PROB = .5
 
     def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
