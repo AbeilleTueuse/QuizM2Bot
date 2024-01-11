@@ -28,10 +28,10 @@ class RegistrationButton(nextcord.ui.View):
         self.players = {}
 
     async def update(self, message: nextcord.message.Message):
-        await self.timer.start(message)
+        await self.registration_timer.start(message)
 
     @tasks.loop(seconds=1)
-    async def timer(self, message: nextcord.message.Message):
+    async def registration_timer(self, message: nextcord.message.Message):
         plural = "s" * (self.count >= 2)
 
         self.embed.set_footer(
@@ -44,7 +44,7 @@ class RegistrationButton(nextcord.ui.View):
             button.disabled = True
             self.embed.set_footer(text=self.MESSAGE_CLOSE)
             await message.edit(embed=self.embed, view=self)
-            self.timer.stop()
+            self.registration_timer.stop()
 
         self.count -= 1
 
@@ -167,19 +167,16 @@ class QuizCog(Cog):
             )
 
             while self.quiz_manager.waiting_for_answer():
-                await self.wait_for_answer(channel, question, allowed_players)
+                answer_message, answer_embed = await self.wait_for_answer(channel, question, allowed_players)
 
             if (
                 question_index + 1 != number_of_question
                 and self.quiz_manager.quiz_is_running()
             ):
-                await channel.send(
-                    f"Next question in {self.quiz_manager.TIME_BETWEEN_QUESTION} seconds!"
-                )
-
-            await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
+                self.next_question_timer.start(answer_message, answer_embed)
 
         if self.quiz_manager.quiz_is_running():
+            await asyncio.sleep(5)
             await channel.send("The quiz is over, thanks for playing!")
             await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
@@ -222,7 +219,7 @@ class QuizCog(Cog):
             ) and question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(f"Good game!")
-                await self.show_answer(channel, question)
+                answer_message, answer_embed = await self.show_answer(channel, question)
                 self.quiz_manager.ranking.increment_score(message.author.id)
                 break
         else:
@@ -255,7 +252,9 @@ class QuizCog(Cog):
             else:
                 self.quiz_manager.end_question()
                 await channel.send(f"Too late!")
-                await self.show_answer(channel, question)
+                answer_message, answer_embed = await self.show_answer(channel, question)
+
+        return answer_message, answer_embed
 
     async def show_answer(
         self, channel: nextcord.channel.TextChannel, question: Question
@@ -268,7 +267,21 @@ class QuizCog(Cog):
             ),
             color=0x5E296B,
         )
-        await channel.send(embed=embed)
+        message = await channel.send(embed=embed)
+        
+        return message, embed
+
+    @tasks.loop(seconds=1)
+    async def next_question_timer(self, message: nextcord.message.Message, embed: Embed):
+        remaining_time = self.quiz_manager.TIME_BETWEEN_QUESTION - self.next_question_timer.current_loop
+        plural = "s" * (remaining_time >= 2)
+        embed.set_footer(
+            text=f"Next question in {remaining_time} second{plural}."
+        )
+        await message.edit(embed=embed)
+
+        if not remaining_time:
+            self.next_question_timer.stop()
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
         if self.quiz_manager.ranked_quiz:
