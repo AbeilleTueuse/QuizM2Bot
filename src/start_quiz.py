@@ -169,7 +169,7 @@ class QuizCog(Cog):
             while self.quiz_manager.waiting_for_answer():
                 await self.wait_for_answer(channel, question, allowed_players)
 
-            answer_message, answer_embed = self.show_answer(channel, question)
+            answer_message, answer_embed = await self.show_answer(channel, question)
 
             if (
                 question_index + 1 != number_of_question
