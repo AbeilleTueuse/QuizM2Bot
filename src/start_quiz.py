@@ -284,6 +284,11 @@ class QuizCog(Cog):
         )
         plural = "s" * (remaining_time >= 2)
         embed.set_footer(text=f"Next question in {remaining_time} second{plural}.")
+
+        if not self.quiz_manager.quiz_is_running():
+            embed.remove_footer()
+            self.next_question_timer.stop()
+
         await message.edit(embed=embed)
 
         if not remaining_time:
