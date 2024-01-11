@@ -24,7 +24,7 @@ class RegistrationButton(nextcord.ui.View):
         super().__init__()
         self.quiz_manager = quiz_manager
         self.embed = embed
-        self.count = registration_time
+        self.registration_time = registration_time
         self.players = {}
 
     async def update(self, message: nextcord.message.Message):
@@ -32,21 +32,20 @@ class RegistrationButton(nextcord.ui.View):
 
     @tasks.loop(seconds=1)
     async def registration_timer(self, message: nextcord.message.Message):
-        plural = "s" * (self.count >= 2)
+        remaining_time = self.registration_time - self.registration_timer.current_loop
+        plural = "s" * (remaining_time >= 2)
 
         self.embed.set_footer(
-            text=self.MESSAGE_OPEN.format(remaining_time=self.count, plural=plural)
+            text=self.MESSAGE_OPEN.format(remaining_time=remaining_time, plural=plural)
         )
         await message.edit(embed=self.embed, view=self)
 
-        if not self.count:
+        if not remaining_time:
             button: nextcord.ui.Button = self.children[0]
             button.disabled = True
             self.embed.set_footer(text=self.MESSAGE_CLOSE)
             await message.edit(embed=self.embed, view=self)
             self.registration_timer.stop()
-
-        self.count -= 1
 
     @nextcord.ui.button(label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
     async def button_callback(self, _, interaction: nextcord.Interaction):
@@ -175,10 +174,10 @@ class QuizCog(Cog):
                 question_index + 1 != number_of_question
                 and self.quiz_manager.quiz_is_running()
             ):
-                self.next_question_timer.start(answer_message, answer_embed)
+                await self.next_question_timer.start(answer_message, answer_embed)
 
         if self.quiz_manager.quiz_is_running():
-            await asyncio.sleep(5)
+            await asyncio.sleep(self.quiz_manager.TIME_BETWEEN_QUESTION)
             await channel.send("The quiz is over, thanks for playing!")
             await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
