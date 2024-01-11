@@ -40,7 +40,7 @@ class RegistrationButton(nextcord.ui.View):
         )
         await message.edit(embed=self.embed, view=self)
 
-        if not remaining_time:
+        if not remaining_time or not self.quiz_manager.quiz_is_running():
             button: nextcord.ui.Button = self.children[0]
             button.disabled = True
             self.embed.set_footer(text=self.MESSAGE_CLOSE)
@@ -256,6 +256,9 @@ class QuizCog(Cog):
     async def show_answer(
         self, channel: nextcord.channel.TextChannel, question: Question
     ):
+        if not self.quiz_manager.quiz_is_running():
+            return
+        
         embed = Embed(
             title="Answers",
             description="\n".join(
