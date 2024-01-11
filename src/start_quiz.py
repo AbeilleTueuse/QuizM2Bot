@@ -293,6 +293,8 @@ class QuizCog(Cog):
 
         if not remaining_time:
             self.next_question_timer.stop()
+            embed.remove_footer()
+            await message.edit(embed=embed)
 
     async def show_ranking(self, channel: nextcord.channel.TextChannel):
         if self.quiz_manager.ranked_quiz:
