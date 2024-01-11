@@ -147,7 +147,7 @@ class QuizCog(Cog):
                 )
                 self.quiz_manager.end_quiz()
                 return
-            
+
             self.quiz_manager.ranking.initialize(allowed_players)
 
             await channel.send("The quiz will start soon!")
@@ -167,7 +167,9 @@ class QuizCog(Cog):
             )
 
             while self.quiz_manager.waiting_for_answer():
-                answer_message, answer_embed = await self.wait_for_answer(channel, question, allowed_players)
+                await self.wait_for_answer(channel, question, allowed_players)
+
+            answer_message, answer_embed = self.show_answer(channel, question)
 
             if (
                 question_index + 1 != number_of_question
@@ -219,7 +221,6 @@ class QuizCog(Cog):
             ) and question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
                 await message.reply(f"Good game!")
-                answer_message, answer_embed = await self.show_answer(channel, question)
                 self.quiz_manager.ranking.increment_score(message.author.id)
                 break
         else:
@@ -252,9 +253,6 @@ class QuizCog(Cog):
             else:
                 self.quiz_manager.end_question()
                 await channel.send(f"Too late!")
-                answer_message, answer_embed = await self.show_answer(channel, question)
-
-        return answer_message, answer_embed
 
     async def show_answer(
         self, channel: nextcord.channel.TextChannel, question: Question
@@ -268,16 +266,19 @@ class QuizCog(Cog):
             color=0x5E296B,
         )
         message = await channel.send(embed=embed)
-        
+
         return message, embed
 
     @tasks.loop(seconds=1)
-    async def next_question_timer(self, message: nextcord.message.Message, embed: Embed):
-        remaining_time = self.quiz_manager.TIME_BETWEEN_QUESTION - self.next_question_timer.current_loop
-        plural = "s" * (remaining_time >= 2)
-        embed.set_footer(
-            text=f"Next question in {remaining_time} second{plural}."
+    async def next_question_timer(
+        self, message: nextcord.message.Message, embed: Embed
+    ):
+        remaining_time = (
+            self.quiz_manager.TIME_BETWEEN_QUESTION
+            - self.next_question_timer.current_loop
         )
+        plural = "s" * (remaining_time >= 2)
+        embed.set_footer(text=f"Next question in {remaining_time} second{plural}.")
         await message.edit(embed=embed)
 
         if not remaining_time:
@@ -297,7 +298,12 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     def user_row(
-        self, channel: nextcord.channel.TextChannel, user_id: int, rank: str, score: int, elo_augmentation: dict
+        self,
+        channel: nextcord.channel.TextChannel,
+        user_id: int,
+        rank: str,
+        score: int,
+        elo_augmentation: dict,
     ):
         user_name = self.user_id_to_name(channel, user_id)
 
@@ -343,7 +349,9 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Show user elo."""
-        elo = self.quiz_manager.get_elo(interaction.guild_id, interaction.user.id, interaction.user.name)
+        elo = self.quiz_manager.get_elo(
+            interaction.guild_id, interaction.user.id, interaction.user.name
+        )
 
         await interaction.send(f"You have {elo} elo.")
 
@@ -355,7 +363,9 @@ class QuizCog(Cog):
         """Show elo ranking."""
         ranking = "\n".join(
             f"{rank} ┊ **{user_name}** ({elo})"
-            for rank, user_name, elo in self.quiz_manager.get_elo_ranking(interaction.guild_id)
+            for rank, user_name, elo in self.quiz_manager.get_elo_ranking(
+                interaction.guild_id
+            )
         )
         embed = Embed(title="Elo ranking 🏆", description=ranking, color=0x33A5FF)
         await interaction.send(embed=embed)
