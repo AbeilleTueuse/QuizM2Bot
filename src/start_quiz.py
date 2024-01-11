@@ -138,6 +138,9 @@ class QuizCog(Cog):
             message = await interaction.send(embed=embed, view=registration_button)
             await registration_button.update(message)
 
+            if not self.quiz_manager.quiz_is_running():
+                return
+
             allowed_players = registration_button.players.keys()
 
             if not len(allowed_players):
