@@ -260,7 +260,7 @@ class QuizCog(Cog):
         self, channel: nextcord.channel.TextChannel, question: Question
     ):
         if not self.quiz_manager.quiz_is_running():
-            return
+            return None, None
         
         embed = Embed(
             title="Answers",
