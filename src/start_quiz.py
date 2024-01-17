@@ -94,8 +94,8 @@ class QuizCog(Cog):
             required=True,
         ),
         game_category: str = nextcord.SlashOption(
-            name="type",
-            description="Choose the type of the quiz.",
+            name="category",
+            description="Choose the category of the quiz.",
             choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
             required=True,
         ),
@@ -380,6 +380,18 @@ class QuizCog(Cog):
             )
         )
         embed = Embed(title="Elo ranking 🏆", description=ranking, color=0x33A5FF)
+        await interaction.send(embed=embed)
+
+    @quiz.subcommand(name="info")
+    async def show_quiz_info(
+        self,
+        interaction: Interaction,
+    ):
+        """Display information about the quiz."""
+        embed = Embed(title="Quiz information :information_source:", description="Use the command `/quiz start` to start a quiz. The parameters below must be set.", color=0x33A5FF)
+        embed.add_field(name="Questions", value="The number of questions of the quiz. Choose a value from the displayed list.", inline=False)
+        hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
+        embed.add_field(name="Difficulty", value=f"The difficulty changes the precision required for answers to be accepted as well as the number of hints.\n{hardcore_description}", inline=False)
         await interaction.send(embed=embed)
 
 
