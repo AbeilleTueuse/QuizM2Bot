@@ -305,6 +305,9 @@ class Question:
             if char == " ":
                 continue
 
+            if char == "(":
+                char = "\("
+
             self.hints[lang][pos] = f"__{char}__"
 
     def get_hints(self):
