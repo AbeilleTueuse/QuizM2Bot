@@ -388,7 +388,7 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Display information about the quiz."""
-        embed = Embed(title="Quiz information", description="Use the command `/quiz start` to start a quiz. The parameters below must be set.", color=0x33A5FF)
+        embed = Embed(title="Quiz information", description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.", color=0x33A5FF)
         embed.add_field(name="Questions", value="The number of questions of the quiz. Choose a value from the displayed list.", inline=False)
         hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
         medium_description = "- **Medium**: there is no hints and answers must be exact. Each question lasts 30 seconds."

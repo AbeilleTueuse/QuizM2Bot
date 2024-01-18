@@ -8,7 +8,12 @@ from fuzzywuzzy import fuzz
 
 from src.metin2_api import M2Wiki, Page
 from src.data.read_files import GameNames
-from src.utils.utils import json_converter, format_number_with_sign, elo_formula, convert_rank
+from src.utils.utils import (
+    json_converter,
+    format_number_with_sign,
+    elo_formula,
+    convert_rank,
+)
 
 
 class ConfigurationManager:
@@ -20,10 +25,10 @@ class ConfigurationManager:
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
     ALLOWED_LANGS = {
-        507732107036983297: ["en", "fr", "ro", "it"], # Metin2Dev
-        719469557647147018: ["fr"], # Shaaky
-        970626513131147264: ["ae", "en", "fr", "pt"], # Wiki
-        963091224988889088: ["fr"], #JusQuoBou
+        507732107036983297: ["en", "fr", "ro", "it"],  # Metin2Dev
+        719469557647147018: ["fr"],  # Shaaky
+        970626513131147264: ["ae", "en", "fr", "pt"],  # Wiki
+        963091224988889088: ["fr"],  # JusQuoBou
     }
 
     HARDCORE = "hardcore"
@@ -216,7 +221,7 @@ class EloRanking:
             ranking.append((convert_rank(current_rank), player_name, score))
 
         return ranking
-    
+
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
             file.write(json.dumps(self.data, indent=4))
@@ -342,7 +347,7 @@ class Question:
 
 class QuizManager:
     TIME_BETWEEN_QUESTION = 10
-    APPEARANCE_PROB = .5
+    APPEARANCE_PROB = 0.5
 
     def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
         self._started = False
@@ -366,12 +371,18 @@ class QuizManager:
     def waiting_for_answer(self):
         return self._waiting_for_answer
 
-    def get_questions(self, number_of_question: int = 1):
-        pages_info = rd.choices(
+    def get_all_pages(self):
+        return (
             self.m2_wiki.category(
                 category="Objets (temporaire)", exclude_category="Objets multiples"
             )
-            + self.m2_wiki.category(category="Monstres (temporaire)"),
+            + self.m2_wiki.category(category="Monstres (temporaire)")
+            + self.m2_wiki.category(category="Pierres Metin")
+        )
+
+    def get_questions(self, number_of_question: int = 1):
+        pages_info = rd.choices(
+            self.get_all_pages(),
             k=number_of_question,
         )
         pages = self.m2_wiki.get_pages_content(pages_info)
@@ -391,6 +402,9 @@ class QuizManager:
 
         return questions
 
+    def number_of_question_possible(self):
+        return len(self.get_all_pages())
+
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
@@ -409,6 +423,6 @@ class QuizManager:
 
     def get_new_elo(self, guild_id: int):
         return self.elo_ranking.get_new_elo(guild_id, self.ranking)
-    
+
     def get_elo_ranking(self, guild_id: int):
         return self.elo_ranking.get_ranking(guild_id)

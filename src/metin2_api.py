@@ -16,6 +16,7 @@ BASE = len(ALPHABET)
 
 class Page:
     MONSTER = "Monstres"
+    METIN = "Metin"
 
     def __init__(self, title: str, content: Wikicode):
         self.title = title
@@ -39,7 +40,7 @@ class Page:
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
 
-        if self._type == self.MONSTER:
+        if self._type == self.MONSTER or self._type == self.METIN:
             names = game_names.mob_names
         else:
             names = game_names.item_names
