@@ -44,7 +44,7 @@ class ConfigurationManager:
     FUZZ_THRESHOLD = {
         STRICT: 100,
         PERMISSIVE: 97,
-        VERY_PERMISSIVE: 95,
+        VERY_PERMISSIVE: 94,
     }
 
     def __init__(self):
