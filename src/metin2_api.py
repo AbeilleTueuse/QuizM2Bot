@@ -160,3 +160,33 @@ class M2Wiki:
         pages_info: dict = request_result["query"]["pages"]
 
         return [pages_info[pageid]["imageinfo"][0]["url"] for pageid in pages_info]
+    
+    def check_image_urls(self, pages: list[Page]):
+        query_params = {
+            "action": "query",
+            "format": "json",
+            "prop": "imageinfo",
+            "titles": "|".join(page.image_name for page in pages),
+            "iiprop": "url",
+        }
+
+        request_result = self.wiki_request(query_params)
+
+        pages_info: dict = request_result["query"]["pages"]
+
+        for _, value in pages_info.items():
+            title = value["title"]
+            if title != "Fichier:" + value["imageinfo"][0]["url"].split("/")[-1]:
+                print(title)
+
+    def check_images(self, category: str):
+        monsters = self.category(category=category)
+        batch = 50
+        for index in range(len(monsters) // batch + 1):
+            pages = monsters[index * batch : (index + 1) * batch]
+            pages = self.get_pages_content(pages)
+            
+            for page in pages:
+                page.add_image_name(0)
+            
+            self.check_image_urls(pages)
