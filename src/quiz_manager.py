@@ -391,7 +391,6 @@ class QuizManager:
             page.add_ingame_name(self.game_names)
             page.add_image_name(self.APPEARANCE_PROB)
 
-        pages: list[Page] = sorted(pages, key=lambda page: page.image_name)
         image_urls = self.m2_wiki.get_image_urls(pages)
 
         questions = [
@@ -400,7 +399,6 @@ class QuizManager:
             )
             for page in pages
         ]
-        rd.shuffle(questions)
 
         return questions
 
