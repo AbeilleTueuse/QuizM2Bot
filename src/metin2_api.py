@@ -159,7 +159,7 @@ class M2Wiki:
 
         pages_info: dict = request_result["query"]["pages"]
 
-        return [pages_info[pageid]["imageinfo"][0]["url"] for pageid in pages_info]
+        return {pages_info[pageid]["title"]: pages_info[pageid]["imageinfo"][0]["url"] for pageid in pages_info}
     
     def check_image_urls(self, pages: list[Page]):
         query_params = {

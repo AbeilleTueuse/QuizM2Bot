@@ -395,8 +395,10 @@ class QuizManager:
         image_urls = self.m2_wiki.get_image_urls(pages)
 
         questions = [
-            Question(page.ingame_names, image_url, self.config_manager)
-            for page, image_url in zip(pages, image_urls)
+            Question(
+                page.ingame_names, image_urls[page.image_name], self.config_manager
+            )
+            for page in pages
         ]
         rd.shuffle(questions)
 
