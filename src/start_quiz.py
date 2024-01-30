@@ -334,6 +334,9 @@ class QuizCog(Cog):
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
         """Suddenly stops the current quiz."""
+        if not interaction.user.name == "arcmeurtrier":
+            return
+        
         if not self.quiz_manager.quiz_is_running():
             await interaction.send("There are no quizzes in progress.")
             return
