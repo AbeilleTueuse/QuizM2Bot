@@ -19,17 +19,12 @@ from src.utils.utils import (
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
     REGISTRATION_TIME = 30
+    CHANGE_LANG_TIME = 30
 
     NUMBER_OF_QUESTION = [5, 10, 20, 40]
     FRIENDYLY = "friendly"
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
-    ALLOWED_LANGS = {
-        507732107036983297: ["en", "fr", "ro", "it"],  # Metin2Dev
-        719469557647147018: ["fr"],  # Shaaky
-        970626513131147264: ["ae", "en", "fr", "pt"],  # Wiki
-        963091224988889088: ["fr"],  # JusQuoBou
-    }
 
     HARDCORE = "hardcore"
     MODE = "mode"
@@ -40,6 +35,10 @@ class ConfigurationManager:
     VERY_PERMISSIVE = "very permissive"
 
     CONFIG_PATH = os.path.join("src", "config.json")
+    LANGS_BY_SERVERS_PATH = os.path.join("src", "data", "langs_by_servers.json")
+    LANGS_DATA_PATH = os.path.join("src", "data", "langs_data.json")
+
+    DEFAULT_LANG = "fr"
 
     FUZZ_THRESHOLD = {
         STRICT: 100,
@@ -50,20 +49,25 @@ class ConfigurationManager:
     def __init__(self):
         self.config = None
         self.formatted_answer = None
-        self.allowed_langs = ["fr"]
         self.fuzz_threshold = 100
+        self.allowed_langs = self._open(self.LANGS_BY_SERVERS_PATH)
         self.saved_config = self._open(self.CONFIG_PATH)
+        self.langs_data = self._open(self.LANGS_DATA_PATH)
 
-    def _open(self, path) -> dict[str, dict]:
+    def _open(self, path) -> dict[str]:
         with open(path, "r", encoding="utf-8") as config_file:
             return json.load(config_file)
 
     def set_config(self, config_name: str, guild_id: int):
         self.config = self.saved_config[config_name]
         self.formatted_answer = self._get_formatted_answer()
+        guild_id = str(guild_id)
 
-        if guild_id in self.ALLOWED_LANGS:
-            self.allowed_langs = self.ALLOWED_LANGS[guild_id]
+        if guild_id in self.allowed_langs:
+            self.allowed_langs = self.allowed_langs[guild_id]
+
+        else:
+            self.allowed_langs = [self.DEFAULT_LANG]
 
     def _get_formatted_answer(self):
         mode = self.config[self.MODE]
@@ -136,7 +140,7 @@ class Ranking:
 
 
 class EloRanking:
-    DATA_PATH = os.path.join("src", "ranking.json")
+    DATA_PATH = os.path.join("src", "data", "ranking.json")
     ELO = "elo"
     NAME = "name"
     DEFAULT_ELO = 1000
@@ -357,7 +361,7 @@ class QuizManager:
         self.config_manager = config_manager
         self.ranking = Ranking()
         self.elo_ranking = EloRanking()
-        self.game_names = GameNames()
+        self.game_names = GameNames(config_manager.langs_data)
 
     def start_quiz(self):
         self._started = True

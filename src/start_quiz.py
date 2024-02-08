@@ -47,7 +47,9 @@ class RegistrationButton(nextcord.ui.View):
             await message.edit(embed=self.embed, view=self)
             self.registration_timer.stop()
 
-    @nextcord.ui.button(label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️")
+    @nextcord.ui.button(
+        label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️"
+    )
     async def button_callback(self, _, interaction: nextcord.Interaction):
         user = interaction.user
 
@@ -63,6 +65,58 @@ class RegistrationButton(nextcord.ui.View):
                 for player_id, player_name in self.players.items()
             ),
             inline=False,
+        )
+
+
+class LangButton(nextcord.ui.View):
+    MESSAGE_OPEN = "{remaining_time} second{plural} remaining"
+
+    def __init__(self, embed: Embed, change_lang_time: int):
+        super().__init__()
+        self.embed = embed
+        self.change_lang_time = change_lang_time
+        self.players = {}
+
+    async def update(self, message: nextcord.message.Message):
+        await self.registration_timer.start(message)
+
+    @tasks.loop(seconds=1)
+    async def registration_timer(self, message: nextcord.message.Message):
+        remaining_time = self.change_lang_time - self.registration_timer.current_loop
+        plural = "s" * (remaining_time >= 2)
+
+        self.embed.set_footer(
+            text=self.MESSAGE_OPEN.format(remaining_time=remaining_time, plural=plural)
+        )
+        await message.edit(embed=self.embed, view=self)
+
+        if not remaining_time:
+            button: nextcord.ui.Button = self.children[0]
+            button.disabled = True
+            self.embed.remove_footer()
+            await message.edit(embed=self.embed, view=self)
+            self.registration_timer.stop()
+
+    @nextcord.ui.button(label=":flag_fr:", style=nextcord.ButtonStyle.success)
+    async def button_callback(self, _, interaction: nextcord.Interaction):
+        await interaction.send("click")
+
+
+class MyView(nextcord.ui.View):
+    @nextcord.ui.select(
+        placeholder="Choose languages",
+        min_values=1,
+        max_values=len(CONFIGURATION_MANAGER.langs_data.keys()),
+        options=[
+            nextcord.SelectOption(label=lang, emoji=data["emoji"])
+            for lang, data in CONFIGURATION_MANAGER.langs_data.items()
+        ],
+    )
+    async def select_callback(
+        self, select, interaction
+    ):  # the function called when the user is done selecting options
+        await interaction.send(
+            f"Awesome! I like {select.values[0]} too!"
         )
 
 
@@ -261,7 +315,7 @@ class QuizCog(Cog):
     ):
         if not self.quiz_manager.quiz_is_running():
             return None, None
-        
+
         embed = Embed(
             title="Answers",
             description="\n".join(
@@ -334,9 +388,6 @@ class QuizCog(Cog):
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
         """Suddenly stops the current quiz."""
-        if not interaction.user.name == "arcmeurtrier":
-            return
-        
         if not self.quiz_manager.quiz_is_running():
             await interaction.send("There are no quizzes in progress.")
             return
@@ -391,14 +442,45 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Display information about the quiz."""
-        embed = Embed(title="Quiz information", description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.", color=0x33A5FF)
-        embed.add_field(name="Questions", value="The number of questions of the quiz. Choose a value from the displayed list.", inline=False)
+        embed = Embed(
+            title="Quiz information",
+            description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.",
+            color=0x33A5FF,
+        )
+        embed.add_field(
+            name="Questions",
+            value="The number of questions of the quiz. Choose a value from the displayed list.",
+            inline=False,
+        )
         hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
-        medium_description = "- **Medium**: there is no hints and answers must be exact. Each question lasts 30 seconds."
-        easy_description = "- **Easy"":"
-        embed.add_field(name="Difficulty", value=f"The difficulty changes the precision required for answers to be accepted as well as the number of hints.\n{hardcore_description}\n{medium_description}\n{easy_description}", inline=False)
+        medium_description = "- **Medium**: ..."
+        easy_description = "- **Easy**: ..."
+        embed.add_field(
+            name="Difficulty",
+            value=f"The difficulty changes the precision required for answers to be accepted as well as the number of hints.\n{hardcore_description}\n{medium_description}\n{easy_description}",
+            inline=False,
+        )
         embed.add_field(name="Category", value="")
         await interaction.send(embed=embed)
+
+    @quiz.subcommand(name="lang")
+    async def set_lang(
+        self,
+        interaction: Interaction,
+    ):
+        """Set languages authorized for the next quizzes."""
+        if interaction.user.id == self.bot.owner_id:
+            # embed = Embed(title="a")
+            # lang_button = LangButton(
+            #     embed=embed,
+            #     change_lang_time=CONFIGURATION_MANAGER.CHANGE_LANG_TIME,
+            # )
+            # message = await interaction.send(embed=embed, view=lang_button)
+            # await lang_button.update(message)
+            await interaction.send("Choose a flavor!", view=MyView())
+
+        else:
+            await interaction.send("you are not god")
 
 
 def setup(bot: Bot):

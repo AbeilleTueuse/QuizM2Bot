@@ -14,14 +14,10 @@ class GameNames:
     INDEX_NAME = "vnnum"
     SEPARATOR = "\t"
 
-    def __init__(self):
-        self.encoding = self._get_encoding()
+    def __init__(self, langs_data: dict[str, dict]):
+        self.langs_data = langs_data
         self.mob_names = self._get_data(self.MOB_NAMES)
         self.item_names = self._get_data(self.ITEM_NAMES)
-
-    def _get_encoding(self) -> dict[str, str]:
-        with open(self.ENCODING_PATH, "r") as file:
-            return json.load(file)
 
     def _read_csv(self, filename: str, lang: str, encoding: str):
         names = pd.read_csv(
@@ -39,8 +35,8 @@ class GameNames:
     def _get_data(self, filename: str):
         return pd.concat(
             (
-                self._read_csv(filename, lang, encoding)
-                for lang, encoding in self.encoding.items()
+                self._read_csv(filename, lang, data["encoding"])
+                for lang, data in self.langs_data.items()
             ),
             axis=1,
         )

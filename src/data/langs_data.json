@@ -1,0 +1,58 @@
+{
+    "ae": {
+        "encoding": "Windows-1256",
+        "emoji": "🇦🇪"
+    },
+    "de": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇩🇪"
+    },
+    "dk": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇩🇰"
+    },
+    "en": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇬🇧"
+    },
+    "es": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇪🇸"
+    },
+    "fr": {
+        "encoding": "Windows-1252",
+        "emoji": "🇫🇷"
+    },
+    "hu": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇭🇺"
+    },
+    "it": {
+        "encoding": "Windows-1252",
+        "emoji": "🇮🇹"
+    },
+    "nl": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇳🇱"
+    },
+    "pl": {
+        "encoding": "Windows-1252",
+        "emoji": "🇵🇱"
+    },
+    "pt": {
+        "encoding": "ISO-8859-1",
+        "emoji": "🇵🇹"
+    },
+    "ro": {
+        "encoding": "ISO-8859-16",
+        "emoji": "🇷🇴"
+    },
+    "ru": {
+        "encoding": "Windows-1251",
+        "emoji": "🇷🇺"
+    },
+    "tr": {
+        "encoding": "Windows-1252",
+        "emoji": "🇹🇷"
+    }
+}
