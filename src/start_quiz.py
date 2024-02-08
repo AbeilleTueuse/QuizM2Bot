@@ -89,7 +89,9 @@ class DropDown(nextcord.ui.Select):
 
     async def callback(self, interaction: Interaction):
         CONFIGURATION_MANAGER.update_allowed_langs(self.guild_id, self.values)
-        await interaction.send("Languages have been successfully changed.", ephemeral=True)
+        await interaction.send(
+            "Languages have been successfully changed.", ephemeral=True
+        )
 
 
 class QuizCog(Cog):
@@ -146,7 +148,7 @@ class QuizCog(Cog):
         embed.add_field(
             name="Allowed languages",
             value=" ".join(
-                f":flag_{lang.replace('en', 'gb')}:"
+                CONFIGURATION_MANAGER.get_icon(lang)
                 for lang in CONFIGURATION_MANAGER.allowed_langs
             ),
             inline=False,
@@ -262,7 +264,7 @@ class QuizCog(Cog):
                 embed = Embed(
                     title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
                     description="\n".join(
-                        f":flag_{lang.replace('en', 'gb')}: ┊ {' '.join(hint)}"
+                        f"{CONFIGURATION_MANAGER.get_icon(lang)} ┊ {' '.join(hint)}"
                         for lang, hint in question.hints.items()
                     ),
                     color=0xEDF02A,
@@ -291,7 +293,7 @@ class QuizCog(Cog):
         embed = Embed(
             title="Answers",
             description="\n".join(
-                f":flag_{lang.replace('en', 'gb')}: ┊ {answer}"
+                f"{CONFIGURATION_MANAGER.get_icon(lang)} ┊ {answer}"
                 for lang, answer in question.answers.items()
             ),
             color=0x5E296B,

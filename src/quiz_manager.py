@@ -39,6 +39,7 @@ class ConfigurationManager:
     LANGS_DATA_PATH = os.path.join("src", "data", "langs_data.json")
 
     DEFAULT_LANG = "fr"
+    EMOJI = "emoji"
 
     FUZZ_THRESHOLD = {
         STRICT: 100,
@@ -108,6 +109,9 @@ class ConfigurationManager:
         
         with open(self.LANGS_BY_SERVERS_PATH, "w") as file:
             file.write(json.dumps(self.langs_by_servers, indent=4))
+
+    def get_icon(self, lang: str) -> str:
+        return self.langs_data[lang][self.EMOJI]
 
 
 class Ranking:
