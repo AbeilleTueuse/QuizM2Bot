@@ -3,172 +3,290 @@ from collections import defaultdict
 import json
 import os
 
-from metin2_api import M2Wiki, Page
-from data.read_files import ItemName
+from unidecode import unidecode
+from fuzzywuzzy import fuzz
 
-
-class MissingConfiguration(Exception):
-    pass
+from src.metin2_api import M2Wiki, Page
+from src.data.read_files import GameNames
+from src.utils.utils import (
+    json_converter,
+    format_number_with_sign,
+    elo_formula,
+    convert_rank,
+)
 
 
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
+    REGISTRATION_TIME = 30
+
+    NUMBER_OF_QUESTION = [5, 10, 20, 40]
+    FRIENDYLY = "friendly"
+    RANKED = "ranked"
+    GAME_CATEGORIES = [FRIENDYLY, RANKED]
+    ALLOWED_LANGS = {
+        507732107036983297: ["en", "fr", "ro", "it"],  # Metin2Dev
+        719469557647147018: ["fr"],  # Shaaky
+        970626513131147264: ["ae", "en", "fr", "pt"],  # Wiki
+        963091224988889088: ["fr"],  # JusQuoBou
+    }
+
+    HARDCORE = "hardcore"
+    MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"
-    LANG = "fr"
-
-    DEFAULT = "default"
-    MODE = "mode"
     STRICT = "strict"
     PERMISSIVE = "permissive"
-
-    PARAMS = {MODE: [STRICT, PERMISSIVE]}
+    VERY_PERMISSIVE = "very permissive"
 
     CONFIG_PATH = os.path.join("src", "config.json")
-    CONVERSION_PATH =  os.path.join("src", "conversion.json")
+
+    FUZZ_THRESHOLD = {
+        STRICT: 100,
+        PERMISSIVE: 97,
+        VERY_PERMISSIVE: 94,
+    }
 
     def __init__(self):
         self.config = None
         self.formatted_answer = None
+        self.allowed_langs = ["fr"]
+        self.fuzz_threshold = 100
         self.saved_config = self._open(self.CONFIG_PATH)
-        self.conversion = self._open(self.CONVERSION_PATH)
 
     def _open(self, path) -> dict[str, dict]:
         with open(path, "r", encoding="utf-8") as config_file:
             return json.load(config_file)
-        
-    def _save(self):
-        with open(self.CONFIG_PATH, "w", encoding="utf-8") as config_file:
-            config_file.write(json.dumps(self.saved_config, indent=4))
 
-    def set_config(self, config_name: str):
-        if config_name is not None and config_name in self.saved_config:
-            self.config = self.saved_config[config_name]
-        
-        else:
-            self.config = self.saved_config[self.DEFAULT]
-
+    def set_config(self, config_name: str, guild_id: int):
+        self.config = self.saved_config[config_name]
         self.formatted_answer = self._get_formatted_answer()
-    
+
+        if guild_id in self.ALLOWED_LANGS:
+            self.allowed_langs = self.ALLOWED_LANGS[guild_id]
+
     def _get_formatted_answer(self):
-        mode = self._get_mode()
+        mode = self.config[self.MODE]
+        self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
             return self._strict
 
         elif mode == self.PERMISSIVE:
             return self._permissive
-        
-        return self._strict
 
-    async def autocomplete_configuration(self, cog, interaction, user_input: str):
-        return list(self.saved_config.keys())[:25]
+        elif mode == self.VERY_PERMISSIVE:
+            return self._very_permissive
 
     def _strict(self, answer: str):
         return answer
 
     def _permissive(self, answer: str):
-        return answer.lower()
+        return unidecode(answer.lower())
 
-    def _get_mode(self):
-        return self.config[self.MODE]
-    
-    def create_new_config(self, name: str, mode: str):
-        if name in self.saved_config:
-            raise MissingConfiguration
-        
-        if mode not in self.PARAMS[self.MODE]:
-            mode = self.STRICT
-
-        self.saved_config[name] = {self.MODE: mode}
-        self._save()
-
-    def delete_config(self, name: str):
-        if name not in self.saved_config:
-            raise MissingConfiguration
-        
-        del self.saved_config[name]
-        self._save()
-
-    def get_config(self, name: str) -> dict[str, str]:
-        if name not in self.saved_config:
-            raise MissingConfiguration
-        
-        return self.saved_config[name]
-    
-    def convert(self, value: str) -> str:
-        if value in self.conversion[self.LANG]:
-            return self.conversion[self.LANG][value]
-        
-        if not value.isnumeric():
-            print(f"{value} can't be translated.")
-
-        return value
-
-    @classmethod
-    def get_mode_choices(cls):
-        return cls.PARAMS[cls.MODE]
+    def _very_permissive(self, answer: str):
+        answer = answer.replace("-", " ")
+        formatted_answer = "".join(
+            letter
+            for letter in self._permissive(answer)
+            if letter.isalnum() or letter == " "
+        )
+        return " ".join(formatted_answer.split())
 
 
-class Leaderboard:
-    PSEUDO_COLUMN = "Pseudo"
-    SCORE_COLUMN = "Score"
-
+class Ranking:
     def __init__(self):
         self.scores = defaultdict(int)
 
-    def increment_score(self, name: str):
-        self.scores[name] += 1
+    def initialize(self, players_id: list[int]):
+        for player_id in players_id:
+            self.scores[player_id] = 0
+
+    def increment_score(self, user_id: str):
+        self.scores[user_id] += 1
 
     def sort(self):
-        self.scores = sorted(self.scores, key=lambda player: player[self.SCORE_COLUMN])
+        self.scores = dict(
+            sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
+        )
 
-    def convert_rank(self, rank):
-        if rank == 1:
-            return "🥇"
-        if rank == 2:
-            return "🥈"
-        if rank == 3:
-            return "🥉"
-        return f"{rank}e"
-    
     def reset(self):
         self.__init__()
 
     def __iter__(self):
-        return iter(sorted(self.scores.items(), key=lambda item: item[1], reverse=True))
+        return iter(self.scores.items())
+
+    def __len__(self):
+        return len(self.scores.keys())
+
+    def get_ranking(self):
+        sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
+
+        ranking = []
+        current_rank = 1
+        current_score = None
+
+        for index, (player_id, score) in enumerate(sorted_players):
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+            ranking.append((convert_rank(current_rank), player_id, score))
+
+        return ranking
+
+
+class EloRanking:
+    DATA_PATH = os.path.join("src", "ranking.json")
+    ELO = "elo"
+    NAME = "name"
+    DEFAULT_ELO = 1000
+    RANKING_MAX_DISPLAY = 20
+
+    def __init__(self):
+        self.data = self._get_data()
+
+    def _get_data(self) -> dict:
+        try:
+            with open(self.DATA_PATH, "r") as file:
+                data = json.load(file, object_hook=json_converter)
+        except FileNotFoundError:
+            data = {}
+
+        return data
+
+    def get_elo(self, guild_id, player_id, player_name=None):
+        if not guild_id in self.data:
+            self.data[guild_id] = {}
+
+        if not player_id in self.data[guild_id]:
+            self.data[guild_id][player_id] = self.default_info(player_name)
+
+        return self.data[guild_id][player_id][self.ELO]
+
+    def default_info(self, player_name: str):
+        return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
+
+    def _update_elo(self, guild_id, player_id, additionnal_elo):
+        self.data[guild_id][player_id][self.ELO] += additionnal_elo
+
+    def get_new_elo(self, guild_id: int, ranking: Ranking):
+        current_elo = {
+            player_id: self.get_elo(guild_id, player_id) for player_id, _ in ranking
+        }
+        new_elo = {}
+
+        for player_id, player_score in ranking:
+            player_elo = current_elo[player_id]
+            additionnal_elo = sum(
+                elo_formula(
+                    player_elo, player_score, current_elo[opponent_id], opponent_score
+                )
+                for opponent_id, opponent_score in ranking
+                if player_id != opponent_id
+            )
+            new_elo[player_id] = [
+                player_elo + additionnal_elo,
+                format_number_with_sign(additionnal_elo),
+            ]
+            self._update_elo(guild_id, player_id, additionnal_elo)
+        self._save()
+
+        return new_elo
+
+    def get_player_score(self, players_score: dict, player_id: int):
+        player_score = players_score[player_id]
+        return player_score[self.NAME], player_score[self.ELO]
+
+    def get_ranking(self, guild_id: int):
+        players_score = self.data[guild_id]
+        sorted_players = sorted(
+            [
+                self.get_player_score(players_score, player_id)
+                for player_id in players_score
+            ],
+            key=lambda item: item[1],
+            reverse=True,
+        )
+
+        ranking = []
+        current_rank = 1
+        current_score = None
+
+        for index, (player_name, score) in enumerate(sorted_players):
+            if index == self.RANKING_MAX_DISPLAY:
+                break
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+            ranking.append((convert_rank(current_rank), player_name, score))
+
+        return ranking
+
+    def _save(self):
+        with open(self.DATA_PATH, "w") as file:
+            file.write(json.dumps(self.data, indent=4))
 
 
 class Question:
-    def __init__(self, answer: str, image_url: str, config_manager: ConfigurationManager):
-        self.answer = answer
-        self.image_url = image_url
+    def __init__(
+        self,
+        answers: dict[str, str],
+        image_url: str,
+        config_manager: ConfigurationManager,
+    ):
         self.config_manager = config_manager
-        self.formatted_answer = self._formatted_answer(answer)
-        self.hint = self._get_default_hint()
-        self.hint_shuffle = self._get_hint_shuffle()
-        self.answer_len = len(answer)
+        self.answers = self._filter_answer(answers)
+        self.image_url = image_url
+        self.formatted_answers = self._formatted_answers()
+        self.hints = self._get_default_hints()
+        self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
         self.hint_shown = 0
+        self._last_message = None
+        self._last_hint_message = None
+
+    def _filter_answer(self, answers: dict[str, str]):
+        return {
+            lang: answer
+            for lang, answer in answers.items()
+            if lang in self.config_manager.allowed_langs
+        }
 
     def _formatted_answer(self, answer: str):
         return self.config_manager.formatted_answer(answer)
 
-    def _get_default_hint(self):
-        return ["＿"] * len(self.answer)
+    def _formatted_answers(self):
+        return [self._formatted_answer(answer) for answer in self.answers.values()]
 
-    def _get_hint_shuffle(self):
-        char_position = list(enumerate(self.answer))
+    def _get_default_hint(self, answer: str):
+        return [
+            "\u200B \u200B" if char == " " else "__\u200B \u200B \u200B__"
+            for char in answer
+        ]
+
+    def _get_default_hints(self):
+        return {
+            lang: self._get_default_hint(answer)
+            for lang, answer in self.answers.items()
+        }
+
+    def _get_hint_shuffle(self, answer: str):
+        char_position = list(enumerate(answer))
         rd.shuffle(char_position)
 
         return char_position
 
+    def _get_hints_shuffle(self):
+        return {
+            lang: self._get_hint_shuffle(answer)
+            for lang, answer in self.answers.items()
+        }
+
     def show_hint(self):
         self.check_answer_count += 1
 
-        if (
-            self.check_answer_count * self.config_manager.CHECK_ANSWER_PERIOD
-            >= int(self.config_manager.config[self.config_manager.TIME_BETWEEN_HINT])
+        if self.check_answer_count * self.config_manager.CHECK_ANSWER_PERIOD >= int(
+            self.config_manager.config[self.config_manager.TIME_BETWEEN_HINT]
         ):
             self.check_answer_count = 0
             return True
@@ -176,50 +294,72 @@ class Question:
         return False
 
     def exceed_max_hint(self):
-        return self.hint_shown < int(self.config_manager.config[self.config_manager.MAX_HINT])
+        return self.hint_shown < int(
+            self.config_manager.config[self.config_manager.MAX_HINT]
+        )
 
-    def get_hint(self):
-        char_to_show_number = len(self.hint_shuffle) // (
-            int(self.config_manager.config[self.config_manager.MAX_HINT]) - self.hint_shown
+    def _get_hint(self, lang):
+        char_to_show_number = len(self.hints_shuffle[lang]) // (
+            int(self.config_manager.config[self.config_manager.MAX_HINT])
+            - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
-            pos, char = self.hint_shuffle.pop()
+            pos, char = self.hints_shuffle[lang].pop()
 
             if char == " ":
                 continue
 
-            if pos >= 1 and self.hint[pos - 1] != "＿":
-                char_before = " "
-            else:
-                char_before = ""
+            if char == "(":
+                char = "\("
 
-            if pos < self.answer_len - 1 and self.hint[pos + 1] != "＿":
-                char_after = " "
-            else:
-                char_after = ""
+            self.hints[lang][pos] = f"__{char}__"
 
-            self.hint[pos] = char_before + "__" + char + "__" + char_after
+    def get_hints(self):
+        for lang in self.hints:
+            self._get_hint(lang)
 
         self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        return self._formatted_answer(user_answer) == self.formatted_answer
+        formatted_user_answer = self._formatted_answer(user_answer)
+
+        for formatted_answer in self.formatted_answers:
+            if (
+                fuzz.ratio(formatted_user_answer, formatted_answer)
+                >= self.config_manager.fuzz_threshold
+            ):
+                return True
+        return False
+
+    def change_last_message(self, message):
+        self._last_message = message
+
+    def get_last_message(self):
+        return self._last_message
+
+    def change_last_hint_message(self, message):
+        self._last_hint_message = message
+
+    def get_last_hint_message(self):
+        return self._last_hint_message
 
 
 class QuizManager:
-    TIME_BETWEEN_QUESTION = 1
+    TIME_BETWEEN_QUESTION = 10
+    APPEARANCE_PROB = 0.5
 
-    def __init__(self, m2_wiki: M2Wiki):
+    def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
         self._started = False
         self._waiting_for_answer = False
+        self.ranked_quiz = False
         self.m2_wiki = m2_wiki
-        self.config = None
-        self.leaderboard = Leaderboard()
-        self.item_names = ItemName().data
-
-    def start_quiz(self, config_manager: ConfigurationManager):
         self.config_manager = config_manager
+        self.ranking = Ranking()
+        self.elo_ranking = EloRanking()
+        self.game_names = GameNames()
+
+    def start_quiz(self):
         self._started = True
 
     def quiz_is_running(self):
@@ -231,34 +371,58 @@ class QuizManager:
     def waiting_for_answer(self):
         return self._waiting_for_answer
 
-    def get_questions(self, number_of_question: int = 1):
-        pages_info = rd.choices(
+    def get_all_pages(self):
+        return (
             self.m2_wiki.category(
                 category="Objets (temporaire)", exclude_category="Objets multiples"
-            ),
+            )
+            + self.m2_wiki.category(category="Monstres (temporaire)")
+            + self.m2_wiki.category(category="Pierres Metin")
+        )
+
+    def get_questions(self, number_of_question: int = 1):
+        pages_info = rd.choices(
+            self.get_all_pages(),
             k=number_of_question,
         )
         pages = self.m2_wiki.get_pages_content(pages_info)
 
         for page in pages:
-            page.add_ig_name(self.item_names)
-            page.add_image_name()
+            page.add_ingame_name(self.game_names)
+            page.add_image_name(self.APPEARANCE_PROB)
 
-        pages: list[Page] = sorted(pages, key=lambda page: page.image_name)
         image_urls = self.m2_wiki.get_image_urls(pages)
 
         questions = [
-            Question(page.ig_name, image_url, self.config_manager)
-            for page, image_url in zip(pages, image_urls)
+            Question(
+                page.ingame_names, image_urls[page.image_name], self.config_manager
+            )
+            for page in pages
         ]
-        rd.shuffle(questions)
 
         return questions
+
+    def number_of_question_possible(self):
+        return len(self.get_all_pages())
 
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
-        self.leaderboard.reset()
+        self.ranking.reset()
 
     def end_question(self):
         self._waiting_for_answer = False
+
+    def is_ranked_quiz(self, game_category: str):
+        is_ranked = game_category == self.config_manager.RANKED
+        self.ranked_quiz = is_ranked
+        return is_ranked
+
+    def get_elo(self, guild_id: int, player_id: int, player_name: str):
+        return self.elo_ranking.get_elo(guild_id, player_id, player_name)
+
+    def get_new_elo(self, guild_id: int):
+        return self.elo_ranking.get_new_elo(guild_id, self.ranking)
+
+    def get_elo_ranking(self, guild_id: int):
+        return self.elo_ranking.get_ranking(guild_id)

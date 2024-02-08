@@ -1,10 +1,12 @@
 import requests
+import random as rd
 
-import pandas as pd
 import mwparserfromhell
 from mwparserfromhell.wikicode import Wikicode
 from mwparserfromhell.nodes.template import Template
 from mwparserfromhell.nodes.extras.parameter import Parameter
+
+from src.data.read_files import GameNames
 
 
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
@@ -13,31 +15,61 @@ BASE = len(ALPHABET)
 
 
 class Page:
+    MONSTER = "Monstres"
+    METIN = "Metin"
+
     def __init__(self, title: str, content: Wikicode):
         self.title = title
         self.content = mwparserfromhell.parse(content)
-        self.ig_name: str = None
+        self.ingame_names: list[str] = None
         self.image_name = None
         self.template = self._get_template()
+        self._type = self._get_type()
 
     def __str__(self):
         return f"(Page: {self.title})"
 
     def _get_template(self) -> Template:
         return self.content.filter(forcetype=Template)[0]
+    
+    def _get_type(self):
+        return str(self.template.name).strip()
 
-    def add_ig_name(self, item_names: pd.DataFrame):
+    def add_ingame_name(self, game_names: GameNames):
         parameter: Parameter = self.template.get("Code")
         code = str(parameter.value).strip()
         vnum = self.code_to_vnum(code)
 
-        self.ig_name = item_names.loc[vnum][0]
+        if self._type == self.MONSTER or self._type == self.METIN:
+            names = game_names.mob_names
+        else:
+            names = game_names.item_names
+        
+        ingame_names: dict[str, str] = names.loc[vnum].to_dict()
 
-    def add_image_name(self):
-        image_parameter: Parameter = self.template.get("Image")
+        for lang, ig_name in ingame_names.items():
+            if ig_name.endswith("+0"):
+                ingame_names[lang] = ig_name[:-2]
+
+            ingame_names[lang] = ingame_names[lang].replace(chr(160), " ").strip()
+
+        self.ingame_names = ingame_names
+
+    def add_image_name(self, appearance_prob: float):
+        if self.template.has("Apparence") and self._type != "Bijoux":
+            if rd.random() > appearance_prob:
+                image_parameter: Parameter = self.template.get("Image")
+            else:
+                image_parameter: Parameter = self.template.get("Apparence")
+        else:
+            image_parameter: Parameter = self.template.get("Image")
+
         image_name = str(image_parameter.value).strip()
 
-        self.image_name = f"Fichier:{image_name}.png"
+        if self._type == "Monstres":
+            self.image_name = f"Fichier:{image_name}-min.png"
+        else:
+            self.image_name = f"Fichier:{image_name}.png"
 
     def code_to_vnum(self, letters: str) -> int:
         number = 0
@@ -127,4 +159,34 @@ class M2Wiki:
 
         pages_info: dict = request_result["query"]["pages"]
 
-        return [pages_info[pageid]["imageinfo"][0]["url"] for pageid in pages_info]
+        return {pages_info[pageid]["title"]: pages_info[pageid]["imageinfo"][0]["url"] for pageid in pages_info}
+    
+    def check_image_urls(self, pages: list[Page]):
+        query_params = {
+            "action": "query",
+            "format": "json",
+            "prop": "imageinfo",
+            "titles": "|".join(page.image_name for page in pages),
+            "iiprop": "url",
+        }
+
+        request_result = self.wiki_request(query_params)
+
+        pages_info: dict = request_result["query"]["pages"]
+
+        for _, value in pages_info.items():
+            title = value["title"]
+            if title != "Fichier:" + value["imageinfo"][0]["url"].split("/")[-1]:
+                print(title)
+
+    def check_images(self, category: str):
+        monsters = self.category(category=category)
+        batch = 50
+        for index in range(len(monsters) // batch + 1):
+            pages = monsters[index * batch : (index + 1) * batch]
+            pages = self.get_pages_content(pages)
+            
+            for page in pages:
+                page.add_image_name(0)
+            
+            self.check_image_urls(pages)

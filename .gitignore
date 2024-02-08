@@ -162,3 +162,4 @@ cython_debug/
 # Project
 token.txt
 test.py
+ranking.json
