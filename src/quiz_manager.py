@@ -50,9 +50,10 @@ class ConfigurationManager:
         self.config = None
         self.formatted_answer = None
         self.fuzz_threshold = 100
-        self.allowed_langs = self._open(self.LANGS_BY_SERVERS_PATH)
+        self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
         self.saved_config = self._open(self.CONFIG_PATH)
         self.langs_data = self._open(self.LANGS_DATA_PATH)
+        self.allowed_langs = [self.DEFAULT_LANG]
 
     def _open(self, path) -> dict[str]:
         with open(path, "r", encoding="utf-8") as config_file:
@@ -63,11 +64,8 @@ class ConfigurationManager:
         self.formatted_answer = self._get_formatted_answer()
         guild_id = str(guild_id)
 
-        if guild_id in self.allowed_langs:
-            self.allowed_langs = self.allowed_langs[guild_id]
-
-        else:
-            self.allowed_langs = [self.DEFAULT_LANG]
+        if guild_id in self.langs_by_servers:
+            self.allowed_langs = self.langs_by_servers[guild_id]
 
     def _get_formatted_answer(self):
         mode = self.config[self.MODE]
@@ -96,6 +94,20 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         )
         return " ".join(formatted_answer.split())
+    
+    def get_default_langs(self, guild_id: int):
+        guild_id = str(guild_id)
+        
+        if guild_id in self.langs_by_servers:
+            return self.langs_by_servers[guild_id]
+        
+        return []
+    
+    def update_allowed_langs(self, guild_id: int, new_langs: list[str]):
+        self.langs_by_servers[str(guild_id)] = new_langs
+        
+        with open(self.LANGS_BY_SERVERS_PATH, "w") as file:
+            file.write(json.dumps(self.langs_by_servers, indent=4))
 
 
 class Ranking:
