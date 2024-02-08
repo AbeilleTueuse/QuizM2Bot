@@ -163,3 +163,4 @@ cython_debug/
 token.txt
 test.py
 ranking.json
+langs_by_servers.json
