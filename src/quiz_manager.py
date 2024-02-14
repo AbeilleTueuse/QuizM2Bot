@@ -401,7 +401,7 @@ class QuizManager:
         )
 
     def get_questions(self, number_of_question: int = 1):
-        pages_info = rd.choices(
+        pages_info = rd.sample(
             self.get_all_pages(),
             k=number_of_question,
         )
