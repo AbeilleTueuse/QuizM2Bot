@@ -452,6 +452,19 @@ class QuizCog(Cog):
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
 
+    @slash_command(name="info")
+    async def quiz(self, interaction: Interaction):
+        """Get bot information."""
+        if interaction.user.id == self.bot.owner_id:
+            embed = Embed(title="Bot information ℹ️", color=0x33A5FF)
+            embed.add_field(
+                name="Servers list",
+                value="\n".join(f"- {guild.name} ({guild.member_count})" for guild in self.bot.guilds),
+            )
+            await interaction.send(embed=embed, ephemeral=True)
+        else:
+            await interaction.send("You can't use this command.", ephemeral=True)
+
 
 def setup(bot: Bot):
     bot.add_cog(QuizCog(bot))
