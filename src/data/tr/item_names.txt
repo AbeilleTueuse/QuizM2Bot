@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Zehir Kýlýcý (baðlý)
+21995	Havalý Çelik Yay (baðlý)
+21996	Orkide Çan (baðlý)
+21997	Diken Pençe (baðlý)
 22000	Þehre Dönüþ Kaðýdý
 22001	Þehre Dönüþ Kaðýdý
 22010	Geri Dönüþ Kaðýdý
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Kara Madde
 31082	Magma Çemberi
 31083	Samael'in Yüzüðü
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Mantar Hücresi
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Kýrmýzý SungMa runiði
 31248	Mor SungMa runiði
 31249	Mavi SungMa runiði
-31250	Yeþil SungMa runiði
+31250	Sarý SungMa rünü
 31251	Deri sertleþtirici
 31252	Deri sertleþtirici+
 31253	Gnoll usta sandýðý
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Gri örnek öðrenci+
 41886	Mavi örnek kýz öðrenci+
 41887	Gri örnek kýz öðrenci+
+41888	K. Cankurtaran
+41889	B. Cankurtaran
+41890	K. Kadýn Cankurtaran
+41891	B. Kadýn Cankurtaran
+41892	K. Cankurtaran+
+41893	B. Cankurtaran+
+41894	K. Kadýn Cankurtaran+
+41895	B. Kadýn Cankurtaran+
+41896	Yeþil büyücü hekim
+41897	Kýrmýzý büyücü hekim
+41898	Yeþil kadýn büyücü hekim
+41899	Kýrmýzý k. büyücü hekim
+41900	Yeþil büyücü hekim+
+41901	Kýrmýzý büyücü hekim+
+41902	Yeþil k. büyücü hekim+
+41903	Kýrmýzý k. büyücü hekim+
+41904	Asil lejyoner
+41905	Karanlýk lejyoner
+41906	Asil kadýn lejyoner
+41907	Karanlýk kadýn lejyoner
+41908	Asil lejyoner+
+41909	Karanlýk lejyoner+
+41910	Asil kadýn lejyoner+
+41911	Karanlýk kadýn lejyoner+
+41912	Cömertlik Zýrhý
+41913	Muzaffer Zýrhý
+41914	Cömertlerin Zýrhý
+41915	Muzafferlerin Zýrhý
+41916	Cömertlik Zýrhý+
+41917	Muzaffer Zýrhý+
+41918	Cömertlerin Zýrhý+
+41919	Muzafferlerin Zýrhý+
 45001	Tavþancýk kulaklarý (kv)
 45002	Tavþan Kulaðý e (kahve)
 45003	Baþlýk (e)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	K. örnek öðrenci gözlð.+
 45626	Mavi ör. öðrenci tokasý+
 45627	K. örnek öðrenci tokasý+
+45628	K. Plaj Þapkasý (e)
+45629	B. Plaj Þapkasý (e)
+45630	K. Plaj Þapkasý (k)
+45631	B. Plaj Þapkasý (k)
+45632	K. Plaj Þapkasý+ (e)
+45633	B. Plaj Þapkasý+ (e)
+45634	K. Plaj Þapkasý+ (k)
+45635	B. Plaj Þapkasý+ (k)
+45636	Yeþil cadý tacý (e)
+45637	Kýrmýzý cadý tacý (e)
+45638	Yeþil cadý tacý (k)
+45639	Kýrmýzý cadý tacý (k)
+45640	Yeþil cadý tacý+ (e)
+45641	Kýrmýzý cadý tacý+ (e)
+45642	Yeþil cadý tacý+ (k)
+45643	Kýrmýzý cadý tacý+ (k)
+45644	Asil lejyoner kaský (e)
+45645	Kar. lejyoner kaský (e)
+45646	Asil lejyoner kaský (k)
+45647	Kar. lejyoner kaský (k)
+45648	Asil lejyoner kaský+ (e)
+45649	Kar. lejyoner kaský+ (e)
+45650	Asil lejyoner kaský+ (k)
+45651	Kar. lejyoner kaský+ (k)
+45652	Cömertlik Tacý
+45653	Muzaffer Tacý
+45654	Cömertlerin Tacý
+45655	Muzafferlerin Tacý
+45656	Cömertlik Tacý+
+45657	Muzaffer Tacý+
+45658	Cömertlerin Tacý+
+45659	Muzafferlerin Tacý+
 49001	Genel Aura Giysisi
 49002	Sade Aura Giysisi
 49003	Soylu Aura Giysisi
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Karanlýðýn Sandýðý
 50255	Cor Draconis, Ýþlenmemiþ
 50260	Cor Draconis, Ýþlenmemiþ
+50261	Cor Daemonis (ham)
 50262	Ayýrma parþömeni+
 50263	Baðlama Parþömeni
 50264	Ayýrma Parþömeni
 50265	Altýn Futbol Topu
 50266	Jotun Thrym Sandýðý
-50267	Altýn Okey Sandýðý
-50268	Gümüþ Okey Sandýðý
-50269	Bronz Okey Sandýðý
+50267	Altýn Okey Þenlik Kutusu
+50268	Gümüþ Okey Þenlik Kutusu
+50269	Bronz Okey Þenlik Kutusu
 50270	Kraliçe Meley'in Sandýðý
 50271	Ejderha Bekçisi Sandýðý
 50272	Altýn Patron Avcýsý San.
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong Suyu
 50820	Hwal Suyu
 50821	Kýrmýzý Þebnem
-50822	Pembe Þebnem
+50822	Turuncu Þebnem
 50823	Sarý Þebnem
 50824	Yeþil Þebnem
 50825	Mavi Þebnem
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Cesur Moa
 52119	Cesur Moa
 52120	Cesur Moa
+52202	Turbo sörf tahtasý
 52701	Aslan Sertifikasý
 52702	Kaplan Sertifikasý
 52703	Yaban Domuzu Sertifikasý
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini Whistle
+53348	Sadýk katil buz balinasý
+53349	Küçük buz balinasý
+53350	Cesur Tiki korkuluðu
+53351	Þýmarýk Tiki korkuluðu
+53352	Küçük Tiki korkuluðu
+53353	Kar Krampus
+53354	Kömür Krampus
+53355	Küçük Krampus
 53501	Ateþ Ankasý Kafesi
 53502	Ren Geyiði Yavrusu Sand.
 53503	Buz Ankasý Kafesi
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Öten Diþli Kutusu
 53628	Takýrdayan Diþli Kutusu
 53629	Küçük Diþli Kutusu
+53630	Damlayan balina kutusu
+53631	Küçük balina kutusu
+53632	Gýcýrdayan Tiki sandýðý
+53633	Sarsýlan Tiki sandýðý
+53634	Küçük Tiki sandýðý
+53635	Buzlu Krampus sandýðý
+53636	Ýsli Krampus sandýðý
+53637	Küçük Krampus sandýðý
 54041	NoNAme
 54042	NoNAme
 54043	Çýrak Sandýðý I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Lanetlenme Anahtarý+
 70450	Kurtuluþ Metini rulosu
 70451	Ölü Alev Destesi
-70500	Rüya ruhu+0
-70501	Rüya ruhu+1
-70502	Rüya ruhu+2
-70503	Rüya ruhu+3
-70504	Rüya ruhu+4
-70505	Gök ruhu+0
-70506	Gök ruhu+1
-70507	Gök ruhu+2
-70508	Gök ruhu+3
-70509	Gök ruhu+4
-70602	Ruh Parþömeni (%100)
-70603	Ruh Parþömeni
 70604	Þampiyonluk Sandýðý
 70605	Bilet Sandýðý
 70606	Þampiyonluk Kupasý
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Kar Tanesi Sandýðý
 70614	Kar Tanesi Yýldýzý
 70615	Kar Tanesi Bambi
+70617	Hazine bileti
+70618	Goblin anahtarý
+70619	Goblin anahtar kutusu
 71000	Eðitim Dönüþüm Parþömeni
 71001	Kötü Ruh Kovma Kaðýdý
 71002	Statü Sýfýrlama Kaðýdý
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Kýþ Gecesi Ren Geyiði
 71271	Aceleci tavþan (kýrmýzý)
 71272	Aceleci tavþan (siyah)
+71273	Lanetli süpürge
+71274	Büyülü süpürge
+71275	Asil lejyon atý
+71276	Karanlýk lejyon atý
+71277	Halia
+71278	Aquilos
 72001	Tecrübe yüzüðü (10 sa.)
 72002	Tecrübe yüzüðü (30 dk.)
 72003	Tecrübe yüzüðü (3 sa.)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	General Yonghan parþmn.
 72053	Loncalar Sözleþmesi
 72054	Bekçiler Týlsýmý
+72057	Çift tecrübe yüzüðü
 72058	Zihin Taþý Destesi
 72059	Liderin kitabý+
 72060	Liderin kitabý+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Canavar kartý plat. kut.
 83075	Acý dut sandýðý
 83076	Altýn dut sandýðý
+83077	Ejderha tanrýsý sandýðý
 83100	Seungryong Vadisi ödülü
 83101	Yongbi Çölü ödülü
 83102	Kuahlo Dong ödülü
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mitsi ejderha oniksi
 165300	Mitsi ejderha oniksi
 165400	Mitsi ejderha oniksi
+170000	Ham ejderha ametisti
+170100	Ham ejderha ametisti
+170200	Ham ejderha ametisti
+170300	Ham ejderha ametisti
+170400	Ham ejderha ametisti
+171000	Yontl. ejderha ametisti
+171100	Yontl. ejderha ametisti
+171200	Yontl. ejderha ametisti
+171300	Yontl. ejderha ametisti
+171400	Yontl. ejderha ametisti
+172000	Ender ejderha ametisti
+172100	Ender ejderha ametisti
+172200	Ender ejderha ametisti
+172300	Ender ejderha ametisti
+172400	Ender ejderha ametisti
+173000	Antika ejderha ametisti
+173100	Antika ejderha ametisti
+173200	Antika ejderha ametisti
+173300	Antika ejderha ametisti
+173400	Antika ejderha ametisti
+174000	Efsane ejderha ametisti
+174100	Efsane ejderha ametisti
+174200	Efsane ejderha ametisti
+174300	Efsane ejderha ametisti
+174400	Efsane ejderha ametisti
+175000	Mitsi ejderha ametisti
+175100	Mitsi ejderha ametisti
+175200	Mitsi ejderha ametisti
+175300	Mitsi ejderha ametisti
+175400	Mitsi ejderha ametisti

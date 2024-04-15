@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	Waffe lv 60 Wolfman
 21992	Waffe lv 60 Wolfman
 21993	Waffe lv 60 Wolfman
+21994	Giftschwert (geb.)
+21995	Krähenstahlbogen (geb.)
+21996	Orchideenglocke (geb.)
+21997	Dornenkralle (geb.)
 22000	Schriftrolle Stadt
 22001	Zurück zur Stadt
 22010	Schriftrolle des Ortes
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Rote SungMa-Rune
 31248	Lila SungMa-Rune
 31249	Blaue SungMa-Rune
-31250	Grüne SungMa-Rune
+31250	Gelbe SungMa-Rune
 31251	Lederhärter
 31252	Lederhärter+
 31253	Gnoll-Meistertruhe
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Grauer Musterschüler+
 41886	Blaue Musterschülerin+
 41887	Graue Musterschülerin+
+41888	R. Strandwächter
+41889	W. Strandwächter
+41890	R. Strandwächterin
+41891	W. Strandwächterin
+41892	R. Strandwächter+
+41893	W. Strandwächter+
+41894	R. Strandwächterin+
+41895	W. Strandwächterin+
+41896	Grüner Hexendoktor
+41897	Roter Hexendoktor
+41898	Grüne Hexendoktorin
+41899	Rote Hexendoktorin
+41900	Grüner Hexendoktor+
+41901	Roter Hexendoktor+
+41902	Grüne Hexendoktorin+
+41903	Rote Hexendoktorin+
+41904	Edler Legionär
+41905	Dunkler Legionär
+41906	Edle Legionärin
+41907	Dunkle Legionärin
+41908	Edler Legionär+
+41909	Dunkler Legionär+
+41910	Edle Legionärin+
+41911	Dunkle Legionärin+
+41912	Rüstung des Großzügigen
+41913	Rüstung des Siegreichen
+41914	Rüstung der Großzügigen
+41915	Rüstung der Siegreichen
+41916	Rüstung des Großzügigen+
+41917	Rüstung des Siegreichen+
+41918	Rüstung der Großzügigen+
+41919	Rüstung der Siegreichen+
 45001	Häschenohren (braun)
 45002	Hasenohren (braun)
 45003	Kopftuch (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	R. Musterschülerbrille+
 45626	Bl. Musterschülerspange+
 45627	R. Musterschülerspange+
+45628	R. Strandkappe (m)
+45629	W. Strandkappe (m)
+45630	R. Strandkappe (w)
+45631	W. Strandkappe (w)
+45632	R. Strandkappe+ (m)
+45633	W. Strandkappe+ (m)
+45634	R. Strandkappe+ (w)
+45635	W. Strandkappe+ (w)
+45636	Grüne Hexenkrone (m)
+45637	Rote Hexenkrone (m)
+45638	Grüne Hexenkrone (w)
+45639	Rote Hexenkrone (w)
+45640	Grüne Hexenkrone+ (m)
+45641	Rote Hexenkrone+ (m)
+45642	Grüne Hexenkrone+ (w)
+45643	Rote Hexenkrone+ (w)
+45644	Edler Legionärshelm (m)
+45645	Dnkl. Legionärshelm (m)
+45646	Edler Legionärshelm (w)
+45647	Dnkl. Legionärshelm (w)
+45648	Edler Legionärshelm+ (m)
+45649	Dnkl. Legionärshelm+ (m)
+45650	Edler Legionärshelm+ (w)
+45651	Dnkl. Legionärshelm+ (w)
+45652	Krone des Großzügigen
+45653	Krone des Siegreichen
+45654	Krone der Großzügigen
+45655	Krone der Siegreichen
+45656	Krone des Großzügigen+
+45657	Krone des Siegreichen+
+45658	Krone der Großzügigen+
+45659	Krone der Siegreichen+
 49001	Gewöhnliches Auragewand
 49002	Schlichtes Auragewand
 49003	Edles Auragewand
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Truhe der Dunkelheit
 50255	Cor Draconis (Roh)
 50260	Cor Draconis (Roh)
+50261	Cor Daemonis (Roh)
 50262	Pergament der Lösung+
 50263	Pergament der Bindung
 50264	Pergament der Lösung
 50265	Goldener Fußball
 50266	Jotun Thrym-Truhe
-50267	Goldene Okey-Truhe
-50268	Silberne Okey-Truhe
-50269	Bronzene Okey-Truhe
+50267	Goldene Okey-Festtruhe
+50268	Silberne Okey-Festtruhe
+50269	Bronzene Okey-Festtruhe
 50270	Truhe der Königin Meley
 50271	Truhe der Drachenwächter
 50272	Goldene Bossjäger-Truhe
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong-Wasser
 50820	Hwal-Wasser
 50821	Roter Tau
-50822	Pinker Tau
+50822	Oranger Tau
 50823	Gelber Tau
 50824	Grüner Tau
 50825	Blauer Tau
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Tapferer Moa
 52119	Tapferer Moa
 52120	Tapferer Moa
+52202	Turbo-Surfboard
 52701	Löwen-Urkunde
 52702	Tiger-Urkunde
 52703	Keiler-Urkunde
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini-Whistle
+53348	Treuer Eiskillerwal
+53349	Kleiner Eiskillerwal
+53350	Mutiger Tiki-Schrecken
+53351	Frecher Tiki-Schrecken
+53352	Kleiner Tiki-Schrecken
+53353	Schnee-Krampus
+53354	Kohlen-Krampus
+53355	Kleiner Krampus
 53501	Feuerphönix-Käfig
 53502	Truhe des Rentierjungen
 53503	Eisphönix-Käfig
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Pfeifende Zahnradbox
 53628	Klackernde Zahnradbox
 53629	Kleine Zahnradbox
+53630	Tropfende Wal-Kiste
+53631	Kleine Wal-Kiste
+53632	Knarzende Tiki-Truhe
+53633	Ruckelnde Tiki-Truhe
+53634	Kleine Tiki-Truhe
+53635	Eiskalte Krampus-Truhe
+53636	Rußige Krampus-Truhe
+53637	Kleine Krampus-Truhe
 54041	Wolfmantruhe lvl60
 54042	Kiste aus der wolfman equ
 54043	Lehrlingstruhe I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Verdammnis-Schlüssel+
 70450	Rolle d. Erlösungs-Metin
 70451	Totenflammen-Bündel
-70500	Traumseele+0
-70501	Traumseele+1
-70502	Traumseele+2
-70503	Traumseele+3
-70504	Traumseele+4
-70505	Himmelsseele+0
-70506	Himmelsseele+1
-70507	Himmelsseele+2
-70508	Himmelsseele+3
-70509	Himmelsseele+4
-70602	Seelenpergament (100%)
-70603	Seelenpergament
 70604	Meisterschafts-Truhe
 70605	Ticket-Truhe
 70606	Meisterschafts-Trophäe
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Schneeflocken-Truhe
 70614	Schneeflocken-Komet
 70615	Schneeflocken-Bambi
+70617	Schatzticket
+70618	Goblin-Schlüssel
+70619	Goblin-Schlüsselbox
 71000	Rolle des Lehrwandels
 71001	Exorzismus-Schriftrolle
 71002	Status-Neuverteilung
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Winternacht-Rentier
 71271	Eiliges Kaninchen (rot)
 71272	Eiliges Kaninchen (sch.)
+71273	Verfluchter Besen
+71274	Verhexter Besen
+71275	Edles Legionspferd
+71276	Dunkles Legionspferd
+71277	Halia
+71278	Aquilos
 72001	Erfahrungsring (10h)
 72002	Erfahrungsring (30m)
 72003	Erfahrungsring (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Rufrolle General Yonghan
 72053	Vertrag der Gilden
 72054	Amulett der Wächter
+72057	Doppel-Erfahrungsring
 72058	Geiststeinbündel
 72059	Buch des Anführers+
 72060	Buch des Anführers+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Monsterkartenplatinbox
 83075	Bitterbeeren-Truhe
 83076	Goldbeeren-Truhe
+83077	Drachengott-Truhe
 83100	Belohnung T. v. Seungr.
 83101	Belohnung Yongbi-Wüste
 83102	Belohnung Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mythischer Drachenonyx
 165300	Mythischer Drachenonyx
 165400	Mythischer Drachenonyx
+170000	Roher Drachenamethyst
+170100	Roher Drachenamethyst
+170200	Roher Drachenamethyst
+170300	Roher Drachenamethyst
+170400	Roher Drachenamethyst
+171000	Geschl. Drachenamethyst
+171100	Geschl. Drachenamethyst
+171200	Geschl. Drachenamethyst
+171300	Geschl. Drachenamethyst
+171400	Geschl. Drachenamethyst
+172000	Rarer Drachenamethyst
+172100	Rarer Drachenamethyst
+172200	Rarer Drachenamethyst
+172300	Rarer Drachenamethyst
+172400	Rarer Drachenamethyst
+173000	Antiker Drachenamethyst
+173100	Antiker Drachenamethyst
+173200	Antiker Drachenamethyst
+173300	Antiker Drachenamethyst
+173400	Antiker Drachenamethyst
+174000	Legend. Drachenamethyst
+174100	Legend. Drachenamethyst
+174200	Legend. Drachenamethyst
+174300	Legend. Drachenamethyst
+174400	Legend. Drachenamethyst
+175000	Mythi. Drachenamethyst
+175100	Mythi. Drachenamethyst
+175200	Mythi. Drachenamethyst
+175300	Mythi. Drachenamethyst
+175400	Mythi. Drachenamethyst

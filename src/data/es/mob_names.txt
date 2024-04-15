@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Estandarte aniversario 7
 20134	Estandarte de sol
 20135	Banderola de Navidad
+20138	Estandarte de Ramadán
 20139	Estand. gremio (lila)
 20140	Estand. gremio (azu/ver)
 20141	Estand. gremio (roj/dor)
-20138	Estandarte de Ramadán
 20142	Estandarte de Halloween
 20143	Estandarte de Pascua
 20146	Portal al Otro Mundo
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Cometa de nieve
 20289	Conejo raudo (rojo)
 20290	Conejo raudo (negro)
+20291	Escoba maldita
+20292	Escoba embrujada
+20293	Caballo de legión noble
+20294	Caballo de legión oscuro
+20295	Halia
+20296	Aquilos
 20300	Maestro Fuerza Corporal
 20301	Maestro Lucha Mental
 20302	Maestro Asesino
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Altar misterioso
 20851	Cazarrecompensas (Seog.)
 20852	Cazarrecompensas (Namg.)
+20856	Goblin de los tesoros
+20857	Caja del tesoro gigante
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	Mil y una noches
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Tornillo
 34181	Tuerca
 34182	Minitornillo
+34183	Orca glacial fiel
+34184	Orca glacial pequeña
+34185	Duende Tiki valiente
+34186	Duende Tiki descarado
+34187	Duende Tiki pequeño
+34188	Krampus de las nieves
+34189	Krampus del carbón
+34190	Krampus pequeño
+40003	Turbotabla de surf
 60000	Administrador de gremio
 60001	Administrador de gremio
 60002	Administrador de gremio

@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Espada Venenosa (Vin.)
+21995	Arco Corvo Negro (Vin.)
+21996	Campainha de Bambu(Vin.)
+21997	Garra de Espinhos (Vin.)
 22000	Pergaminho da Cidade
 22001	Pergaminho da Cidade
 22010	Pergaminho do Retorno
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Matéria Negra
 31082	Anel de Magma
 31083	Anel de Samael
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Esporos de Cogumelo
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Runa de Sung Ma Vermelha
 31248	Runa de Sung Ma Roxa
 31249	Runa de Sung Ma Azul
-31250	Runa de Sung Ma Verde
+31250	Runa de Sung Ma Amarela
 31251	Endurecedor de Couro
 31252	Endurecedor de Couro+
 31253	Cofre do Gnoll Mestre
@@ -8084,7 +8088,39 @@ VNUM	LOCALE_NAME
 41884	Melhor Aluno Azul (M)+
 41885	Melhor Aluno Cinza (M)+
 41886	Melhor Aluna Azul (F)+
-41887	Melhor Aluno Cinza (F)+
+41887	Melhor Aluna Cinza (F)+
+41888	Nadador-salvador Vm. (M)
+41889	Nadador-salvador Br. (M)
+41890	Nadador-salvador Vm. (F)
+41891	Nadador-salvador Br. (F)
+41892	Nadador-salvador Vm.+(M)
+41893	Nadador-salvador Br.+(M)
+41894	Nadador-salvador Vm.+(F)
+41895	Nadador-salvador Br.+(F)
+41896	Curandeiro Verde (M)
+41897	Curandeiro Vermelho (M)
+41898	Curandeira Verde (F)
+41899	Curandeira Vermelha (F)
+41900	Curandeiro Verde+ (M)
+41901	Curandeiro Vermelho+ (M)
+41902	Curandeira Verde+ (F)
+41903	Curandeira Vermelha+ (F)
+41904	Legionário Nobre (M)
+41905	Legionário Negro (M)
+41906	Legionária Nobre (F)
+41907	Legionária Negra (F)
+41908	Legionário Nobre+ (M)
+41909	Legionário Negro+ (M)
+41910	Legionária Nobre+ (F)
+41911	Legionária Negra+ (F)
+41912	Armadura Benevolente (M)
+41913	Armadura Triunfal (M)
+41914	Armadura Benevolente (F)
+41915	Armadura Triunfal (F)
+41916	Armadura Benevolente+(M)
+41917	Armadura Triunfal+ (M)
+41918	Armadura Benevolente+(F)
+41919	Armadura Triunfal+ (F)
 45001	Orelhas Bunny (Castanho)
 45002	Orelhas Coelho (pardas)
 45003	Turbante (M)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Óculos Melhor Aluno Vm.+
 45626	Gancho Melhor Aluna Az.+
 45627	Gancho Melhor Aluna Vm.+
+45628	Chapéu de Praia Vm. (M)
+45629	Chapéu de Praia Br. (M)
+45630	Chapéu de Praia Vm. (F)
+45631	Chapéu de Praia Br. (F)
+45632	Chapéu de Praia Vm.+ (M)
+45633	Chapéu de Praia Br.+ (M)
+45634	Chapéu de Praia Vm.+ (F)
+45635	Chapéu de Praia Br.+ (F)
+45636	Coroa Curandeiro Vd. (M)
+45637	Coroa Curandeiro Vm. (M)
+45638	Coroa Curandeira Vd. (F)
+45639	Coroa Curandeira Vm. (F)
+45640	Coroa Curandeiro Vd.+(M)
+45641	Coroa Curandeiro Vm.+(M)
+45642	Coroa Curandeira Vd.+(F)
+45643	Coroa Curandeira Vm.+(F)
+45644	Elmo Legion. Nobre (M)
+45645	Elmo Legion. Negro (M)
+45646	Elmo Legion. Nobre (F)
+45647	Elmo Legion. Negra (F)
+45648	Elmo Legion. Nobre+ (M)
+45649	Elmo Legion. Negro+ (M)
+45650	Elmo Legion. Nobre+ (F)
+45651	Elmo Legion. Negra+ (F)
+45652	Coroa Benevolente (M)
+45653	Coroa Trinfual (M)
+45654	Coroa Benevolente (F)
+45655	Coroa Trinfual (F)
+45656	Coroa Benevolente+ (M)
+45657	Coroa Trinfual+ (M)
+45658	Coroa Benevolente+ (F)
+45659	Coroa Trinfual+ (F)
 49001	Roupa da Aura Normal
 49002	Roupa da Aura Simples
 49003	Roupa da Aura Nobre
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Cofre das Trevas
 50255	Cor Draconis (Cru)
 50260	Cor Draconis (Cru)
+50261	Cor Daemonis (Cru)
 50262	Pergaminho Desvinculo+
 50263	Pergaminho do Vínculo
 50264	Pergaminho do Desvinculo
 50265	Bola de Futebol Dourada
 50266	Cofre de Jotun Thrym
-50267	Cofre Okey de Ouro
-50268	Cofre Okey de Prata
-50269	Cofre Okey de Bronze
+50267	Cofre Okey Ouro Feliz
+50268	Cofre Okey Prata Feliz
+50269	Cofre Okey Bronze Feliz
 50270	Cofre da Rainha Meley
 50271	Cofre Guarda do Dragão
 50272	Cofre Ceifa-Boss Ouro
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Água Mong
 50820	Água Hwal
 50821	Orvalho Vermelho
-50822	Orvalho Rosa
+50822	Orvalho Laranja
 50823	Orvalho Amarelo
 50824	Orvalho Verde
 50825	Orvalho Azul
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Moa Corajoso
 52119	Moa Corajoso
 52120	Moa Corajoso
+52202	Turboprancha de Surf
 52701	Certificado do Leão
 52702	Certificado do Tigre
 52703	Certificado do Javali
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini Whistle
+53348	Orca do Gelo Leal
+53349	Mini Orca do Gelo
+53350	Tiki do Terror Temeroso
+53351	Tiki do Terror Corajoso
+53352	Tiki do Terror Pequeno
+53353	Krampus da Neve
+53354	Krampus do Carvão
+53355	Krampus Pequeno
 53501	Gaiola da Fénix de Fogo
 53502	Cofre da Cria de Rena
 53503	Gaiola da Fénix de Gelo
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Jaula Rufus do Gelo
 53522	Ninho do Sheldon
 53523	Gaiola para Coelho
-53526	Pepita Can
+53526	NoNAme
 53527	Jaula Cabeça de Abóbora
 53528	Armário de Vassouras
 53529	Cofre Floco de Neve
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Caixa do Robô Sibilante
 53628	Caixa do Robô Batedor
 53629	Caixa do Mini Robô
+53630	Cofre Gotejante da Orca
+53631	Cofre da Mini Orca
+53632	Cofre Rangente do Tiki
+53633	Cofre Agitado do Tiki
+53634	Cofre Pequeno do Tiki
+53635	Cofre Gelado do Krampus
+53636	Cofre Sujo do Krampus
+53637	Cofre Pequeno do Krampus
 54041	NoNAme
 54042	NoNAme
 54043	Cofre de Aprendiz I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Chave da Condenação+
 70450	Pergam. Metin Salvação
 70451	Pacote Chamas da Morte
-70500	Alma Onírica+0
-70501	Alma Onírica+1
-70502	Alma Onírica+2
-70503	Alma Onírica+3
-70504	Alma Onírica+4
-70505	Alma Celeste+0
-70506	Alma Celeste+1
-70507	Alma Celeste+2
-70508	Alma Celeste+3
-70509	Alma Celeste+4
-70602	Pergaminho da Alma(100%)
-70603	Pergaminho da Alma
 70604	Cofre do Mundial
 70605	Cofre dos Bilhetes
 70606	Troféu do Mundial
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Caixa Forte Floco Neve
 70614	Cometa Floco de Neve
 70615	Bambi Floco de Neve
+70617	Bilhete do Tesouro
+70618	Chave do Duende
+70619	Caixa da Chave do Duende
 71000	Pergaminho do Treino
 71001	Pergaminho do Exorcismo
 71002	Pergaminho dos Atributos
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Enciclopédia Mercúrio(G)
 71217	Enciclopédia de Vénus(P)
 71218	Enciclopédia de Vénus(G)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Cavalo de Kyzaghan
 71221	Pacote de Caxemira
 71222	Dragão de Nirvana
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Rena do Inverno
 71271	Coelho Apressado (Verm.)
 71272	Coelho Apressado (Preto)
+71273	Vassoura Maldita
+71274	Vassoura Enfeitiçada
+71275	Cavalo da Legião Nobre
+71276	Cavalo da Legião Negra
+71277	Halia
+71278	Aquilos
 72001	Anel de Experiência(10h)
 72002	Anel de Experiência(30m)
 72003	Anel de Experiência (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Papiro - General Yonghan
 72053	Contrato de Guild
 72054	Amuleto dos Guardiões
+72057	Anel Experiência Dupla
 72058	Pacote da Pedra Espírita
 72059	Livro do Líder+
 72060	Livro do Líder+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Caixa da Carta Platina
 83075	Cofre de Bagas Amargas
 83076	Cofre de Bagas de Ouro
+83077	Cofre do Deus Dragão
 83100	Recompensa de Seungryong
 83101	Recompensa de Yongbi
 83102	Recompensa Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Ónix-Dragão Mítica
 165300	Ónix-Dragão Mítica
 165400	Ónix-Dragão Mítica
+170000	Ametista-Dragão Crua
+170100	Ametista-Dragão Crua
+170200	Ametista-Dragão Crua
+170300	Ametista-Dragão Crua
+170400	Ametista-Dragão Crua
+171000	Ametista-Dragão Talhada
+171100	Ametista-Dragão Talhada
+171200	Ametista-Dragão Talhada
+171300	Ametista-Dragão Talhada
+171400	Ametista-Dragão Talhada
+172000	Ametista-Dragão Rara
+172100	Ametista-Dragão Rara
+172200	Ametista-Dragão Rara
+172300	Ametista-Dragão Rara
+172400	Ametista-Dragão Rara
+173000	Ametista-Dragão Antiga
+173100	Ametista-Dragão Antiga
+173200	Ametista-Dragão Antiga
+173300	Ametista-Dragão Antiga
+173400	Ametista-Dragão Antiga
+174000	Ametista-Dragão Lendária
+174100	Ametista-Dragão Lendária
+174200	Ametista-Dragão Lendária
+174300	Ametista-Dragão Lendária
+174400	Ametista-Dragão Lendária
+175000	Ametista-Dragão Mítica
+175100	Ametista-Dragão Mítica
+175200	Ametista-Dragão Mítica
+175300	Ametista-Dragão Mítica
+175400	Ametista-Dragão Mítica

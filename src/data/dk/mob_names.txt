@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Jubilæums Banner 7
 20134	Solar Banner
 20135	Jule Banner
+20138	Ramadan Banner
 20139	Ordens Banner (Lilla)
 20140	Ordens Banner (Blå/Grøn)
 20141	Ordens Banner (Rød/Guld)
-20138	Ramadan Banner
 20142	Halloween Banner
 20143	Påske Banner
 20146	Åndeverdens Portal
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Snefnugs Komet
 20289	Forhastede Kanin (Rød)
 20290	Forhastede Kanin (Sort)
+20291	Forbandede Kost
+20292	Forheksede Kost
+20293	Adelig Legion Hest
+20294	Mørk Legion Hest
+20295	Halia
+20296	Aquilos
 20300	Kampstyrke lærer
 20301	Mentalstyrke lærer
 20302	Nærkamp lærer
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Mystisk Alter
 20851	Dusør J. (Seo Gw. W.)
 20852	Dusør J. (Nam Gw. Ch.)
+20856	Skatte Nisse
+20857	Stor Skattekiste
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	1001 Nætter
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Fløjte
 34181	Skruenøgle
 34182	Mini-Fløjte
+34183	Loyal Is Spækhugger
+34184	Mini Is Spækhugger
+34185	Frygtløs Tiki Terror
+34186	Dristig Tiki Terror
+34187	Lille Bitte Tiki Terror
+34188	Sne Krampus
+34189	Kul Krampus
+34190	Lille Bitte Krampus
+40003	Turbo Surfbræt
 60000	Ordens Manager
 60001	Ordens Manager
 60002	Ordens Manager

@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Espada Envenenada (vin.)
+21995	Arco Cuervo Acero (vin.)
+21996	Campana Bambú (vinc.)
+21997	Zarpa de espinas (vinc.)
 22000	Pergamino de la Ciudad
 22001	Retorno a la ciudad
 22010	Pergamino de Ubicación
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Materia negra
 31082	Anillo magmático
 31083	Anillo de Samael
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Esporas de seta
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Runa de SungMa roja
 31248	Runa de SungMa lila
 31249	Runa de SungMa azul
-31250	Runa de SungMa verde
+31250	Runa de SungMa amarilla
 31251	Endurecedor de cuero
 31252	Endurecedor de cuero+
 31253	Baúl de maestro gnoll
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Alumno modelo gris+
 41886	Alumna modelo azul+
 41887	Alumna modelo gris+
+41888	Socorrista rojo
+41889	Socorrista blanco
+41890	Socorrista roja
+41891	Socorrista blanca
+41892	Socorrista rojo+
+41893	Socorrista blanco+
+41894	Socorrista roja+
+41895	Socorrista blanca+
+41896	Doctor brujo verde
+41897	Doctor brujo rojo
+41898	Doctora bruja verde
+41899	Doctora bruja roja
+41900	Doctor brujo verde+
+41901	Doctor brujo rojo+
+41902	Doctora bruja verde+
+41903	Doctora bruja roja+
+41904	Legionario noble
+41905	Legionario oscuro
+41906	Legionaria noble
+41907	Legionaria oscura
+41908	Legionario noble+
+41909	Legionario oscuro+
+41910	Legionaria noble+
+41911	Legionaria oscura+
+41912	Armadura del Generoso
+41913	Armadura del Victorioso
+41914	Armadura de la Generosa
+41915	Armadura de Victoriosa
+41916	Armadura del Generoso+
+41917	Armadura del Victorioso+
+41918	Armadura de la Generosa+
+41919	Armadura de Victoriosa+
 45001	Orejas conejita (marrón)
 45002	Orejas conejo (marrón)
 45003	Pañuelo (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Gafas modelo rojas+
 45626	Horquilla modelo azul+
 45627	Horquilla modelo roja+
+45628	Gorra playera roja (m)
+45629	Gorra playera blanca (m)
+45630	Gorra playera roja (f)
+45631	Gorra playera blanca (f)
+45632	Gorra playera roja+ (m)
+45633	Gorra playera blan.+ (m)
+45634	Gorra playera roja+ (f)
+45635	Gorra playera blan.+ (f)
+45636	Penacho brujo verde (m)
+45637	Penacho brujo rojo (m)
+45638	Penacho brujo verde (f)
+45639	Penacho brujo rojo (f)
+45640	Penacho brujo verde+ (m)
+45641	Penacho brujo rojo+ (m)
+45642	Penacho brujo verde+ (f)
+45643	Penacho brujo rojo+ (f)
+45644	Casco de leg. noble (m)
+45645	Casco de leg. oscuro (m)
+45646	Casco de leg. noble (f)
+45647	Casco de leg. oscuro (f)
+45648	Casco de leg. noble+ (m)
+45649	Casco de leg. osc.+ (m)
+45650	Casco de leg. noble+ (f)
+45651	Casco de leg. osc.+ (f)
+45652	Corona del Generoso
+45653	Corona del Victorioso
+45654	Corona de la Generosa
+45655	Corona de la Victoriosa
+45656	Corona del Generoso+
+45657	Corona del Victorioso+
+45658	Corona de la Generosa+
+45659	Corona de la Victoriosa+
 49001	Vestimenta de aura común
 49002	Vestim. de aura sencilla
 49003	Vestim. de aura noble
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Baúl de la Oscuridad
 50255	Cor Draconis (en bruto)
 50260	Cor Draconis (en bruto)
+50261	Cor Daemonis (en bruto)
 50262	Pergamino de separación+
 50263	Pergamino de unión
 50264	Pergamino de separación
 50265	Balón de oro
 50266	Baúl de Jotun Thrym
-50267	Baúl okey de oro
-50268	Baúl okey de plata
-50269	Baúl okey de bronce
+50267	Baúl okey festivo oro
+50268	Baúl okey festivo plata
+50269	Baúl okey festivo bronce
 50270	Baúl de la reina Meley
 50271	Baúl guardianes dragón
 50272	Cofre cazajefes oro
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Agua Mong
 50820	Agua Hwal
 50821	Rocío rojo
-50822	Rocío rosa
+50822	Rocío naranja
 50823	Rocío amarillo
 50824	Rocío verde
 50825	Rocío azul
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Moa valeroso
 52119	Moa valeroso
 52120	Moa valeroso
+52202	Turbotabla de surf
 52701	Título de León
 52702	Título de Tigre
 52703	Título de Jabalí
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Tornillo
 53346	Tuerca
 53347	Minitornillo
+53348	Orca glacial fiel
+53349	Orca glacial pequeña
+53350	Duende Tiki valiente
+53351	Duende Tiki descarado
+53352	Duende Tiki pequeño
+53353	Krampus de las nieves
+53354	Krampus del carbón
+53355	Krampus pequeño
 53501	Jaula del fénix de fuego
 53502	Baúl de la Cría de reno
 53503	Jaula del Fénix de Hielo
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Jaula de rufus escarcha
 53522	Nido de Sheldon
 53523	Jaula de conejos
-53526	Pepita Can
+53526	NoNAme
 53527	Jaula calabeza
 53528	Armario de las escobas
 53529	Arcón helado Copito
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Caja de tornillos
 53628	Caja de tuercas
 53629	Caja de minitornillos
+53630	Tanque de orca con fugas
+53631	Tanque de orca pequeño
+53632	Baúl Tiki chirriante
+53633	Baúl Tiki bamboleante
+53634	Baúl Tiki pequeño
+53635	Baúl de Krampus gélido
+53636	Baúl de Krampus tiznado
+53637	Baúl de Krampus pequeño
 54041	NoNAme
 54042	NoNAme
 54043	Baúl de aprendiz I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Llave de condena+
 70450	Perg. Metin de salvación
 70451	Fardo de los muertos
-70500	Alma onírica+0
-70501	Alma onírica+1
-70502	Alma onírica+2
-70503	Alma onírica+3
-70504	Alma onírica+4
-70505	Alma celestial+0
-70506	Alma celestial+1
-70507	Alma celestial+2
-70508	Alma celestial+3
-70509	Alma celestial+4
-70602	Perg. de almas (100%)
-70603	Pergamino de almas
 70604	Baúl del Mundial
 70605	Baúl de tique
 70606	Trofeo del Mundial
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Baúl de copos de nieve
 70614	Cometa de nieve
 70615	Bambi de nieve
+70617	Tique tesoro
+70618	Llave goblin
+70619	Caja de Llaves goblin
 71000	Perg. de reinstrucción
 71001	Pergamino de Exorcismo
 71002	Reseteo de Atributos
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Enciclo. de Mercurio (G)
 71217	Enciclop. de Venus (P)
 71218	Enciclop. de Venus (G)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Caballo de Kyzaghan
 71221	Paquete de cachemira
 71222	Dragón nirvana
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Reno noche invernal
 71271	Conejo raudo (rojo)
 71272	Conejo raudo (negro)
+71273	Escoba maldita
+71274	Escoba embrujada
+71275	Caballo de legión noble
+71276	Caballo de legión oscuro
+71277	Halia
+71278	Aquilos
 72001	Anillo de exp. (10 h)
 72002	Anillo de exp. (30 min)
 72003	Anillo de exp. (3 h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Invocac. General Yonghan
 72053	Contrato de gremios
 72054	Amuleto de guardianes
+72057	Anillo de exp. doble
 72058	Fardo piedras espíritu
 72059	Libro del líder+
 72060	Libro del líder+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Caja platino cart. mons.
 83075	Baúl de frutos ácidos
 83076	Baúl de frutos dorados
+83077	Baúl del Dios Dragón
 83100	Recomp. Valle Seungr.
 83101	Recomp. Desierto Yongbi
 83102	Recompensa Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Ónice dragón mítico
 165300	Ónice dragón mítico
 165400	Ónice dragón mítico
+170000	Amatista dragón en bruto
+170100	Amatista dragón en bruto
+170200	Amatista dragón en bruto
+170300	Amatista dragón en bruto
+170400	Amatista dragón en bruto
+171000	Amatista dragón afilada
+171100	Amatista dragón afilada
+171200	Amatista dragón afilada
+171300	Amatista dragón afilada
+171400	Amatista dragón afilada
+172000	Amatista dragón rara
+172100	Amatista dragón rara
+172200	Amatista dragón rara
+172300	Amatista dragón rara
+172400	Amatista dragón rara
+173000	Amatista dragón antigua
+173100	Amatista dragón antigua
+173200	Amatista dragón antigua
+173300	Amatista dragón antigua
+173400	Amatista dragón antigua
+174000	Amatista dragón legend.
+174100	Amatista dragón legend.
+174200	Amatista dragón legend.
+174300	Amatista dragón legend.
+174400	Amatista dragón legend.
+175000	Amatista dragón mítica
+175100	Amatista dragón mítica
+175200	Amatista dragón mítica
+175300	Amatista dragón mítica
+175400	Amatista dragón mítica

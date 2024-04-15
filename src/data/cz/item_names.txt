@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Jedovatı meè (pouto)
+21995	Ocelovı luk vran (pouto)
+21996	Zvon orchidejí (pouto)
+21997	Ostnantı paøát (pouto)
 22000	Pergamen návr. do mìsta
 22001	Zpìt do mìsta
 22010	Pergamen lokality
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Rudá runa Sung Ma
 31248	Fialová runa Sung Ma
 31249	Modrá runa Sung Ma
-31250	Zelená runa Sung Ma
+31250	lutá runa Sung Ma
 31251	Koené tuidlo
 31252	Koené tuidlo+
 31253	Truhla Mistra Gnollù
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Šedı hvìzdnı ák+ (m)
 41886	Modrı hvìzdnı ák+ ()
 41887	Šedı hvìzdnı ák+ ()
+41888	Èervenı plavèík (m)
+41889	Bílı plavèík (m)
+41890	Èervenı plavèík ()
+41891	Bílı plavèík ()
+41892	Èervenı plavèík+ (m)
+41893	Bílı plavèík+ (m)
+41894	Èervenı plavèík+ ()
+41895	Bílı plavèík+ ()
+41896	Zelenı èar. doktor (m)
+41897	Èervenı èar. doktor (m)
+41898	Zelená èar. doktorka ()
+41899	Èerv. èar. doktorka ()
+41900	Zelenı èar. doktor+ (m)
+41901	Èervenı èar. doktor+ (m)
+41902	Zel. èar. doktorka+ ()
+41903	Èerv. èar. doktorka+ ()
+41904	Vznešenı legionáø (m)
+41905	Temnı legionáø (m)
+41906	Vznešenı legionáø ()
+41907	Temnı legionáø ()
+41908	Vznešenı legionáø+ (m)
+41909	Temnı legionáø+ (m)
+41910	Vznešenı legionáø+ ()
+41911	Temnı legionáø+ ()
+41912	Benevolentní brnìní (m)
+41913	Triumfální brnìní (m)
+41914	Benevolentní brnìní ()
+41915	Triumfální brnìní ()
+41916	Benevolentní brnìní+ (m)
+41917	Triumfální brnìní+ (m)
+41918	Benevolentní brnìní+ ()
+41919	Triumfální brnìní+ ()
 45001	Zajeèí uši (hnìdé)
 45002	Králièí uši (hnìdé)
 45003	Pokrıvka hlavy (M)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Brıle èerv. hv. áka+
 45626	Spona modrého hv. áka+
 45627	Spona èerv. hv. áka+
+45628	Èerv. pláová èapka (m)
+45629	Bílá pláová èapka (m)
+45630	Èerv. pláová èapka ()
+45631	Bílá pláová èapka ()
+45632	Èerv. pláová èapka+ (m)
+45633	Bílá pláová èapka+ (m)
+45634	Èerv. pláová èapka+ ()
+45635	Bílá pláová èapka+ ()
+45636	Z. koruna dok. èar. (m)
+45637	È. koruna dok. èar. (m)
+45638	Z. koruna dok. èar. ()
+45639	È. koruna dok. èar. ()
+45640	Z. koruna dok. èar.+(m)
+45641	È. koruna dok. èar.+(m)
+45642	Z. koruna dok. èar.+()
+45643	È. koruna dok. èar.+()
+45644	Helma vzn. legionáøe (m)
+45645	Helma tem. legionáøe (m)
+45646	Helma vzn. legionáøe ()
+45647	Helma tem. legionáøe ()
+45648	Helma vzn. legionáøe+(m)
+45649	Helma tem. legionáøe+(m)
+45650	Helma vzn. legionáøe+()
+45651	Helma tem. legionáøe+()
+45652	Benevolentní koruna (m)
+45653	Triumfální koruna (m)
+45654	Benevolentní koruna ()
+45655	Triumfální koruna ()
+45656	Benevolentní koruna+ (m)
+45657	Triumfální koruna+ (m)
+45658	Benevolentní koruna+ ()
+45659	Triumfální koruna+ ()
 49001	Bìnı kostım s aurou
 49002	Prostı kostım s aurou.
 49003	Vznešenı kostım s aurou
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Truhla temnoty
 50255	Cor Draconis (surové)
 50260	Cor Draconis (surové)
+50261	Cor Daemonis (surové)
 50262	Svitek odpoutání+
 50263	Svitek pøipoutání
 50264	Svitek odpoutání
 50265	Zlatı fotbalovı míè
 50266	Truhla Jotun Thryma
-50267	Zlatá Okey truhla
-50268	Støíbrná Okey truhla
-50269	Bronzová Okey truhla
+50267	Šastná zl. Okey truhla
+50268	Šastná stø. Okey truhla
+50269	Šastná br. Okey truhla
 50270	Truhla královny Meley
 50271	Truhla draèího stráce
 50272	Zlatá truhla Rozparovaèe
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Voda Mong
 50820	Voda Hwal
 50821	Èervená rosa
-50822	Rùová rosa
+50822	Pomeranèová rosa
 50823	lutá rosa
 50824	Zelená rosa
 50825	Modrá rosa
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Odvánı Moa
 52119	Odvánı Moa
 52120	Odvánı Moa
+52202	Turbo surfovací prkno
 52701	Lví certifikát
 52702	Tygøí certifikát
 52703	Kanèí certifikát
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Píšalka
 53346	Klíè
 53347	Mini klíè
+53348	Vìrná led. zab. velryba
+53349	Mini led. zab. velryba
+53350	Odvánı Tiki Terror
+53351	Stateènı Tiky Terror
+53352	Malı Tiki Terror
+53353	Snìnı Krampus
+53354	Uhelnı Krampus
+53355	Malı Krampus
 53501	Klec Ohnivého fénixe
 53502	Truhla Sobího mládìte
 53503	Klec ledového Fénixe
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Klec Mrazivého Rufuse
 53522	Sheldonovo hnízdo
 53523	Králièí klec
-53526	Pepita Can
+53526	NoNAme
 53527	Klec Hlavy dınì
 53528	Skøíò na košata
 53529	Truhla Snìhové vloèky
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Pískající truhla
 53628	Vrzající truhla
 53629	Malá vrzající truhla
+53630	Kapající velrybí truhla
+53631	Mini velrybí truhla
+53632	Skøípavá truhla Tiky
+53633	Divoká truhla Tiky
+53634	Malá truhla Tiky
+53635	Truhla ledového krampuse
+53636	Truhla uhelného krampuse
+53637	Truhla malého krampuse
 54041	NoNAme
 54042	NoNAme
 54043	Truhla uèedníka I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Klíè Prokletí+
 70450	Pergamen Metinu Spásy
 70451	Balíèek Plamenù smrti
-70500	Duše snù+0
-70501	Duše snù+1
-70502	Duše snù+2
-70503	Duše snù+3
-70504	Duše snù+4
-70505	Nebeská duše+0
-70506	Nebeská duše+1
-70507	Nebeská duše+2
-70508	Nebeská duše+3
-70509	Nebeská duše+4
-70602	Pergamen duše (100%)
-70603	Pergamen duše
 70604	Truhla MS ve fotbale
 70605	Truhla s lístky
 70606	Cena MS ve fotbale
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Strongbox Snìhové vloèky
 70614	Snìhová vloèka Kometa
 70615	Snìhová vloèka Bambi
+70617	Lístek na Ostrov pokladù
+70618	Goblinskı klíè
+70619	Truhla Goblinského klíèe
 71000	Svitek snadného tréninku
 71001	Pergamen exorcismu
 71002	Reset vlastností tìla
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Encyklopedie Merkuru (V)
 71217	Encyklopedie Venuše (M)
 71218	Encyklopedie Venuše (V)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Kyzaghanùv kùò
 71221	Kašmírovı mìšec
 71222	Drak Nirvány
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Zimní sob
 71271	Rychlı králík (èervenı)
 71272	Rychlı králík (èernı)
+71273	Prokleté koštì
+71274	Oèarované koštì
+71275	Ušlechtilı kùò legie
+71276	Temnı kùò legie
+71277	Halia
+71278	Aquilos
 72001	Prsten zkušeností (10h)
 72002	Prsten zkušeností (30m)
 72003	Prsten zkušeností (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Perg. - Generál Yonghan
 72053	Cechovní smlouva
 72054	Amulet strácù
+72057	Dvojitı prsten zkuš.
 72058	Mìšec kamene ducha
 72059	Kniha náèelníka+
 72060	Kniha náèelníka+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Plat. tr. K. pøí. Yohary
 83075	Truhla Hoøkıch bobulí
 83076	Truhla Zlatıch bobulí
+83077	Truhla draèího boha
 83100	Truhla odmìny Seungryong
 83101	Truhla odmìny Yongbi
 83102	Truh. odmìny Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mıtickı Draèí onyx
 165300	Mıtickı Draèí onyx
 165400	Mıtickı Draèí onyx
+170000	Surovı draèí ametyst
+170100	Surovı draèí ametyst
+170200	Surovı draèí ametyst
+170300	Surovı draèí ametyst
+170400	Surovı draèí ametyst
+171000	Opracovanı draèí ametyst
+171100	Opracovanı draèí ametyst
+171200	Opracovanı draèí ametyst
+171300	Opracovanı draèí ametyst
+171400	Opracovanı draèí ametyst
+172000	Vzácnı draèí ametyst
+172100	Vzácnı draèí ametyst
+172200	Vzácnı draèí ametyst
+172300	Vzácnı draèí ametyst
+172400	Vzácnı draèí ametyst
+173000	Staroitnı draèí ametyst
+173100	Staroitnı draèí ametyst
+173200	Staroitnı draèí ametyst
+173300	Staroitnı draèí ametyst
+173400	Staroitnı draèí ametyst
+174000	Legendární draèí ametyst
+174100	Legendární draèí ametyst
+174200	Legendární draèí ametyst
+174300	Legendární draèí ametyst
+174400	Legendární draèí ametyst
+175000	Mıtickı draèí ametyst
+175100	Mıtickı draèí ametyst
+175200	Mıtickı draèí ametyst
+175300	Mıtickı draèí ametyst
+175400	Mıtickı draèí ametyst

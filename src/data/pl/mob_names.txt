@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Sztandar Jubileuszowy 7
 20134	Sztandar S³oñca
 20135	Bo¿onarodz. Sztandar
+20138	Sztandar Ramadanu
 20139	Sztandar gildii (fiol.)
 20140	Sztandar gil. (ni./zie.)
 20141	Sztandar gil. (cze./z³.)
-20138	Sztandar Ramadanu
 20142	Halloweenowy Sztandar
 20143	Sztandar Wielkanocny
 20146	Portal Zaœwiatów
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Œnie¿na Kometa
 20289	Poœp. Królik (czer.)
 20290	Poœp. Królik (czar.)
+20291	Przeklêta Miot³a
+20292	Zaczarowana Miot³a
+20293	Szlachetny Legionowy Koñ
+20294	Mroczny Legionowy Koñ
+20295	Halia
+20296	Aquilos
 20300	Trener Mocy Cia³a
 20301	Trener Mocy Duchowej
 20302	Trener Mocy Ostrza
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Tajemniczy O³tarz
 20851	£owca G³ów (Seoganland)
 20852	£owca G³ów (Namgan)
+20856	Goblin Skarbnik
+20857	Olbrzymia Szkatu³ka
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	Tysi¹c i Jedna Noc
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini-Whistle
+34183	Wierny Lod. Wiel. Zab.
+34184	Ma³y Lod. Wiel. Zabójca
+34185	Dzielne Straszyd³o Tiki
+34186	Zuchwa³e Straszyd³o Tiki
+34187	Ma³e Straszyd³o Tiki
+34188	Œnie¿ny Krampus
+34189	Wêglowy Krampus
+34190	Ma³y Krampus
+40003	Turbodeska Surfingowa
 60000	Zarz¹dca gildii
 60001	Zarz¹dca gildii
 60002	Zarz¹dca gildii

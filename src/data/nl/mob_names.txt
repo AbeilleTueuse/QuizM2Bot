@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Jubileum Banier 7
 20134	Zonne Banier
 20135	Kerst Banier
+20138	Ramadan Banier
 20139	Gilde Banier (Paars)
 20140	Gilde Banier (Bl./Gr.)
 20141	Gilde Banier (Rood/Goud)
-20138	Ramadan Banier
 20142	Halloween Banier
 20143	Paasbanner
 20146	Anderwereld Portaal
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Sneeuwvlokje Comet
 20289	Haastige Haas (Rood)
 20290	Haastige Haas (Zwart)
+20291	Vervloekte Bezemsteel
+20292	Behekste Bezemsteel
+20293	Nobel Legionairspaard
+20294	Duister Legionairspaard
+20295	Halia
+20296	Aquilos
 20300	Leraar Lichaamskracht
 20301	Leraar mentale weerstand
 20302	Leraar zwaardvechten
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Mysterieus Altaar
 20851	Premiejag. (Seo Gw. W.)
 20852	Premiejag. (Nam. Gw. K.)
+20856	Schattengoblin
+20857	Enorme Schatkist
 30000	개인상점
 30001	개인상점
 30002	1001 Nachten
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Fluitje
 34181	Sleuteltje
 34182	Mini-Fluitje
+34183	Loyale IJs Orca
+34184	Mini IJs Orca
+34185	Vermetele Tiki Terreur
+34186	Dappere Tiki Terreur
+34187	Kleine Tiki Terreur
+34188	Sneeuw Krampus
+34189	Kolen Krampus
+34190	Kleine Krampus
+40003	Turbo Reddingsplank
 60000	Gilde Beheerder
 60001	Gilde Beheerder
 60002	Gilde Beheerder

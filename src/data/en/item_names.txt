@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Poison Sword (Bound)
+21995	Crow Steel Bow (Bound)
+21996	Bamboo Bell (Bound)
+21997	Thorned Claw (Bound)
 22000	Town Scroll
 22001	Back to town
 22010	Scroll of the Location
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Red Sung Ma Rune
 31248	Purple Sung Ma Rune
 31249	Blue Sung Ma Rune
-31250	Green Sung Ma Rune
+31250	Yellow Sung Ma Rune
 31251	Leather Hardener
 31252	Leather Hardener+
 31253	Gnoll Master Chest
@@ -8081,10 +8085,42 @@ VNUM	LOCALE_NAME
 41881	Gray Star Pupil (m)
 41882	Blue Star Pupil (f)
 41883	Gray Star Pupil (f)
-41884	Blue Star Pupil (m)+
-41885	Gray Star Pupil (m)+
-41886	Blue Star Pupil (f)+
-41887	Gray Star Pupil (f)+
+41884	Blue Star Pupil+ (m)
+41885	Gray Star Pupil+ (m)
+41886	Blue Star Pupil+ (f)
+41887	Gray Star Pupil+ (f)
+41888	Red Lifeguard (m)
+41889	White Lifeguard (m)
+41890	Red Lifeguard (f)
+41891	White Lifeguard (f)
+41892	Red Lifeguard+ (m)
+41893	White Lifeguard+ (m)
+41894	Red Lifeguard+ (f)
+41895	White Lifeguard+ (f)
+41896	Green Witch Doctor (m)
+41897	Red Witch Doctor (m)
+41898	Green Witch Doctor (f)
+41899	Red Witch Doctor (f)
+41900	Green Witch Doctor+ (m)
+41901	Red Witch Doctor+ (m)
+41902	Green Witch Doctor+ (f)
+41903	Red Witch Doctor+ (f)
+41904	Noble Legionary (m)
+41905	Dark Legionary (m)
+41906	Noble Legionary (f)
+41907	Dark Legionary (f)
+41908	Noble Legionary+ (m)
+41909	Dark Legionary+ (m)
+41910	Noble Legionary+ (f)
+41911	Dark Legionary+ (f)
+41912	Benevolent Armour (m)
+41913	Triumphal Armour (m)
+41914	Benevolent Armour (f)
+41915	Triumphal Armour (f)
+41916	Benevolent Armour+ (m)
+41917	Triumphal Armour+ (m)
+41918	Benevolent Armour+ (f)
+41919	Triumphal Armour+ (f)
 45001	Bunny Ears (brown)
 45002	Rabbit Ears (brown)
 45003	Headdress (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Red Star Pupil Glasses+
 45626	Blue Star Pupil Hairpin+
 45627	Red Star Pupil Hairpin+
+45628	Red Beach Cap (m)
+45629	White Beach Cap (m)
+45630	Red Beach Cap (f)
+45631	White Beach Cap (f)
+45632	Red Beach Cap+ (m)
+45633	White Beach Cap+ (m)
+45634	Red Beach Cap+ (f)
+45635	White Beach Cap+ (f)
+45636	G Witch Doctor Crown (m)
+45637	R Witch Doctor Crown (m)
+45638	G Witch Doctor Crown (f)
+45639	R Witch Doctor Crown (f)
+45640	G Witch Doctor Crown+(m)
+45641	R Witch Doctor Crown+(m)
+45642	G Witch Doctor Crown+(f)
+45643	R Witch Doctor Crown+(f)
+45644	Noble Legionary Helm (m)
+45645	Dark Legionary Helm (m)
+45646	Noble Legionary Helm (f)
+45647	Dark Legionary Helm (f)
+45648	Noble Legionary Helm+(m)
+45649	Dark Legionary Helm+ (m)
+45650	Noble Legionary Helm+(f)
+45651	Dark Legionary Helm+ (f)
+45652	Benevolent Crown (m)
+45653	Triumphal Crown (m)
+45654	Benevolent Crown (f)
+45655	Triumphal Crown (f)
+45656	Benevolent Crown+ (m)
+45657	Triumphal Crown+ (m)
+45658	Benevolent Crown+ (f)
+45659	Triumphal Crown+ (f)
 49001	Ordinary Aura Outfit
 49002	Simple Aura Outfit
 49003	Noble Aura Outfit
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Chest of Darkness
 50255	Cor Draconis (Rough)
 50260	Cor Draconis (Rough)
+50261	Cor Daemonis (Rough)
 50262	Scroll of Unbinding+
 50263	Scroll of Binding
 50264	Scroll of Unbinding
 50265	Golden Football
 50266	Jotun Thrym Chest
-50267	Golden Okey Chest
-50268	Silver Okey Chest
-50269	Bronze Okey Chest
+50267	Merry Golden Okey Chest
+50268	Merry Silver Okey Chest
+50269	Merry Bronze Okey Chest
 50270	Queen Meley's Chest
 50271	Dragon Watcher Chest
 50272	Golden Boss Reaper Chest
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong Water
 50820	Hwal Water
 50821	Red Dew
-50822	Pink Dew
+50822	Orange Dew
 50823	Yellow Dew
 50824	Green Dew
 50825	Blue Dew
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Valiant Moa
 52119	Valiant Moa
 52120	Valiant Moa
+52202	Turbo Surfboard
 52701	Lion Certificate
 52702	Tiger Certificate
 52703	Wild Boar Certificate
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini-Whistle
+53348	Loyal Ice Killer Whale
+53349	Mini Ice Killer Whale
+53350	Temerous Tiki Terror
+53351	Audacious Tiki Terror
+53352	Tiny Tiki Terror
+53353	Snow Krampus
+53354	Coal Krampus
+53355	Tiny Krampus
 53501	Fire Phoenix Cage
 53502	Reindeer Calf Chest
 53503	Ice Phoenix Cage
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Whistling Cog Box
 53628	Clacking Cog Box
 53629	Mini Cog Box
+53630	Dripping Whale Chest
+53631	Mini Whale Chest
+53632	Creaking Tiki Chest
+53633	Rattling Tiki Chest
+53634	Tiny Tiki Chest
+53635	Frozen Krampus Chest
+53636	Sooty Krampus Chest
+53637	Tiny Krampus Chest
 54041	NoNAme
 54042	NoNAme
 54043	Apprentice Chest I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Damnation Key+
 70450	Salvation Metin Scroll
 70451	Death Flame Bundle
-70500	Oneiric Soul+0
-70501	Oneiric Soul+1
-70502	Oneiric Soul+2
-70503	Oneiric Soul+3
-70504	Oneiric Soul+4
-70505	Celestial Soul+0
-70506	Celestial Soul+1
-70507	Celestial Soul+2
-70508	Celestial Soul+3
-70509	Celestial Soul+4
-70602	Soul Parchment (100%)
-70603	Soul Parchment
 70604	World Cup Chest
 70605	Ticket Chest
 70606	World Cup Trophy
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Snowflake Strongbox
 70614	Snowflake Comet
 70615	Snowflake Bambi
+70617	Treasure Ticket
+70618	Goblin Key
+70619	Goblin Key Box
 71000	Scroll of Fluid Training
 71001	Exorcism Scroll
 71002	Status Reset Document
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Winter Reindeer
 71271	Hasty Rabbit (Red)
 71272	Hasty Rabbit (Black)
+71273	Cursed Broom
+71274	Bewitched Broom
+71275	Noble Legion Horse
+71276	Dark Legion Horse
+71277	Halia
+71278	Aquilos
 72001	Experience Ring (10h)
 72002	Experience Ring (30m)
 72003	Experience Ring (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Scroll - General Yonghan
 72053	Guild Contract
 72054	Amulet of the Guardians
+72057	Double Experience Ring
 72058	Spirit Stone Bundle
 72059	Book of the Leader+
 72060	Book of the Leader+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Plat. Monster Card Box
 83075	Bitterberry Chest
 83076	Goldberry Chest
+83077	Dragon God Chest
 83100	Seungryong Reward Chest
 83101	Yongbi Reward Chest
 83102	Kuahlo Dong Reward Chest
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mythic Dragon Onyx
 165300	Mythic Dragon Onyx
 165400	Mythic Dragon Onyx
+170000	Rough Dragon Amethyst
+170100	Rough Dragon Amethyst
+170200	Rough Dragon Amethyst
+170300	Rough Dragon Amethyst
+170400	Rough Dragon Amethyst
+171000	Cut Dragon Amethyst
+171100	Cut Dragon Amethyst
+171200	Cut Dragon Amethyst
+171300	Cut Dragon Amethyst
+171400	Cut Dragon Amethyst
+172000	Rare Dragon Amethyst
+172100	Rare Dragon Amethyst
+172200	Rare Dragon Amethyst
+172300	Rare Dragon Amethyst
+172400	Rare Dragon Amethyst
+173000	Antique Dragon Amethyst
+173100	Antique Dragon Amethyst
+173200	Antique Dragon Amethyst
+173300	Antique Dragon Amethyst
+173400	Antique Dragon Amethyst
+174000	Legend. Dragon Amethyst
+174100	Legend. Dragon Amethyst
+174200	Legend. Dragon Amethyst
+174300	Legend. Dragon Amethyst
+174400	Legend. Dragon Amethyst
+175000	Mythic Dragon Amethyst
+175100	Mythic Dragon Amethyst
+175200	Mythic Dragon Amethyst
+175300	Mythic Dragon Amethyst
+175400	Mythic Dragon Amethyst

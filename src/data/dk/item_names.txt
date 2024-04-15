@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Giftsværd (Bundet)
+21995	Krage Stålbue (Bundet)
+21996	Bambus Klokke (Bundet)
+21997	Tornede Klo (Bundet)
 22000	By-dokument
 22001	Tilbage til byen
 22010	Omegns dokument
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Sort substans
 31082	Magmas ring
 31083	Samaels ring
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Svampe sporer
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Rød Sung Ma Rune
 31248	Lilla Sung Ma Rune
 31249	Blå Sung Ma Rune
-31250	Grøn Sung Ma Rune
+31250	Gul Sung Ma Rune
 31251	Læder Hærder
 31252	Læder Hærder+
 31253	Gnoll Mester Kiste
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Grå Stjernepupil (m)+
 41886	Blå Stjernepupil (k)+
 41887	Grå Stjernepupil (k)+
+41888	Rød Livredder (m)
+41889	Hvid Livredder (m)
+41890	Rød Livredder (k)
+41891	Hvid Livredder (k)
+41892	Rød Livredder+ (m)
+41893	Hvid Livredder+ (m)
+41894	Rød Livredder+ (k)
+41895	Hvid Livredder+ (k)
+41896	Grøn Heksedoktor (m)
+41897	Rød Heksedoktor (m)
+41898	Grøn Heksedoktor (k)
+41899	Rød Heksedoktor (k)
+41900	Grøn Heksedoktor+ (m)
+41901	Rød Heksedoktor+ (m)
+41902	Grøn Heksedoktor+ (k)
+41903	Rød Heksedoktor+ (k)
+41904	Adelig Legionær (m)
+41905	Mørk Legionær (m)
+41906	Adelig Legionær (k)
+41907	Mørk Legionær (k)
+41908	Adelig Legionær+ (m)
+41909	Mørk Legionær+ (m)
+41910	Adelig Legionær+ (k)
+41911	Mørk Legionær+ (k)
+41912	Velvillige Rustning (m)
+41913	Triumferende Rust. (m)
+41914	Velvillige Rustning (k)
+41915	Triumferende Rust. (k)
+41916	Velvillige Rustning+ (m)
+41917	Triumferende Rust.+ (m)
+41918	Velvillige Rustning+ (k)
+41919	Triumferende Rust.+ (k)
 45001	Brune kanin ører (brun)
 45002	Hare ører (brun)
 45003	Hovedbeklædning (M)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Røde Stjernepupil Bril.+
 45626	Blå Stjernepupil Hårnål+
 45627	Rød Stjernepupil Hårnål+
+45628	Rød Strandkasket (m)
+45629	Hvid Strandkasket (m)
+45630	Rød Strandkasket (k)
+45631	Hvid Strandkasket (k)
+45632	Rød Strandkasket+ (m)
+45633	Hvid Strandkasket+ (m)
+45634	Rød Strandkasket+ (k)
+45635	Hvid Strandkasket+ (k)
+45636	G Heksedoktor Krone (m)
+45637	R Heksedoktor Krone (m)
+45638	G Heksedoktor Krone (k)
+45639	R Heksedoktor Krone (k)
+45640	G Heksedoktor Krone+ (m)
+45641	R Heksedoktor Krone+ (m)
+45642	G Heksedoktor Krone+ (k)
+45643	R Heksedoktor Krone+ (k)
+45644	Adelig Legionær Hje. (m)
+45645	Mørk Legionær Hjelm (m)
+45646	Adelig Legionær Hje. (k)
+45647	Mørk Legionær Hjelm (k)
+45648	Adelig Legionær Hj.+ (m)
+45649	Mørk Legionær Hjelm+ (m)
+45650	Adelig Legionær Hj.+ (k)
+45651	Mørk Legionær Hjelm+ (k)
+45652	Velvillige Krone (m)
+45653	Triumferende Krone (m)
+45654	Velvillige Krone (k)
+45655	Triumferende Krone (k)
+45656	Velvillige Krone+ (m)
+45657	Triumferende Krone+ (m)
+45658	Velvillige Krone+ (k)
+45659	Triumferende Krone+ (k)
 49001	Almindelig Aura Outfit
 49002	Simpel Aura Outfit
 49003	Adelig Aura Outfit
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Mørkets kiste
 50255	Cor Draconis (uslebet)
 50260	Cor Draconis (uslebet)
+50261	Cor Daemonis (Uslebent)
 50262	Ubindende Dokument+
 50263	Rulle af bindning
 50264	Rulle af adskillelse
 50265	Gylden fodbold
 50266	Jotun Thrym kiste
-50267	Gylden Okey Kiste
-50268	Sølv Okey Kiste
-50269	Bronze Okey Kiste
+50267	Glæde. Gylden Okey Kiste
+50268	Glæde. Sølv Okey Kiste
+50269	Glæde. Bronze Okey Kiste
 50270	Dronning Meleys Kiste
 50271	Drage Vogter Kiste
 50272	Gylden Høstm. Boss Kiste
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong vand
 50820	Hwal-vand
 50821	Rød dug
-50822	Lyserød dug
+50822	Orange Dug
 50823	Gul dug
 50824	Grøn dug
 50825	Blå dug
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Tapper Moa
 52119	Tapper Moa
 52120	Tapper Moa
+52202	Turbo Surfbræt
 52701	Løve Certifikat
 52702	Tiger Certifikat
 52703	Vildsvin Certifikat
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Fløjte
 53346	Skruenøgle
 53347	Mini-Fløjte
+53348	Loyal Is Spækhugger
+53349	Mini Is Spækhugger
+53350	Frygtløs Tiki Terror
+53351	Dristig Tiki Terror
+53352	Lille Bitte Tiki Terror
+53353	Sne Krampus
+53354	Kul Krampus
+53355	Lille Bitte Krampus
 53501	Ild Føniks Bur
 53502	Rensdyr Kalv Kiste
 53503	Is Føniks Bur
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Frost Rufus Bur
 53522	Sheldons rede
 53523	Kanin bur
-53526	Pepita Can
+53526	NoNAme
 53527	Græskarhoved Bur
 53528	Kosteskab
 53529	Snefnug kiste
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Fløjtende Tandhjuls Boks
 53628	Klakkende Tandhjuls Boks
 53629	Mini Tandhjuls Boks
+53630	Dryppende Hval Kiste
+53631	Mini Hval Kiste
+53632	Knirkende Tiki Kiste
+53633	Raslende Tiki Kiste
+53634	Lille Bitte Tiki Kiste
+53635	Frossen Krampus Kiste
+53636	Sodet Krampus Kiste
+53637	Lille Bitte Krampus Kis.
 54041	NoNAme
 54042	NoNAme
 54043	Lærlinge kiste I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Fordømmelses Nøgle+
 70450	Frelsens Metin Dokument
 70451	Døds Flamme Bundt
-70500	Oneiric Sjæl+0
-70501	Oneiric Sjæl+1
-70502	Oneiric Sjæl+2
-70503	Oneiric Sjæl+3
-70504	Oneiric Sjæl+4
-70505	Celestial Sjæl+0
-70506	Celestial Sjæl+1
-70507	Celestial Sjæl+2
-70508	Celestial Sjæl+3
-70509	Celestial Sjæl+4
-70602	Sjæl Pergament (100%)
-70603	Sjæl Pergament
 70604	VM Kiste
 70605	Billet Kiste
 70606	VM Trofæet
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Snefnugs Stærkboks
 70614	Snefnugs Komet
 70615	Snefnugs Bambi
+70617	Skatte Billet
+70618	Nisse Nøgle
+70619	Nisse Nøgle Boks
 71000	Dok. Flydende Træning
 71001	Eksorcisme-dokument
 71002	Status-Nulstilling
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Merkur Leksikon (S)
 71217	Venus Leksikon (L)
 71218	Venus Leksikon (L)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Kyzaghans Hest
 71221	Kashmir Bundt.
 71222	Nirvana Drage
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Vinter Rensdyr
 71271	Forhastede Kanin (Rød)
 71272	Forhastede Kanin (Sort)
+71273	Forbandede Kost
+71274	Forheksede Kost
+71275	Adelig Legion Hest
+71276	Mørk Legion Hest
+71277	Halia
+71278	Aquilos
 72001	Erfaringsring (10t)
 72002	Erfaringsring (30m)
 72003	Erfaringsring (3t)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Dok. - General Yonghan
 72053	Ordens Kontrakt
 72054	Vogternes Amulet
+72057	Dobbelt Erfaringsring
 72058	Åndesten Bundt
 72059	Lederens Bog+
 72060	Lederens Bog+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Plat. Monster Korts Boks
 83075	Bitterbærs Kiste
 83076	Guldbærs Kiste
+83077	Dragegudens Kiste
 83100	Seung. Belønnings Kiste
 83101	Yongbi Belønnings Kiste
 83102	Kua. D. Belønnings Kiste
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mytisk Drage Onyks
 165300	Mytisk Drage Onyks
 165400	Mytisk Drage Onyks
+170000	Uslebent Drage Ametyst
+170100	Uslebent Drage Ametyst
+170200	Uslebent Drage Ametyst
+170300	Uslebent Drage Ametyst
+170400	Uslebent Drage Ametyst
+171000	Slebet Drage Ametyst
+171100	Slebet Drage Ametyst
+171200	Slebet Drage Ametyst
+171300	Slebet Drage Ametyst
+171400	Slebet Drage Ametyst
+172000	Sjælden Drage Ametyst
+172100	Sjælden Drage Ametyst
+172200	Sjælden Drage Ametyst
+172300	Sjælden Drage Ametyst
+172400	Sjælden Drage Ametyst
+173000	Antik Drage Ametyst
+173100	Antik Drage Ametyst
+173200	Antik Drage Ametyst
+173300	Antik Drage Ametyst
+173400	Antik Drage Ametyst
+174000	Legend. Drage Ametyst
+174100	Legend. Drage Ametyst
+174200	Legend. Drage Ametyst
+174300	Legend. Drage Ametyst
+174400	Legend. Drage Ametyst
+175000	Mytisk Drage Ametyst
+175100	Mytisk Drage Ametyst
+175200	Mytisk Drage Ametyst
+175300	Mytisk Drage Ametyst
+175400	Mytisk Drage Ametyst

@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Spada Velenosa(leg.)
+21995	Arco Acciaio Corv(leg.)
+21996	Campana Orchidea(leg.)
+21997	Artiglio spinato(leg.)
 22000	Papiro Città
 22001	Carta
 22010	Papiro del Luogo
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Runa SungMa rossa
 31248	Runa SungMa viola
 31249	Runa SungMa blu
-31250	Runa SungMa verde
+31250	Runa gialla di SungMa
 31251	Indurente per pelli
 31252	Indurente per pelli+
 31253	Baule maestro Gnoll
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Sekkione+ (grigio)
 41886	Sekkiona+ (blu)
 41887	Sekkiona+ (grigio)
+41888	Bagnino in rosso
+41889	Bagnino in bianco
+41890	Bagnina in rosso
+41891	Bagnina in bianco
+41892	Bagnino in rosso+
+41893	Bagnino in bianco+
+41894	Bagnina in rosso+
+41895	Bagnina in bianco+
+41896	Stregone verde
+41897	Stregone rosso
+41898	Strega verde
+41899	Strega rossa
+41900	Stregone verde+
+41901	Stregone rosso+
+41902	Strega verde+
+41903	Strega rossa+
+41904	Legionario pregiato
+41905	Legionario oscuro
+41906	Legionaria pregiata
+41907	Legionaria oscura
+41908	Legionario pregiato+
+41909	Legionario oscuro+
+41910	Legionaria pregiata+
+41911	Legionaria oscura+
+41912	Armatura Generosità(m)
+41913	Armatura Vittoria(m)
+41914	Armatura Generosità(f)
+41915	Armatura Vittoria(f)
+41916	Armatura Generosità(m)+
+41917	Armatura Vittoria(m)+
+41918	Armatura Generosità(f)+
+41919	Armatura Vittoria(f)+
 45001	Orecchie F marroni
 45002	Orecchie marroni per lui
 45003	Foulard (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Occh. Sekkione+ (grigio)
 45626	Clip Sekkiona+ (blu)
 45627	Clip Sekkiona+ (rosso)
+45628	Copricapo spiaggia R (m)
+45629	Copricapo spiaggia B (m)
+45630	Copricapo spiaggia R (f)
+45631	Copricapo spiaggia B (f)
+45632	Copricapo spiaggia R+(m)
+45633	Copricapo spiaggia B+(m)
+45634	Copricapo spiaggia R+(f)
+45635	Copricapo spiaggia B+(f)
+45636	Corona streg. verde (m)
+45637	Corona streg. rossa (m)
+45638	Corona streg. verde (f)
+45639	Corona streg. rossa (f)
+45640	Corona streg. verde+ (m)
+45641	Corona streg. rossa+ (m)
+45642	Corona streg. verde+ (f)
+45643	Corona streg. rossa+ (f)
+45644	Elmo Legione preg. (m)
+45645	Elmo Legione oscuro (m)
+45646	Elmo Legione preg. (f)
+45647	Elmo Legione oscuro (f)
+45648	Elmo Legione preg.+ (m)
+45649	Elmo Legione oscuro+ (m)
+45650	Elmo Legione preg.+ (f)
+45651	Elmo Legione oscuro+ (f)
+45652	Corona Generosità(m)
+45653	Corona Vittoria(m)
+45654	Corona Generosità(f)
+45655	Corona Vittoria(f)
+45656	Corona Generosità(m)+
+45657	Corona Vittoria(m)+
+45658	Corona Generosità(f)+
+45659	Corona Vittoria(f)+
 49001	Veste Aura comune
 49002	Veste Aura semplice
 49003	Veste Aura pregiata
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Scrigno dell'oscurità
 50255	Cor draconis (grezzo)
 50260	Cor draconis (grezzo)
+50261	Cor daemonis (grezzo)
 50262	Pergamena slegante+
 50263	Pergamena del legame
 50264	Pergamena slegante
 50265	Pallone d'oro
 50266	Baule di Jotun Thrym
-50267	Baule Okey oro
-50268	Baule Okey argento
-50269	Baule Okey bronzo
+50267	Baule Festa Okey oro
+50268	Baule Festa Okey argento
+50269	Baule Festa Okey bronzo
 50270	Baule della Regina Meley
 50271	Baule Guard. d. draghi
 50272	B. cacciatore boss oro
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Acqua Mong
 50820	Acqua Hwal
 50821	Rugiada rossa
-50822	Rugiada rosa
+50822	Rugiada arancione
 50823	Rugiada gialla
 50824	Rugiada verde
 50825	Rugiada blu
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Moa coraggioso
 52119	Moa coraggioso
 52120	Moa coraggioso
+52202	Turbo-surf
 52701	Certificato Leone
 52702	Certificato Tigre
 52703	Certificato Cinghiale
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini-Whistle
+53348	Fedele Orca Ass. Ghiacc.
+53349	Piccola Orca Ass. Ghacc.
+53350	Terrore Tiki coraggioso
+53351	Terrore Tiki sfrontato
+53352	Terrore Tiki piccolo
+53353	Krampus Neve
+53354	Krampus Carbone
+53355	Krampus piccolo
 53501	Gabbia Fenice di fuoco
 53502	Baule Baby-renna
 53503	Gabbia Fenice Ghiaccio
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Gabbia Rufus gelido
 53522	Nido di Sheldon
 53523	Gabbia conigli
-53526	Pepita Can
+53526	NoNAme
 53527	Gabbia Testa di zucca
 53528	Ripostiglio delle scope
 53529	Freezer di Fiocchetto
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Box Fischingranaggi
 53628	Box Clicchingranaggi
 53629	Box Ingranaggi mini
+53630	Cassa Orca gocciolante
+53631	Cassa Orca piccola
+53632	Scrigno Tiki cigolante
+53633	Scrigno Tiki Sussulto
+53634	Scrigno Tiki piccolo
+53635	Scrigno Krampus gelido
+53636	Scrigno Krampus sporco
+53637	Scrigno Krampus piccolo
 54041	NoNAme
 54042	NoNAme
 54043	Baule Apprendista I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Chiave Damnatio+
 70450	Pergam. Metin Salvezza
 70451	Set Fiamma letale
-70500	Anima onirica+0
-70501	Anima onirica+1
-70502	Anima onirica+2
-70503	Anima onirica+3
-70504	Anima onirica+4
-70505	Anima celeste+0
-70506	Anima celeste+1
-70507	Anima celeste+2
-70508	Anima celeste+3
-70509	Anima celeste+4
-70602	Perg. dell'anima (100%)
-70603	Pergamena dell'anima
 70604	Scrigno Campionato
 70605	Scrigno Biglietto
 70606	Trofeo Campionato
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Scrigno Fiocco di neve
 70614	Cometa Fiocco di neve
 70615	Bambi Fiocco di neve
+70617	Buono Tesoro
+70618	Chiave Goblin
+70619	Box Chiave Goblin
 71000	Pergam. tramuta-conosc.
 71001	Papiro dell'esorcismo
 71002	Ridistr. dello status
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Enciclop. Mercurio (G)
 71217	Enciclopedia Venere (P)
 71218	Enciclopedia Venere (G)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Cavallo Kyzaghan
 71221	Fagotto di cashmere
 71222	Drago Nirvana
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Renna Notte invernale
 71271	Coniglio Express (rosso)
 71272	Coniglio Express (nero)
+71273	Scopa maledetta
+71274	Scopa stregata
+71275	Cavallo Legione pregiato
+71276	Cavallo Legione oscuro
+71277	Halia
+71278	Aquilos
 72001	Anello esperienza (10h)
 72002	Anello esperienza (30m)
 72003	Anello esperienza (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Pergam. Generale Yonghan
 72053	Contratto delle gilde
 72054	Amuleto dei guardiani
+72057	Anello Esp. doppio
 72058	Fagotto Pietre spirit.
 72059	Libro del capo+
 72060	Libro del capo+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Box Platino Carta mostro
 83075	Scrigno Bacche amare
 83076	Scrigno Bacche d'oro
+83077	Scrigno Dio Drago
 83100	Ric. Seungryong
 83101	Ric. Yongbi
 83102	Ric. Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Onice mitica del drago
 165300	Onice mitica del drago
 165400	Onice mitica del drago
+170000	Ametista grezza d. drago
+170100	Ametista grezza d. drago
+170200	Ametista grezza d. drago
+170300	Ametista grezza d. drago
+170400	Ametista grezza d. drago
+171000	Ametista tagl. del drago
+171100	Ametista tagl. del drago
+171200	Ametista tagl. del drago
+171300	Ametista tagl. del drago
+171400	Ametista tagl. del drago
+172000	Ametista rara del drago
+172100	Ametista rara del drago
+172200	Ametista rara del drago
+172300	Ametista rara del drago
+172400	Ametista rara del drago
+173000	Ametista antica d. drago
+173100	Ametista antica d. drago
+173200	Ametista antica d. drago
+173300	Ametista antica d. drago
+173400	Ametista antica d. drago
+174000	Ametista legg. del drago
+174100	Ametista legg. del drago
+174200	Ametista legg. del drago
+174300	Ametista legg. del drago
+174400	Ametista legg. del drago
+175000	Ametista mit. del drago
+175100	Ametista mit. del drago
+175200	Ametista mit. del drago
+175300	Ametista mit. del drago
+175400	Ametista mit. del drago

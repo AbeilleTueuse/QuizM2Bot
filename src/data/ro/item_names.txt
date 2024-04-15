@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Sabie Otrãvitã (Pers)
+21995	Arc Oþel Cioarã (Pers)
+21996	Clopot Orhidee (Pers)
+21997	Ghearã Ascuþitã (Pers)
 22000	Pergamentul oraºului
 22001	Înapoi în oraº
 22010	Pergamentul Oraºului
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Materie Neagra
 31082	Inel Magma
 31083	Inelul lui Samael
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Spori de Ciuperci
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Runã Roºie Sung Ma
 31248	Runã Mov Sung Ma
 31249	Runã Albastrã Sung Ma
-31250	Runã Verde Sung Ma
+31250	Runã Galbenã Sung Ma
 31251	Întãritor Piele
 31252	Întãritor Piele+
 31253	Cufãr Maestru Gnoll
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Elev Vedetã Gri+ (m)
 41886	Elev Vedetã Albastr+ (f)
 41887	Elev Vedetã Gri+ (f)
+41888	Salvamar Roºu (m)
+41889	Salvamar Alb (m)
+41890	Salvamar Roºu (f)
+41891	Salvamar Alb (f)
+41892	Salvamar Roºu+ (m)
+41893	Salvamar Alb+ (m)
+41894	Salvamar Roºu+ (f)
+41895	Salvamar Alb+ (f)
+41896	Vrãjitor Demon Verde (m)
+41897	Vrãjitor Demon Roºu (m)
+41898	Vrãjitor Demon Verde (f)
+41899	Vrãjitor Demon Roºu (f)
+41900	Vrãjitor Demon Verd+ (m)
+41901	Vrãjitor Demon Roºu+ (m)
+41902	Vrãjitor Demon Verd+ (f)
+41903	Vrãjitor Demon Roºu+ (f)
+41904	Legionar Nobil (m)
+41905	Legionar Întunecat (m)
+41906	Legionar Nobil (f)
+41907	Legionar Întunecat (f)
+41908	Legionar Nobil+ (m)
+41909	Legionar Întunecat+ (m)
+41910	Legionar Nobil+ (f)
+41911	Legionar Întunecat+ (f)
+41912	Armurã Protectoare (m)
+41913	Armurã Triumfalã (m)
+41914	Armurã Protectoare (f)
+41915	Armurã Triumfalã (f)
+41916	Armurã Protectoare+ (m)
+41917	Armurã Triumfalã+ (m)
+41918	Armurã Protectoare+ (f)
+41919	Armurã Triumfalã+ (f)
 45001	Urechi de Iepuras (maro)
 45002	Urechi de Iepure (maro)
 45003	Bandana (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Ochel Elev Vedetã Roºii+
 45626	Ac Pãr Elev Vdt Albas+
 45627	Ac Pãr Elev Vedetã Roºu+
+45628	ªapcã Plajã Roºie (m)
+45629	ªapcã Plajã Albã (m)
+45630	ªapcã Plajã Roºie (f)
+45631	ªapcã Plajã Albã (f)
+45632	ªapcã Plajã Roºie+ (m)
+45633	ªapcã Plajã Albã+ (m)
+45634	ªapcã Plajã Roºie+ (f)
+45635	ªapcã Plajã Albã+ (f)
+45636	Coroanã Vrãj Demon V (m)
+45637	Coroanã Vrãj Demon R (m)
+45638	Coroanã Vrãj Demon V (f)
+45639	Coroanã Vrãj Demon R (f)
+45640	Coroanã Vrãj Demon V+(m)
+45641	Coroanã Vrãj Demon R+(m)
+45642	Coroanã Vrãj Demon V+(f)
+45643	Coroanã Vrãj Demon R+(f)
+45644	Coif Legionar Nobil (m)
+45645	Coif Legion Întunec (m)
+45646	Coif Legionar Nobil (f)
+45647	Coif Legion Întunec (f)
+45648	Coif Legionar Nobil+ (m)
+45649	Coif Legion Întunec+ (m)
+45650	Coif Legionar Nobil+ (f)
+45651	Coif Legion Întunec+ (f)
+45652	Coroanã Protectoare (m)
+45653	Coroanã Triumfalã (m)
+45654	Coroanã Protectoare (f)
+45655	Coroanã Triumfalã (f)
+45656	Coroanã Protectoare+ (m)
+45657	Coroanã Triumfalã+ (m)
+45658	Coroanã Protectoare+ (f)
+45659	Coroanã Triumfalã+ (f)
 49001	Costum Aura Comun
 49002	Costum Aura Simplu
 49003	Costum Aura Nobil
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Cufãrul Întunericului
 50255	Cor Draconis (Brut)
 50260	Cor Draconis (Brut)
+50261	Cor Daemonis (Brut)
 50262	Pergam. Depersonalizat+
 50263	Pergament Personalizat
 50264	Pergam. Depersonalizat
 50265	Balon de Aur
 50266	Cufãr Jotun Thrym
-50267	Cufãr Auriu Okey
-50268	Cufãr Argintiu Okey
-50269	Cufãr Bronz Okey
+50267	Cufãr Auriu Okey Vesel
+50268	Cufãr Argint Okey Vesel
+50269	Cufãr Bronz Okey Vesel
 50270	Cufãr Regina Meley
 50271	Cufãr Gardã Dragon
 50272	Cufãr Aur Spintecãtor
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Apa Mong
 50820	Apã Hwal
 50821	Rouã roºie
-50822	Rouã roz
+50822	Rouã Portocalie
 50823	Rouã galbenã
 50824	Rouã verde
 50825	Rouã albastrã
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Moa Curajos
 52119	Moa Curajos
 52120	Moa Curajos
+52202	Placã de Surf Turbo
 52701	Autorizaþie pt Leu
 52702	Autorizaþie pt Tigru
 52703	Autorizaþie pt Mistreþ
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Micul Whistle
+53348	Balenã de Gheaþã Loialã
+53349	Balenã de Gheaþã Mini
+53350	Tiki Terror Nesãbuit
+53351	Tiki Terror Îndrãzneþ
+53352	Tiki Terror Mic
+53353	Krampus Zãpadã
+53354	Krampus Cãrbune
+53355	Krampus Mic
 53501	Cuºcã Phoenix de Foc
 53502	Cufãr Ren Tânãr
 53503	Cuºcã Phoenix de Gheaþã
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Cuºcã Rufus de Gheaþã
 53522	Ascunzatoare Sheldon
 53523	Cusca de Iepure
-53526	Pepita Can
+53526	NoNAme
 53527	Cusca Cap de Dovleac
 53528	Dulap cu Maturi
 53529	Cufãr Fulg de Nea
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Cutie Whistle
 53628	Cutie Wrench
 53629	Cutie Micul Whistle
+53630	Cufãr Ud Balenã
+53631	Cufãr Mini Balenã
+53632	Cufãr Tiki Agitat
+53633	Cufãr Tiki Zgomotos
+53634	Cufãr Tiki Mic
+53635	Cufãr Krampus Îngheþat
+53636	Cufãr Krampus Cãrbune
+53637	Cufãr Krampus Mic
 54041	NoNAme
 54042	NoNAme
 54043	Cufãr Începãtor I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Cheia Condamnaþilor+
 70450	Pergament Metin Salvare
 70451	Mãnunchi Flacãra Morþii
-70500	Spirit Oneiric+0
-70501	Spirit Oneiric+1
-70502	Spirit Oneiric+2
-70503	Spirit Oneiric+3
-70504	Spirit Oneiric+4
-70505	Spirit Celest+0
-70506	Spirit Celest+1
-70507	Spirit Celest+2
-70508	Spirit Celest+3
-70509	Spirit Celest+4
-70602	Pergament Spirit (100%)
-70603	Pergament Spirit
 70604	Cufãr Cupa Mondialã
 70605	Cufãr Tichet
 70606	Trofeu Cupa Mondialã
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Cutie Masivã Fulg de Nea
 70614	Comet Fulg de Nea
 70615	Bambi Fulg de Nea
+70617	Tichet Comoarã
+70618	Cheie Goblin
+70619	Cutie Cheie Goblin
 71000	Pergament Deºtept
 71001	Pergamentul Exorcizãrii
 71002	Pergam. Reset Status
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Enciclopedie Mercur (L)
 71217	Enciclopedie Venus (S)
 71218	Enciclopedie Venus (L)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Calul lui Kyzaghan
 71221	Mãnunchi de Kaºmir
 71222	Dragon Nirvana
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Renul Iarnã
 71271	Iepuraº Grãbit (Roºu)
 71272	Iepuraº Grãbit (Negru)
+71273	Mãturã Blestematã
+71274	Mãturã Fermecatã
+71275	Cal Legionar Nobil
+71276	Cal Legionar Întunecat
+71277	Halia
+71278	Aquilos
 72001	Inelul Experienþei (10h)
 72002	Inelul Experienþei (30m)
 72003	Inelul Experienþei (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Perg. - General Yonghan
 72053	Contract Breaslã
 72054	Amuleta Gardienilor
+72057	Inel Dublu Experienþã
 72058	Mãnunchi Piatrã Spirit
 72059	Cartea Comandantului+
 72060	Cartea Comandantului+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Cutie Platinã Card Monst
 83075	Cufãr Fructe Amare
 83076	Cufãr Fructe Aurii
+83077	Cufãr Zeul Dragon
 83100	Cufãr Recomp. Seungryong
 83101	Cufãr Recomp. Yongbi
 83102	Cufãr Recomp Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Onyx Dragon Mitic
 165300	Onyx Dragon Mitic
 165400	Onyx Dragon Mitic
+170000	Ametist Dragon Brut
+170100	Ametist Dragon Brut
+170200	Ametist Dragon Brut
+170300	Ametist Dragon Brut
+170400	Ametist Dragon Brut
+171000	Ametist Dragon Tãiat
+171100	Ametist Dragon Tãiat
+171200	Ametist Dragon Tãiat
+171300	Ametist Dragon Tãiat
+171400	Ametist Dragon Tãiat
+172000	Ametist Dragon Rar
+172100	Ametist Dragon Rar
+172200	Ametist Dragon Rar
+172300	Ametist Dragon Rar
+172400	Ametist Dragon Rar
+173000	Ametist Dragon Antic
+173100	Ametist Dragon Antic
+173200	Ametist Dragon Antic
+173300	Ametist Dragon Antic
+173400	Ametist Dragon Antic
+174000	Ametist Dragon Legendar
+174100	Ametist Dragon Legendar
+174200	Ametist Dragon Legendar
+174300	Ametist Dragon Legendar
+174400	Ametist Dragon Legendar
+175000	Ametist Dragon Mitic
+175100	Ametist Dragon Mitic
+175200	Ametist Dragon Mitic
+175300	Ametist Dragon Mitic
+175400	Ametist Dragon Mitic

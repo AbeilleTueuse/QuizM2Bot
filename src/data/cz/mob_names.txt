@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Vıroèní vlajka 7
 20134	Sluneèní prapor
 20135	Vánoèní vlajka
+20138	Prapor Ramadánu
 20139	Vlajka cechu (purpurová)
 20140	Vlajka cechu (mod./zel.)
 20141	Vlajka cechu (èer./zla.)
-20138	Prapor Ramadánu
 20142	Halloweenská vlajka
 20143	Velikonoèní prapor
 20146	Portál do Jiného svìta
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Snìhová vloèka Kometa
 20289	Rychlı králík (èervenı)
 20290	Rychlı králík (èernı)
+20291	Prokleté koštì
+20292	Oèarované koštì
+20293	Ušlechtilı kùò legie
+20294	Temnı kùò legie
+20295	Halia
+20296	Aquilos
 20300	Uèitel tìlesného boje
 20301	Uèitel mentálního boje
 20302	Uèitel boje zblízka
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Tajemnı oltáø
 20851	Lovec odmìn (Pustiny)
 20852	Lovec odmìn (Propast)
+20856	Goblin s pokladem
+20857	Velká pokladnice
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	1001 nocí
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Píšalka
 34181	Klíè
 34182	Mini klíè
+34183	Vìrná led. zab. velryba
+34184	Mini led. zab. velryba
+34185	Odvánı Tiki Terror
+34186	Stateènı Tiky Terror
+34187	Malı Tiki Terror
+34188	Snìnı Krampus
+34189	Uhelnı Krampus
+34190	Malı Krampus
+40003	Turbo surfovací prkno
 60000	Správce cechu
 60001	Správce cechu
 60002	Správce cechu

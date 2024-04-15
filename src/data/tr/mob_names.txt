@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Yýl dönümü flamasý 7
 20134	Güneþ flamasý
 20135	Noel Flamasý
+20138	Ramazan flamasý
 20139	Lonca flamasý (eflatun)
 20140	Lonca flam. (mavi/yeþil)
 20141	Lonca flama (kýr./altýn)
-20138	Ramazan flamasý
 20142	Cadýlar Bayramý Flamasý
 20143	Paskalya afiþi
 20146	Öbür Dünya Portalý
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Kar Tanesi Yýldýzý
 20289	Aceleci tavþan (kýrmýzý)
 20290	Aceleci tavþan (siyah)
+20291	Lanetli süpürge
+20292	Büyülü süpürge
+20293	Asil lejyon atý
+20294	Karanlýk lejyon atý
+20295	Halia
+20296	Aquilos
 20300	Bedensel Savaþ Öðretmeni
 20301	Zihinsel Savaþ Öðretmeni
 20302	Yakýn Dövüþ Öðretmeni
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Gizemli sunak
 20851	Kelle avcýsý. (Se. Ço.)
 20852	Kelle avcýsý. (Namg. Y.)
+20856	Hazine Goblini
+20857	Devasa define sandýðý
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	Binbir Gece
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini Whistle
+34183	Sadýk katil buz balinasý
+34184	Küçük buz balinasý
+34185	Cesur Tiki korkuluðu
+34186	Þýmarýk Tiki korkuluðu
+34187	Küçük Tiki korkuluðu
+34188	Kar Krampus
+34189	Kömür Krampus
+34190	Küçük Krampus
+40003	Turbo sörf tahtasý
 60000	Lonca yöneticisi
 60001	Lonca yöneticisi
 60002	Lonca yöneticisi

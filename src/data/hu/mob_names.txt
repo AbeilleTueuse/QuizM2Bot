@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Évfordulós Lobogó 7
 20134	Nap lobogó
 20135	Karácsonyi lobogó
+20138	Ramadán lobogó
 20139	Céh Lobogó (lila)
 20140	Céh Lobogó (kék/zöld)
 20141	Céh Lobogó (piros/arany)
-20138	Ramadán lobogó
 20142	Halloween lobogó
 20143	Húsvéti lobogó
 20146	Túlvilág portál
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Hópehely Üstökös
 20289	Rohanó nyuszi (piros)
 20290	Rohanó nyuszi (fekete)
+20291	Elátkozott seprû
+20292	Elvarázsolt seprû
+20293	Nemes légiós ló
+20294	Sötét légiós ló
+20295	Halia
+20296	Aquilosz
 20300	Testi küzdelem oktató
 20301	Mentális küzdelem oktató
 20302	Tõrharc oktató
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Titokzatos oltár
 20851	Fejvadász (Seo G. pusz.)
 20852	Fejvadász (Nam G. szak.)
+20856	Kincses kobold
+20857	Hatalmas kincsesláda
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	1001 éjszaka
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Kattogó
 34181	Berregõ
 34182	Mini kattogó
+34183	Hûséges jég gyilk. bálna
+34184	Kis jég gyilkos bálna
+34185	Gonosz rémség totem
+34186	Vakmerõ rémség totem
+34187	Kis rémség totem
+34188	Hó krampusz
+34189	Szén krampusz
+34190	Kis krampusz
+40003	Turbó szörfdeszka
 60000	Céh-adminisztrátor
 60001	Céh-adminisztrátor
 60002	Céh-adminisztrátor

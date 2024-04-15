@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Zatruty Miecz (zw.)
+21995	Stalowy £uk Kruka (zw.)
+21996	Bambusowy Dzwon (zw.)
+21997	Kolczasty Szpon (zw.)
 22000	Zwój Powrotu Do Miasta
 22001	Zwój Powrotu Do Miasta
 22010	Zwój Powrotu
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Czerwona Runa SungMa
 31248	Liliowa Runa SungMa
 31249	Niebieska Runa SungMa
-31250	Zielona Runa SungMa
+31250	¯ó³ta Runa SungMa
 31251	Utwardzacz Skóry
 31252	Utwardzacz Skóry+
 31253	Skrzynia Mistrza Gnolli
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Szary Wzorowy Uczeñ+
 41886	Nieb. Wzorowa Uczennica+
 41887	Szara Wzorowa Uczennica+
+41888	C. Ratownik Pla¿owy
+41889	B. Ratownik Pla¿owy
+41890	C. Ratowniczka Pla¿owa
+41891	B. Ratowniczka Pla¿owa
+41892	C. Ratownik Pla¿owy+
+41893	B. Ratownik Pla¿owy+
+41894	C. Ratowniczka Pla¿owa+
+41895	B. Ratowniczka Pla¿owa+
+41896	Zielony Szaman
+41897	Czerwony Szaman
+41898	Zielona Szamanka
+41899	Czerwona Szamanka
+41900	Zielony Szaman+
+41901	Czerwony Szaman+
+41902	Zielona Szamanka+
+41903	Czerwona Szamanka+
+41904	Szlachetny Legionista
+41905	Mroczny Legionista
+41906	Szlachetna Legionistka
+41907	Mroczna Legionistka
+41908	Szlachetny Legionista+
+41909	Mroczny Legionista+
+41910	Szlachetna Legionistka+
+41911	Mroczna Legionistka+
+41912	Zbroja Szczodrego
+41913	Zbroja Zwyciêskiego
+41914	Zbroja Szczodrej
+41915	Zbroja Zwyciêskiej
+41916	Zbroja Szczodrego+
+41917	Zbroja Zwyciêskiego+
+41918	Zbroja Szczodrej+
+41919	Zbroja Zwyciêskiej+
 45001	Uszy Zaj¹czka (br¹zowe)
 45002	Uszy Zaj¹ca (br¹z.)
 45003	Chusta (m)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Czerw. Okul. Wz. Ucznia+
 45626	Nieb. Spinka Wz. Ucznia+
 45627	Czerw. Spinka W. Ucznia+
+45628	C. Czapka Pla¿owa (m)
+45629	B. Czapka Pla¿owa (m)
+45630	C. Czapka Pla¿owa (k)
+45631	B. Czapka Pla¿owa (k)
+45632	C. Czapka Pla¿owa+ (m)
+45633	B. Czapka Pla¿owa+ (m)
+45634	C. Czapka Pla¿owa+ (k)
+45635	B. Czapka Pla¿owa+ (k)
+45636	Zielona Szam. Korona (m)
+45637	Czerw. Szam. Korona (m)
+45638	Zielona Szam. Korona (k)
+45639	Czerw. Szam. Korona (k)
+45640	Ziel. Szam. Korona+ (m)
+45641	Czerw. Szam. Korona+ (m)
+45642	Ziel. Szam. Korona+ (k)
+45643	Czerw. Szam. Korona+ (k)
+45644	Szl. He³m Legionisty (m)
+45645	Mro. He³m Legionisty (m)
+45646	Szl. He³m Legionisty (k)
+45647	Mro. He³m Legionisty (k)
+45648	Sz. He³m Legionisty+ (m)
+45649	Mr. He³m Legionisty+ (m)
+45650	Sz. He³m Legionisty+ (k)
+45651	Mr. He³m Legionisty+ (k)
+45652	Korona Szczodrego
+45653	Korona Zwyciêskiego
+45654	Korona Szczodrej
+45655	Korona Zwyciêskiej
+45656	Korona Szczodrego+
+45657	Korona Zwyciêskiego+
+45658	Korona Szczodrej+
+45659	Korona Zwyciêskiej+
 49001	Zwyczajna Szata Aury
 49002	Prosta Szata Aury
 49003	Szlachetna Szata Aury
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Skrzynia Mroku
 50255	Cor Draconis (surowe)
 50260	Cor Draconis (surowe)
+50261	Cor Daemonis (surowe)
 50262	Pergamin Przerwania+
 50263	Pergamin Wiêzi
 50264	Pergamin Przerwania
 50265	Z³ota Pi³ka
 50266	Skrzynia Jotuna Thryma
-50267	Z³ota Skrzynia Okey
-50268	Srebrna Skrzynia Okey
-50269	Br¹zowa Skrzynia Okey
+50267	Z³ota Œwi¹t. Skrz. Okey
+50268	Sreb. Œwi¹t. Skrz. Okey
+50269	Br¹z. Œwi¹t. Skrz. Okey
 50270	Skrzynia Królowej Meley
 50271	Skrzynia Sm. Stra¿ników
 50272	Z³. Skrzy. £owcy Bossów
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Woda Mong
 50820	Woda Hwal
 50821	Czerwona Rosa
-50822	Ró¿owa Rosa
+50822	Pomarañczowa Rosa
 50823	¯ó³ta Rosa
 50824	Zielona Rosa
 50825	Niebieska Rosa
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Chrobry Moa
 52119	Chrobry Moa
 52120	Chrobry Moa
+52202	Turbodeska Surfingowa
 52701	Œwiadectwo Lwa
 52702	Œwiadectwo Tygrysa
 52703	Œwiadectwo Dzika
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Whistle
 53346	Wrench
 53347	Mini-Whistle
+53348	Wierny Lod. Wiel. Zab.
+53349	Ma³y Lod. Wiel. Zabójca
+53350	Dzielne Straszyd³o Tiki
+53351	Zuchwa³e Straszyd³o Tiki
+53352	Ma³e Straszyd³o Tiki
+53353	Œnie¿ny Krampus
+53354	Wêglowy Krampus
+53355	Ma³y Krampus
 53501	Klatka Ognistego Feniksa
 53502	Skrzynia Reniferka
 53503	Klatka Lodowego Feniksa
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Klatka MroŸnego Rufusa
 53522	Gniazdo Sheldona
 53523	Zajêcza Klatka
-53526	Pepita Can
+53526	NoNAme
 53527	Klatka Dyniowej G³ówki
 53528	Komórka na Miot³y
 53529	Skrzynka P³atka Œniegu
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Gwi¿d¿. skrz. kó³ek zêb.
 53628	Stukaj. skrz. kó³ek zêb.
 53629	Ma³a skrz. kó³ek zêb.
+53630	Kapi¹ca Szkat. Wieloryba
+53631	Ma³a Szkatu³ka Wieloryba
+53632	Trzeszcz. Skrzynia Tiki
+53633	Dygocz¹ca Skrzynia Tiki
+53634	Ma³a Skrzynia Tiki
+53635	Lod. Skrzynia Krampusa
+53636	Okopc. Skrz. Krampusa
+53637	Ma³a Skrzynia Krampusa
 54041	NoNAme
 54042	NoNAme
 54043	Skrzynia Ucznia I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Klucz Potêpienia+
 70450	Zwój Metina Zbawienia
 70451	Pakiet Trupich P³omieni
-70500	Dusza Snu+0
-70501	Dusza Snu+1
-70502	Dusza Snu+2
-70503	Dusza Snu+3
-70504	Dusza Snu+4
-70505	Dusza Nieba+0
-70506	Dusza Nieba+1
-70507	Dusza Nieba+2
-70508	Dusza Nieba+3
-70509	Dusza Nieba+4
-70602	Pergamin Duszy (100%)
-70603	Pergamin Duszy
 70604	Skrzynia mistrzowska
 70605	Skrzynia biletowa
 70606	Trofeum mistrzowskie
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Skrzynia P³atków Œniegu
 70614	Œnie¿na Kometa
 70615	Œnie¿ny Bambi
+70617	Bilet Skarbów
+70618	Klucz Goblina
+70619	Pud. z Kluczami Goblina
 71000	Zwój Zmiany Treningu
 71001	Zwój Egzorcyzmu
 71002	Zwój Powrotu Statusu
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Encyklop. Merkurego (D)
 71217	Encyklopedia Wenus (M)
 71218	Encyklopedia Wenus (D)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Koñ Kyzaghana
 71221	Szpula Kaszmiru
 71222	Smok Nirwana
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Renifer zimowej nocy
 71271	Poœp. Królik (czer.)
 71272	Poœp. Królik (czar.)
+71273	Przeklêta Miot³a
+71274	Zaczarowana Miot³a
+71275	Szlachetny Legionowy Koñ
+71276	Mroczny Legionowy Koñ
+71277	Halia
+71278	Aquilos
 72001	Pierœcieñ Doœwiad. (10h)
 72002	Pierœcieñ Doœwiad. (30m)
 72003	Pierœcieñ Doœwiad. (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Zwój Przywo³ania GY
 72053	Traktat Gildii
 72054	Amulet Stra¿ników
+72057	Podw. Pierœc. Doœwiadcz.
 72058	Pakiet Kamieni Duszy
 72059	Ksi¹¿ka Lidera+
 72060	Ksi¹¿ka Lidera+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Platyn. Pud. Kart Potw.
 83075	Skrzynia jagód gorycz.
 83076	Skrzynia z³otych jagód
+83077	Skrzynia Boga Smoków
 83100	Nagroda Dol. Seungryong
 83101	Nagroda Pustyni Yongbi
 83102	Nagroda Kuahlo Dong
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mityczny Smoczy Onyks
 165300	Mityczny Smoczy Onyks
 165400	Mityczny Smoczy Onyks
+170000	Surowy Smoczy Ametyst
+170100	Surowy Smoczy Ametyst
+170200	Surowy Smoczy Ametyst
+170300	Surowy Smoczy Ametyst
+170400	Surowy Smoczy Ametyst
+171000	Szlif. Smoczy Ametyst
+171100	Szlif. Smoczy Ametyst
+171200	Szlif. Smoczy Ametyst
+171300	Szlif. Smoczy Ametyst
+171400	Szlif. Smoczy Ametyst
+172000	Rzadki Smoczy Ametyst
+172100	Rzadki Smoczy Ametyst
+172200	Rzadki Smoczy Ametyst
+172300	Rzadki Smoczy Ametyst
+172400	Rzadki Smoczy Ametyst
+173000	Antyczny Smoczy Ametyst
+173100	Antyczny Smoczy Ametyst
+173200	Antyczny Smoczy Ametyst
+173300	Antyczny Smoczy Ametyst
+173400	Antyczny Smoczy Ametyst
+174000	Legend. Smoczy Ametyst
+174100	Legend. Smoczy Ametyst
+174200	Legend. Smoczy Ametyst
+174300	Legend. Smoczy Ametyst
+174400	Legend. Smoczy Ametyst
+175000	Mityczny Smoczy Ametyst
+175100	Mityczny Smoczy Ametyst
+175200	Mityczny Smoczy Ametyst
+175300	Mityczny Smoczy Ametyst
+175400	Mityczny Smoczy Ametyst

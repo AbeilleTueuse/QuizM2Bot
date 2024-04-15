@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Jubiläumsbanner 7
 20134	Sonnenbanner
 20135	Weinachtsbanner
+20138	Ramadanbanner
 20139	Gildenbanner (lila)
 20140	Gildenbanner (blau/grün)
 20141	Gildenbanner (rot/gold)
-20138	Ramadanbanner
 20142	Halloween-Banner
 20143	Osterbanner
 20146	Anderwelt-Portal
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Schneeflocken-Komet
 20289	Eiliges Kaninchen (rot)
 20290	Eiliges Kaninchen (sch.)
+20291	Verfluchter Besen
+20292	Verhexter Besen
+20293	Edles Legionspferd
+20294	Dunkles Legionspferd
+20295	Halia
+20296	Aquilos
 20300	Körper-Kampf Lehrer
 20301	Mental-Kampf Lehrer
 20302	Nahkampf Lehrer
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Mysteriöser Altar
 20851	Kopfgeldj. (Ödl. v. Se.)
 20852	Kopfgeldjäger (Namgank.)
+20856	Schatzgoblin
+20857	Riesige Schatztruhe
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	Tausendundeine Nacht
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini-Whistle
+34183	Treuer Eiskillerwal
+34184	Kleiner Eiskillerwal
+34185	Mutiger Tiki-Schrecken
+34186	Frecher Tiki-Schrecken
+34187	Kleiner Tiki-Schrecken
+34188	Schnee-Krampus
+34189	Kohlen-Krampus
+34190	Kleiner Krampus
+40003	Turbo-Surfboard
 60000	Gildenverwalter
 60001	Gildenverwalter
 60002	Gildenverwalter

@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Estandarte Aniversário 7
 20134	Estandarte Solar
 20135	Estandarte de Natal
+20138	Estandarte de Ramadão
 20139	Estandarte Guild (Roxo)
 20140	Estandarte Guild (Az/Vd)
 20141	Estandarte Guild (Vm/Ou)
-20138	Estandarte de Ramadão
 20142	Estandarte de Halloween
 20143	Estandarte de Páscoa
 20146	Portal do Outro Mundo
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Cometa Floco de Neve
 20289	Coelho Apressado (Verm.)
 20290	Coelho Apressado (Preto)
+20291	Vassoura Maldita
+20292	Vassoura Enfeitiçada
+20293	Cavalo da Legião Nobre
+20294	Cavalo da Legião Negra
+20295	Halia
+20296	Aquilos
 20300	Professor - Luta Corpo
 20301	Professor - Luta Mental
 20302	Professor - Arte Furtiva
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Altar Misterioso
 20851	Caça-Prémios (TB Seo Gw)
 20852	Caça-Prémios (A. Nam Gw)
+20856	Duende do Tesouro
+20857	Caixa do Tesouro Enorme
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	1001 Noites
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini Whistle
+34183	Orca do Gelo Leal
+34184	Mini Orca do Gelo
+34185	Tiki do Terror Temeroso
+34186	Tiki do Terror Corajoso
+34187	Tiki do Terror Pequeno
+34188	Krampus da Neve
+34189	Krampus do Carvão
+34190	Krampus Pequeno
+40003	Turboprancha de Surf
 60000	Gestor da Guild
 60001	Gestor da Guild
 60002	Gestor da Guild

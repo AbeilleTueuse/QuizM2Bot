@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Anniversary Banner 7
 20134	Solar Banner
 20135	Christmas Banner
+20138	Ramadan Banner
 20139	Guild Banner (Purple)
 20140	Guild Banner (Blue/Gr.)
 20141	Guild Banner (Red/Gold)
-20138	Ramadan Banner
 20142	Halloween Banner
 20143	Easter Banner
 20146	Otherworld Portal
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Snowflake Comet
 20289	Hasty Rabbit (Red)
 20290	Hasty Rabbit (Black)
+20291	Cursed Broom
+20292	Bewitched Broom
+20293	Noble Legion Horse
+20294	Dark Legion Horse
+20295	Halia
+20296	Aquilos
 20300	Body-Force Teacher
 20301	Mental-Fight Teacher
 20302	Blade-Fight Teacher
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Mysterious Altar
 20851	Bounty H. (Seo Gw. W.)
 20852	Bounty H. (Nam Gw. Ch.)
+20856	Treasure Goblin
+20857	Huge Treasure Chest
 30000	개인상점
 30001	개인상점
 30002	1001 Nights
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini-Whistle
+34183	Loyal Ice Killer Whale
+34184	Mini Ice Killer Whale
+34185	Temerous Tiki Terror
+34186	Audacious Tiki Terror
+34187	Tiny Tiki Terror
+34188	Snow Krampus
+34189	Coal Krampus
+34190	Tiny Krampus
+40003	Turbo Surfboard
 60000	Guild Manager
 60001	Guild Manager
 60002	Guild Manager

@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Méregkard (kötött)
+21995	Varjúacél íj (kötött)
+21996	Orchidea harang (kötött)
+21997	Tövises karom (kötött)
 22000	Vissza a városba
 22001	Vissza a városba
 22010	Visszaszállító tekercs
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Vörös Sung Ma rúna
 31248	Lila Sung Ma rúna
 31249	Kék Sung Ma rúna
-31250	Zöld Sung Ma rúna
+31250	Sárga Sung Ma rúna
 31251	Bõrkeményítõ
 31252	Bõrkeményítõ+
 31253	Gnoll mester láda
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Szürke éltanuló+ (f)
 41886	Kék éltanuló+ (n)
 41887	Szürke éltanuló+ (n)
+41888	Piros vízimentõ (f)
+41889	Fehér vízimentõ (f)
+41890	Piros vízimentõ (n)
+41891	Fehér vízimentõ (n)
+41892	Piros vízimentõ+ (f)
+41893	Fehér vízimentõ+ (f)
+41894	Piros vízimentõ+ (n)
+41895	Fehér vízimentõ+ (n)
+41896	Zöld varázsdoktor (f)
+41897	Vörös varázsdoktor (f)
+41898	Zöld varázsdoktor (n)
+41899	Vörös varázsdoktor (n)
+41900	Zöld varázsdoktor+ (f)
+41901	Vörös varázsdoktor+ (f)
+41902	Zöld varázsdoktor+ (n)
+41903	Vörös varázsdoktor+ (n)
+41904	Nemes légiós (f)
+41905	Sötét légiós (f)
+41906	Nemes légiós (n)
+41907	Sötét légiós (n)
+41908	Nemes légiós+ (f)
+41909	Sötét légiós+ (f)
+41910	Nemes légiós+ (n)
+41911	Sötét légiós+ (n)
+41912	Jóság páncélja (f)
+41913	Dicsõség páncélja (f)
+41914	Jóság páncélja (n)
+41915	Dicsõség páncélja (n)
+41916	Jóság páncélja+ (f)
+41917	Dicsõség páncélja+ (f)
+41918	Jóság páncélja+ (n)
+41919	Dicsõség páncélja+ (n)
 45001	Nyuszifül (barna)
 45002	Nyúlfül (barna)
 45003	Fejkendõ (F)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Piros éltanuló szemüveg+
 45626	Kék éltanuló hajtû+
 45627	Piros éltanuló hajtû+
+45628	Piros strandsapka (f)
+45629	Fehér strandsapka (f)
+45630	Piros strandsapka (n)
+45631	Fehér strandsapka (n)
+45632	Piros strandsapka+ (f)
+45633	Fehér strandsapka+ (f)
+45634	Piros strandsapka+ (n)
+45635	Fehér strandsapka+ (n)
+45636	Z varázsdoktor kor. (f)
+45637	V varázsdoktor kor. (f)
+45638	Z varázsdoktor kor. (n)
+45639	V varázsdoktor kor. (n)
+45640	Z varázsdoktor kor.+ (f)
+45641	V varázsdoktor kor.+ (f)
+45642	Z varázsdoktor kor.+ (n)
+45643	V varázsdoktor kor.+ (n)
+45644	Nemes légiós sisak (f)
+45645	Sötét légiós sisak (f)
+45646	Nemes légiós sisak (n)
+45647	Sötét légiós sisak (n)
+45648	Nemes légiós sisak+ (f)
+45649	Sötét légiós sisak+ (f)
+45650	Nemes légiós sisak+ (n)
+45651	Sötét légiós sisak+ (n)
+45652	Jóság koronája (f)
+45653	Dicsõség koronája (f)
+45654	Jóság koronája (n)
+45655	Dicsõség koronája (n)
+45656	Jóság koronája+ (f)
+45657	Dicsõség koronája+ (f)
+45658	Jóság koronája+ (n)
+45659	Dicsõség koronája+ (n)
 49001	Közönséges aura öltözék
 49002	Egyszerû aura öltözék
 49003	Nemes aura öltözék
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Sötétség ládája
 50255	Cor Draconis (Nyers)
 50260	Cor Draconis (Nyers)
+50261	Cor Daemonis (nyers)
 50262	Oldás tekercse+
 50263	Kötés tekercse
 50264	Oldás tekercse
 50265	Arany focilabda
 50266	Jotun Thrym ládája
-50267	Arany Okey láda
-50268	Ezüst Okey láda
-50269	Bronz Okey láda
+50267	Vidám arany Okey láda
+50268	Vidám ezüst Okey láda
+50269	Vidám bronz Okey láda
 50270	Meley királynõ ládája
 50271	Sárkányfigyelõ-láda
 50272	Arany Fõszörny-kasz.láda
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong-víz
 50820	Hwal-víz
 50821	Vörös harmat
-50822	Rózsaszín harmat
+50822	Narancs harmat
 50823	Sárga harmat
 50824	Zöld harmat
 50825	Kék harmat
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Szelídített Moa
 52119	Szelídített Moa
 52120	Szelídített Moa
+52202	Turbó szörfdeszka
 52701	Oroszlán tanúsítvány
 52702	Tigris tanúsítvány
 52703	Vadkan tanúsítvány
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Kattogó
 53346	Berregõ
 53347	Mini kattogó
+53348	Hûséges jég gyilk. bálna
+53349	Kis jég gyilkos bálna
+53350	Gonosz rémség totem
+53351	Vakmerõ rémség totem
+53352	Kis rémség totem
+53353	Hó krampusz
+53354	Szén krampusz
+53355	Kis krampusz
 53501	Tûzfõnix-kalitka
 53502	Rénszarvasgida láda
 53503	Jégfõnix kalitka
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Fagyos Rufusz ketrec
 53522	Sheldon fészke
 53523	Nyúlketrec
-53526	Pepita Can
+53526	NoNAme
 53527	Tökfej-ketrec
 53528	Seprûs szekrény
 53529	Hópehely-hûtõláda
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Kattogó fogaskerék doboz
 53628	Berregõ fogaskerék doboz
 53629	Mini fogaskerék doboz
+53630	Ázott bálna láda
+53631	Kis bálna láda
+53632	Csikorgó totem láda
+53633	Zörgõ totem láda
+53634	Kis totem láda
+53635	Fagyos krampusz láda
+53636	Kormos krampusz láda
+53637	Kis krampusz láda
 54041	NoNAme
 54042	NoNAme
 54043	Gyakornok láda I
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Kárhozat kulcs+
 70450	Megváltás Metin tekercs
 70451	Halálláng csomag
-70500	Álombeli lélek+0
-70501	Álombeli lélek+1
-70502	Álombeli lélek+2
-70503	Álombeli lélek+3
-70504	Álombeli lélek+4
-70505	Égi lélek+0
-70506	Égi lélek+1
-70507	Égi lélek+2
-70508	Égi lélek+3
-70509	Égi lélek+4
-70602	Lélek pergamen (100%)
-70603	Lélek pergamen
 70604	Futball világb. láda
 70605	Jegy láda
 70606	Futball világb. trófea
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Hópehely doboz
 70614	Hópehely Üstökös
 70615	Hópehely Bambi
+70617	Kincses jegy
+70618	Kobold kulcs
+70619	Kobold kulcsos doboz
 71000	Tanváltás tekercse
 71001	Ördögûzõ tekercs
 71002	Állapot visszaállító
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Merkúr lexikon (nagy)
 71217	Vénusz lexikon (kicsi)
 71218	Vénusz lexikon (nagy)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Kyzaghan lova
 71221	Kasmír csomó
 71222	Nirvana sárkány
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Tél rénszarvas
 71271	Rohanó nyuszi (piros)
 71272	Rohanó nyuszi (fekete)
+71273	Elátkozott seprû
+71274	Elvarázsolt seprû
+71275	Nemes légiós ló
+71276	Sötét légiós ló
+71277	Halia
+71278	Aquilosz
 72001	Tapasztalat gyûrû (10h)
 72002	Tapasztalat gyûrû (30m)
 72003	Tapasztalat gyûrû (3h)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Yong. Tábornok tekercse
 72053	Céh paktum
 72054	A védelmezõk amulettje
+72057	Dupla tapasztalat gyûrû
 72058	Szellemkõ csomag
 72059	Vezér könyve+
 72060	Vezér könyve+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Platina szörnyk. doboz
 83075	Keserûbogyó láda
 83076	Aranybogyó láda
+83077	Sárkányisten láda
 83100	Seungryong jutalom láda
 83101	Yongbi jutalom láda
 83102	Kuahlo Dong jutalom láda
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mitikus sárkányónix
 165300	Mitikus sárkányónix
 165400	Mitikus sárkányónix
+170000	Nyers sárkányametiszt
+170100	Nyers sárkányametiszt
+170200	Nyers sárkányametiszt
+170300	Nyers sárkányametiszt
+170400	Nyers sárkányametiszt
+171000	Metszett sárkányametiszt
+171100	Metszett sárkányametiszt
+171200	Metszett sárkányametiszt
+171300	Metszett sárkányametiszt
+171400	Metszett sárkányametiszt
+172000	Ritka sárkányametiszt
+172100	Ritka sárkányametiszt
+172200	Ritka sárkányametiszt
+172300	Ritka sárkányametiszt
+172400	Ritka sárkányametiszt
+173000	Antik sárkányametiszt
+173100	Antik sárkányametiszt
+173200	Antik sárkányametiszt
+173300	Antik sárkányametiszt
+173400	Antik sárkányametiszt
+174000	Legendás sárkányametiszt
+174100	Legendás sárkányametiszt
+174200	Legendás sárkányametiszt
+174300	Legendás sárkányametiszt
+174400	Legendás sárkányametiszt
+175000	Mitikus sárkányametiszt
+175100	Mitikus sárkányametiszt
+175200	Mitikus sárkányametiszt
+175300	Mitikus sárkányametiszt
+175400	Mitikus sárkányametiszt

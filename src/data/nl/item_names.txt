@@ -5753,6 +5753,10 @@ VNUM	LOCALE_NAME
 21991	NoNAme
 21992	NoNAme
 21993	NoNAme
+21994	Gifzwaard (Gebonden)
+21995	Kraai Staal Boog (Geb.)
+21996	Bamboe Bel (Gebonden)
+21997	Doornen Klauw (Geb.)
 22000	Stad Terugkeer Geschrift
 22001	Stad Terugkeer Geschrift
 22010	Terugkeer Geschrift
@@ -6812,7 +6816,7 @@ VNUM	LOCALE_NAME
 31081	Zwarte Materie
 31082	Magma Ring
 31083	Ring van Samael
-31084	Nimbus Tincture
+31084	NoNAme
 31085	NoNAme
 31086	Paddenstoelsporen
 31087	NoNAme
@@ -6951,7 +6955,7 @@ VNUM	LOCALE_NAME
 31247	Rode Sung Ma Rune
 31248	Paarse Sung Ma Rune
 31249	Blauwe Sung Ma Rune
-31250	Groene Sung Ma Rune
+31250	Gele Sung Ma Rune
 31251	Leer Verharder
 31252	Leer Verharder+
 31253	Gnol Meesterkist
@@ -8085,6 +8089,38 @@ VNUM	LOCALE_NAME
 41885	Grijze Sterrenpupil (m)+
 41886	Blauwe Sterrenpupil (v)+
 41887	Grijze Sterrenpupil (v)+
+41888	Rode Strandwacht (m)
+41889	Witte Strandwacht (m)
+41890	Rode Strandwacht (v)
+41891	Witte Strandwacht (v)
+41892	Rode Strandwacht+ (m)
+41893	Witte Strandwacht+ (m)
+41894	Rode Strandwacht+ (v)
+41895	Witte Strandwacht+ (v)
+41896	Groene Medicijnman (m)
+41897	Rode Medicijnman (m)
+41898	Groene Medicijnvrouw (v)
+41899	Rode Medicijnvrouw (v)
+41900	Groene Medicijnman+ (m)
+41901	Rode Medicijnman+ (m)
+41902	Groe. Medicijnvrouw+ (v)
+41903	Rode Medicijnvrouw+ (v)
+41904	Nobele Legionair (m)
+41905	Duistere Legionair (m)
+41906	Nobele Legionair (v)
+41907	Duistere Legionair (v)
+41908	Nobele Legionair+ (m)
+41909	Duistere Legionair+ (m)
+41910	Nobele Legionair+ (v)
+41911	Duistere Legionair+ (v)
+41912	Goedaardig Pantser (m)
+41913	Triomfaal Pantser (m)
+41914	Goedaardig Pantser (v)
+41915	Triomfaal Pantser (v)
+41916	Goedaardig Pantser+ (m)
+41917	Triomfaal Pantser+ (m)
+41918	Goedaardig Pantser+ (v)
+41919	Triomfaal Pantser+ (v)
 45001	Konijnenoortjes (bruin)
 45002	Hazenoren (bruin)
 45003	Hoofddoek (M)
@@ -8669,6 +8705,38 @@ VNUM	LOCALE_NAME
 45625	Rode Sterrenpupilbril+
 45626	Blauwe Sterrenpupilclip+
 45627	Rode Sterrenpupilclip+
+45628	Rode Strandpet (m)
+45629	Witte Strandpet (m)
+45630	Rode Strandpet (v)
+45631	Witte Strandpet (v)
+45632	Rode Strandpet+ (m)
+45633	Witte Strandpet+ (m)
+45634	Rode Strandpet+ (v)
+45635	Witte Strandpet+ (v)
+45636	G Medicijnman Kroon (m)
+45637	R Medicijnman Kroon (m)
+45638	G Med. vrouw Kroon (v)
+45639	R Med. vrouw Kroon (v)
+45640	G Med. man Kroon+ (m)
+45641	R Med. man Kroon+ (m)
+45642	G Med. vrouw Kroon+ (v)
+45643	R Med. vrouw Kroon+ (v)
+45644	Nob. Legion. helm (m)
+45645	Duis. Legion. helm (m)
+45646	Nob. Legion. helm (v)
+45647	Duis. Legion. helm (v)
+45648	Nob. Legion. helm+ (m)
+45649	Duis. Legion. helm+ (m)
+45650	Nob. Legion. helm+ (v)
+45651	Duis. Legion. helm+ (v)
+45652	Goedaardige Kroon (m)
+45653	Triomfale Kroon (m)
+45654	Goedaardige Kroon (v)
+45655	Triomfale Kroon (v)
+45656	Goedaardige Kroon+ (m)
+45657	Triomfale Kroon+ (m)
+45658	Goedaardige Kroon+ (v)
+45659	Triomfale Kroon+ (v)
 49001	Gewone Aura Outfit
 49002	Simpele Aura Outfit
 49003	Edele Aura Outfit
@@ -8872,14 +8940,15 @@ VNUM	LOCALE_NAME
 50254	Kist van het Duister.
 50255	Cor Draconis (Ruw)
 50260	Cor Draconis (Ruw)
+50261	Cor Daemonis (Ruw)
 50262	Geschr. der Ontbinding+
 50263	Geschrift der Verbinding
 50264	Geschrift der Ontbinding
 50265	Gouden Voetbal
 50266	Jotun Thrym Kist
-50267	Gouden Okey Kist
-50268	Zilveren Okey Kist
-50269	Bronzen Okey Kist
+50267	Blije Gouden Okey Kist
+50268	Blije Zilveren Okey Kist
+50269	Blije Bronzen Okey Kist
 50270	Koningin Meley's Kist
 50271	Draken Kijker Kist
 50272	Gouden Bazensl. Kist
@@ -9128,7 +9197,7 @@ VNUM	LOCALE_NAME
 50819	Mong Water
 50820	Hwal Water
 50821	Rode Dauw
-50822	Roze Dauw
+50822	Oranje Dauw
 50823	Gele Dauw
 50824	Groene Dauw
 50825	Blauwe Dauw
@@ -9449,6 +9518,7 @@ VNUM	LOCALE_NAME
 52118	Dappere Moa
 52119	Dappere Moa
 52120	Dappere Moa
+52202	Turbo Reddingsplank
 52701	Leeuw Certificaat
 52702	Tijger Certificaat
 52703	Wild Zwijn Certificaat
@@ -9609,6 +9679,14 @@ VNUM	LOCALE_NAME
 53345	Fluitje
 53346	Sleuteltje
 53347	Mini-Fluitje
+53348	Loyale IJs Orca
+53349	Mini IJs Orca
+53350	Vermetele Tiki Terreur
+53351	Dappere Tiki Terreur
+53352	Kleine Tiki Terreur
+53353	Sneeuw Krampus
+53354	Kolen Krampus
+53355	Kleine Krampus
 53501	Vuurfeniks Kooi
 53502	Rendier Kalf Kist
 53503	IJs Feniks Kooi
@@ -9631,7 +9709,7 @@ VNUM	LOCALE_NAME
 53521	Vorst Rufus Kooi
 53522	Sheldons Nest
 53523	Konijnenkooi
-53526	Pepita Can
+53526	NoNAme
 53527	Pompoenhoofd Kooi
 53528	Bezemkast
 53529	Sneeuwvlokje's Vrieskist
@@ -9733,6 +9811,14 @@ VNUM	LOCALE_NAME
 53627	Fluitende Tandwielkist
 53628	Ratelende Tandwielkist
 53629	Mini Tandwielkist
+53630	Druppelende Orca Kist
+53631	Mini Orca Kist
+53632	Omineuze Tiki Kist
+53633	Rammelende Tiki Kist
+53634	Kleine Tiki Kist
+53635	Bevroren Krampus Kist
+53636	Roetige Krampus Kist
+53637	Kleine Krampus Kist
 54041	NoNAme
 54042	NoNAme
 54043	Leerling Kist 1
@@ -9949,18 +10035,6 @@ VNUM	LOCALE_NAME
 70449	Verdoemenis Sleutel+
 70450	Verlossing Metin Geschr.
 70451	Vlam des Doods Bundel
-70500	Oneirische Ziel+0
-70501	Oneirische Ziel+1
-70502	Oneirische Ziel+2
-70503	Oneirische Ziel+3
-70504	Oneirische Ziel+4
-70505	Hemelse Ziel+0
-70506	Hemelse Ziel+1
-70507	Hemelse Ziel+2
-70508	Hemelse Ziel+3
-70509	Hemelse Ziel+4
-70602	Ziel Perkament (100%)
-70603	Ziel Perkament
 70604	Wereldkampioenschapskist
 70605	Ticketkist
 70606	Wereldkampioen. beker
@@ -9973,6 +10047,9 @@ VNUM	LOCALE_NAME
 70613	Sneeuwvlokje Kluisje
 70614	Sneeuwvlokje Comet
 70615	Sneeuwvlokje Bambi
+70617	Schattenticket
+70618	Goblin Sleutel
+70619	Goblin Sleutelkist
 71000	Gesch. van Vl. Training
 71001	Exorcisme Geschrift
 71002	Status Herstel Doc.
@@ -10167,7 +10244,7 @@ VNUM	LOCALE_NAME
 71216	Mercurius Encyclo. (G)
 71217	Venus Encyclopedie (K)
 71218	Venus Encyclopedie (G)
-71219	Invigorating Potion
+71219	NoNAme
 71220	Kyzaghan's Paard
 71221	Kashmir Bundel
 71222	Nirvana Draak
@@ -10221,6 +10298,12 @@ VNUM	LOCALE_NAME
 71270	Winter Rendier
 71271	Haastige Haas (Rood)
 71272	Haastige Haas (Zwart)
+71273	Vervloekte Bezemsteel
+71274	Behekste Bezemsteel
+71275	Nobele Legionairspaard
+71276	Duistere Legionairspaard
+71277	Halia
+71278	Aquilos
 72001	Ervarings Ring (10u)
 72002	Ervarings Ring (30m)
 72003	Ervarings Ring (3u)
@@ -10275,6 +10358,7 @@ VNUM	LOCALE_NAME
 72052	Geschrift - Gen. Yonghan
 72053	Gilde Contract
 72054	Amulet van de Wachters
+72057	Dubbele Ervarings Ring
 72058	Geestensteen Bundel
 72059	Leider Boek+
 72060	Leider Boek+
@@ -10927,6 +11011,7 @@ VNUM	LOCALE_NAME
 83074	Plat. Monsterkaart Doos
 83075	Bitterbeskist
 83076	Goudbeskist
+83077	Draken God Kist
 83100	Seungryong Beloningsk.
 83101	Yongbi Beloningskist
 83102	Kuahlo Dong Beloningsk.
@@ -11289,3 +11374,33 @@ VNUM	LOCALE_NAME
 165200	Mythische Drakenonyx
 165300	Mythische Drakenonyx
 165400	Mythische Drakenonyx
+170000	Ruwe Drakenamethist
+170100	Ruwe Drakenamethist
+170200	Ruwe Drakenamethist
+170300	Ruwe Drakenamethist
+170400	Ruwe Drakenamethist
+171000	Geslepen Drakenamethist
+171100	Geslepen Drakenamethist
+171200	Geslepen Drakenamethist
+171300	Geslepen Drakenamethist
+171400	Geslepen Drakenamethist
+172000	Zeldzame Drakenamethist
+172100	Zeldzame Drakenamethist
+172200	Zeldzame Drakenamethist
+172300	Zeldzame Drakenamethist
+172400	Zeldzame Drakenamethist
+173000	Antieke Drakenamethist
+173100	Antieke Drakenamethist
+173200	Antieke Drakenamethist
+173300	Antieke Drakenamethist
+173400	Antieke Drakenamethist
+174000	Legend. Drakenamethist
+174100	Legend. Drakenamethist
+174200	Legend. Drakenamethist
+174300	Legend. Drakenamethist
+174400	Legend. Drakenamethist
+175000	Mythische Drakenamethist
+175100	Mythische Drakenamethist
+175200	Mythische Drakenamethist
+175300	Mythische Drakenamethist
+175400	Mythische Drakenamethist

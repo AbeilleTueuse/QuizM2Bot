@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Banner dell'anniv. 7
 20134	Banner del sole
 20135	Stendardo natalizio
+20138	Banner del Ramadan
 20139	Banner gilda (lilla)
 20140	Banner gilda (blu/verde)
 20141	Banner gilda (rosso/oro)
-20138	Banner del Ramadan
 20142	Banner di Halloween
 20143	Striscione pasquale
 20146	Portale Altromondo
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Cometa Fiocco di neve
 20289	Coniglio Express (rosso)
 20290	Coniglio Express (nero)
+20291	Scopa maledetta
+20292	Scopa stregata
+20293	Cavallo Legione pregiato
+20294	Cavallo Legione oscuro
+20295	Halia
+20296	Aquilos
 20300	Ins. Dott. Lotta Corp.
 20301	Ins. Dott. Lotta Mentale
 20302	Ins. Dott. Lotta C. a C.
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Altare Misterioso
 20851	Cac. taglie LandeSeogan
 20852	Cac. taglie AbissoNamgan
+20856	Goblin del tesoro
+20857	Forziere gigante
 30000	개인상점
 30001	개인상점
 30002	Mille e una notte
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Mini-Whistle
+34183	Fedele Orca Ass. Ghiacc.
+34184	Piccola Orca Ass. Ghacc.
+34185	Terrore Tiki coraggioso
+34186	Terrore Tiki sfrontato
+34187	Terrore Tiki piccolo
+34188	Krampus Neve
+34189	Krampus Carbone
+34190	Krampus piccolo
+40003	Turbo-surf
 60000	Amministratore gilda
 60001	Amministratore gilda
 60002	Amministratore gilda

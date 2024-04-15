@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Banner Aniversar 7
 20134	Banner Solar
 20135	Banner de Crãciun
+20138	Banner Ramadan
 20139	Banner Breaslã (Violet)
 20140	Banner Breaslã (Al/Ver)
 20141	Banner Breaslã (Roº/Aur)
-20138	Banner Ramadan
 20142	Banner de Halloween
 20143	Banner de Paºte
 20146	Portal Lumea de Dincolo
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Comet Fulg de Nea
 20289	Iepuraº Grãbit (Roºu)
 20290	Iepuraº Grãbit (Negru)
+20291	Mãturã Blestematã
+20292	Mãturã Fermecatã
+20293	Cal Legionar Nobil
+20294	Cal Legionar Întunecat
+20295	Halia
+20296	Aquilos
 20300	Învãþãtor Luptã de Corp
 20301	Învãþãtor Luptã Mentala
 20302	Învãþãtor Luptã cu Sabia
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Altar Misterios
 20851	Vânãtor Recomp (Seo Gw)
 20852	Vânãtor Recomp (Nam Gw)
+20856	Spiriduº Comori
+20857	Cufãr Uriaº Comori
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	1001 Nopþi
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Whistle
 34181	Wrench
 34182	Micul Whistle
+34183	Balenã de Gheaþã Loialã
+34184	Balenã de Gheaþã Mini
+34185	Tiki Terror Nesãbuit
+34186	Tiki Terror Îndrãzneþ
+34187	Tiki Terror Mic
+34188	Krampus Zãpadã
+34189	Krampus Cãrbune
+34190	Krampus Mic
+40003	Placã de Surf Turbo
 60000	ªef Breaslã
 60001	ªef Breaslã
 60002	ªef Breaslã
