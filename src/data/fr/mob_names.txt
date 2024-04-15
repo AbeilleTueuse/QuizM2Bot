@@ -213,7 +213,7 @@ VNUM	LOCALE_NAME
 1095	Mort Bleue
 1096	Áø»ç±Í¿Õ
 1101	Glace enchantée
-1102	Baleine de glace
+1102	Baleine tueuse
 1103	Insecte de glace
 1104	Lion de glace
 1105	Homme de glace furieux
@@ -221,7 +221,7 @@ VNUM	LOCALE_NAME
 1107	Golem de glace
 1108	Golem de glace
 1131	Glaçon d'enfer
-1132	Baleine de glace d'enfer
+1132	Baleine tueuse d'enfer
 1133	Insecte de glace d'enfer
 1134	Lion de glace d'enfer
 1135	Homme de glace d'enfer
@@ -442,7 +442,7 @@ VNUM	LOCALE_NAME
 2632	Général barbare zodiacal
 2633	Capitaine best. zodiacal
 2634	Glace enchant. zodiacale
-2635	Baleine glac. zodiacale
+2635	Baleine tueuse zodiacale
 2636	Insecte glac. zodiacal
 2637	Lion de glace zodiacal
 2638	Homme de glace zodiacal
@@ -1413,7 +1413,7 @@ VNUM	LOCALE_NAME
 7172	Fort esprit des flammes
 7173	Fort guerrier flamme
 7174	Glace enchantée
-7175	Baleine de glace
+7175	Baleine tueuse
 7176	Insecte de glace
 7177	Lion de glace
 7178	Homme de glace furieux
@@ -2277,10 +2277,10 @@ VNUM	LOCALE_NAME
 20133	Bannière anniversaire 7
 20134	Bannière ensoleillée
 20135	Bannière de Noël
+20138	Bannière du Ramadan
 20139	Bann. guilde (mauve)
 20140	Bann. guilde (bleu/vert)
 20141	Bann. guilde (rouge/or)
-20138	Bannière du Ramadan
 20142	Bannière d'Halloween
 20143	Bannière de Pâques
 20146	Portail d'Autremonde
@@ -2378,6 +2378,12 @@ VNUM	LOCALE_NAME
 20288	Comète du flocon
 20289	Lapin pressé (rouge)
 20290	Lapin pressé (noir)
+20291	Balai maudit
+20292	Balai ensorcelé
+20293	Noble cheval de légion
+20294	Sombre cheval de légion
+20295	Halia
+20296	Aquilos
 20300	Maître Corps à Corps
 20301	Maître en Force Mentale
 20302	Maître Assassin
@@ -2633,6 +2639,8 @@ VNUM	LOCALE_NAME
 20850	Autel mystérieux
 20851	Chasseur p. (Désert Se.)
 20852	Chasseur p. (Ab. Namgan)
+20856	Gobelin trésor
+20857	Coffre au trésor géant
 30000	°³ÀÎ»óÁ¡
 30001	°³ÀÎ»óÁ¡
 30002	Mille et une nuits
@@ -2864,6 +2872,15 @@ VNUM	LOCALE_NAME
 34180	Wissel
 34181	Rench
 34182	Miniwissel
+34183	Baleine tueuse fidèle
+34184	Petite baleine tueuse
+34185	Terreur tiki intrépide
+34186	Terreur tiki perfide
+34187	Petite terreur tiki
+34188	Krampus des neiges
+34189	Krampus du charbon
+34190	Petit krampus
+40003	Turboplanche de surf
 60000	Chef de guilde
 60001	Chef de guilde
 60002	Chef de guilde
