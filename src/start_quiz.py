@@ -453,7 +453,7 @@ class QuizCog(Cog):
             await interaction.send("You can't use this command.", ephemeral=True)
 
     @slash_command(name="info")
-    async def quiz(self, interaction: Interaction):
+    async def info(self, interaction: Interaction):
         """Get bot information."""
         if interaction.user.id == self.bot.owner_id:
             embed = Embed(title="Bot information ℹ️", color=0x33A5FF)
