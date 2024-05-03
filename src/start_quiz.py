@@ -443,7 +443,9 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Set languages authorized for the next quizzes."""
-        if interaction.user.id == self.bot.owner_id:
+        user = interaction.user
+
+        if user.id == self.bot.owner_id or user.guild_permissions.administrator:
             dropdown_view = nextcord.ui.View()
             dropdown_view.add_item(DropDown(interaction.guild_id))
 
