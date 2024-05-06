@@ -426,12 +426,14 @@ class QuizCog(Cog):
             value="The number of questions of the quiz. Choose a value from the displayed list.",
             inline=False,
         )
+        CONFIGURATION_MANAGER.saved_config.keys()
+        difficulty_description = "The difficulty changes the precision required for answers to be accepted as well as the number of hints."
         hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
         medium_description = "- **Medium**: ..."
         easy_description = "- **Easy**: ..."
         embed.add_field(
             name="Difficulty",
-            value=f"The difficulty changes the precision required for answers to be accepted as well as the number of hints.\n{hardcore_description}\n{medium_description}\n{easy_description}",
+            value=f"{difficulty_description}\n{hardcore_description}\n{medium_description}\n{easy_description}",
             inline=False,
         )
         embed.add_field(name="Category", value="")

@@ -2,7 +2,8 @@
     "hardcore": {
         "mode": "strict",
         "time_between_hint": "30",
-        "max_hint": "0"
+        "max_hint": "0",
+        "description": ""
     },
     "medium": {
         "mode": "permissive",

@@ -48,8 +48,7 @@ class ConfigurationManager:
     }
 
     def __init__(self):
-        self.config = None
-        self.formatted_answer = None
+        self.answer_formatter = None
         self.fuzz_threshold = 100
         self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
         self.saved_config = self._open(self.CONFIG_PATH)
@@ -61,15 +60,17 @@ class ConfigurationManager:
             return json.load(config_file)
 
     def set_config(self, config_name: str, guild_id: int):
-        self.config = self.saved_config[config_name]
-        self.formatted_answer = self._get_formatted_answer()
+        self.answer_formatter = self._get_answer_formatter(config_name)
         guild_id = str(guild_id)
 
         if guild_id in self.langs_by_servers:
             self.allowed_langs = self.langs_by_servers[guild_id]
 
-    def _get_formatted_answer(self):
-        mode = self.config[self.MODE]
+    def _get_mode(self, config_name: str) -> str:
+        return self.saved_config[config_name][self.MODE]
+
+    def _get_answer_formatter(self, config_name: str):
+        mode = self._get_mode(config_name)
         self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
@@ -257,7 +258,7 @@ class Question:
         self.config_manager = config_manager
         self.answers = self._filter_answer(answers)
         self.image_url = image_url
-        self.formatted_answers = self._formatted_answers()
+        self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
@@ -272,11 +273,11 @@ class Question:
             if lang in self.config_manager.allowed_langs
         }
 
-    def _formatted_answer(self, answer: str):
-        return self.config_manager.formatted_answer(answer)
+    def _get_formatted_answer(self, answer: str):
+        return self.config_manager.answer_formatter(answer)
 
-    def _formatted_answers(self):
-        return [self._formatted_answer(answer) for answer in self.answers.values()]
+    def _get_formatted_answers(self):
+        return [self._get_formatted_answer(answer) for answer in self.answers.values()]
 
     def _get_default_hint(self, answer: str):
         return [
