@@ -416,6 +416,8 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Display information about the quiz."""
+        await interaction.response.defer()
+
         embed = Embed(
             title="Quiz information",
             description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.",
@@ -437,6 +439,7 @@ class QuizCog(Cog):
             inline=False,
         )
         embed.add_field(name="Category", value="- friendly: ...\n- ranker: ...")
+
         await interaction.send(embed=embed)
 
     @quiz.subcommand(name="lang")
