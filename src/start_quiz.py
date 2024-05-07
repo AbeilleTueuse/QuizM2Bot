@@ -433,10 +433,7 @@ class QuizCog(Cog):
             name="Difficulty",
             value=difficulty_description
             + "\n"
-            + "\n".join(
-                config_parameters["description"]
-                for config_parameters in CONFIGURATION_MANAGER.saved_config.values()
-            ),
+            + "\n".join(CONFIGURATION_MANAGER.get_descriptions()),
             inline=False,
         )
         embed.add_field(name="Category", value="- friendly: ...\n- ranker: ...")

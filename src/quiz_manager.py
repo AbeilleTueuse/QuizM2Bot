@@ -30,6 +30,7 @@ class ConfigurationManager:
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"
+    DESCRIPTION = "description"
     STRICT = "strict"
     PERMISSIVE = "permissive"
     VERY_PERMISSIVE = "very permissive"
@@ -51,7 +52,7 @@ class ConfigurationManager:
         self.answer_formatter = None
         self.fuzz_threshold = 100
         self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
-        self.saved_config = self._open(self.CONFIG_PATH)
+        self.saved_config: dict[str, dict[str, str]] = self._open(self.CONFIG_PATH)
         self.langs_data = self._open(self.LANGS_DATA_PATH)
         self.allowed_langs = [self.DEFAULT_LANG]
 
@@ -66,11 +67,8 @@ class ConfigurationManager:
         if guild_id in self.langs_by_servers:
             self.allowed_langs = self.langs_by_servers[guild_id]
 
-    def _get_mode(self, config_name: str) -> str:
-        return self.saved_config[config_name][self.MODE]
-
     def _get_answer_formatter(self, config_name: str):
-        mode = self._get_mode(config_name)
+        mode = self.saved_config[config_name][self.MODE]
         self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
@@ -96,23 +94,29 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         )
         return " ".join(formatted_answer.split())
-    
+
     def get_default_langs(self, guild_id: int):
         guild_id = str(guild_id)
-        
+
         if guild_id in self.langs_by_servers:
             return self.langs_by_servers[guild_id]
-        
+
         return []
-    
+
     def update_allowed_langs(self, guild_id: int, new_langs: list[str]):
         self.langs_by_servers[str(guild_id)] = new_langs
-        
+
         with open(self.LANGS_BY_SERVERS_PATH, "w") as file:
             file.write(json.dumps(self.langs_by_servers, indent=4))
 
     def get_icon(self, lang: str) -> str:
         return self.langs_data[lang][self.EMOJI]
+
+    def get_descriptions(self):
+        return (
+            config_parameters[self.DESCRIPTION]
+            for config_parameters in self.saved_config.values()
+        )
 
 
 class Ranking:
