@@ -426,17 +426,20 @@ class QuizCog(Cog):
             value="The number of questions of the quiz. Choose a value from the displayed list.",
             inline=False,
         )
-        CONFIGURATION_MANAGER.saved_config.keys()
-        difficulty_description = "The difficulty changes the precision required for answers to be accepted as well as the number of hints."
-        hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
-        medium_description = "- **Medium**: ..."
-        easy_description = "- **Easy**: ..."
+
+        difficulty_description = "The difficulty changes the precision required for answers to be accepted as well as the number of hints and the time between hints."
+
         embed.add_field(
             name="Difficulty",
-            value=f"{difficulty_description}\n{hardcore_description}\n{medium_description}\n{easy_description}",
+            value=difficulty_description
+            + "\n"
+            + "\n".join(
+                config_parameters["description"]
+                for config_parameters in CONFIGURATION_MANAGER.saved_config.values()
+            ),
             inline=False,
         )
-        embed.add_field(name="Category", value="")
+        embed.add_field(name="Category", value="- friendly: ...\n- ranker: ...")
         await interaction.send(embed=embed)
 
     @quiz.subcommand(name="lang")
@@ -463,7 +466,10 @@ class QuizCog(Cog):
             embed = Embed(title="Bot information ℹ️", color=0x33A5FF)
             embed.add_field(
                 name="Servers list",
-                value="\n".join(f"- {guild.name} ({guild.member_count})" for guild in self.bot.guilds),
+                value="\n".join(
+                    f"- {guild.name} ({guild.member_count})"
+                    for guild in self.bot.guilds
+                ),
             )
             await interaction.send(embed=embed, ephemeral=True)
         else:
