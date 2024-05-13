@@ -50,6 +50,8 @@ class ConfigurationManager:
 
     def __init__(self):
         self.answer_formatter = None
+        self.max_hint = None
+        self.time_between_hint = None
         self.fuzz_threshold = 100
         self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
         self.saved_config: dict[str, dict[str, str]] = self._open(self.CONFIG_PATH)
@@ -61,14 +63,20 @@ class ConfigurationManager:
             return json.load(config_file)
 
     def set_config(self, config_name: str, guild_id: int):
-        self.answer_formatter = self._get_answer_formatter(config_name)
+        config = self.saved_config[config_name]
+
+        self.answer_formatter = self._get_answer_formatter(config)
+        self.max_hint = config[self.MAX_HINT]
+        self.time_between_hint = config[self.TIME_BETWEEN_HINT]
         guild_id = str(guild_id)
 
         if guild_id in self.langs_by_servers:
             self.allowed_langs = self.langs_by_servers[guild_id]
+        else:
+            self.allowed_langs = [self.DEFAULT_LANG]
 
-    def _get_answer_formatter(self, config_name: str):
-        mode = self.saved_config[config_name][self.MODE]
+    def _get_answer_formatter(self, config: dict):
+        mode = config[self.MODE]
         self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
@@ -260,6 +268,7 @@ class Question:
         config_manager: ConfigurationManager,
     ):
         self.config_manager = config_manager
+        self.answer_formatter = self.config_manager.answer_formatter
         self.answers = self._filter_answer(answers)
         self.image_url = image_url
         self.formatted_answers = self._get_formatted_answers()
@@ -278,7 +287,7 @@ class Question:
         }
 
     def _get_formatted_answer(self, answer: str):
-        return self.config_manager.answer_formatter(answer)
+        return self.answer_formatter(answer)
 
     def _get_formatted_answers(self):
         return [self._get_formatted_answer(answer) for answer in self.answers.values()]
@@ -311,7 +320,7 @@ class Question:
         self.check_answer_count += 1
 
         if self.check_answer_count * self.config_manager.CHECK_ANSWER_PERIOD >= int(
-            self.config_manager.config[self.config_manager.TIME_BETWEEN_HINT]
+            self.config_manager.time_between_hint
         ):
             self.check_answer_count = 0
             return True
@@ -320,12 +329,12 @@ class Question:
 
     def exceed_max_hint(self):
         return self.hint_shown < int(
-            self.config_manager.config[self.config_manager.MAX_HINT]
+            self.config_manager.max_hint
         )
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(self.config_manager.config[self.config_manager.MAX_HINT])
+            int(self.config_manager.max_hint)
             - self.hint_shown
         )
 
@@ -347,7 +356,7 @@ class Question:
         self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        formatted_user_answer = self._formatted_answer(user_answer)
+        formatted_user_answer = self.answer_formatter(user_answer)
 
         for formatted_answer in self.formatted_answers:
             if (

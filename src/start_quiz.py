@@ -262,7 +262,7 @@ class QuizCog(Cog):
             if question.exceed_max_hint():
                 question.get_hints()
                 embed = Embed(
-                    title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                    title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.max_hint}",
                     description="\n".join(
                         f"{CONFIGURATION_MANAGER.get_icon(lang)} ┊ {' '.join(hint)}"
                         for lang, hint in question.hints.items()
