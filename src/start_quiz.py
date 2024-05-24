@@ -179,14 +179,11 @@ class QuizCog(Cog):
                 return
 
             self.quiz_manager.ranking.initialize(allowed_players)
-
-            await channel.send("The quiz will start soon!")
-
         else:
             allowed_players = []
             await interaction.send(embed=embed)
 
-        questions = self.quiz_manager.get_questions(number_of_question)
+        questions = await self.get_questions(number_of_question, channel)
 
         for question_index, question in enumerate(questions):
             if not self.quiz_manager.quiz_is_running():
@@ -212,6 +209,29 @@ class QuizCog(Cog):
             await channel.send("The quiz is over, thanks for playing!")
             await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
+
+    async def get_questions(
+        self, number_of_question: int, channel: nextcord.channel.TextChannel
+    ):
+        message = "The quiz will start soon!\n- Fetching pages from the wiki..."
+        progress_message = await channel.send(message)
+
+        pages = self.quiz_manager.get_pages(number_of_question)
+        message = f"{message} done.\n- Fetching pages content..."
+        await progress_message.edit(message)
+
+        pages_content = self.quiz_manager.get_pages_content(pages)
+        message = f"{message} done.\n- Fetching images..."
+        await progress_message.edit(message)
+
+        questions = self.quiz_manager.get_questions(pages_content)
+        message = f"{message} done."
+        await progress_message.edit(message)
+
+        await progress_message.edit("The quiz is starting!")
+        await asyncio.sleep(2)
+
+        return questions
 
     async def ask_question(
         self,

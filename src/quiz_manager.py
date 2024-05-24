@@ -328,14 +328,11 @@ class Question:
         return False
 
     def exceed_max_hint(self):
-        return self.hint_shown < int(
-            self.config_manager.max_hint
-        )
+        return self.hint_shown < int(self.config_manager.max_hint)
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(self.config_manager.max_hint)
-            - self.hint_shown
+            int(self.config_manager.max_hint) - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
@@ -414,13 +411,16 @@ class QuizManager:
             + self.m2_wiki.category(category="Pierres Metin")
         )
 
-    def get_questions(self, number_of_question: int = 1):
-        pages_info = rd.sample(
+    def get_pages(self, number_of_question: int = 1):
+        return rd.sample(
             self.get_all_pages(),
             k=number_of_question,
         )
-        pages = self.m2_wiki.get_pages_content(pages_info)
 
+    def get_pages_content(self, pages_info: list[dict]):
+        return self.m2_wiki.get_pages_content(pages_info)
+
+    def get_questions(self, pages: list[Page]):
         for page in pages:
             page.add_ingame_name(self.game_names)
             page.add_image_name(self.APPEARANCE_PROB)
