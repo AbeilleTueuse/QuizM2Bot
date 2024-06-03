@@ -179,14 +179,11 @@ class QuizCog(Cog):
                 return
 
             self.quiz_manager.ranking.initialize(allowed_players)
-
-            await channel.send("The quiz will start soon!")
-
         else:
             allowed_players = []
             await interaction.send(embed=embed)
 
-        questions = self.quiz_manager.get_questions(number_of_question)
+        questions = await self.get_questions(number_of_question, channel)
 
         for question_index, question in enumerate(questions):
             if not self.quiz_manager.quiz_is_running():
@@ -212,6 +209,29 @@ class QuizCog(Cog):
             await channel.send("The quiz is over, thanks for playing!")
             await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
+
+    async def get_questions(
+        self, number_of_question: int, channel: nextcord.channel.TextChannel
+    ):
+        message = "The quiz will start soon!\n- Fetching pages from the wiki..."
+        progress_message = await channel.send(message)
+
+        pages = self.quiz_manager.get_pages(number_of_question)
+        message = f"{message} done.\n- Fetching pages content..."
+        await progress_message.edit(message)
+
+        pages_content = self.quiz_manager.get_pages_content(pages)
+        message = f"{message} done.\n- Fetching images..."
+        await progress_message.edit(message)
+
+        questions = self.quiz_manager.get_questions(pages_content)
+        message = f"{message} done."
+        await progress_message.edit(message)
+
+        await progress_message.edit("The quiz is starting!")
+        await asyncio.sleep(2)
+
+        return questions
 
     async def ask_question(
         self,
@@ -262,7 +282,7 @@ class QuizCog(Cog):
             if question.exceed_max_hint():
                 question.get_hints()
                 embed = Embed(
-                    title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.config[CONFIGURATION_MANAGER.MAX_HINT]}",
+                    title=f"Hint {question.hint_shown} of {CONFIGURATION_MANAGER.max_hint}",
                     description="\n".join(
                         f"{CONFIGURATION_MANAGER.get_icon(lang)} ┊ {' '.join(hint)}"
                         for lang, hint in question.hints.items()
@@ -416,6 +436,8 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Display information about the quiz."""
+        await interaction.response.defer()
+
         embed = Embed(
             title="Quiz information",
             description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.",
@@ -426,15 +448,18 @@ class QuizCog(Cog):
             value="The number of questions of the quiz. Choose a value from the displayed list.",
             inline=False,
         )
-        hardcore_description = "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds."
-        medium_description = "- **Medium**: ..."
-        easy_description = "- **Easy**: ..."
+
+        difficulty_description = "The difficulty changes the precision required for answers to be accepted as well as the number of hints and the time between hints."
+
         embed.add_field(
             name="Difficulty",
-            value=f"The difficulty changes the precision required for answers to be accepted as well as the number of hints.\n{hardcore_description}\n{medium_description}\n{easy_description}",
+            value=difficulty_description
+            + "\n"
+            + "\n".join(CONFIGURATION_MANAGER.get_descriptions()),
             inline=False,
         )
-        embed.add_field(name="Category", value="")
+        embed.add_field(name="Category", value="- friendly: ...\n- ranker: ...")
+
         await interaction.send(embed=embed)
 
     @quiz.subcommand(name="lang")
@@ -443,7 +468,9 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Set languages authorized for the next quizzes."""
-        if interaction.user.id == self.bot.owner_id:
+        user = interaction.user
+
+        if user.id == self.bot.owner_id or user.guild_permissions.administrator:
             dropdown_view = nextcord.ui.View()
             dropdown_view.add_item(DropDown(interaction.guild_id))
 

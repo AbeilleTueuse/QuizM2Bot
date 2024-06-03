@@ -30,6 +30,7 @@ class ConfigurationManager:
     MODE = "mode"
     TIME_BETWEEN_HINT = "time_between_hint"
     MAX_HINT = "max_hint"
+    DESCRIPTION = "description"
     STRICT = "strict"
     PERMISSIVE = "permissive"
     VERY_PERMISSIVE = "very permissive"
@@ -48,11 +49,12 @@ class ConfigurationManager:
     }
 
     def __init__(self):
-        self.config = None
-        self.formatted_answer = None
+        self.answer_formatter = None
+        self.max_hint = None
+        self.time_between_hint = None
         self.fuzz_threshold = 100
         self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
-        self.saved_config = self._open(self.CONFIG_PATH)
+        self.saved_config: dict[str, dict[str, str]] = self._open(self.CONFIG_PATH)
         self.langs_data = self._open(self.LANGS_DATA_PATH)
         self.allowed_langs = [self.DEFAULT_LANG]
 
@@ -61,15 +63,20 @@ class ConfigurationManager:
             return json.load(config_file)
 
     def set_config(self, config_name: str, guild_id: int):
-        self.config = self.saved_config[config_name]
-        self.formatted_answer = self._get_formatted_answer()
+        config = self.saved_config[config_name]
+
+        self.answer_formatter = self._get_answer_formatter(config)
+        self.max_hint = config[self.MAX_HINT]
+        self.time_between_hint = config[self.TIME_BETWEEN_HINT]
         guild_id = str(guild_id)
 
         if guild_id in self.langs_by_servers:
             self.allowed_langs = self.langs_by_servers[guild_id]
+        else:
+            self.allowed_langs = [self.DEFAULT_LANG]
 
-    def _get_formatted_answer(self):
-        mode = self.config[self.MODE]
+    def _get_answer_formatter(self, config: dict):
+        mode = config[self.MODE]
         self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
 
         if mode == self.STRICT:
@@ -95,23 +102,29 @@ class ConfigurationManager:
             if letter.isalnum() or letter == " "
         )
         return " ".join(formatted_answer.split())
-    
+
     def get_default_langs(self, guild_id: int):
         guild_id = str(guild_id)
-        
+
         if guild_id in self.langs_by_servers:
             return self.langs_by_servers[guild_id]
-        
+
         return []
-    
+
     def update_allowed_langs(self, guild_id: int, new_langs: list[str]):
         self.langs_by_servers[str(guild_id)] = new_langs
-        
+
         with open(self.LANGS_BY_SERVERS_PATH, "w") as file:
             file.write(json.dumps(self.langs_by_servers, indent=4))
 
     def get_icon(self, lang: str) -> str:
         return self.langs_data[lang][self.EMOJI]
+
+    def get_descriptions(self):
+        return (
+            config_parameters[self.DESCRIPTION]
+            for config_parameters in self.saved_config.values()
+        )
 
 
 class Ranking:
@@ -255,9 +268,10 @@ class Question:
         config_manager: ConfigurationManager,
     ):
         self.config_manager = config_manager
+        self.answer_formatter = self.config_manager.answer_formatter
         self.answers = self._filter_answer(answers)
         self.image_url = image_url
-        self.formatted_answers = self._formatted_answers()
+        self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
@@ -272,11 +286,11 @@ class Question:
             if lang in self.config_manager.allowed_langs
         }
 
-    def _formatted_answer(self, answer: str):
-        return self.config_manager.formatted_answer(answer)
+    def _get_formatted_answer(self, answer: str):
+        return self.answer_formatter(answer)
 
-    def _formatted_answers(self):
-        return [self._formatted_answer(answer) for answer in self.answers.values()]
+    def _get_formatted_answers(self):
+        return [self._get_formatted_answer(answer) for answer in self.answers.values()]
 
     def _get_default_hint(self, answer: str):
         return [
@@ -306,7 +320,7 @@ class Question:
         self.check_answer_count += 1
 
         if self.check_answer_count * self.config_manager.CHECK_ANSWER_PERIOD >= int(
-            self.config_manager.config[self.config_manager.TIME_BETWEEN_HINT]
+            self.config_manager.time_between_hint
         ):
             self.check_answer_count = 0
             return True
@@ -314,14 +328,11 @@ class Question:
         return False
 
     def exceed_max_hint(self):
-        return self.hint_shown < int(
-            self.config_manager.config[self.config_manager.MAX_HINT]
-        )
+        return self.hint_shown < int(self.config_manager.max_hint)
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(self.config_manager.config[self.config_manager.MAX_HINT])
-            - self.hint_shown
+            int(self.config_manager.max_hint) - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
@@ -342,7 +353,7 @@ class Question:
         self.hint_shown += 1
 
     def is_correct_answer(self, user_answer: str):
-        formatted_user_answer = self._formatted_answer(user_answer)
+        formatted_user_answer = self.answer_formatter(user_answer)
 
         for formatted_answer in self.formatted_answers:
             if (
@@ -400,13 +411,16 @@ class QuizManager:
             + self.m2_wiki.category(category="Pierres Metin")
         )
 
-    def get_questions(self, number_of_question: int = 1):
-        pages_info = rd.sample(
+    def get_pages(self, number_of_question: int = 1):
+        return rd.sample(
             self.get_all_pages(),
             k=number_of_question,
         )
-        pages = self.m2_wiki.get_pages_content(pages_info)
 
+    def get_pages_content(self, pages_info: list[dict]):
+        return self.m2_wiki.get_pages_content(pages_info)
+
+    def get_questions(self, pages: list[Page]):
         for page in pages:
             page.add_ingame_name(self.game_names)
             page.add_image_name(self.APPEARANCE_PROB)

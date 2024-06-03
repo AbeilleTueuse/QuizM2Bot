@@ -2,16 +2,19 @@
     "hardcore": {
         "mode": "strict",
         "time_between_hint": "30",
-        "max_hint": "0"
+        "max_hint": "0",
+        "description": "- **Hardcore**: there is no hints and answers must be exact. Each question lasts 30 seconds in maximum."
     },
     "medium": {
         "mode": "permissive",
         "time_between_hint": "10",
-        "max_hint": "6"
+        "max_hint": "6",
+        "description": "- **Medium**: there are 6 hints and the time between hints is 10 seconds. Each question lasts 70 seconds in maximum. Capital letters and accents are not taken into account: `ït'Ś Añ_(ExÀmplé)` => `it's an_(example)`. Additionally, there is a small leniency on typos."
     },
     "easy": {
         "mode": "very permissive",
-        "time_between_hint": "5",
-        "max_hint": "4"
+        "time_between_hint": "7",
+        "max_hint": "4",
+        "description": "- **Easy**: there are 4 hints and the time between hints is 7 seconds. Each question lasts 35 seconds in maximum. Capital letters, accents and special characters are not taken into account: `ït'Ś Añ_(ExÀmplé)` => `it s an example`. Additionally, there is a medium leniency on typos."
     }
 }
