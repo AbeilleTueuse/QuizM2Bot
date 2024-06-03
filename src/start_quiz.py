@@ -12,7 +12,7 @@ from src.quiz_manager import (
 )
 from src.metin2_api import M2Wiki
 
-
+CONSOLE_PATH = "output-1187021385093107765.log"
 CONFIGURATION_MANAGER = ConfigurationManager()
 
 
@@ -459,9 +459,23 @@ class QuizCog(Cog):
             embed = Embed(title="Bot information ℹ️", color=0x33A5FF)
             embed.add_field(
                 name="Servers list",
-                value="\n".join(f"- {guild.name} ({guild.member_count})" for guild in self.bot.guilds),
+                value="\n".join(
+                    f"- {guild.name} ({guild.member_count})"
+                    for guild in self.bot.guilds
+                ),
             )
             await interaction.send(embed=embed, ephemeral=True)
+        else:
+            await interaction.send("You can't use this command.", ephemeral=True)
+
+    @slash_command(name="console")
+    async def info(
+        self,
+        interaction: Interaction,
+    ):
+        """Get the console."""
+        if interaction.user.id == self.bot.owner_id:
+            await interaction.send(file=nextcord.File(CONSOLE_PATH), ephemeral=True)
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
 
