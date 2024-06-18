@@ -496,7 +496,7 @@ class QuizCog(Cog):
             await interaction.send("You can't use this command.", ephemeral=True)
 
     @slash_command(name="console")
-    async def info(
+    async def get_console(
         self,
         interaction: Interaction,
     ):
