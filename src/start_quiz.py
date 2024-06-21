@@ -124,12 +124,13 @@ class QuizCog(Cog):
             choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
             required=True,
         ),
-        max_year: str = nextcord.SlashOption(
-            name="year",
-            description="Choose the max year of the questions.",
-            choices=CONFIGURATION_MANAGER.YEARS,
+        max_year: int = nextcord.SlashOption(
+            name="max_year",
+            description="Only keep pages created before this year.",
+            min_value=2012,
+            max_value=2024,
             required=False,
-            default="all"
+            default=-1
         ),
     ):
         """Start a quiz."""
@@ -145,9 +146,14 @@ class QuizCog(Cog):
             title="Launch of the quiz!",
             color=0x5E296B,
         )
+        settings_value = f"- questions: **{number_of_question}**\n- difficulty: **{config_name}**\n- category: **{game_category}**"
+        
+        if max_year != -1:
+            settings_value = f"{settings_value}\n- year: **before {max_year}**"
+
         embed.add_field(
             name="Settings",
-            value=f"- questions: **{number_of_question}**\n- difficulty: **{config_name}**\n- category: **{game_category}**",
+            value=settings_value,
         )
         embed.add_field(
             name="Allowed languages",
