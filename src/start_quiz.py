@@ -130,7 +130,7 @@ class QuizCog(Cog):
             min_value=2012,
             max_value=2024,
             required=False,
-            default=-1
+            default=-1,
         ),
     ):
         """Start a quiz."""
@@ -147,7 +147,7 @@ class QuizCog(Cog):
             color=0x5E296B,
         )
         settings_value = f"- questions: **{number_of_question}**\n- difficulty: **{config_name}**\n- category: **{game_category}**"
-        
+
         if max_year != -1:
             settings_value = f"{settings_value}\n- year: **before {max_year}**"
 

@@ -4,7 +4,7 @@ from nextcord.ext.commands import Bot
 
 if __name__ == "__main__":
     GOD_ID = 413429373996367872
-    
+
     with open("token.txt", "r") as file:
         token = file.readline()
 
