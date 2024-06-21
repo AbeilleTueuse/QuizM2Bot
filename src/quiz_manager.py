@@ -5,8 +5,8 @@ import os
 
 from unidecode import unidecode
 from fuzzywuzzy import fuzz
+import pandas as pd
 
-from src.metin2_api import M2Wiki, Page
 from src.data.read_files import GameNames
 from src.utils.utils import (
     json_converter,
@@ -264,13 +264,13 @@ class Question:
     def __init__(
         self,
         answers: dict[str, str],
-        image_url: str,
+        image_path: str,
         config_manager: ConfigurationManager,
     ):
         self.config_manager = config_manager
         self.answer_formatter = self.config_manager.answer_formatter
         self.answers = self._filter_answer(answers)
-        self.image_url = image_url
+        self.image_path = image_path
         self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
@@ -379,16 +379,26 @@ class Question:
 class QuizManager:
     TIME_BETWEEN_QUESTION = 10
     APPEARANCE_PROB = 0.5
+    QUESTIONS_PATH = os.path.join("src", "data", "questions.csv")
+    IMAGES_PATH = os.path.join("src", "data", "0_images")
+    VNUM = "vnum"
+    IS_MONSTER = "is_monster"
+    IMAGE_NAME1 = "image_name1"
+    IMAGE_NAME2 = "image_name2"
 
-    def __init__(self, m2_wiki: M2Wiki, config_manager: ConfigurationManager):
+    def __init__(self, config_manager: ConfigurationManager):
         self._started = False
         self._waiting_for_answer = False
+        self._questions = self._get_questions()
         self.ranked_quiz = False
-        self.m2_wiki = m2_wiki
         self.config_manager = config_manager
         self.ranking = Ranking()
         self.elo_ranking = EloRanking()
         self.game_names = GameNames(config_manager.langs_data)
+        self.total_questions = self._questions.shape[0]
+
+    def _get_questions(self):
+        return pd.read_csv(self.QUESTIONS_PATH, sep=",", index_col=[self.VNUM])
 
     def start_quiz(self):
         self._started = True
@@ -402,42 +412,41 @@ class QuizManager:
     def waiting_for_answer(self):
         return self._waiting_for_answer
 
-    def get_all_pages(self):
-        return (
-            self.m2_wiki.category(
-                category="Objets (temporaire)", exclude_category="Objets multiples"
-            )
-            + self.m2_wiki.category(category="Monstres (temporaire)")
-            + self.m2_wiki.category(category="Pierres Metin")
-        )
+    def get_ingame_names(self, vnum: int, is_monster: int):
+        if is_monster:
+            names = self.game_names.mob_names
+        else:
+            names = self.game_names.item_names
 
-    def get_pages(self, number_of_question: int = 1):
-        return rd.sample(
-            self.get_all_pages(),
-            k=number_of_question,
-        )
+        ingame_names: dict[str, str] = names.loc[vnum].to_dict()
 
-    def get_pages_content(self, pages_info: list[dict]):
-        return self.m2_wiki.get_pages_content(pages_info)
+        for lang, ig_name in ingame_names.items():
+            if ig_name.endswith("+0"):
+                ingame_names[lang] = ig_name[:-2]
 
-    def get_questions(self, pages: list[Page]):
-        for page in pages:
-            page.add_ingame_name(self.game_names)
-            page.add_image_name(self.APPEARANCE_PROB)
+            ingame_names[lang] = ingame_names[lang].replace(chr(160), " ").strip()
 
-        image_urls = self.m2_wiki.get_image_urls(pages)
+        return ingame_names
+
+    def choose_value(self, row: pd.Series) -> str:
+        if pd.isna(row[self.IMAGE_NAME2]):
+            return row[self.IMAGE_NAME1]
+        else:
+            return rd.choice([row[self.IMAGE_NAME1], row[self.IMAGE_NAME2]])
+
+    def get_questions(self, number_of_question: int):
+        questions = self._questions.sample(number_of_question)
 
         questions = [
             Question(
-                page.ingame_names, image_urls[page.image_name], self.config_manager
+                answers=self.get_ingame_names(vnum, question[self.IS_MONSTER]),
+                image_path=os.path.join(self.IMAGES_PATH, self.choose_value(question)),
+                config_manager=self.config_manager,
             )
-            for page in pages
+            for vnum, question in questions.iterrows()
         ]
 
         return questions
-
-    def number_of_question_possible(self):
-        return len(self.get_all_pages())
 
     def end_quiz(self):
         self._started = False

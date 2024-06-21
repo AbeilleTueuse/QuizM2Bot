@@ -10,7 +10,6 @@ from src.quiz_manager import (
     ConfigurationManager,
     Question,
 )
-from src.metin2_api import M2Wiki
 
 CONSOLE_PATH = "output-1187021385093107765.log"
 CONFIGURATION_MANAGER = ConfigurationManager()
@@ -97,9 +96,7 @@ class DropDown(nextcord.ui.Select):
 class QuizCog(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
-        self.quiz_manager = QuizManager(
-            m2_wiki=M2Wiki(), config_manager=CONFIGURATION_MANAGER
-        )
+        self.quiz_manager = QuizManager(config_manager=CONFIGURATION_MANAGER)
 
     @slash_command(name="quiz")
     async def quiz(self, interaction: Interaction):
@@ -183,7 +180,7 @@ class QuizCog(Cog):
             allowed_players = []
             await interaction.send(embed=embed)
 
-        questions = await self.get_questions(number_of_question, channel)
+        questions = self.quiz_manager.get_questions(number_of_question)
 
         for question_index, question in enumerate(questions):
             if not self.quiz_manager.quiz_is_running():
@@ -210,29 +207,6 @@ class QuizCog(Cog):
             await self.show_ranking(channel)
             self.quiz_manager.end_quiz()
 
-    async def get_questions(
-        self, number_of_question: int, channel: nextcord.channel.TextChannel
-    ):
-        message = "The quiz will start soon!\n- Fetching pages from the wiki..."
-        progress_message = await channel.send(message)
-
-        pages = self.quiz_manager.get_pages(number_of_question)
-        message = f"{message} done.\n- Fetching pages content..."
-        await progress_message.edit(message)
-
-        pages_content = self.quiz_manager.get_pages_content(pages)
-        message = f"{message} done.\n- Fetching images..."
-        await progress_message.edit(message)
-
-        questions = self.quiz_manager.get_questions(pages_content)
-        message = f"{message} done."
-        await progress_message.edit(message)
-
-        await progress_message.edit("The quiz is starting!")
-        await asyncio.sleep(2)
-
-        return questions
-
     async def ask_question(
         self,
         channel: nextcord.channel.TextChannel,
@@ -245,12 +219,13 @@ class QuizCog(Cog):
             description=f"What is the name of this?",
             color=0x7AFF33,
         )
-        embed.set_image(url=question.image_url)
+        image = nextcord.File(question.image_path, filename="arcthegod.png")
+        embed.set_image(url="attachment://arcthegod.png")
 
         if self.quiz_manager.ranked_quiz:
             embed.set_footer(text="Only registered players can participate.")
 
-        message = await channel.send(embed=embed)
+        message = await channel.send(embed=embed, file=image)
         self.quiz_manager.start_question()
         question.change_last_message(message)
 
@@ -440,7 +415,7 @@ class QuizCog(Cog):
 
         embed = Embed(
             title="Quiz information",
-            description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.number_of_question_possible()}** names to guess. The parameters below must be set.",
+            description=f"Use the command `/quiz start` to start a quiz. There are currently **{self.quiz_manager.total_questions}** names to guess. The parameters below must be set.",
             color=0x33A5FF,
         )
         embed.add_field(
