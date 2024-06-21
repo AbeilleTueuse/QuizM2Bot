@@ -124,6 +124,13 @@ class QuizCog(Cog):
             choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
             required=True,
         ),
+        max_year: str = nextcord.SlashOption(
+            name="year",
+            description="Choose the max year of the questions.",
+            choices=CONFIGURATION_MANAGER.YEARS,
+            required=False,
+            default="all"
+        ),
     ):
         """Start a quiz."""
         if self.quiz_manager.quiz_is_running():
@@ -180,7 +187,7 @@ class QuizCog(Cog):
             allowed_players = []
             await interaction.send(embed=embed)
 
-        questions = self.quiz_manager.get_questions(number_of_question)
+        questions = self.quiz_manager.get_questions(number_of_question, max_year)
 
         for question_index, question in enumerate(questions):
             if not self.quiz_manager.quiz_is_running():

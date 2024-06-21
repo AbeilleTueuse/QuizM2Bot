@@ -22,6 +22,7 @@ class ConfigurationManager:
     CHANGE_LANG_TIME = 30
 
     NUMBER_OF_QUESTION = [5, 10, 20, 40]
+    YEARS = ["2014", "2018", "2022", "all"]
     FRIENDYLY = "friendly"
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
@@ -434,8 +435,12 @@ class QuizManager:
         else:
             return rd.choice([row[self.IMAGE_NAME1], row[self.IMAGE_NAME2]])
 
-    def get_questions(self, number_of_question: int):
-        questions = self._questions.sample(number_of_question)
+    def get_questions(self, number_of_question: int, max_year: str):
+        if max_year == "all":
+            questions = self._questions.sample(number_of_question)
+        else:
+            max_year = int(max_year)
+            questions = self._questions[self._questions["year"] <= max_year].sample(number_of_question)
 
         questions = [
             Question(
