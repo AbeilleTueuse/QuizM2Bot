@@ -1,4 +1,5 @@
 import asyncio
+from datetime import timedelta
 
 import nextcord
 from nextcord.ext.commands import Bot, Cog
@@ -126,8 +127,8 @@ class QuizCog(Cog):
         ),
         max_year: int = nextcord.SlashOption(
             name="max_year",
-            description="Only keep pages created before this year.",
-            min_value=2012,
+            description="Only keep pages created on this year and before.",
+            min_value=2011,
             max_value=2024,
             required=False,
             default=-1,
@@ -240,7 +241,54 @@ class QuizCog(Cog):
 
         message = await channel.send(embed=embed, file=image)
         self.quiz_manager.start_question()
-        question.change_last_message(message)
+        question.last_message = message
+        question.first_message = message
+
+    async def get_close_answers(
+        self,
+        channel: nextcord.channel.TextChannel,
+        question: Question,
+        allowed_players: list,
+        first_message: nextcord.message.Message,
+        winner_message: nextcord.message.Message,
+        winner_time: float,
+    ):
+        close_answers = [[winner_message.author.name, winner_time, 0]]
+
+        async for message in channel.history(
+            limit=None,
+            after=winner_message,
+            before=winner_message.created_at + timedelta(seconds=1),
+            oldest_first=True,
+        ):
+            if (
+                not allowed_players or message.author.id in allowed_players
+            ) and question.is_correct_answer(message.content):
+
+                answer_time = (
+                    message.created_at - first_message.created_at
+                ).total_seconds()
+                close_answers.append(
+                    [message.author.name, answer_time, answer_time - winner_time]
+                )
+
+        return close_answers
+
+    async def show_close_answers(
+        self, channel: nextcord.channel.TextChannel, close_answers: list
+    ):
+        if len(close_answers) <= 1:
+            return
+        
+        embed = Embed(
+            title="It was close!",
+            description="\n".join(
+                f"- {name}: {time:.3f}s (+{extra_time:.3f})"
+                for name, time, extra_time in close_answers
+            ),
+            color=0xFF5733,
+        )
+        await channel.send(embed=embed)
 
     async def wait_for_answer(
         self,
@@ -249,7 +297,7 @@ class QuizCog(Cog):
         allowed_players: list,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
-        message = question.get_last_message()
+        message = question.last_message
 
         async for message in channel.history(
             limit=None, after=message, oldest_first=True
@@ -258,11 +306,28 @@ class QuizCog(Cog):
                 not allowed_players or message.author.id in allowed_players
             ) and question.is_correct_answer(message.content):
                 self.quiz_manager.end_question()
-                await message.reply(f"Good game!")
+                first_message: nextcord.message.Message = question.first_message
+                answer_time = (
+                    message.created_at - first_message.created_at
+                ).total_seconds()
+
+                await message.reply(
+                    f"Good game! You answered in {answer_time:.3f} seconds."
+                )
                 self.quiz_manager.ranking.increment_score(message.author.id)
+                await asyncio.sleep(1)
+                close_answers = await self.get_close_answers(
+                    channel,
+                    question,
+                    allowed_players,
+                    first_message,
+                    message,
+                    answer_time,
+                )
+                await self.show_close_answers(channel, close_answers)
                 break
         else:
-            question.change_last_message(message)
+            question.last_message = message
 
             if not question.show_hint() or not self.quiz_manager.waiting_for_answer():
                 return
@@ -278,12 +343,10 @@ class QuizCog(Cog):
                     color=0xEDF02A,
                 )
 
-                last_hint_message: nextcord.message.Message = (
-                    question.get_last_hint_message()
-                )
+                last_hint_message: nextcord.message.Message = question.last_hint_message
 
                 new_hint_message = await channel.send(embed=embed)
-                question.change_last_hint_message(new_hint_message)
+                question.last_hint_message = new_hint_message
 
                 if last_hint_message is not None:
                     await last_hint_message.delete()

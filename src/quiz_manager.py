@@ -276,8 +276,9 @@ class Question:
         self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
         self.hint_shown = 0
-        self._last_message = None
-        self._last_hint_message = None
+        self.first_message = None
+        self.last_message = None
+        self.last_hint_message = None
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
@@ -363,18 +364,6 @@ class Question:
                 return True
         return False
 
-    def change_last_message(self, message):
-        self._last_message = message
-
-    def get_last_message(self):
-        return self._last_message
-
-    def change_last_hint_message(self, message):
-        self._last_hint_message = message
-
-    def get_last_hint_message(self):
-        return self._last_hint_message
-
 
 class QuizManager:
     TIME_BETWEEN_QUESTION = 10
@@ -438,7 +427,7 @@ class QuizManager:
         if max_year == -1:
             questions = self._questions
         else:
-            questions = self._questions[self._questions["year"] < max_year]
+            questions = self._questions[self._questions["year"] <= max_year]
 
         questions = questions.sample(number_of_question)
 
