@@ -197,11 +197,12 @@ class EloLeaderboard:
 
         if not player_id in self.data[guild_id]:
             self.data[guild_id][player_id] = self.default_info(player_name)
+            return self.DEFAULT_ELO
 
         return self.data[guild_id][player_id][self.ELO]
 
     def default_info(self, player_name: str):
-        return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
+        return {self.NAME: player_name}
 
     def _update_elo(self, guild_id, player_id, new_elo: int):
         self.data[guild_id][player_id][self.ELO] = new_elo
@@ -239,20 +240,14 @@ class EloLeaderboard:
 
         return new_elo
 
-    def get_player_score(self, players_score: dict, player_id: int) -> tuple[str, int]:
-        player_score = players_score[player_id]
-        return player_score[self.NAME], player_score[self.ELO]
-
     def get_leaderboard(self, guild_id: int):
-        players_score = self.data[guild_id]
-        sorted_players = sorted(
-            [
-                self.get_player_score(players_score, player_id)
-                for player_id in players_score
-            ],
-            key=lambda item: item[1],
-            reverse=True,
+        players_score: dict[int, dict] = self.data[guild_id]
+        valid_scores = (
+            (player_score[self.NAME], player_score[self.ELO])
+            for player_score in players_score.values()
+            if self.ELO in player_score
         )
+        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
 
         lb = []
         current_rank = 1
@@ -269,15 +264,13 @@ class EloLeaderboard:
         return lb
 
     def get_player_ranking(self, guild_id: int, user_name: str):
-        players_score = self.data[guild_id]
-        sorted_players = sorted(
-            [
-                self.get_player_score(players_score, player_id)
-                for player_id in players_score
-            ],
-            key=lambda item: item[1],
-            reverse=True,
+        players_score: dict[int, dict] = self.data[guild_id]
+        valid_scores = (
+            (player_score[self.NAME], player_score[self.ELO])
+            for player_score in players_score.values()
+            if self.ELO in player_score
         )
+        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
 
         current_rank = 1
         current_score = None
