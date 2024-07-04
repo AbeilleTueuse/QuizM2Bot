@@ -162,5 +162,5 @@ cython_debug/
 # Project
 token.txt
 test.py
-ranking.json
+leaderboard.json
 langs_by_servers.json

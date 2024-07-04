@@ -20,6 +20,7 @@ class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
     REGISTRATION_TIME = 30
     CHANGE_LANG_TIME = 30
+    CLOSE_ANSWSER_MAX_SECOND = 1
 
     NUMBER_OF_QUESTION = [5, 10, 20, 40]
     FRIENDYLY = "friendly"
@@ -57,6 +58,7 @@ class ConfigurationManager:
         self.saved_config: dict[str, dict[str, str]] = self._open(self.CONFIG_PATH)
         self.langs_data = self._open(self.LANGS_DATA_PATH)
         self.allowed_langs = [self.DEFAULT_LANG]
+        self.allowed_players = []
 
     def _open(self, path) -> dict[str]:
         with open(path, "r", encoding="utf-8") as config_file:
@@ -74,6 +76,8 @@ class ConfigurationManager:
             self.allowed_langs = self.langs_by_servers[guild_id]
         else:
             self.allowed_langs = [self.DEFAULT_LANG]
+
+        self.allowed_players = []
 
     def _get_answer_formatter(self, config: dict):
         mode = config[self.MODE]
@@ -127,7 +131,7 @@ class ConfigurationManager:
         )
 
 
-class Ranking:
+class Leaderboard:
     def __init__(self):
         self.scores = defaultdict(int)
 
@@ -152,10 +156,10 @@ class Ranking:
     def __len__(self):
         return len(self.scores.keys())
 
-    def get_ranking(self):
+    def get_leaderboard(self):
         sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
 
-        ranking = []
+        lb = []
         current_rank = 1
         current_score = None
 
@@ -163,17 +167,17 @@ class Ranking:
             if score != current_score:
                 current_rank = index + 1
                 current_score = score
-            ranking.append((convert_rank(current_rank), player_id, score))
+            lb.append((convert_rank(current_rank), player_id, score))
 
-        return ranking
+        return lb
 
 
-class EloRanking:
-    DATA_PATH = os.path.join("src", "data", "ranking.json")
+class EloLeaderboard:
+    DATA_PATH = os.path.join("src", "data", "leaderboard.json")
     ELO = "elo"
     NAME = "name"
     DEFAULT_ELO = 1000
-    RANKING_MAX_DISPLAY = 20
+    LEADERBOARD_MAX_DISPLAY = 20
 
     def __init__(self):
         self.data = self._get_data()
@@ -202,19 +206,19 @@ class EloRanking:
     def _update_elo(self, guild_id, player_id, additionnal_elo):
         self.data[guild_id][player_id][self.ELO] += additionnal_elo
 
-    def get_new_elo(self, guild_id: int, ranking: Ranking):
+    def get_new_elo(self, guild_id: int, leaderboard: Leaderboard):
         current_elo = {
-            player_id: self.get_elo(guild_id, player_id) for player_id, _ in ranking
+            player_id: self.get_elo(guild_id, player_id) for player_id, _ in leaderboard
         }
         new_elo = {}
 
-        for player_id, player_score in ranking:
+        for player_id, player_score in leaderboard:
             player_elo = current_elo[player_id]
             additionnal_elo = sum(
                 elo_formula(
                     player_elo, player_score, current_elo[opponent_id], opponent_score
                 )
-                for opponent_id, opponent_score in ranking
+                for opponent_id, opponent_score in leaderboard
                 if player_id != opponent_id
             )
             new_elo[player_id] = [
@@ -230,7 +234,7 @@ class EloRanking:
         player_score = players_score[player_id]
         return player_score[self.NAME], player_score[self.ELO]
 
-    def get_ranking(self, guild_id: int):
+    def get_leaderboard(self, guild_id: int):
         players_score = self.data[guild_id]
         sorted_players = sorted(
             [
@@ -241,19 +245,19 @@ class EloRanking:
             reverse=True,
         )
 
-        ranking = []
+        lb = []
         current_rank = 1
         current_score = None
 
         for index, (player_name, score) in enumerate(sorted_players):
-            if index == self.RANKING_MAX_DISPLAY:
+            if index == self.LEADERBOARD_MAX_DISPLAY:
                 break
             if score != current_score:
                 current_rank = index + 1
                 current_score = score
-            ranking.append((convert_rank(current_rank), player_name, score))
+            lb.append((convert_rank(current_rank), player_name, score))
 
-        return ranking
+        return lb
 
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
@@ -279,6 +283,7 @@ class Question:
         self.first_message = None
         self.last_message = None
         self.last_hint_message = None
+        self.allowed_players = self.config_manager.allowed_players
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
@@ -364,6 +369,11 @@ class Question:
                 return True
         return False
 
+    def is_winner(self, message_content: str, author_id: int):
+        return (
+            not self.allowed_players or author_id in self.allowed_players
+        ) and self.is_correct_answer(message_content)
+
 
 class QuizManager:
     TIME_BETWEEN_QUESTION = 10
@@ -381,16 +391,22 @@ class QuizManager:
         self._questions = self._get_questions()
         self.ranked_quiz = False
         self.config_manager = config_manager
-        self.ranking = Ranking()
-        self.elo_ranking = EloRanking()
+        self.leaderboard = Leaderboard()
+        self.elo_leaderboard = EloLeaderboard()
         self.game_names = GameNames(config_manager.langs_data)
         self.total_questions = self._questions.shape[0]
+        self.multilang_plural = ""
 
     def _get_questions(self):
         return pd.read_csv(self.QUESTIONS_PATH, sep=",", index_col=[self.VNUM])
 
     def start_quiz(self):
         self._started = True
+
+        if len(self.config_manager.allowed_langs) >= 2:
+            self.multilang_plural = "s"
+        else:
+            self.multilang_plural = ""
 
     def quiz_is_running(self):
         return self._started
@@ -445,7 +461,7 @@ class QuizManager:
     def end_quiz(self):
         self._started = False
         self._waiting_for_answer = False
-        self.ranking.reset()
+        self.leaderboard.reset()
 
     def end_question(self):
         self._waiting_for_answer = False
@@ -456,10 +472,10 @@ class QuizManager:
         return is_ranked
 
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
-        return self.elo_ranking.get_elo(guild_id, player_id, player_name)
+        return self.elo_leaderboard.get_elo(guild_id, player_id, player_name)
 
     def get_new_elo(self, guild_id: int):
-        return self.elo_ranking.get_new_elo(guild_id, self.ranking)
+        return self.elo_leaderboard.get_new_elo(guild_id, self.leaderboard)
 
-    def get_elo_ranking(self, guild_id: int):
-        return self.elo_ranking.get_ranking(guild_id)
+    def get_elo_leaderboard(self, guild_id: int):
+        return self.elo_leaderboard.get_leaderboard(guild_id)
