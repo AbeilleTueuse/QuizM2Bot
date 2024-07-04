@@ -465,11 +465,11 @@ class QuizManager:
         else:
             return rd.choice([row[self.IMAGE_NAME1], row[self.IMAGE_NAME2]])
 
-    def get_questions(self, number_of_question: int, max_year: str):
-        if max_year == -1:
+    def get_questions(self, number_of_question: int, year: str):
+        if year == -1:
             questions = self._questions
         else:
-            questions = self._questions[self._questions["year"] <= max_year]
+            questions = self._questions[self._questions["year"] <= year]
 
         questions = questions.sample(number_of_question)
 

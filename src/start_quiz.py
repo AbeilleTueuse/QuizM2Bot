@@ -122,8 +122,8 @@ class QuizCog(Cog):
             choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
             required=True,
         ),
-        max_year: int = nextcord.SlashOption(
-            name="max_year",
+        year: int = nextcord.SlashOption(
+            name="year",
             description="Only keep pages created on this year and before.",
             min_value=2011,
             max_value=2024,
@@ -146,8 +146,8 @@ class QuizCog(Cog):
         )
         settings_value = f"- questions: **{number_of_question}**\n- difficulty: **{config_name}**\n- category: **{game_category}**"
 
-        if max_year != -1:
-            settings_value = f"{settings_value}\n- year: **before {max_year}**"
+        if year != -1:
+            settings_value = f"{settings_value}\n- year: **{year} and before**"
 
         embed.add_field(
             name="Settings",
@@ -192,7 +192,7 @@ class QuizCog(Cog):
             await interaction.send(embed=embed)
 
         CONFIGURATION_MANAGER.allowed_players = allowed_players
-        questions = self.quiz_manager.get_questions(number_of_question, max_year)
+        questions = self.quiz_manager.get_questions(number_of_question, year)
 
         for question_index, question in enumerate(questions):
             if not self.quiz_manager.quiz_is_running():
