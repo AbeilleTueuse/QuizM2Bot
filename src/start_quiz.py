@@ -401,7 +401,7 @@ class QuizCog(Cog):
 
     async def show_leaderboard(self, channel: nextcord.channel.TextChannel):
         if self.quiz_manager.ranked_quiz:
-            elo_augmentation = self.quiz_manager.get_new_elo(channel.guild.id)
+            elo_augmentation = self.quiz_manager.calc_and_save_new_elo(channel.guild.id)
         else:
             elo_augmentation = None
 
@@ -433,7 +433,7 @@ class QuizCog(Cog):
     @staticmethod
     def user_id_to_display_name(channel: nextcord.channel.TextChannel, user_id: int):
         return channel.guild.get_member(user_id).display_name
-    
+
     @staticmethod
     def user_name_to_display_name(guild: nextcord.Guild, user_name: str) -> str:
         member = nextcord.utils.get(guild.members, name=user_name)
@@ -471,11 +471,24 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Show user elo."""
-        elo = self.quiz_manager.get_elo(
-            interaction.guild_id, interaction.user.id, interaction.user.name
-        )
+        try:
+            player_ranking = self.quiz_manager.get_player_ranking(
+                interaction.guild.id, interaction.user.name
+            )
 
-        await interaction.send(f"You have {elo} elo.")
+            if player_ranking is None:
+                await interaction.send(
+                    f"You are not ranked yet. You have to finish a ranked game against at least one player."
+                )
+
+            else:
+                elo, rank, total_player = player_ranking
+                await interaction.send(f"You have {elo} elo ({rank}/{total_player}).")
+
+        except KeyError:
+            await interaction.send(
+                f"You are not ranked yet. You have to finish a ranked game against at least one player."
+            )
 
     @quiz.subcommand(name="leaderboard")
     async def show_elo_leaderboard(
@@ -483,16 +496,19 @@ class QuizCog(Cog):
         interaction: Interaction,
     ):
         """Show elo leaderboard."""
-        leaderboard = "\n".join(
-            f"{rank} ┊ **{self.user_name_to_display_name(interaction.guild, user_name)}** ({elo})"
-            for rank, user_name, elo in self.quiz_manager.get_elo_leaderboard(
-                interaction.guild_id
+        try:
+            leaderboard = "\n".join(
+                f"{rank} ┊ **{self.user_name_to_display_name(interaction.guild, user_name)}** ({elo})"
+                for rank, user_name, elo in self.quiz_manager.get_elo_leaderboard(
+                    interaction.guild_id
+                )
             )
-        )
-        embed = Embed(
-            title="Elo leaderboard 🏆", description=leaderboard, color=0x33A5FF
-        )
-        await interaction.send(embed=embed)
+            embed = Embed(
+                title="Elo leaderboard 🏆", description=leaderboard, color=0x33A5FF
+            )
+            await interaction.send(embed=embed)
+        except KeyError:
+            await interaction.send("There are no leaderboard on this server yet.")
 
     @quiz.subcommand(name="info")
     async def show_quiz_info(
@@ -569,7 +585,9 @@ class QuizCog(Cog):
             if os.path.exists(CONSOLE_PATH):
                 await interaction.send(file=nextcord.File(CONSOLE_PATH), ephemeral=True)
             else:
-                await interaction.send(f"The file {CONSOLE_PATH} doesn't exist.", ephemeral=True)
+                await interaction.send(
+                    f"The file {CONSOLE_PATH} doesn't exist.", ephemeral=True
+                )
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
 
@@ -587,7 +605,9 @@ class QuizCog(Cog):
                     file=nextcord.File(leaderboard_path), ephemeral=True
                 )
             else:
-                await interaction.send(f"The file {leaderboard_path} doesn't exist.", ephemeral=True)
+                await interaction.send(
+                    f"The file {leaderboard_path} doesn't exist.", ephemeral=True
+                )
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
 

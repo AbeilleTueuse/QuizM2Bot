@@ -11,7 +11,7 @@ def json_converter(obj):
     else:
         return obj
     
-def format_number_with_sign(number):
+def format_number_with_sign(number: int):
     return f"+{number}" if number >= 0 else f"{number}"
 
 def elo_formula(player_elo, player_score, opponent_elo, opponent_score):

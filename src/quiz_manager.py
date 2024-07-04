@@ -203,13 +203,21 @@ class EloLeaderboard:
     def default_info(self, player_name: str):
         return {self.ELO: self.DEFAULT_ELO, self.NAME: player_name}
 
-    def _update_elo(self, guild_id, player_id, additionnal_elo):
-        self.data[guild_id][player_id][self.ELO] += additionnal_elo
+    def _update_elo(self, guild_id, player_id, new_elo: int):
+        self.data[guild_id][player_id][self.ELO] = new_elo
 
-    def get_new_elo(self, guild_id: int, leaderboard: Leaderboard):
+    def calc_and_save_new_elo(self, guild_id: int, leaderboard: Leaderboard):
         current_elo = {
             player_id: self.get_elo(guild_id, player_id) for player_id, _ in leaderboard
         }
+
+        # don't save if only one player
+        if len(leaderboard) == 1:
+            return {
+                player_id: [player_elo, format_number_with_sign(0)]
+                for player_id, player_elo in current_elo.items()
+            }
+
         new_elo = {}
 
         for player_id, player_score in leaderboard:
@@ -225,12 +233,13 @@ class EloLeaderboard:
                 player_elo + additionnal_elo,
                 format_number_with_sign(additionnal_elo),
             ]
-            self._update_elo(guild_id, player_id, additionnal_elo)
+            self._update_elo(guild_id, player_id, player_elo + additionnal_elo)
+
         self._save()
 
         return new_elo
 
-    def get_player_score(self, players_score: dict, player_id: int):
+    def get_player_score(self, players_score: dict, player_id: int) -> tuple[str, int]:
         player_score = players_score[player_id]
         return player_score[self.NAME], player_score[self.ELO]
 
@@ -250,7 +259,7 @@ class EloLeaderboard:
         current_score = None
 
         for index, (player_name, score) in enumerate(sorted_players):
-            if index == self.LEADERBOARD_MAX_DISPLAY:
+            if index == self.LEADERBOARD_MAX_DISPLAY or score == -1:
                 break
             if score != current_score:
                 current_rank = index + 1
@@ -258,6 +267,30 @@ class EloLeaderboard:
             lb.append((convert_rank(current_rank), player_name, score))
 
         return lb
+
+    def get_player_ranking(self, guild_id: int, user_name: str):
+        players_score = self.data[guild_id]
+        sorted_players = sorted(
+            [
+                self.get_player_score(players_score, player_id)
+                for player_id in players_score
+            ],
+            key=lambda item: item[1],
+            reverse=True,
+        )
+
+        current_rank = 1
+        current_score = None
+
+        for index, (player_name, score) in enumerate(sorted_players):
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+
+            if player_name == user_name:
+                return score, current_rank, len(sorted_players)
+
+        return None
 
     def _save(self):
         with open(self.DATA_PATH, "w") as file:
@@ -474,8 +507,11 @@ class QuizManager:
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
         return self.elo_leaderboard.get_elo(guild_id, player_id, player_name)
 
-    def get_new_elo(self, guild_id: int):
-        return self.elo_leaderboard.get_new_elo(guild_id, self.leaderboard)
+    def get_player_ranking(self, guild_id: int, player_name: str):
+        return self.elo_leaderboard.get_player_ranking(guild_id, player_name)
+
+    def calc_and_save_new_elo(self, guild_id: int):
+        return self.elo_leaderboard.calc_and_save_new_elo(guild_id, self.leaderboard)
 
     def get_elo_leaderboard(self, guild_id: int):
         return self.elo_leaderboard.get_leaderboard(guild_id)
