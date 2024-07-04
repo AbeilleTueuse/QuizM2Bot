@@ -199,7 +199,10 @@ class EloLeaderboard:
             self.data[guild_id][player_id] = self.default_info(player_name)
             return self.DEFAULT_ELO
 
-        return self.data[guild_id][player_id][self.ELO]
+        if self.ELO in self.data[guild_id][player_id]:
+            return self.data[guild_id][player_id][self.ELO]
+        
+        return self.DEFAULT_ELO
 
     def default_info(self, player_name: str):
         return {self.NAME: player_name}
