@@ -6,6 +6,7 @@ import os
 from unidecode import unidecode
 from fuzzywuzzy import fuzz
 import pandas as pd
+from nextcord import Member
 
 from src.data.read_files import GameNames
 from src.utils.utils import (
@@ -59,6 +60,7 @@ class ConfigurationManager:
         self.langs_data = self._open(self.LANGS_DATA_PATH)
         self.allowed_langs = [self.DEFAULT_LANG]
         self.allowed_players = []
+        self.players = {}
 
     def _open(self, path) -> dict[str]:
         with open(path, "r", encoding="utf-8") as config_file:
@@ -78,6 +80,10 @@ class ConfigurationManager:
             self.allowed_langs = [self.DEFAULT_LANG]
 
         self.allowed_players = []
+
+    def set_players(self, players: dict[int, Member]):
+        self.allowed_players = players.keys()
+        self.players = players
 
     def _get_answer_formatter(self, config: dict):
         mode = config[self.MODE]
@@ -135,8 +141,8 @@ class Leaderboard:
     def __init__(self):
         self.scores = defaultdict(int)
 
-    def initialize(self, players_id: list[int]):
-        for player_id in players_id:
+    def initialize(self, players: dict):
+        for player_id in players:
             self.scores[player_id] = 0
 
     def increment_score(self, user_id: str):

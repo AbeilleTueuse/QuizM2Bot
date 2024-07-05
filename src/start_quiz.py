@@ -5,7 +5,20 @@ import os
 import nextcord
 from nextcord.ext.commands import Bot, Cog
 from nextcord.ext import tasks
-from nextcord import Interaction, Embed, slash_command
+from nextcord import (
+    Interaction,
+    Embed,
+    slash_command,
+    Member,
+    Message,
+    SlashOption,
+    TextChannel,
+    File,
+    Guild,
+    SelectOption,
+    ButtonStyle,
+)
+from nextcord.ui import View, Button, StringSelect, button
 
 from src.quiz_manager import QuizManager, ConfigurationManager, Question, EloLeaderboard
 
@@ -13,7 +26,7 @@ CONSOLE_PATH = "output-1187021385093107765.log"
 CONFIGURATION_MANAGER = ConfigurationManager()
 
 
-class RegistrationButton(nextcord.ui.View):
+class RegistrationButton(View):
     MESSAGE_OPEN = "Registrations will close in {remaining_time} second{plural}."
     MESSAGE_CLOSE = "Registrations are closed."
 
@@ -25,11 +38,11 @@ class RegistrationButton(nextcord.ui.View):
         self.players = {}
         self.embed_value = ""
 
-    async def update(self, message: nextcord.message.Message):
+    async def update(self, message: Message):
         await self.registration_timer.start(message)
 
     @tasks.loop(seconds=1)
-    async def registration_timer(self, message: nextcord.message.Message):
+    async def registration_timer(self, message: Message):
         remaining_time = self.registration_time - self.registration_timer.current_loop
         plural = "s" * (remaining_time >= 2)
 
@@ -39,22 +52,20 @@ class RegistrationButton(nextcord.ui.View):
         await message.edit(embed=self.embed, view=self)
 
         if not remaining_time or not self.quiz_manager.quiz_is_running():
-            button: nextcord.ui.Button = self.children[0]
+            button: Button = self.children[0]
             button.disabled = True
             self.embed.set_footer(text=self.MESSAGE_CLOSE)
             await message.edit(embed=self.embed, view=self)
             self.registration_timer.stop()
 
-    @nextcord.ui.button(
-        label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️"
-    )
-    async def button_callback(self, _, interaction: nextcord.Interaction):
+    @button(label="Registration", style=ButtonStyle.success, emoji="🎟️")
+    async def button_callback(self, _, interaction: Interaction):
         user = interaction.user
 
         if user.id in self.players:
             return
 
-        self.players[user.id] = user.name
+        self.players[user.id] = user
         self.embed_value += f"\n- {user.display_name} ({self.quiz_manager.get_elo(interaction.guild_id, user.id, user.name)})"
 
         self.embed.set_field_at(
@@ -65,7 +76,7 @@ class RegistrationButton(nextcord.ui.View):
         )
 
 
-class DropDown(nextcord.ui.Select):
+class DropDown(StringSelect):
     def __init__(self, guild_id: int):
         self.guild_id = guild_id
         default_langs = CONFIGURATION_MANAGER.get_default_langs(guild_id)
@@ -75,7 +86,7 @@ class DropDown(nextcord.ui.Select):
             min_values=1,
             max_values=len(CONFIGURATION_MANAGER.langs_data.keys()),
             options=[
-                nextcord.SelectOption(
+                SelectOption(
                     label=lang,
                     emoji=data["emoji"],
                     default=lang in default_langs,
@@ -104,25 +115,25 @@ class QuizCog(Cog):
     async def start_quiz(
         self,
         interaction: Interaction,
-        number_of_question: int = nextcord.SlashOption(
+        number_of_question: int = SlashOption(
             name="questions",
             description="Choose the number of questions to ask.",
             choices=CONFIGURATION_MANAGER.NUMBER_OF_QUESTION,
             required=True,
         ),
-        config_name: str = nextcord.SlashOption(
+        config_name: str = SlashOption(
             name="difficulty",
             description="Choose the quiz difficulty.",
             choices=CONFIGURATION_MANAGER.saved_config.keys(),
             required=True,
         ),
-        game_category: str = nextcord.SlashOption(
+        game_category: str = SlashOption(
             name="category",
             description="Choose the category of the quiz.",
             choices=CONFIGURATION_MANAGER.GAME_CATEGORIES,
             required=True,
         ),
-        year: int = nextcord.SlashOption(
+        year: int = SlashOption(
             name="year",
             description="Only keep pages created on this year and before.",
             min_value=2011,
@@ -177,21 +188,21 @@ class QuizCog(Cog):
             if not self.quiz_manager.quiz_is_running():
                 return
 
-            allowed_players = registration_button.players.keys()
+            players = registration_button.players
 
-            if not len(allowed_players):
+            if not players:
                 await channel.send(
                     "There are not registered players, the quiz is canceled."
                 )
                 self.quiz_manager.end_quiz()
                 return
 
-            self.quiz_manager.leaderboard.initialize(allowed_players)
+            self.quiz_manager.leaderboard.initialize(players)
         else:
-            allowed_players = []
+            players = {}
             await interaction.send(embed=embed)
 
-        CONFIGURATION_MANAGER.allowed_players = allowed_players
+        CONFIGURATION_MANAGER.set_players(players)
         questions = self.quiz_manager.get_questions(number_of_question, year)
 
         for question_index, question in enumerate(questions):
@@ -221,7 +232,7 @@ class QuizCog(Cog):
 
     async def ask_question(
         self,
-        channel: nextcord.channel.TextChannel,
+        channel: TextChannel,
         question_index: int,
         question: Question,
         number_of_question: int,
@@ -231,7 +242,7 @@ class QuizCog(Cog):
             description=f"What is the name of this?",
             color=0x7AFF33,
         )
-        image = nextcord.File(question.image_path, filename="arcthegod.png")
+        image = File(question.image_path, filename="arcthegod.png")
         embed.set_image(url="attachment://arcthegod.png")
 
         if self.quiz_manager.ranked_quiz:
@@ -244,10 +255,10 @@ class QuizCog(Cog):
 
     async def get_close_answers(
         self,
-        channel: nextcord.channel.TextChannel,
+        channel: TextChannel,
         question: Question,
-        first_message: nextcord.message.Message,
-        winner_message: nextcord.message.Message,
+        first_message: Message,
+        winner_message: Message,
         winner_time: float,
     ):
         close_answers = [[winner_message.author.display_name, winner_time, 0]]
@@ -272,9 +283,7 @@ class QuizCog(Cog):
 
         return close_answers
 
-    async def show_close_answers(
-        self, channel: nextcord.channel.TextChannel, close_answers: list
-    ):
+    async def show_close_answers(self, channel: TextChannel, close_answers: list):
         if len(close_answers) <= 1:
             return
 
@@ -288,7 +297,7 @@ class QuizCog(Cog):
         )
         await channel.send(embed=embed)
 
-    async def wait_for_close_answers(self, winner_message: nextcord.message.Message):
+    async def wait_for_close_answers(self, winner_message: Message):
         current_time = datetime.now(timezone.utc)
         elapsed_time = (current_time - winner_message.created_at).total_seconds()
         time_to_wait = max(
@@ -299,7 +308,7 @@ class QuizCog(Cog):
 
     async def wait_for_answer(
         self,
-        channel: nextcord.channel.TextChannel,
+        channel: TextChannel,
         question: Question,
     ):
         await asyncio.sleep(CONFIGURATION_MANAGER.CHECK_ANSWER_PERIOD)
@@ -310,7 +319,7 @@ class QuizCog(Cog):
         ):
             if question.is_winner(message.content, message.author.id):
                 self.quiz_manager.end_question()
-                first_message: nextcord.message.Message = question.first_message
+                first_message: Message = question.first_message
                 answer_time = (
                     message.created_at - first_message.created_at
                 ).total_seconds()
@@ -347,7 +356,7 @@ class QuizCog(Cog):
                     color=0xEDF02A,
                 )
 
-                last_hint_message: nextcord.message.Message = question.last_hint_message
+                last_hint_message: Message = question.last_hint_message
 
                 new_hint_message = await channel.send(embed=embed)
                 question.last_hint_message = new_hint_message
@@ -359,9 +368,7 @@ class QuizCog(Cog):
                 self.quiz_manager.end_question()
                 await channel.send(f"Too late!")
 
-    async def show_answer(
-        self, channel: nextcord.channel.TextChannel, question: Question
-    ):
+    async def show_answer(self, channel: TextChannel, question: Question):
         if not self.quiz_manager.quiz_is_running():
             return None, None
 
@@ -378,9 +385,7 @@ class QuizCog(Cog):
         return message, embed
 
     @tasks.loop(seconds=1)
-    async def next_question_timer(
-        self, message: nextcord.message.Message, embed: Embed
-    ):
+    async def next_question_timer(self, message: Message, embed: Embed):
         remaining_time = (
             self.quiz_manager.TIME_BETWEEN_QUESTION
             - self.next_question_timer.current_loop
@@ -399,30 +404,33 @@ class QuizCog(Cog):
             embed.remove_footer()
             await message.edit(embed=embed)
 
-    async def show_leaderboard(self, channel: nextcord.channel.TextChannel):
+    async def show_leaderboard(self, channel: TextChannel):
         if self.quiz_manager.ranked_quiz:
             elo_augmentation = self.quiz_manager.calc_and_save_new_elo(channel.guild.id)
         else:
             elo_augmentation = None
 
+        leaderboard_data = self.quiz_manager.leaderboard.get_leaderboard()
+
         leaderboard = "\n".join(
             self.user_row_leaderboard(channel, user_id, rank, score, elo_augmentation)
-            for rank, user_id, score in self.quiz_manager.leaderboard.get_leaderboard()
+            for rank, user_id, score in leaderboard_data
         )
         embed = Embed(title="Leaderboard 🏆", description=leaderboard, color=0x33A5FF)
+        winner = CONFIGURATION_MANAGER.players[leaderboard_data[0][1]]
+        embed.set_thumbnail(winner.display_avatar.url)
         await channel.send(embed=embed)
 
     def user_row_leaderboard(
         self,
-        channel: nextcord.channel.TextChannel,
         user_id: int,
         rank: str,
         score: int,
         elo_augmentation: dict,
     ):
-        user_name = self.user_id_to_display_name(channel, user_id)
+        user = CONFIGURATION_MANAGER.players[user_id]
 
-        row = f"{rank} ┊ **{user_name}** ({score} point{'s' * (score > 1)})"
+        row = f"{rank} ┊ **{user.display_name}** ({score} point{'s' * (score > 1)})"
 
         if elo_augmentation is not None:
             new_elo, elo_augmentation = elo_augmentation[user_id]
@@ -431,15 +439,22 @@ class QuizCog(Cog):
         return row
 
     @staticmethod
-    def user_id_to_display_name(channel: nextcord.channel.TextChannel, user_id: int):
-        return channel.guild.get_member(user_id).display_name
+    def user_name_to_display_name(guild: Guild, user_name: str):
+        user = nextcord.utils.get(guild.members, name=user_name)
+
+        if user is None:
+            return user_name
+
+        return user.display_name
 
     @staticmethod
-    def user_name_to_display_name(guild: nextcord.Guild, user_name: str) -> str:
-        member = nextcord.utils.get(guild.members, name=user_name)
-        if member is not None:
-            return member.display_name
-        return user_name
+    def user_name_to_display_avatar(guild: Guild, user_name: str):
+        user = nextcord.utils.get(guild.members, name=user_name)
+
+        if user is None:
+            return
+
+        return user.display_avatar
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: Interaction):
@@ -469,7 +484,7 @@ class QuizCog(Cog):
     async def show_user_elo(
         self,
         interaction: Interaction,
-        member: nextcord.Member = nextcord.SlashOption(
+        member: Member = SlashOption(
             name="member",
             description="Choose a member to see his ranking.",
             required=False,
@@ -489,9 +504,10 @@ class QuizCog(Cog):
 
             else:
                 elo, rank, total_player = player_ranking
-                description = (
-                    f"{member.mention} has {elo} elo ({rank}/{total_player})."
-                )
+                description = f"{member.mention} has {elo} elo ({rank}/{total_player})."
+
+                if rank == 1:
+                    description += " He's the best!"
 
         except KeyError:
             description = f"{member.mention} isn't ranked yet."
@@ -508,15 +524,26 @@ class QuizCog(Cog):
     ):
         """Show elo leaderboard."""
         try:
+            leaderboard_data = self.quiz_manager.get_elo_leaderboard(
+                interaction.guild_id
+            )
+
+            if not leaderboard_data:
+                await interaction.send("There are no leaderboard on this server yet.")
+
             leaderboard = "\n".join(
                 f"{rank} ┊ **{self.user_name_to_display_name(interaction.guild, user_name)}** ({elo})"
-                for rank, user_name, elo in self.quiz_manager.get_elo_leaderboard(
-                    interaction.guild_id
-                )
+                for rank, user_name, elo in leaderboard_data
             )
             embed = Embed(
                 title="Elo leaderboard 🏆", description=leaderboard, color=0x33A5FF
             )
+            leader_avatar = self.user_name_to_display_avatar(
+                interaction.guild, leaderboard_data[0][1]
+            )
+            if leader_avatar:
+                embed.set_thumbnail(leader_avatar.url)
+
             await interaction.send(embed=embed)
         except KeyError:
             await interaction.send("There are no leaderboard on this server yet.")
@@ -562,7 +589,7 @@ class QuizCog(Cog):
         user = interaction.user
 
         if user.id == self.bot.owner_id or user.guild_permissions.administrator:
-            dropdown_view = nextcord.ui.View()
+            dropdown_view = View()
             dropdown_view.add_item(DropDown(interaction.guild_id))
 
             await interaction.send(view=dropdown_view, ephemeral=True)
@@ -594,7 +621,7 @@ class QuizCog(Cog):
         """Get the console."""
         if interaction.user.id == self.bot.owner_id:
             if os.path.exists(CONSOLE_PATH):
-                await interaction.send(file=nextcord.File(CONSOLE_PATH), ephemeral=True)
+                await interaction.send(file=File(CONSOLE_PATH), ephemeral=True)
             else:
                 await interaction.send(
                     f"The file {CONSOLE_PATH} doesn't exist.", ephemeral=True
@@ -612,9 +639,7 @@ class QuizCog(Cog):
             leaderboard_path = EloLeaderboard.DATA_PATH
 
             if os.path.exists(leaderboard_path):
-                await interaction.send(
-                    file=nextcord.File(leaderboard_path), ephemeral=True
-                )
+                await interaction.send(file=File(leaderboard_path), ephemeral=True)
             else:
                 await interaction.send(
                     f"The file {leaderboard_path} doesn't exist.", ephemeral=True
