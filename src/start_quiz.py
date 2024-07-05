@@ -469,26 +469,37 @@ class QuizCog(Cog):
     async def show_user_elo(
         self,
         interaction: Interaction,
+        member: nextcord.Member = nextcord.SlashOption(
+            name="member",
+            description="Choose a member to see his ranking.",
+            required=False,
+            default=None,
+        ),
     ):
-        """Show user elo."""
+        """Show user ranking."""
+        member = member if member is not None else interaction.user
+
         try:
             player_ranking = self.quiz_manager.get_player_ranking(
-                interaction.guild.id, interaction.user.name
+                interaction.guild.id, member.name
             )
 
             if player_ranking is None:
-                await interaction.send(
-                    f"You are not ranked yet. You have to finish a ranked game against at least one player."
-                )
+                description = f"{member.mention} isn't ranked yet."
 
             else:
                 elo, rank, total_player = player_ranking
-                await interaction.send(f"You have {elo} elo ({rank}/{total_player}).")
+                description = (
+                    f"{member.mention} has {elo} elo ({rank}/{total_player})."
+                )
 
         except KeyError:
-            await interaction.send(
-                f"You are not ranked yet. You have to finish a ranked game against at least one player."
-            )
+            description = f"{member.mention} isn't ranked yet."
+
+        embed = Embed(title="Ranking 🏆", description=description, color=0x33A5FF)
+        embed.set_thumbnail(member.display_avatar.url)
+
+        await interaction.send(embed=embed)
 
     @quiz.subcommand(name="leaderboard")
     async def show_elo_leaderboard(
