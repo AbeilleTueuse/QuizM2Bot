@@ -61,9 +61,6 @@ class ConfigurationManager:
             return self.langs_by_servers[guild_id]
         
         return [self.DEFAULT_LANG]
-    
-    def get_max_hint(self, config: dict):
-        return config[self.MAX_HINT]
 
     def get_answer_formatter(self, config: dict):
         mode = config[self.MODE]
@@ -79,9 +76,6 @@ class ConfigurationManager:
         
         else:
             raise ValueError(f"{mode} isn't a correct value.")
-        
-    def get_fuzz_threshold(self, config: dict):
-        return self.FUZZ_THRESHOLD[config[self.MODE]]
 
     def _strict(self, answer: str):
         return answer

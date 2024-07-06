@@ -182,6 +182,7 @@ class Question:
         image_path: str,
         allowed_langs: list,
         allowed_players: set[nextcord.Member],
+        max_hint: int,
         time_between_hints: int,
         answer_formatter,
         fuzz_threshold: int,
@@ -190,6 +191,7 @@ class Question:
         self.image_path = image_path
         self.allowed_langs = allowed_langs
         self.allowed_players = allowed_players
+        self.max_hint = max_hint
         self.time_between_hints = time_between_hints
         self.answer_formatter = answer_formatter
         self.fuzz_threshold = fuzz_threshold
@@ -245,7 +247,7 @@ class Question:
         self.check_answer_count += 1
 
         if self.check_answer_count * cm.CHECK_ANSWER_PERIOD >= int(
-            self.time_between_hint
+            self.time_between_hints
         ):
             self.check_answer_count = 0
             return True
@@ -253,11 +255,11 @@ class Question:
         return False
 
     def exceed_max_hint(self):
-        return self.hint_shown < int(cm.MAX_HINT)
+        return self.hint_shown < int(self.max_hint)
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(cm.MAX_HINT) - self.hint_shown
+            int(self.max_hint) - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
@@ -318,7 +320,7 @@ class Quiz:
         self.number_of_question = number_of_question
         self.allowed_langs = self._get_allowed_langs()
         self.max_hint = self._get_max_hint()
-        self.time_between_hint = self._get_time_between_hint()
+        self.time_between_hints = self._get_time_between_hint()
         self.answer_formatter = self._get_answer_formatter()
         self.fuzz_threshold = self._get_fuzz_threshold()
         self.game_category = game_category
@@ -338,16 +340,16 @@ class Quiz:
         return self._config_manager.get_allowed_langs(self._guild_id)
 
     def _get_max_hint(self):
-        return self._config_manager.get_max_hint(self._config)
+        return self._config[cm.MAX_HINT]
     
     def _get_time_between_hint(self):
-        return 
+        return self._config[cm.TIME_BETWEEN_HINT] 
 
     def _get_answer_formatter(self):
         return self._config_manager.get_answer_formatter(self._config)
 
     def _get_fuzz_threshold(self):
-        return self._config_manager.get_fuzz_threshold(self._config)
+        return cm.FUZZ_THRESHOLD[self._config[cm.MODE]]
 
     def create_settings(self):
         settings = [
@@ -404,7 +406,8 @@ class Quiz:
                 image_path=os.path.join(IMAGES_PATH, self.choose_value(question)),
                 allowed_langs=self.allowed_langs,
                 allowed_players=self.allowed_players,
-                time_between_hint=self.time_between_hint,
+                max_hint=self.max_hint,
+                time_between_hints=self.time_between_hints,
                 answer_formatter=self.answer_formatter,
                 fuzz_threshold=self.fuzz_threshold,
                 answers=self.get_ingame_names(vnum, question[cm.IS_MONSTER]),
