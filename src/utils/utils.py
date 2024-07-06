@@ -1,3 +1,6 @@
+import json
+
+
 def json_converter(obj):
     if isinstance(obj, str):
         try:
@@ -27,7 +30,7 @@ def elo_formula(player_elo, player_score, opponent_elo, opponent_score):
 
     return round(20 * (W_coeff - p_coeff))
 
-def convert_rank(rank):
+def convert_rank(rank: int):
     if rank == 1:
         return "🥇"
     if rank == 2:
@@ -35,3 +38,8 @@ def convert_rank(rank):
     if rank == 3:
         return "🥉"
     return f"{rank}e"
+
+
+def open_json(path: str) -> dict:
+    with open(path, "r", encoding="utf-8") as config_file:
+        return json.load(config_file,  object_hook=json_converter)

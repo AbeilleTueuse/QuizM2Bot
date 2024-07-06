@@ -1,214 +1,117 @@
 import random as rd
-from collections import defaultdict
 import json
 import os
 
-from unidecode import unidecode
 from fuzzywuzzy import fuzz
 import pandas as pd
+import nextcord
 
 from src.data.read_files import GameNames
 from src.utils.utils import (
-    json_converter,
     format_number_with_sign,
     elo_formula,
     convert_rank,
+    open_json,
+    convert_rank,
 )
+from src.config import ConfigurationManager as cm
+from src.paths import IMAGES_PATH, QUESTIONS_PATH, LEADERBOARD_PATH
 
 
-class ConfigurationManager:
-    CHECK_ANSWER_PERIOD = 1
-    REGISTRATION_TIME = 30
-    CHANGE_LANG_TIME = 30
-    CLOSE_ANSWSER_MAX_SECOND = 1
+class Ranking:
+    def __init__(self, player: nextcord.Member, score: int):
+        self.rank = None
+        self.player = player
+        self.score = score
+        self.is_first = False
 
-    NUMBER_OF_QUESTION = [5, 10, 20, 40]
-    FRIENDYLY = "friendly"
-    RANKED = "ranked"
-    GAME_CATEGORIES = [FRIENDYLY, RANKED]
+    def increment_score(self):
+        self.score += 1
 
-    HARDCORE = "hardcore"
-    MODE = "mode"
-    TIME_BETWEEN_HINT = "time_between_hint"
-    MAX_HINT = "max_hint"
-    DESCRIPTION = "description"
-    STRICT = "strict"
-    PERMISSIVE = "permissive"
-    VERY_PERMISSIVE = "very permissive"
+    def leaderboard_display(self, elo_augmentation):
+        display = f"{convert_rank(self.rank)} ┊ **{self.player.display_name}** ({self.score} point{'s' * (self.score > 1)})"
 
-    CONFIG_PATH = os.path.join("src", "config.json")
-    LANGS_BY_SERVERS_PATH = os.path.join("src", "data", "langs_by_servers.json")
-    LANGS_DATA_PATH = os.path.join("src", "data", "langs_data.json")
+        if elo_augmentation is not None:
+            new_elo, elo_augmentation = elo_augmentation[self.player.id]
+            display += f" ┊ {new_elo} ({elo_augmentation})"
 
-    DEFAULT_LANG = "fr"
-    EMOJI = "emoji"
-
-    FUZZ_THRESHOLD = {
-        STRICT: 100,
-        PERMISSIVE: 97,
-        VERY_PERMISSIVE: 94,
-    }
-
-    def __init__(self):
-        self.answer_formatter = None
-        self.max_hint = None
-        self.time_between_hint = None
-        self.fuzz_threshold = 100
-        self.langs_by_servers = self._open(self.LANGS_BY_SERVERS_PATH)
-        self.saved_config: dict[str, dict[str, str]] = self._open(self.CONFIG_PATH)
-        self.langs_data = self._open(self.LANGS_DATA_PATH)
-        self.allowed_langs = [self.DEFAULT_LANG]
-        self.allowed_players = []
-
-    def _open(self, path) -> dict[str]:
-        with open(path, "r", encoding="utf-8") as config_file:
-            return json.load(config_file)
-
-    def set_config(self, config_name: str, guild_id: int):
-        config = self.saved_config[config_name]
-
-        self.answer_formatter = self._get_answer_formatter(config)
-        self.max_hint = config[self.MAX_HINT]
-        self.time_between_hint = config[self.TIME_BETWEEN_HINT]
-        guild_id = str(guild_id)
-
-        if guild_id in self.langs_by_servers:
-            self.allowed_langs = self.langs_by_servers[guild_id]
-        else:
-            self.allowed_langs = [self.DEFAULT_LANG]
-
-        self.allowed_players = []
-
-    def _get_answer_formatter(self, config: dict):
-        mode = config[self.MODE]
-        self.fuzz_threshold = self.FUZZ_THRESHOLD[mode]
-
-        if mode == self.STRICT:
-            return self._strict
-
-        elif mode == self.PERMISSIVE:
-            return self._permissive
-
-        elif mode == self.VERY_PERMISSIVE:
-            return self._very_permissive
-
-    def _strict(self, answer: str):
-        return answer
-
-    def _permissive(self, answer: str):
-        return unidecode(answer.lower())
-
-    def _very_permissive(self, answer: str):
-        answer = answer.replace("-", " ")
-        formatted_answer = "".join(
-            letter
-            for letter in self._permissive(answer)
-            if letter.isalnum() or letter == " "
-        )
-        return " ".join(formatted_answer.split())
-
-    def get_default_langs(self, guild_id: int):
-        guild_id = str(guild_id)
-
-        if guild_id in self.langs_by_servers:
-            return self.langs_by_servers[guild_id]
-
-        return []
-
-    def update_allowed_langs(self, guild_id: int, new_langs: list[str]):
-        self.langs_by_servers[str(guild_id)] = new_langs
-
-        with open(self.LANGS_BY_SERVERS_PATH, "w") as file:
-            file.write(json.dumps(self.langs_by_servers, indent=4))
-
-    def get_icon(self, lang: str) -> str:
-        return self.langs_data[lang][self.EMOJI]
-
-    def get_descriptions(self):
-        return (
-            config_parameters[self.DESCRIPTION]
-            for config_parameters in self.saved_config.values()
-        )
+        return display
 
 
 class Leaderboard:
     def __init__(self):
-        self.scores = defaultdict(int)
+        self.scores: dict[int, Ranking] = {}
 
-    def initialize(self, players_id: list[int]):
-        for player_id in players_id:
-            self.scores[player_id] = 0
+    def initialize(self, players: set[nextcord.Member]):
+        for player in players:
+            self.scores[player.id] = Ranking(player=player, score=0)
 
-    def increment_score(self, user_id: str):
-        self.scores[user_id] += 1
+    def increment_score(self, player: nextcord.Member):
+        if player.id in self.scores:
+            self.scores[player.id].increment_score()
+        else:
+            self.scores[player.id] = Ranking(player=player, score=1)
 
-    def sort(self):
-        self.scores = dict(
-            sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
+    def get_leaderboard(self):
+        sorted_players = sorted(
+            self, key=lambda item: item[1].score, reverse=True
         )
 
-    def reset(self):
-        self.__init__()
+        current_rank = 1
+        current_score = None
 
-    def __iter__(self):
-        return iter(self.scores.items())
+        for index, (_, ranking) in enumerate(sorted_players, start=1):
+            if index == 1:
+                ranking.is_first = True
+
+            if ranking.score != current_score:
+                current_rank = index
+                current_score = ranking.score
+
+            ranking.rank = current_rank
+
+            yield ranking
 
     def __len__(self):
         return len(self.scores.keys())
 
-    def get_leaderboard(self):
-        sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
-
-        lb = []
-        current_rank = 1
-        current_score = None
-
-        for index, (player_id, score) in enumerate(sorted_players):
-            if score != current_score:
-                current_rank = index + 1
-                current_score = score
-            lb.append((convert_rank(current_rank), player_id, score))
-
-        return lb
+    def __iter__(self):
+        return iter(self.scores.items())
 
 
-class EloLeaderboard:
-    DATA_PATH = os.path.join("src", "data", "leaderboard.json")
+class EloManager:
     ELO = "elo"
     NAME = "name"
     DEFAULT_ELO = 1000
     LEADERBOARD_MAX_DISPLAY = 20
 
     def __init__(self):
-        self.data = self._get_data()
+        self._data = self._get_data()
 
     def _get_data(self) -> dict:
-        try:
-            with open(self.DATA_PATH, "r") as file:
-                data = json.load(file, object_hook=json_converter)
-        except FileNotFoundError:
-            data = {}
+        if os.path.exists(LEADERBOARD_PATH):
+            return open_json(LEADERBOARD_PATH)
 
-        return data
+        return {}
 
     def get_elo(self, guild_id, player_id, player_name=None):
-        if not guild_id in self.data:
-            self.data[guild_id] = {}
+        if not guild_id in self._data:
+            self._data[guild_id] = {}
 
-        if not player_id in self.data[guild_id]:
-            self.data[guild_id][player_id] = self.default_info(player_name)
+        if not player_id in self._data[guild_id]:
+            self._data[guild_id][player_id] = self.default_info(player_name)
             return self.DEFAULT_ELO
 
-        if self.ELO in self.data[guild_id][player_id]:
-            return self.data[guild_id][player_id][self.ELO]
-        
+        if self.ELO in self._data[guild_id][player_id]:
+            return self._data[guild_id][player_id][self.ELO]
+
         return self.DEFAULT_ELO
 
     def default_info(self, player_name: str):
         return {self.NAME: player_name}
 
     def _update_elo(self, guild_id, player_id, new_elo: int):
-        self.data[guild_id][player_id][self.ELO] = new_elo
+        self._data[guild_id][player_id][self.ELO] = new_elo
 
     def calc_and_save_new_elo(self, guild_id: int, leaderboard: Leaderboard):
         current_elo = {
@@ -244,7 +147,7 @@ class EloLeaderboard:
         return new_elo
 
     def get_leaderboard(self, guild_id: int):
-        players_score: dict[int, dict] = self.data[guild_id]
+        players_score: dict[int, dict] = self._data[guild_id]
         valid_scores = (
             (player_score[self.NAME], player_score[self.ELO])
             for player_score in players_score.values()
@@ -267,7 +170,7 @@ class EloLeaderboard:
         return lb
 
     def get_player_ranking(self, guild_id: int, user_name: str):
-        players_score: dict[int, dict] = self.data[guild_id]
+        players_score: dict[int, dict] = self._data[guild_id]
         valid_scores = (
             (player_score[self.NAME], player_score[self.ELO])
             for player_score in players_score.values()
@@ -289,21 +192,30 @@ class EloLeaderboard:
         return None
 
     def _save(self):
-        with open(self.DATA_PATH, "w") as file:
+        with open(LEADERBOARD_PATH, "w") as file:
             file.write(json.dumps(self.data, indent=4))
 
 
 class Question:
     def __init__(
         self,
-        answers: dict[str, str],
         image_path: str,
-        config_manager: ConfigurationManager,
+        allowed_langs: list,
+        allowed_players: set[int],
+        max_hint: int,
+        time_between_hints: int,
+        answer_formatter,
+        fuzz_threshold: int,
+        answers: dict[str, str],
     ):
-        self.config_manager = config_manager
-        self.answer_formatter = self.config_manager.answer_formatter
-        self.answers = self._filter_answer(answers)
         self.image_path = image_path
+        self.allowed_langs = allowed_langs
+        self.allowed_players = allowed_players
+        self.max_hint = max_hint
+        self.time_between_hints = time_between_hints
+        self.answer_formatter = answer_formatter
+        self.fuzz_threshold = fuzz_threshold
+        self.answers = self._filter_answer(answers)
         self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
@@ -312,13 +224,12 @@ class Question:
         self.first_message = None
         self.last_message = None
         self.last_hint_message = None
-        self.allowed_players = self.config_manager.allowed_players
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
             lang: answer
             for lang, answer in answers.items()
-            if lang in self.config_manager.allowed_langs
+            if lang in self.allowed_langs
         }
 
     def _get_formatted_answer(self, answer: str):
@@ -354,8 +265,8 @@ class Question:
     def show_hint(self):
         self.check_answer_count += 1
 
-        if self.check_answer_count * self.config_manager.CHECK_ANSWER_PERIOD >= int(
-            self.config_manager.time_between_hint
+        if self.check_answer_count * cm.CHECK_ANSWER_PERIOD >= int(
+            self.time_between_hints
         ):
             self.check_answer_count = 0
             return True
@@ -363,11 +274,11 @@ class Question:
         return False
 
     def exceed_max_hint(self):
-        return self.hint_shown < int(self.config_manager.max_hint)
+        return self.hint_shown < int(self.max_hint)
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(self.config_manager.max_hint) - self.hint_shown
+            int(self.max_hint) - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
@@ -393,7 +304,7 @@ class Question:
         for formatted_answer in self.formatted_answers:
             if (
                 fuzz.ratio(formatted_user_answer, formatted_answer)
-                >= self.config_manager.fuzz_threshold
+                >= self.fuzz_threshold
             ):
                 return True
         return False
@@ -404,53 +315,83 @@ class Question:
         ) and self.is_correct_answer(message_content)
 
 
-class QuizManager:
-    TIME_BETWEEN_QUESTION = 10
-    APPEARANCE_PROB = 0.5
-    QUESTIONS_PATH = os.path.join("src", "data", "questions.csv")
-    IMAGES_PATH = os.path.join("src", "data", "0_images")
-    VNUM = "vnum"
-    IS_MONSTER = "is_monster"
-    IMAGE_NAME1 = "image_name1"
-    IMAGE_NAME2 = "image_name2"
+class Quiz:
+    def __init__(
+        self,
+        config_manager: cm,
+        guild_id: int,
+        questions: pd.DataFrame,
+        game_names: GameNames,
+        number_of_question: int,
+        config_name: str,
+        game_category: str,
+        year: str,
+    ):
+        self._config_manager = config_manager
+        self._questions = questions
+        self._game_names = game_names
+        self._config_name = config_name
+        self._config = self._get_config()
 
-    def __init__(self, config_manager: ConfigurationManager):
-        self._started = False
-        self._waiting_for_answer = False
-        self._questions = self._get_questions()
-        self.ranked_quiz = False
-        self.config_manager = config_manager
+        self.guild_id = guild_id
+        self.is_running = True
+        self.waiting_for_answer = False
+        self.number_of_question = number_of_question
+        self.allowed_langs = self._get_allowed_langs()
+        self.max_hint = self._get_max_hint()
+        self.time_between_hints = self._get_time_between_hint()
+        self.answer_formatter = self._get_answer_formatter()
+        self.fuzz_threshold = self._get_fuzz_threshold()
+        self.game_category = game_category
+        self.year = year
+        self.is_ranked = game_category == cm.RANKED
+        self.players: set[nextcord.Member] = set()
+        self.allowed_players: set[int] = set()
         self.leaderboard = Leaderboard()
-        self.elo_leaderboard = EloLeaderboard()
-        self.game_names = GameNames(config_manager.langs_data)
-        self.total_questions = self._questions.shape[0]
-        self.multilang_plural = ""
+        self.multilang_plural = "s" if len(self.allowed_langs) >= 2 else ""
 
-    def _get_questions(self):
-        return pd.read_csv(self.QUESTIONS_PATH, sep=",", index_col=[self.VNUM])
+    def _get_config(self):
+        return self._config_manager.get_config(self._config_name)
 
-    def start_quiz(self):
-        self._started = True
+    def _get_allowed_langs(self):
+        return self._config_manager.get_allowed_langs(self.guild_id)
 
-        if len(self.config_manager.allowed_langs) >= 2:
-            self.multilang_plural = "s"
-        else:
-            self.multilang_plural = ""
+    def _get_max_hint(self):
+        return self._config[cm.MAX_HINT]
 
-    def quiz_is_running(self):
-        return self._started
+    def _get_time_between_hint(self):
+        return self._config[cm.TIME_BETWEEN_HINT]
 
-    def start_question(self):
-        self._waiting_for_answer = True
+    def _get_answer_formatter(self):
+        return self._config_manager.get_answer_formatter(self._config)
 
-    def waiting_for_answer(self):
-        return self._waiting_for_answer
+    def _get_fuzz_threshold(self):
+        return cm.FUZZ_THRESHOLD[self._config[cm.MODE]]
+
+    def create_settings(self):
+        settings = [
+            f"- questions: **{self.number_of_question}**",
+            f"- difficulty: **{self._config_name}**",
+            f"- category: **{self.game_category}**",
+        ]
+
+        if self.year != -1:
+            settings.append(f"- year: **{self.year} and before**")
+
+        return "\n".join(settings)
+    
+    def add_new_player(self, player: nextcord.Member):
+        self.players.add(player)
+        self.allowed_players.add(player.id)
+
+    def initialize_leaderboard(self):
+        self.leaderboard.initialize(self.players)
 
     def get_ingame_names(self, vnum: int, is_monster: int):
         if is_monster:
-            names = self.game_names.mob_names
+            names = self._game_names.mob_names
         else:
-            names = self.game_names.item_names
+            names = self._game_names.item_names
 
         ingame_names: dict[str, str] = names.loc[vnum].to_dict()
 
@@ -463,51 +404,103 @@ class QuizManager:
         return ingame_names
 
     def choose_value(self, row: pd.Series) -> str:
-        if pd.isna(row[self.IMAGE_NAME2]):
-            return row[self.IMAGE_NAME1]
+        if pd.isna(row[cm.IMAGE_NAME2]):
+            return row[cm.IMAGE_NAME1]
         else:
-            return rd.choice([row[self.IMAGE_NAME1], row[self.IMAGE_NAME2]])
+            return rd.choice(
+                [
+                    row[cm.IMAGE_NAME1],
+                    row[cm.IMAGE_NAME2],
+                ]
+            )
 
-    def get_questions(self, number_of_question: int, year: str):
-        if year == -1:
+    def get_questions(self):
+        if self.year == -1:
             questions = self._questions
         else:
-            questions = self._questions[self._questions["year"] <= year]
+            questions = self._questions[self._questions["year"] <= self.year]
 
-        questions = questions.sample(number_of_question)
+        questions = questions.sample(self.number_of_question)
 
         questions = [
             Question(
-                answers=self.get_ingame_names(vnum, question[self.IS_MONSTER]),
-                image_path=os.path.join(self.IMAGES_PATH, self.choose_value(question)),
-                config_manager=self.config_manager,
+                image_path=os.path.join(IMAGES_PATH, self.choose_value(question)),
+                allowed_langs=self.allowed_langs,
+                allowed_players=self.allowed_players,
+                max_hint=self.max_hint,
+                time_between_hints=self.time_between_hints,
+                answer_formatter=self.answer_formatter,
+                fuzz_threshold=self.fuzz_threshold,
+                answers=self.get_ingame_names(vnum, question[cm.IS_MONSTER]),
             )
             for vnum, question in questions.iterrows()
         ]
 
         return questions
 
-    def end_quiz(self):
-        self._started = False
-        self._waiting_for_answer = False
-        self.leaderboard.reset()
+    def stop(self):
+        self.waiting_for_answer = False
+        self.is_running = False
 
-    def end_question(self):
-        self._waiting_for_answer = False
 
-    def is_ranked_quiz(self, game_category: str):
-        is_ranked = game_category == self.config_manager.RANKED
-        self.ranked_quiz = is_ranked
-        return is_ranked
+class QuizManager:
+    def __init__(self):
+        self._questions = self._get_questions()
+        self.config_manager = cm()
+        self._game_names = GameNames(langs_data=cm.LANGS_DATA)
+        self.total_questions = self._questions.shape[0]
+        self.quizzes_in_progress: dict[int, Quiz] = {}
+        self.elo_manager = EloManager()
+
+    def _get_questions(self):
+        return pd.read_csv(QUESTIONS_PATH, sep=",", index_col=[cm.VNUM])
+
+    def has_active_quiz(self, channel_id: int):
+        if channel_id not in self.quizzes_in_progress:
+            return False
+
+        return True
+
+    def get_quiz(self, channel_id: int):
+        return self.quizzes_in_progress[channel_id]
+
+    def start_quiz(
+        self,
+        guild_id: int,
+        channel_id: int,
+        number_of_question: int,
+        config_name: str,
+        game_category: str,
+        year: int,
+    ):
+        new_quiz = Quiz(
+            config_manager=self.config_manager,
+            guild_id=guild_id,
+            questions=self._questions,
+            game_names=self._game_names,
+            number_of_question=number_of_question,
+            config_name=config_name,
+            game_category=game_category,
+            year=year,
+        )
+        self.quizzes_in_progress[channel_id] = new_quiz
+        return new_quiz
+
+    def end_quiz(self, channel_id: int):
+        self.quizzes_in_progress[channel_id].stop()
+        del self.quizzes_in_progress[channel_id]
+
+    def get_lang_icon(self, lang: str):
+        return self.config_manager.get_lang_icon(lang)
 
     def get_elo(self, guild_id: int, player_id: int, player_name: str):
-        return self.elo_leaderboard.get_elo(guild_id, player_id, player_name)
+        return self.elo_manager.get_elo(guild_id, player_id, player_name)
 
     def get_player_ranking(self, guild_id: int, player_name: str):
-        return self.elo_leaderboard.get_player_ranking(guild_id, player_name)
-
-    def calc_and_save_new_elo(self, guild_id: int):
-        return self.elo_leaderboard.calc_and_save_new_elo(guild_id, self.leaderboard)
+        return self.elo_manager.get_player_ranking(guild_id, player_name)
 
     def get_elo_leaderboard(self, guild_id: int):
-        return self.elo_leaderboard.get_leaderboard(guild_id)
+        return self.elo_manager.get_leaderboard(guild_id)
+
+    def calc_and_save_new_elo(self, quiz: Quiz):
+        return self.elo_manager.calc_and_save_new_elo(quiz.guild_id, quiz.leaderboard)
