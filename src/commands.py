@@ -11,7 +11,6 @@ from src.quiz_manager import (
     Quiz,
     QuizManager,
     Question,
-    EloLeaderboard,
 )
 from src.config import ConfigurationManager as cm
 from src.paths import CONSOLE_PATH, LEADERBOARD_PATH
@@ -62,11 +61,18 @@ class QuizCog(Cog):
             await interaction.send("A quiz is already in progress in this channel.")
             return
 
-        quiz: Quiz = self.quiz_manager.start_quiz(
-            number_of_question, config_name, game_category, year
+        quiz = self.quiz_manager.start_quiz(
+            interaction.guild_id,
+            interaction.channel_id,
+            number_of_question,
+            config_name,
+            game_category,
+            year,
         )
 
-        await self.launch_embed(interaction, quiz)
+        channel = interaction.channel
+
+        await self.launch_embed(interaction, channel, quiz)
 
         if not quiz.is_running:
             return
@@ -78,16 +84,16 @@ class QuizCog(Cog):
                 break
 
             await self.ask_question(
-                interaction, quiz, question_index, question, number_of_question
+                channel, quiz, question_index, question, number_of_question
             )
 
             quiz.waiting_for_answer = True
 
             while question.waiting_for_answer:
-                await self.wait_for_answer(interaction, quiz, question)
+                await self.wait_for_answer(channel, quiz, question)
 
             answer_message, answer_embed = await self.show_answer(
-                interaction, quiz, question
+                channel, quiz, question
             )
 
             if question_index + 1 != number_of_question and quiz.is_running:
@@ -95,11 +101,11 @@ class QuizCog(Cog):
 
         if quiz.is_running:
             await asyncio.sleep(cm.TIME_BETWEEN_QUESTION)
-            await interaction.send("The quiz is over, thanks for playing!")
-            await self.show_leaderboard(interaction, quiz)
+            await channel.send("The quiz is over, thanks for playing!")
+            await self.show_leaderboard(channel, quiz)
             self.quiz_manager.end_quiz()
 
-    async def launch_embed(self, interaction: nextcord.Interaction, quiz: Quiz):
+    async def launch_embed(self, interaction: nextcord.Interaction, channel: nextcord.TextChannel, quiz: Quiz):
         embed = nextcord.Embed(
             title="Launch of the quiz!",
             color=0x5E296B,
@@ -132,10 +138,10 @@ class QuizCog(Cog):
                 return
 
             if not quiz.allowed_players:
-                await interaction.send(
+                await channel.send(
                     "There are not registered players, the quiz is canceled."
                 )
-                self.quiz_manager.end_quiz(interaction.channel_id)
+                self.quiz_manager.end_quiz(channel.id)
                 return
 
             quiz.initialize_leaderboard()
@@ -144,7 +150,7 @@ class QuizCog(Cog):
 
     async def ask_question(
         self,
-        interaction: nextcord.Interaction,
+        channel: nextcord.TextChannel,
         quiz: Quiz,
         question_index: int,
         question: Question,
@@ -161,13 +167,13 @@ class QuizCog(Cog):
         if quiz.is_ranked:
             embed.set_footer(text="Only registered players can participate.")
 
-        message = await interaction.send(embed=embed, file=image)
+        message = await channel.send(embed=embed, file=image)
         question.last_message = message
         question.first_message = message
 
     async def get_close_answers(
         self,
-        interaction: nextcord.Interaction,
+        channel: nextcord.TextChannel,
         question: Question,
         first_message: nextcord.Message,
         winner_message: nextcord.Message,
@@ -175,7 +181,7 @@ class QuizCog(Cog):
     ):
         close_answers = [[winner_message.author.display_name, winner_time, 0]]
 
-        async for message in interaction.channel.history(
+        async for message in channel.history(
             limit=None,
             after=winner_message,
             before=winner_message.created_at + timedelta(seconds=1),
@@ -196,7 +202,7 @@ class QuizCog(Cog):
         return close_answers
 
     async def show_close_answers(
-        self, interaction: nextcord.Interaction, close_answers: list
+        self, channel: nextcord.TextChannel, close_answers: list
     ):
         if len(close_answers) <= 1:
             return
@@ -209,7 +215,7 @@ class QuizCog(Cog):
             ),
             color=0xFF5733,
         )
-        await interaction.send(embed=embed)
+        await channel.send(embed=embed)
 
     async def wait_for_close_answers(self, winner_message: nextcord.Message):
         current_time = datetime.now(timezone.utc)
@@ -220,14 +226,14 @@ class QuizCog(Cog):
 
     async def wait_for_answer(
         self,
-        interaction: nextcord.Interaction,
+        channel: nextcord.TextChannel,
         quiz: Quiz,
         question: Question,
     ):
         await asyncio.sleep(cm.CHECK_ANSWER_PERIOD)
         message = question.last_message
 
-        async for message in interaction.channel.history(
+        async for message in channel.history(
             limit=None, after=message, oldest_first=True
         ):
             if question.is_winner(message.content, message.author.id):
@@ -244,13 +250,13 @@ class QuizCog(Cog):
 
                 await self.wait_for_close_answers(message)
                 close_answers = await self.get_close_answers(
-                    interaction,
+                    channel,
                     question,
                     first_message,
                     message,
                     answer_time,
                 )
-                await self.show_close_answers(interaction, close_answers)
+                await self.show_close_answers(channel, close_answers)
                 break
         else:
             question.last_message = message
@@ -271,7 +277,7 @@ class QuizCog(Cog):
 
                 last_hint_message: nextcord.Message = question.last_hint_message
 
-                new_hint_message = await interaction.send(embed=embed)
+                new_hint_message = await channel.send(embed=embed)
                 question.last_hint_message = new_hint_message
 
                 if last_hint_message is not None:
@@ -279,7 +285,7 @@ class QuizCog(Cog):
 
             else:
                 quiz.waiting_for_answer = False
-                await interaction.send(f"Too late!")
+                await channel.send(f"Too late!")
 
     async def show_answer(
         self, interaction: nextcord.Interaction, quiz: Quiz, question: Question
@@ -566,7 +572,3 @@ class QuizCog(Cog):
                 )
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
-
-
-def setup(bot: Bot):
-    bot.add_cog(QuizCog(bot))

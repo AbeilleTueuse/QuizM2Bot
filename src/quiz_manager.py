@@ -12,7 +12,7 @@ from src.utils.utils import (
     format_number_with_sign,
     elo_formula,
     convert_rank,
-    open_json
+    open_json,
 )
 from src.config import ConfigurationManager as cm
 from src.paths import IMAGES_PATH, QUESTIONS_PATH, LEADERBOARD_PATH
@@ -71,7 +71,7 @@ class EloLeaderboard:
     def _get_data(self) -> dict:
         if os.path.exists(LEADERBOARD_PATH):
             return open_json(LEADERBOARD_PATH)
-        
+
         return {}
 
     def get_elo(self, guild_id, player_id, player_name=None):
@@ -179,19 +179,21 @@ class EloLeaderboard:
 class Question:
     def __init__(
         self,
-        answers: dict[str, str],
         image_path: str,
         allowed_langs: list,
         allowed_players: set[nextcord.Member],
+        time_between_hints: int,
         answer_formatter,
-        fuzz_threshold: int
+        fuzz_threshold: int,
+        answers: dict[str, str],
     ):
-        self.answers = self._filter_answer(answers)
         self.image_path = image_path
         self.allowed_langs = allowed_langs
         self.allowed_players = allowed_players
+        self.time_between_hints = time_between_hints
         self.answer_formatter = answer_formatter
         self.fuzz_threshold = fuzz_threshold
+        self.answers = self._filter_answer(answers)
         self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
@@ -243,7 +245,7 @@ class Question:
         self.check_answer_count += 1
 
         if self.check_answer_count * cm.CHECK_ANSWER_PERIOD >= int(
-            cm.TIME_BETWEEN_HINT
+            self.time_between_hint
         ):
             self.check_answer_count = 0
             return True
@@ -310,14 +312,15 @@ class Quiz:
         self._game_names = game_names
         self._config_name = config_name
         self._config = self._get_config()
-        
+
         self.is_running = True
         self.waiting_for_answer = False
         self.number_of_question = number_of_question
         self.allowed_langs = self._get_allowed_langs()
         self.max_hint = self._get_max_hint()
-        self.answer_formatter= self._get_answer_formatter()
-        self.fuzz_threshold= self._get_fuzz_threshold()
+        self.time_between_hint = self._get_time_between_hint()
+        self.answer_formatter = self._get_answer_formatter()
+        self.fuzz_threshold = self._get_fuzz_threshold()
         self.game_category = game_category
         self.year = year
         self.is_ranked = game_category == cm.RANKED
@@ -327,21 +330,24 @@ class Quiz:
 
         if self.is_ranked:
             self.elo_leaderboard = EloLeaderboard()
-    
+
     def _get_config(self):
         return self._config_manager.get_config(self._config_name)
-    
+
     def _get_allowed_langs(self):
         return self._config_manager.get_allowed_langs(self._guild_id)
-    
+
     def _get_max_hint(self):
         return self._config_manager.get_max_hint(self._config)
     
+    def _get_time_between_hint(self):
+        return 
+
     def _get_answer_formatter(self):
         return self._config_manager.get_answer_formatter(self._config)
-    
+
     def _get_fuzz_threshold(self):
-        return self._config_manager.get_fuzz_threshold(self._config) 
+        return self._config_manager.get_fuzz_threshold(self._config)
 
     def create_settings(self):
         settings = [
@@ -350,7 +356,7 @@ class Quiz:
             f"- category: **{self.game_category}**",
         ]
 
-        if self.year == -1:
+        if self.year != -1:
             settings.append(f"- year: **{self.year} and before**")
 
         return "\n".join(settings)
@@ -395,22 +401,23 @@ class Quiz:
 
         questions = [
             Question(
-                answers=self.get_ingame_names(
-                    vnum, question[cm.IS_MONSTER]
-                ),
                 image_path=os.path.join(IMAGES_PATH, self.choose_value(question)),
                 allowed_langs=self.allowed_langs,
                 allowed_players=self.allowed_players,
+                time_between_hint=self.time_between_hint,
                 answer_formatter=self.answer_formatter,
-                fuzz_threshold=self.fuzz_threshold
+                fuzz_threshold=self.fuzz_threshold,
+                answers=self.get_ingame_names(vnum, question[cm.IS_MONSTER]),
             )
             for vnum, question in questions.iterrows()
         ]
 
         return questions
-    
+
     def calc_and_save_new_elo(self):
-        return self.elo_leaderboard.calc_and_save_new_elo(self._guild_id, self.leaderboard)
+        return self.elo_leaderboard.calc_and_save_new_elo(
+            self._guild_id, self.leaderboard
+        )
 
     def stop(self):
         self.is_running = False
@@ -432,7 +439,7 @@ class QuizManager:
             return False
 
         return True
-    
+
     def get_quiz(self, channel_id: int):
         return self.quizzes_in_progress[channel_id]
 
