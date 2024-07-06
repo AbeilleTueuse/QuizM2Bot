@@ -43,9 +43,15 @@ class RegistrationButton(nextcord.ui.View):
         label="Registration", style=nextcord.ButtonStyle.success, emoji="🎟️"
     )
     async def button_callback(self, _, interaction: nextcord.Interaction):
-        user = interaction.user
-        self.quiz.players.add(user)
-        self.embed_value += f"\n- {user.display_name} ({self.quiz_manager.get_elo(interaction.guild_id, user)})"
+        player = interaction.user
+
+        if player in self.quiz.allowed_players:
+            return
+        
+        self.quiz.add_new_player(player)
+        player_elo = self.quiz_manager.get_elo(interaction.guild_id, player.id, player.name)
+
+        self.embed_value += f"\n- {player.display_name} ({player_elo})"
 
         self.embed.set_field_at(
             index=2,
@@ -63,14 +69,14 @@ class DropDown(nextcord.ui.StringSelect):
         super().__init__(
             placeholder="Choose languages",
             min_values=1,
-            max_values=len(config.langs_data.keys()),
+            max_values=len(cm.LANGS_DATA.keys()),
             options=[
                 nextcord.SelectOption(
                     label=lang,
                     emoji=data["emoji"],
-                    default=lang in config.get_default_langs(guild_id),
+                    default=lang in config.get_allowed_langs(guild_id),
                 )
-                for lang, data in config.langs_data.items()
+                for lang, data in cm.LANGS_DATA.items()
             ],
         )
 

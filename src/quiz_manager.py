@@ -1,5 +1,4 @@
 import random as rd
-from collections import defaultdict
 import json
 import os
 
@@ -13,53 +12,74 @@ from src.utils.utils import (
     elo_formula,
     convert_rank,
     open_json,
+    convert_rank,
 )
 from src.config import ConfigurationManager as cm
 from src.paths import IMAGES_PATH, QUESTIONS_PATH, LEADERBOARD_PATH
 
 
+class Ranking:
+    def __init__(self, player: nextcord.Member, score: int):
+        self.rank = None
+        self.player = player
+        self.score = score
+        self.is_first = False
+
+    def increment_score(self):
+        self.score += 1
+
+    def leaderboard_display(self, elo_augmentation):
+        display = f"{convert_rank(self.rank)} ┊ **{self.player.display_name}** ({self.score} point{'s' * (self.score > 1)})"
+
+        if elo_augmentation is not None:
+            new_elo, elo_augmentation = elo_augmentation[self.player.id]
+            display += f" ┊ {new_elo} ({elo_augmentation})"
+
+        return display
+
+
 class Leaderboard:
     def __init__(self):
-        self.scores = defaultdict(int)
+        self.scores: dict[int, Ranking] = {}
 
-    def initialize(self, players: dict):
-        for player_id in players:
-            self.scores[player_id] = 0
+    def initialize(self, players: set[nextcord.Member]):
+        for player in players:
+            self.scores[player.id] = Ranking(player=player, score=0)
 
-    def increment_score(self, user_id: str):
-        self.scores[user_id] += 1
+    def increment_score(self, player: nextcord.Member):
+        if player.id in self.scores:
+            self.scores[player.id].increment_score()
+        else:
+            self.scores[player.id] = Ranking(player=player, score=1)
 
-    def sort(self):
-        self.scores = dict(
-            sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
+    def get_leaderboard(self):
+        sorted_players = sorted(
+            self, key=lambda item: item[1].score, reverse=True
         )
 
-    def reset(self):
-        self.__init__()
+        current_rank = 1
+        current_score = None
 
-    def __iter__(self):
-        return iter(self.scores.items())
+        for index, (_, ranking) in enumerate(sorted_players, start=1):
+            if index == 1:
+                ranking.is_first = True
+
+            if ranking.score != current_score:
+                current_rank = index
+                current_score = ranking.score
+
+            ranking.rank = current_rank
+
+            yield ranking
 
     def __len__(self):
         return len(self.scores.keys())
 
-    def get_leaderboard(self):
-        sorted_players = sorted(self, key=lambda x: x[1], reverse=True)
-
-        lb = []
-        current_rank = 1
-        current_score = None
-
-        for index, (player_id, score) in enumerate(sorted_players):
-            if score != current_score:
-                current_rank = index + 1
-                current_score = score
-            lb.append((convert_rank(current_rank), player_id, score))
-
-        return lb
+    def __iter__(self):
+        return iter(self.scores.items())
 
 
-class EloLeaderboard:
+class EloManager:
     ELO = "elo"
     NAME = "name"
     DEFAULT_ELO = 1000
@@ -181,7 +201,7 @@ class Question:
         self,
         image_path: str,
         allowed_langs: list,
-        allowed_players: set[nextcord.Member],
+        allowed_players: set[int],
         max_hint: int,
         time_between_hints: int,
         answer_formatter,
@@ -199,7 +219,6 @@ class Question:
         self.formatted_answers = self._get_formatted_answers()
         self.hints = self._get_default_hints()
         self.hints_shuffle = self._get_hints_shuffle()
-        self.waiting_for_answer = True
         self.check_answer_count = 0
         self.hint_shown = 0
         self.first_message = None
@@ -309,12 +328,12 @@ class Quiz:
         year: str,
     ):
         self._config_manager = config_manager
-        self._guild_id = guild_id
         self._questions = questions
         self._game_names = game_names
         self._config_name = config_name
         self._config = self._get_config()
 
+        self.guild_id = guild_id
         self.is_running = True
         self.waiting_for_answer = False
         self.number_of_question = number_of_question
@@ -326,24 +345,22 @@ class Quiz:
         self.game_category = game_category
         self.year = year
         self.is_ranked = game_category == cm.RANKED
-        self.allowed_players: set[nextcord.Member] = set()
+        self.players: set[nextcord.Member] = set()
+        self.allowed_players: set[int] = set()
         self.leaderboard = Leaderboard()
         self.multilang_plural = "s" if len(self.allowed_langs) >= 2 else ""
-
-        if self.is_ranked:
-            self.elo_leaderboard = EloLeaderboard()
 
     def _get_config(self):
         return self._config_manager.get_config(self._config_name)
 
     def _get_allowed_langs(self):
-        return self._config_manager.get_allowed_langs(self._guild_id)
+        return self._config_manager.get_allowed_langs(self.guild_id)
 
     def _get_max_hint(self):
         return self._config[cm.MAX_HINT]
-    
+
     def _get_time_between_hint(self):
-        return self._config[cm.TIME_BETWEEN_HINT] 
+        return self._config[cm.TIME_BETWEEN_HINT]
 
     def _get_answer_formatter(self):
         return self._config_manager.get_answer_formatter(self._config)
@@ -362,9 +379,13 @@ class Quiz:
             settings.append(f"- year: **{self.year} and before**")
 
         return "\n".join(settings)
+    
+    def add_new_player(self, player: nextcord.Member):
+        self.players.add(player)
+        self.allowed_players.add(player.id)
 
     def initialize_leaderboard(self):
-        self.leaderboard.initialize(self.allowed_players)
+        self.leaderboard.initialize(self.players)
 
     def get_ingame_names(self, vnum: int, is_monster: int):
         if is_monster:
@@ -417,12 +438,8 @@ class Quiz:
 
         return questions
 
-    def calc_and_save_new_elo(self):
-        return self.elo_leaderboard.calc_and_save_new_elo(
-            self._guild_id, self.leaderboard
-        )
-
     def stop(self):
+        self.waiting_for_answer = False
         self.is_running = False
 
 
@@ -433,6 +450,7 @@ class QuizManager:
         self._game_names = GameNames(langs_data=cm.LANGS_DATA)
         self.total_questions = self._questions.shape[0]
         self.quizzes_in_progress: dict[int, Quiz] = {}
+        self.elo_manager = EloManager()
 
     def _get_questions(self):
         return pd.read_csv(QUESTIONS_PATH, sep=",", index_col=[cm.VNUM])
@@ -475,11 +493,14 @@ class QuizManager:
     def get_lang_icon(self, lang: str):
         return self.config_manager.get_lang_icon(lang)
 
-    def get_elo(self, guild_id: int, player: nextcord.Member):
-        return self.elo_leaderboard.get_elo(guild_id, player)
+    def get_elo(self, guild_id: int, player_id: int, player_name: str):
+        return self.elo_manager.get_elo(guild_id, player_id, player_name)
 
     def get_player_ranking(self, guild_id: int, player_name: str):
-        return self.elo_leaderboard.get_player_ranking(guild_id, player_name)
+        return self.elo_manager.get_player_ranking(guild_id, player_name)
 
     def get_elo_leaderboard(self, guild_id: int):
-        return self.elo_leaderboard.get_leaderboard(guild_id)
+        return self.elo_manager.get_leaderboard(guild_id)
+
+    def calc_and_save_new_elo(self, quiz: Quiz):
+        return self.elo_manager.calc_and_save_new_elo(quiz.guild_id, quiz.leaderboard)

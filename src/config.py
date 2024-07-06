@@ -6,7 +6,6 @@ from src.paths import CONFIG_PATH, LANGS_BY_SERVERS_PATH, LANGS_DATA_PATH
 from src.utils.utils import open_json
 
 
-
 class ConfigurationManager:
     CHECK_ANSWER_PERIOD = 1
     REGISTRATION_TIME = 30
@@ -14,7 +13,7 @@ class ConfigurationManager:
     CLOSE_ANSWSER_MAX_SECOND = 1
     TIME_BETWEEN_QUESTION = 10
 
-    NUMBER_OF_QUESTION = [5, 10, 20, 40]
+    NUMBER_OF_QUESTION = [1, 5, 10, 20, 40]
     FRIENDYLY = "friendly"
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
@@ -56,12 +55,6 @@ class ConfigurationManager:
     def get_config(self, config_name: str):
         return self.SAVED_CONFIG[config_name]
 
-    def get_allowed_langs(self, guild_id: int) -> list[str]:
-        if guild_id in self.langs_by_servers:
-            return self.langs_by_servers[guild_id]
-        
-        return [self.DEFAULT_LANG]
-
     def get_answer_formatter(self, config: dict):
         mode = config[self.MODE]
 
@@ -73,7 +66,7 @@ class ConfigurationManager:
 
         elif mode == self.VERY_PERMISSIVE:
             return self._very_permissive
-        
+
         else:
             raise ValueError(f"{mode} isn't a correct value.")
 
@@ -92,23 +85,23 @@ class ConfigurationManager:
         )
         return " ".join(formatted_answer.split())
 
-    def get_default_langs(self, guild_id: int):
+    def get_allowed_langs(self, guild_id: int) -> list[str]:
         if guild_id in self.langs_by_servers:
             return self.langs_by_servers[guild_id]
 
-        return []
+        return [self.DEFAULT_LANG]
 
     def update_allowed_langs(self, guild_id: int, new_langs: list[str]):
-        self.langs_by_servers[str(guild_id)] = new_langs
+        self.langs_by_servers[guild_id] = new_langs
 
         with open(LANGS_BY_SERVERS_PATH, "w") as file:
             file.write(json.dumps(self.langs_by_servers, indent=4))
-    
+
     def get_lang_icon(self, lang: str) -> str:
         return self.LANGS_DATA[lang][self.EMOJI]
 
     def get_descriptions(self):
         return (
             config_parameters[self.DESCRIPTION]
-            for config_parameters in self.saved_config.values()
+            for config_parameters in self.SAVED_CONFIG.values()
         )
