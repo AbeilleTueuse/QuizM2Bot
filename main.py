@@ -16,3 +16,5 @@ if __name__ == "__main__":
     bot.load_extension("src.start_quiz")
 
     bot.run(token)
+
+    # cc
