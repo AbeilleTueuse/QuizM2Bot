@@ -1,3 +1,6 @@
+import json
+
+
 def json_converter(obj):
     if isinstance(obj, str):
         try:
@@ -35,3 +38,8 @@ def convert_rank(rank):
     if rank == 3:
         return "🥉"
     return f"{rank}e"
+
+
+def open_json(path: str) -> dict:
+    with open(path, "r", encoding="utf-8") as config_file:
+        return json.load(config_file,  object_hook=json_converter)
