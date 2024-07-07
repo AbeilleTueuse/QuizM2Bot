@@ -1,5 +1,5 @@
 import asyncio
-from datetime import timedelta, datetime, timezone
+from datetime import timedelta
 import os
 
 import nextcord
@@ -10,6 +10,7 @@ from src.widgets import DropDown, RegistrationButton
 from src.quiz_manager import Quiz, QuizManager, Question, EloManager
 from src.config import ConfigurationManager as cm
 from src.paths import CONSOLE_PATH, LEADERBOARD_PATH, LANGS_BY_SERVERS_PATH
+from src.utils.utils import get_current_time
 
 
 class QuizCog(Cog):
@@ -121,7 +122,7 @@ class QuizCog(Cog):
         embed.add_field(
             name="Allowed languages",
             value=" ".join(
-                self.quiz_manager.get_lang_icon(lang) for lang in quiz.allowed_langs
+                self.get_lang_emoji(lang) for lang in quiz.allowed_langs
             ),
             inline=False,
         )
@@ -221,8 +222,7 @@ class QuizCog(Cog):
         await channel.send(embed=embed)
 
     async def wait_for_close_answers(self, winner_message: nextcord.Message):
-        current_time = datetime.now(timezone.utc)
-        elapsed_time = (current_time - winner_message.created_at).total_seconds()
+        elapsed_time = (get_current_time() - winner_message.created_at).total_seconds()
         time_to_wait = max(0, cm.CLOSE_ANSWSER_MAX_SECOND - elapsed_time)
 
         await asyncio.sleep(time_to_wait)
@@ -270,12 +270,12 @@ class QuizCog(Cog):
             if not question.show_hint() or not quiz.waiting_for_answer:
                 return
 
-            if question.exceed_max_hint():
+            if question.under_hint_limit():
                 question.get_hints()
                 embed = nextcord.Embed(
                     title=f"Hint {question.hint_shown} of {quiz.max_hint}",
                     description="\n".join(
-                        f"{self.quiz_manager.get_lang_icon(lang)} ┊ {' '.join(hint)}"
+                        f"{self.get_lang_emoji(lang)} ┊ {' '.join(hint)}"
                         for lang, hint in question.hints.items()
                     ),
                     color=0xEDF02A,
@@ -299,7 +299,7 @@ class QuizCog(Cog):
         embed = nextcord.Embed(
             title=f"Answer{quiz.multilang_plural}",
             description="\n".join(
-                f"{self.quiz_manager.get_lang_icon(lang)} ┊ {answer}"
+                f"{self.get_lang_emoji(lang)} ┊ {answer}"
                 for lang, answer in question.answers.items()
             ),
             color=0x5E296B,
@@ -351,6 +351,10 @@ class QuizCog(Cog):
     @staticmethod
     def get_member(guild: nextcord.Guild, user_name: str):
         return nextcord.utils.get(guild.members, name=user_name)
+    
+    @staticmethod
+    def get_lang_emoji(lang: str) -> str:
+        return cm.LANGS_DATA[lang][cm.EMOJI]
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: nextcord.Interaction):

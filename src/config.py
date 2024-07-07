@@ -97,9 +97,6 @@ class ConfigurationManager:
         with open(LANGS_BY_SERVERS_PATH, "w") as file:
             file.write(json.dumps(self.langs_by_servers, indent=4))
 
-    def get_lang_icon(self, lang: str) -> str:
-        return self.LANGS_DATA[lang][self.EMOJI]
-
     def get_descriptions(self):
         return (
             config_parameters[self.DESCRIPTION]

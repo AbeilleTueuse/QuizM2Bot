@@ -13,6 +13,7 @@ from src.utils.utils import (
     convert_rank,
     open_json,
     convert_rank,
+    get_current_time,
 )
 from src.config import ConfigurationManager as cm
 from src.paths import IMAGES_PATH, QUESTIONS_PATH, LEADERBOARD_PATH
@@ -36,7 +37,9 @@ class Player:
 
         if self.elo_augmentation is not None:
             new_elo = self.elo + self.elo_augmentation
-            ranking += f" ┊ {new_elo} ({format_number_with_sign(self.elo_augmentation)})"
+            ranking += (
+                f" ┊ {new_elo} ({format_number_with_sign(self.elo_augmentation)})"
+            )
 
         return ranking
 
@@ -69,9 +72,9 @@ class Question:
         self.hints_shuffle = self._get_hints_shuffle()
         self.check_answer_count = 0
         self.hint_shown = 0
-        self.first_message = None
-        self.last_message = None
-        self.last_hint_message = None
+        self.first_message: nextcord.Message = None
+        self.last_message: nextcord.Message = None
+        self.last_hint_message: nextcord.Message = None
 
     def _filter_answer(self, answers: dict[str, str]):
         return {
@@ -111,22 +114,21 @@ class Question:
         }
 
     def show_hint(self):
-        self.check_answer_count += 1
-
-        if self.check_answer_count * cm.CHECK_ANSWER_PERIOD >= int(
-            self.time_between_hints
-        ):
-            self.check_answer_count = 0
+        if (
+            get_current_time() - self.first_message.created_at
+        ).total_seconds() + cm.CHECK_ANSWER_PERIOD / 2 >= (
+            self.hint_shown + 1
+        ) * self.time_between_hints:
             return True
 
         return False
 
-    def exceed_max_hint(self):
-        return self.hint_shown < int(self.max_hint)
+    def under_hint_limit(self):
+        return self.hint_shown < self.max_hint
 
     def _get_hint(self, lang):
         char_to_show_number = len(self.hints_shuffle[lang]) // (
-            int(self.max_hint) - self.hint_shown
+            self.max_hint - self.hint_shown
         )
 
         for _ in range(char_to_show_number):
@@ -361,9 +363,6 @@ class QuizManager:
         self.quizzes_in_progress[channel_id].stop()
         del self.quizzes_in_progress[channel_id]
 
-    def get_lang_icon(self, lang: str):
-        return self.config_manager.get_lang_icon(lang)
-
 
 class EloManager:
     ELO = "elo"
@@ -379,7 +378,7 @@ class EloManager:
             return open_json(LEADERBOARD_PATH)
 
         return {}
-    
+
     def _save_data(self):
         with open(LEADERBOARD_PATH, "w") as file:
             file.write(json.dumps(self._data, indent=4))
@@ -429,7 +428,7 @@ class EloManager:
     def get_leaderboard(self, guild_id: int):
         if guild_id not in self._data:
             raise KeyError()
-        
+
         players_score: dict[int, dict] = self._data[guild_id]
         valid_scores = (
             (player_score[self.NAME], player_score[self.ELO])

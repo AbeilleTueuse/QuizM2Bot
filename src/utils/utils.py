@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 
 
 def json_converter(obj):
@@ -48,3 +49,6 @@ def convert_rank(rank: int):
 def open_json(path: str) -> dict:
     with open(path, "r", encoding="utf-8") as config_file:
         return json.load(config_file, object_hook=json_converter)
+
+def get_current_time():
+    return datetime.now(timezone.utc)
