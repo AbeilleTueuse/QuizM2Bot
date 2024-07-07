@@ -18,182 +18,30 @@ from src.config import ConfigurationManager as cm
 from src.paths import IMAGES_PATH, QUESTIONS_PATH, LEADERBOARD_PATH
 
 
-class Ranking:
-    def __init__(self, player: nextcord.Member, score: int):
-        self.rank = None
-        self.player = player
+class Player:
+    def __init__(self, player: nextcord.Member, elo: int = None, score: int = 0):
+        self.id = player.id
+        self.name = player.display_name
+        self.avatar = player.display_avatar
+        self.elo = elo
         self.score = score
-        self.is_first = False
+        self.rank = None
+        self.elo_augmentation = None
 
     def increment_score(self):
         self.score += 1
 
-    def leaderboard_display(self, elo_augmentation):
-        display = f"{convert_rank(self.rank)} ┊ **{self.player.display_name}** ({self.score} point{'s' * (self.score > 1)})"
+    def leaderboard_display(self):
+        ranking = f"{convert_rank(self.rank)} ┊ **{self.name}** ({self.score} point{'s' * (self.score > 1)})"
 
-        if elo_augmentation is not None:
-            new_elo, elo_augmentation = elo_augmentation[self.player.id]
-            display += f" ┊ {new_elo} ({elo_augmentation})"
+        if self.elo_augmentation is not None:
+            new_elo = self.elo + self.elo_augmentation
+            ranking += f" ┊ {new_elo} ({format_number_with_sign(self.elo_augmentation)})"
 
-        return display
+        return ranking
 
-
-class Leaderboard:
-    def __init__(self):
-        self.scores: dict[int, Ranking] = {}
-
-    def initialize(self, players: set[nextcord.Member]):
-        for player in players:
-            self.scores[player.id] = Ranking(player=player, score=0)
-
-    def increment_score(self, player: nextcord.Member):
-        if player.id in self.scores:
-            self.scores[player.id].increment_score()
-        else:
-            self.scores[player.id] = Ranking(player=player, score=1)
-
-    def get_leaderboard(self):
-        sorted_players = sorted(
-            self, key=lambda item: item[1].score, reverse=True
-        )
-
-        current_rank = 1
-        current_score = None
-
-        for index, (_, ranking) in enumerate(sorted_players, start=1):
-            if index == 1:
-                ranking.is_first = True
-
-            if ranking.score != current_score:
-                current_rank = index
-                current_score = ranking.score
-
-            ranking.rank = current_rank
-
-            yield ranking
-
-    def __len__(self):
-        return len(self.scores.keys())
-
-    def __iter__(self):
-        return iter(self.scores.items())
-
-
-class EloManager:
-    ELO = "elo"
-    NAME = "name"
-    DEFAULT_ELO = 1000
-    LEADERBOARD_MAX_DISPLAY = 20
-
-    def __init__(self):
-        self._data = self._get_data()
-
-    def _get_data(self) -> dict:
-        if os.path.exists(LEADERBOARD_PATH):
-            return open_json(LEADERBOARD_PATH)
-
-        return {}
-
-    def get_elo(self, guild_id, player_id, player_name=None):
-        if not guild_id in self._data:
-            self._data[guild_id] = {}
-
-        if not player_id in self._data[guild_id]:
-            self._data[guild_id][player_id] = self.default_info(player_name)
-            return self.DEFAULT_ELO
-
-        if self.ELO in self._data[guild_id][player_id]:
-            return self._data[guild_id][player_id][self.ELO]
-
-        return self.DEFAULT_ELO
-
-    def default_info(self, player_name: str):
-        return {self.NAME: player_name}
-
-    def _update_elo(self, guild_id, player_id, new_elo: int):
-        self._data[guild_id][player_id][self.ELO] = new_elo
-
-    def calc_and_save_new_elo(self, guild_id: int, leaderboard: Leaderboard):
-        current_elo = {
-            player_id: self.get_elo(guild_id, player_id) for player_id, _ in leaderboard
-        }
-
-        # don't save if only one player
-        if len(leaderboard) == 1:
-            return {
-                player_id: [player_elo, format_number_with_sign(0)]
-                for player_id, player_elo in current_elo.items()
-            }
-
-        new_elo = {}
-
-        for player_id, player_score in leaderboard:
-            player_elo = current_elo[player_id]
-            additionnal_elo = sum(
-                elo_formula(
-                    player_elo, player_score, current_elo[opponent_id], opponent_score
-                )
-                for opponent_id, opponent_score in leaderboard
-                if player_id != opponent_id
-            )
-            new_elo[player_id] = [
-                player_elo + additionnal_elo,
-                format_number_with_sign(additionnal_elo),
-            ]
-            self._update_elo(guild_id, player_id, player_elo + additionnal_elo)
-
-        self._save()
-
-        return new_elo
-
-    def get_leaderboard(self, guild_id: int):
-        players_score: dict[int, dict] = self._data[guild_id]
-        valid_scores = (
-            (player_score[self.NAME], player_score[self.ELO])
-            for player_score in players_score.values()
-            if self.ELO in player_score
-        )
-        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
-
-        lb = []
-        current_rank = 1
-        current_score = None
-
-        for index, (player_name, score) in enumerate(sorted_players):
-            if index == self.LEADERBOARD_MAX_DISPLAY or score == -1:
-                break
-            if score != current_score:
-                current_rank = index + 1
-                current_score = score
-            lb.append((convert_rank(current_rank), player_name, score))
-
-        return lb
-
-    def get_player_ranking(self, guild_id: int, user_name: str):
-        players_score: dict[int, dict] = self._data[guild_id]
-        valid_scores = (
-            (player_score[self.NAME], player_score[self.ELO])
-            for player_score in players_score.values()
-            if self.ELO in player_score
-        )
-        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
-
-        current_rank = 1
-        current_score = None
-
-        for index, (player_name, score) in enumerate(sorted_players):
-            if score != current_score:
-                current_rank = index + 1
-                current_score = score
-
-            if player_name == user_name:
-                return score, current_rank, len(sorted_players)
-
-        return None
-
-    def _save(self):
-        with open(LEADERBOARD_PATH, "w") as file:
-            file.write(json.dumps(self.data, indent=4))
+    def register_display(self):
+        return f"{self.name} ({self.elo})"
 
 
 class Question:
@@ -345,9 +193,8 @@ class Quiz:
         self.game_category = game_category
         self.year = year
         self.is_ranked = game_category == cm.RANKED
-        self.players: set[nextcord.Member] = set()
+        self.players: dict[int, Player] = {}
         self.allowed_players: set[int] = set()
-        self.leaderboard = Leaderboard()
         self.multilang_plural = "s" if len(self.allowed_langs) >= 2 else ""
 
     def _get_config(self):
@@ -379,13 +226,21 @@ class Quiz:
             settings.append(f"- year: **{self.year} and before**")
 
         return "\n".join(settings)
-    
-    def add_new_player(self, player: nextcord.Member):
-        self.players.add(player)
+
+    def add_new_player(self, player: nextcord.Member, elo: int) -> Player:
         self.allowed_players.add(player.id)
 
-    def initialize_leaderboard(self):
-        self.leaderboard.initialize(self.players)
+        player = Player(player=player, elo=elo, score=0)
+        self.players[player.id] = player
+
+        return player
+
+    def increment_score(self, player: nextcord.Member):
+        if player.id in self.players:
+            self.players[player.id].score += 1
+
+        elif not self.is_ranked:
+            self.players[player.id] = Player(player=player, score=1)
 
     def get_ingame_names(self, vnum: int, is_monster: int):
         if is_monster:
@@ -438,6 +293,23 @@ class Quiz:
 
         return questions
 
+    def get_leaderboard(self):
+        sorted_players = sorted(
+            self.players.items(), key=lambda item: item[1].score, reverse=True
+        )
+
+        current_rank = 1
+        current_score = None
+
+        for index, (_, player) in enumerate(sorted_players, start=1):
+            if player.score != current_score:
+                current_rank = index
+                current_score = player.score
+
+            player.rank = current_rank
+
+            yield player
+
     def stop(self):
         self.waiting_for_answer = False
         self.is_running = False
@@ -450,7 +322,6 @@ class QuizManager:
         self._game_names = GameNames(langs_data=cm.LANGS_DATA)
         self.total_questions = self._questions.shape[0]
         self.quizzes_in_progress: dict[int, Quiz] = {}
-        self.elo_manager = EloManager()
 
     def _get_questions(self):
         return pd.read_csv(QUESTIONS_PATH, sep=",", index_col=[cm.VNUM])
@@ -493,14 +364,109 @@ class QuizManager:
     def get_lang_icon(self, lang: str):
         return self.config_manager.get_lang_icon(lang)
 
-    def get_elo(self, guild_id: int, player_id: int, player_name: str):
-        return self.elo_manager.get_elo(guild_id, player_id, player_name)
 
-    def get_player_ranking(self, guild_id: int, player_name: str):
-        return self.elo_manager.get_player_ranking(guild_id, player_name)
+class EloManager:
+    ELO = "elo"
+    NAME = "name"
+    DEFAULT_ELO = 1000
+    LEADERBOARD_MAX_DISPLAY = 20
 
-    def get_elo_leaderboard(self, guild_id: int):
-        return self.elo_manager.get_leaderboard(guild_id)
+    def __init__(self):
+        self._data = self._get_data()
 
-    def calc_and_save_new_elo(self, quiz: Quiz):
-        return self.elo_manager.calc_and_save_new_elo(quiz.guild_id, quiz.leaderboard)
+    def _get_data(self) -> dict:
+        if os.path.exists(LEADERBOARD_PATH):
+            return open_json(LEADERBOARD_PATH)
+
+        return {}
+    
+    def _save_data(self):
+        with open(LEADERBOARD_PATH, "w") as file:
+            file.write(json.dumps(self._data, indent=4))
+
+    def get_elo(self, guild_id: int, player_id: int, player_name=None):
+        if not guild_id in self._data:
+            self._data[guild_id] = {}
+
+        if not player_id in self._data[guild_id]:
+            self._data[guild_id][player_id] = self.default_info(player_name)
+            return self.DEFAULT_ELO
+
+        if self.ELO in self._data[guild_id][player_id]:
+            return self._data[guild_id][player_id][self.ELO]
+
+        return self.DEFAULT_ELO
+
+    def default_info(self, player_name: str):
+        return {self.NAME: player_name}
+
+    def _update(self, guild_id, player_id, new_elo: int):
+        self._data[guild_id][player_id][self.ELO] = new_elo
+
+    def update_elo_ratings(self, quiz: Quiz):
+        if len(quiz.allowed_players) == 1:
+            return
+
+        current_elo = {
+            player_id: player.elo for player_id, player in quiz.players.items()
+        }
+        players_items = quiz.players.items()
+
+        for player_id, player in players_items:
+            player_elo = current_elo[player_id]
+            elo_augmentation = sum(
+                elo_formula(
+                    player_elo, player.score, current_elo[opponent_id], opponent.score
+                )
+                for opponent_id, opponent in players_items
+                if player_id != opponent_id
+            )
+            quiz.players[player_id].elo_augmentation = elo_augmentation
+            self._update(quiz.guild_id, player_id, player_elo + elo_augmentation)
+
+        self._save_data()
+
+    def get_leaderboard(self, guild_id: int):
+        players_score: dict[int, dict] = self._data[guild_id]
+        valid_scores = (
+            (player_score[self.NAME], player_score[self.ELO])
+            for player_score in players_score.values()
+            if self.ELO in player_score
+        )
+        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
+
+        lb = []
+        current_rank = 1
+        current_score = None
+
+        for index, (player_name, score) in enumerate(sorted_players):
+            if index == self.LEADERBOARD_MAX_DISPLAY or score == -1:
+                break
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+            lb.append((convert_rank(current_rank), player_name, score))
+
+        return lb
+
+    def get_player_ranking(self, guild_id: int, user_name: str):
+        players_score: dict[int, dict] = self._data[guild_id]
+        valid_scores = (
+            (player_score[self.NAME], player_score[self.ELO])
+            for player_score in players_score.values()
+            if self.ELO in player_score
+        )
+        sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
+
+        current_rank = 1
+        current_score = None
+
+        for index, (player_name, score) in enumerate(sorted_players):
+            if score != current_score:
+                current_rank = index + 1
+                current_score = score
+
+            if player_name == user_name:
+                return score, current_rank, len(sorted_players)
+
+        return None

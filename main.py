@@ -19,4 +19,3 @@ if __name__ == "__main__":
     bot.add_cog(QuizCog(bot))
 
     bot.run(token)
-    

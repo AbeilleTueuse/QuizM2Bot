@@ -7,11 +7,7 @@ from nextcord.ext.commands import Bot, Cog
 from nextcord.ext import tasks
 
 from src.widgets import DropDown, RegistrationButton
-from src.quiz_manager import (
-    Quiz,
-    QuizManager,
-    Question,
-)
+from src.quiz_manager import Quiz, QuizManager, Question, EloManager
 from src.config import ConfigurationManager as cm
 from src.paths import CONSOLE_PATH, LEADERBOARD_PATH, LANGS_BY_SERVERS_PATH
 
@@ -20,6 +16,7 @@ class QuizCog(Cog):
     def __init__(self, bot: Bot):
         self.bot = bot
         self.quiz_manager = QuizManager()
+        self.elo_manager = EloManager()
 
     @nextcord.slash_command(name="quiz")
     async def quiz(self, _):
@@ -134,7 +131,7 @@ class QuizCog(Cog):
                 name="Participants", value="No one is registered.", inline=False
             )
             registration_button = RegistrationButton(
-                quiz_manager=self.quiz_manager,
+                elo_manager=self.elo_manager,
                 quiz=quiz,
                 embed=embed,
                 registration_time=cm.REGISTRATION_TIME,
@@ -151,8 +148,6 @@ class QuizCog(Cog):
                 )
                 self.quiz_manager.end_quiz(channel.id)
                 return
-
-            quiz.initialize_leaderboard()
         else:
             await interaction.send(embed=embed)
 
@@ -257,7 +252,7 @@ class QuizCog(Cog):
                 await message.reply(
                     f"Good game! You answered in {answer_time:.3f} seconds."
                 )
-                quiz.leaderboard.increment_score(player=message.author)
+                quiz.increment_score(player=message.author)
 
                 await self.wait_for_close_answers(message)
                 close_answers = await self.get_close_answers(
@@ -336,22 +331,20 @@ class QuizCog(Cog):
 
     async def show_leaderboard(self, interaction: nextcord.Interaction, quiz: Quiz):
         if quiz.is_ranked:
-            elo_augmentation = self.quiz_manager.calc_and_save_new_elo(quiz)
-        else:
-            elo_augmentation = None
+            self.elo_manager.update_elo_ratings(quiz)
 
         embed = nextcord.Embed(title="Leaderboard 🏆", color=0x33A5FF)
 
-        leaderboard = quiz.leaderboard.get_leaderboard()
+        leaderboard = quiz.get_leaderboard()
         winner = next(leaderboard, None)
 
         if winner is not None:
-            embed.description = winner.leaderboard_display(elo_augmentation) + "\n"
+            embed.description = winner.leaderboard_display() + "\n"
 
-            for ranking in leaderboard:
-                embed.description += ranking.leaderboard_display(elo_augmentation) + "\n"
+            for player in leaderboard:
+                embed.description += player.leaderboard_display() + "\n"
 
-            embed.set_thumbnail(winner.player.display_avatar)                
+            embed.set_thumbnail(winner.avatar)
 
         await interaction.send(embed=embed)
 
@@ -414,7 +407,7 @@ class QuizCog(Cog):
         member = member if member is not None else interaction.user
 
         try:
-            player_ranking = self.quiz_manager.get_player_ranking(
+            player_ranking = self.elo_manager.get_player_ranking(
                 interaction.guild.id, member.name
             )
 
@@ -445,7 +438,7 @@ class QuizCog(Cog):
     ):
         """Show elo leaderboard."""
         try:
-            leaderboard_data = self.quiz_manager.get_elo_leaderboard(
+            leaderboard_data = self.elo_manager.get_elo_leaderboard(
                 interaction.guild_id
             )
 

@@ -1,7 +1,7 @@
 import nextcord
 from nextcord.ext import tasks
 
-from src.quiz_manager import Quiz, QuizManager
+from src.quiz_manager import Quiz, EloManager
 from src.config import ConfigurationManager as cm
 
 
@@ -10,10 +10,14 @@ class RegistrationButton(nextcord.ui.View):
     MESSAGE_CLOSE = "Registrations are closed."
 
     def __init__(
-        self, quiz_manager: QuizManager, quiz: Quiz, embed: nextcord.Embed, registration_time: int
+        self,
+        elo_manager: EloManager,
+        quiz: Quiz,
+        embed: nextcord.Embed,
+        registration_time: int,
     ):
         super().__init__()
-        self.quiz_manager = quiz_manager
+        self.elo_manager = elo_manager
         self.quiz = quiz
         self.embed = embed
         self.registration_time = registration_time
@@ -47,11 +51,13 @@ class RegistrationButton(nextcord.ui.View):
 
         if player.id in self.quiz.allowed_players:
             return
-        
-        self.quiz.add_new_player(player)
-        player_elo = self.quiz_manager.get_elo(interaction.guild_id, player.id, player.name)
 
-        self.embed_value += f"\n- {player.display_name} ({player_elo})"
+        player_elo = self.elo_manager.get_elo(
+            interaction.guild_id, player.id, player.name
+        )
+        player = self.quiz.add_new_player(player, player_elo)
+
+        self.embed_value += f"\n- {player.register_display()}"
 
         self.embed.set_field_at(
             index=2,
