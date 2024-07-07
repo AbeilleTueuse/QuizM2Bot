@@ -442,7 +442,7 @@ class EloManager:
         current_score = None
 
         for index, (player_name, score) in enumerate(sorted_players, start=1):
-            if index == self.LEADERBOARD_MAX_DISPLAY:
+            if index == self.LEADERBOARD_MAX_DISPLAY + 1:
                 break
 
             if score != current_score:
