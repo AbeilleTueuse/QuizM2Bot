@@ -45,7 +45,7 @@ class RegistrationButton(nextcord.ui.View):
     async def button_callback(self, _, interaction: nextcord.Interaction):
         player = interaction.user
 
-        if player in self.quiz.allowed_players:
+        if player.id in self.quiz.allowed_players:
             return
         
         self.quiz.add_new_player(player)

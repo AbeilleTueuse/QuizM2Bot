@@ -13,7 +13,7 @@ class ConfigurationManager:
     CLOSE_ANSWSER_MAX_SECOND = 1
     TIME_BETWEEN_QUESTION = 10
 
-    NUMBER_OF_QUESTION = [1, 5, 10, 20, 40]
+    NUMBER_OF_QUESTION = [5, 10, 20, 40]
     FRIENDYLY = "friendly"
     RANKED = "ranked"
     GAME_CATEGORIES = [FRIENDYLY, RANKED]
