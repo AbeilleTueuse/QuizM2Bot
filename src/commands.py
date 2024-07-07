@@ -349,22 +349,8 @@ class QuizCog(Cog):
         await interaction.send(embed=embed)
 
     @staticmethod
-    def user_name_to_display_name(guild: nextcord.Guild, user_name: str):
-        user = nextcord.utils.get(guild.members, name=user_name)
-
-        if user is None:
-            return user_name
-
-        return user.display_name
-
-    @staticmethod
-    def user_name_to_display_avatar(guild: nextcord.Guild, user_name: str):
-        user = nextcord.utils.get(guild.members, name=user_name)
-
-        if user is None:
-            return
-
-        return user.display_avatar
+    def get_member(guild: nextcord.Guild, user_name: str):
+        return nextcord.utils.get(guild.members, name=user_name)
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: nextcord.Interaction):
@@ -438,29 +424,37 @@ class QuizCog(Cog):
     ):
         """Show elo leaderboard."""
         try:
-            leaderboard_data = self.elo_manager.get_elo_leaderboard(
-                interaction.guild_id
-            )
+            leaderboard = self.elo_manager.get_leaderboard(interaction.guild_id)
 
-            if not leaderboard_data:
-                await interaction.send("There are no leaderboard on this server yet.")
+        except KeyError:
+            await interaction.send("There are no leaderboard on this server yet.")
 
-            leaderboard = "\n".join(
-                f"{rank} ┊ **{self.user_name_to_display_name(interaction.guild, user_name)}** ({elo})"
-                for rank, user_name, elo in leaderboard_data
-            )
+        else:
             embed = nextcord.Embed(
                 title="Elo leaderboard 🏆", description=leaderboard, color=0x33A5FF
             )
-            leader_avatar = self.user_name_to_display_avatar(
-                interaction.guild, leaderboard_data[0][1]
-            )
-            if leader_avatar:
-                embed.set_thumbnail(leader_avatar.url)
+            winner = next(leaderboard, None)
+
+            if winner is not None:
+                member = self.get_member(interaction.guild, winner[1])
+
+                if member is not None:
+                    embed.set_thumbnail(member.display_avatar)
+                    winner_name = member.display_name
+
+                else:
+                    winner_name = winner[1]
+
+                embed.description = f"{winner[0]} ┊ **{winner_name}** ({winner[2]})\n"
+
+                for player in leaderboard:
+                    member = self.get_member(interaction.guild, player[1])
+                    member_name = member.display_name if member is not None else player[1]
+                    embed.description += f"{player[0]} ┊ **{member_name}** ({player[2]})\n"
 
             await interaction.send(embed=embed)
-        except KeyError:
-            await interaction.send("There are no leaderboard on this server yet.")
+
+        
 
     @quiz.subcommand(name="info")
     async def show_quiz_info(

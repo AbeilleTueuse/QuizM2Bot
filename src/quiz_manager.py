@@ -427,6 +427,9 @@ class EloManager:
         self._save_data()
 
     def get_leaderboard(self, guild_id: int):
+        if guild_id not in self._data:
+            raise KeyError()
+        
         players_score: dict[int, dict] = self._data[guild_id]
         valid_scores = (
             (player_score[self.NAME], player_score[self.ELO])
@@ -435,19 +438,18 @@ class EloManager:
         )
         sorted_players = sorted(valid_scores, key=lambda score: score[1], reverse=True)
 
-        lb = []
         current_rank = 1
         current_score = None
 
-        for index, (player_name, score) in enumerate(sorted_players):
-            if index == self.LEADERBOARD_MAX_DISPLAY or score == -1:
+        for index, (player_name, score) in enumerate(sorted_players, start=1):
+            if index == self.LEADERBOARD_MAX_DISPLAY:
                 break
-            if score != current_score:
-                current_rank = index + 1
-                current_score = score
-            lb.append((convert_rank(current_rank), player_name, score))
 
-        return lb
+            if score != current_score:
+                current_rank = index
+                current_score = score
+
+            yield ((convert_rank(current_rank), player_name, score))
 
     def get_player_ranking(self, guild_id: int, user_name: str):
         players_score: dict[int, dict] = self._data[guild_id]
