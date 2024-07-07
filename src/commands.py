@@ -340,13 +340,18 @@ class QuizCog(Cog):
         else:
             elo_augmentation = None
 
-        embed = nextcord.Embed(title="Leaderboard 🏆", description="", color=0x33A5FF)
+        embed = nextcord.Embed(title="Leaderboard 🏆", color=0x33A5FF)
 
-        for ranking in quiz.leaderboard.get_leaderboard():
-            embed.description += ranking.leaderboard_display(elo_augmentation) + "\n"
+        leaderboard = quiz.leaderboard.get_leaderboard()
+        winner = next(leaderboard, None)
 
-            if ranking.is_first:
-                embed.set_thumbnail(ranking.player.display_avatar)
+        if winner is not None:
+            embed.description = winner.leaderboard_display(elo_augmentation) + "\n"
+
+            for ranking in leaderboard:
+                embed.description += ranking.leaderboard_display(elo_augmentation) + "\n"
+
+            embed.set_thumbnail(winner.player.display_avatar)                
 
         await interaction.send(embed=embed)
 
@@ -372,7 +377,7 @@ class QuizCog(Cog):
     async def stop_quiz(self, interaction: nextcord.Interaction):
         """Suddenly stops the current quiz."""
         if not self.quiz_manager.has_active_quiz(interaction.channel_id):
-            await interaction.send("There are no quizzes in progress.")
+            await interaction.send("There is no quiz in progress in this channel.")
             return
 
         self.quiz_manager.end_quiz(interaction.channel_id)
