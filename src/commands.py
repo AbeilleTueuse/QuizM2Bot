@@ -121,9 +121,7 @@ class QuizCog(Cog):
         )
         embed.add_field(
             name="Allowed languages",
-            value=" ".join(
-                self.get_lang_emoji(lang) for lang in quiz.allowed_langs
-            ),
+            value=" ".join(self.get_lang_emoji(lang) for lang in quiz.allowed_langs),
             inline=False,
         )
 
@@ -172,14 +170,13 @@ class QuizCog(Cog):
             embed.set_footer(text="Only registered players can participate.")
 
         message = await channel.send(embed=embed, file=image)
-        question.last_message = message
-        question.first_message = message
+        question.add_first_message(message)
 
     async def get_close_answers(
         self,
         channel: nextcord.TextChannel,
         question: Question,
-        first_message: nextcord.Message,
+        first_message_timestamp: float,
         winner_message: nextcord.Message,
         winner_time: float,
     ):
@@ -192,9 +189,7 @@ class QuizCog(Cog):
             oldest_first=True,
         ):
             if question.is_winner(message.content, message.author.id):
-                answer_time = (
-                    message.created_at - first_message.created_at
-                ).total_seconds()
+                answer_time = message.created_at.timestamp() - first_message_timestamp
                 close_answers.append(
                     [
                         message.author.display_name,
@@ -244,10 +239,9 @@ class QuizCog(Cog):
         ):
             if question.is_winner(message.content, message.author.id):
                 quiz.waiting_for_answer = False
-                first_message: nextcord.Message = question.first_message
-                answer_time = (
-                    message.created_at - first_message.created_at
-                ).total_seconds()
+                
+                first_message_timestamp = question.first_message_timestamp
+                answer_time = message.created_at.timestamp() - first_message_timestamp
 
                 await message.reply(
                     f"Good game! You answered in {answer_time:.3f} seconds."
@@ -258,7 +252,7 @@ class QuizCog(Cog):
                 close_answers = await self.get_close_answers(
                     channel,
                     question,
-                    first_message,
+                    first_message_timestamp,
                     message,
                     answer_time,
                 )
@@ -351,7 +345,7 @@ class QuizCog(Cog):
     @staticmethod
     def get_member(guild: nextcord.Guild, user_name: str):
         return nextcord.utils.get(guild.members, name=user_name)
-    
+
     @staticmethod
     def get_lang_emoji(lang: str) -> str:
         return cm.LANGS_DATA[lang][cm.EMOJI]
@@ -453,12 +447,14 @@ class QuizCog(Cog):
 
                 for player in leaderboard:
                     member = self.get_member(interaction.guild, player[1])
-                    member_name = member.display_name if member is not None else player[1]
-                    embed.description += f"{player[0]} ┊ **{member_name}** ({player[2]})\n"
+                    member_name = (
+                        member.display_name if member is not None else player[1]
+                    )
+                    embed.description += (
+                        f"{player[0]} ┊ **{member_name}** ({player[2]})\n"
+                    )
 
             await interaction.send(embed=embed)
-
-        
 
     @quiz.subcommand(name="info")
     async def show_quiz_info(
@@ -511,6 +507,25 @@ class QuizCog(Cog):
 
         else:
             await interaction.send("You can't use this command.", ephemeral=True)
+
+    # @quiz.subcommand(name="ban")
+    # async def set_lang(
+    #     self,
+    #     interaction: nextcord.Interaction,
+    #     member: nextcord.Member = nextcord.SlashOption(
+    #         name="member",
+    #         description="Choose a member to ban.",
+    #         required=True,
+    #     ),
+    # ):
+    #     """Ban a player from the quiz."""
+    #     user = interaction.user
+
+    #     if user.id == self.bot.owner_id or user.guild_permissions.administrator:
+    #         await interaction.send()
+
+    #     else:
+    #         await interaction.send("You can't use this command.", ephemeral=True)
 
     @nextcord.slash_command(name="info")
     async def info(self, interaction: nextcord.Interaction):

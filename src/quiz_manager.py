@@ -73,6 +73,7 @@ class Question:
         self.check_answer_count = 0
         self.hint_shown = 0
         self.first_message: nextcord.Message = None
+        self.first_message_timestamp : float = None
         self.last_message: nextcord.Message = None
         self.last_hint_message: nextcord.Message = None
 
@@ -112,6 +113,11 @@ class Question:
             lang: self._get_hint_shuffle(answer)
             for lang, answer in self.answers.items()
         }
+    
+    def add_first_message(self, message: nextcord.Message):
+        self.last_message = message
+        self.first_message = message
+        self.first_message_timestamp = message.created_at.timestamp()
 
     def show_hint(self):
         if (

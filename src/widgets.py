@@ -50,6 +50,7 @@ class RegistrationButton(nextcord.ui.View):
         player = interaction.user
 
         if player.id in self.quiz.allowed_players:
+            await interaction.send("You are already registered. Stop clicking :face_with_symbols_over_mouth:", ephemeral=True)
             return
 
         player_elo = self.elo_manager.get_elo(
@@ -65,6 +66,8 @@ class RegistrationButton(nextcord.ui.View):
             value=self.embed_value,
             inline=False,
         )
+
+        await interaction.send("You have been registered successfully!", ephemeral=True)
 
 
 class DropDown(nextcord.ui.StringSelect):
