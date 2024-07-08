@@ -432,9 +432,6 @@ class EloManager:
         self._save_data()
 
     def get_leaderboard(self, guild_id: int):
-        if guild_id not in self._data:
-            raise KeyError()
-
         players_score: dict[int, dict] = self._data[guild_id]
         valid_scores = (
             (player_score[self.NAME], player_score[self.ELO])

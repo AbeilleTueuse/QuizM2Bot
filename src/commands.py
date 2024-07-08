@@ -425,7 +425,7 @@ class QuizCog(Cog):
 
         else:
             embed = nextcord.Embed(
-                title="Elo leaderboard 🏆", description=leaderboard, color=0x33A5FF
+                title="Elo leaderboard 🏆", color=0x33A5FF
             )
             winner = next(leaderboard, None)
 
