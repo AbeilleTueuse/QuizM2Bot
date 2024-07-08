@@ -121,7 +121,7 @@ class QuizCog(Cog):
         )
         embed.add_field(
             name="Allowed languages",
-            value=" ".join(self.get_lang_emoji(lang) for lang in quiz.allowed_langs),
+            value=" ".join(cm.get_lang_emoji(lang) for lang in quiz.allowed_langs),
             inline=False,
         )
 
@@ -239,7 +239,7 @@ class QuizCog(Cog):
         ):
             if question.is_winner(message.content, message.author.id):
                 quiz.waiting_for_answer = False
-                
+
                 first_message_timestamp = question.first_message_timestamp
                 answer_time = message.created_at.timestamp() - first_message_timestamp
 
@@ -269,7 +269,7 @@ class QuizCog(Cog):
                 embed = nextcord.Embed(
                     title=f"Hint {question.hint_shown} of {quiz.max_hint}",
                     description="\n".join(
-                        f"{self.get_lang_emoji(lang)} ┊ {' '.join(hint)}"
+                        f"{cm.get_lang_emoji(lang)} ┊ {' '.join(hint)}"
                         for lang, hint in question.hints.items()
                     ),
                     color=0xEDF02A,
@@ -293,7 +293,7 @@ class QuizCog(Cog):
         embed = nextcord.Embed(
             title=f"Answer{quiz.multilang_plural}",
             description="\n".join(
-                f"{self.get_lang_emoji(lang)} ┊ {answer}"
+                f"{cm.get_lang_emoji(lang)} ┊ {answer}"
                 for lang, answer in question.answers.items()
             ),
             color=0x5E296B,
@@ -345,10 +345,6 @@ class QuizCog(Cog):
     @staticmethod
     def get_member(guild: nextcord.Guild, user_name: str):
         return nextcord.utils.get(guild.members, name=user_name)
-
-    @staticmethod
-    def get_lang_emoji(lang: str) -> str:
-        return cm.LANGS_DATA[lang][cm.EMOJI]
 
     @quiz.subcommand(name="stop")
     async def stop_quiz(self, interaction: nextcord.Interaction):

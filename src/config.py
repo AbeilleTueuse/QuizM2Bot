@@ -102,3 +102,7 @@ class ConfigurationManager:
             config_parameters[self.DESCRIPTION]
             for config_parameters in self.SAVED_CONFIG.values()
         )
+
+    @classmethod
+    def get_lang_emoji(cls, lang: str) -> str:
+        return cls.LANGS_DATA[lang][cls.EMOJI]
