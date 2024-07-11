@@ -62,7 +62,7 @@ class RegistrationButton(nextcord.ui.View):
 
         self.embed.set_field_at(
             index=2,
-            name="Participants",
+            name="Player" + "s" * (len(self.quiz.allowed_players) >= 2),
             value=self.embed_value,
             inline=False,
         )
