@@ -120,7 +120,7 @@ class QuizCog(Cog):
             value=quiz.create_settings(),
         )
         embed.add_field(
-            name="Allowed languages",
+            name=f"Allowed language{quiz.multilang_plural}",
             value=" ".join(cm.get_lang_emoji(lang) for lang in quiz.allowed_langs),
             inline=False,
         )
