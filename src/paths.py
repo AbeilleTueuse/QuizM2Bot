@@ -11,3 +11,6 @@ QUESTIONS_PATH = os.path.join("src", "data", "questions.csv")
 IMAGES_PATH = os.path.join("src", "data", "0_images")
 
 LEADERBOARD_PATH = os.path.join("src", "data", "leaderboard.json")
+
+MOB_NAMES_PATH = os.path.join("src", "data", "{lang}", "mob_names.txt")
+ITEM_NAMES_PATH = os.path.join("src", "data", "{lang}", "item_names.txt")
