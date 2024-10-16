@@ -97,7 +97,7 @@ class QuizCog(Cog):
             )
 
             if question_index + 1 != number_of_question and quiz.is_running:
-                await self.next_question_timer.start(quiz, answer_message, answer_embed)
+                await quiz.next_question_timer.start(answer_message, answer_embed)
 
         if quiz.is_running:
             await asyncio.sleep(cm.TIME_BETWEEN_QUESTION)

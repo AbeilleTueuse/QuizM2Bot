@@ -5,6 +5,7 @@ import os
 from fuzzywuzzy import fuzz
 import pandas as pd
 import nextcord
+from nextcord.ext import tasks
 
 from src.data.read_files import GameNames
 from src.utils.utils import (
@@ -321,6 +322,28 @@ class Quiz:
     def stop(self):
         self.waiting_for_answer = False
         self.is_running = False
+
+
+    @tasks.loop(seconds=1)
+    async def next_question_timer(
+        self, message: nextcord.Message, embed: nextcord.Embed
+    ):
+        remaining_time = (
+            cm.TIME_BETWEEN_QUESTION - self.next_question_timer.current_loop
+        )
+        plural = "s" * (remaining_time >= 2)
+        embed.set_footer(text=f"Next question in {remaining_time} second{plural}.")
+
+        if not self.is_running:
+            embed.remove_footer()
+            self.next_question_timer.stop()
+
+        await message.edit(embed=embed)
+
+        if not remaining_time:
+            self.next_question_timer.stop()
+            embed.remove_footer()
+            await message.edit(embed=embed)
 
 
 class QuizManager:
