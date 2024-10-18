@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Heaume dragon céleste+13
 12874	Heaume dragon céleste+14
 12875	Heaume dragon céleste+15
+12880	Coiffe du serpent+0
+12881	Coiffe du serpent+1
+12882	Coiffe du serpent+2
+12883	Coiffe du serpent+3
+12884	Coiffe du serpent+4
+12885	Coiffe du serpent+5
+12886	Coiffe du serpent+6
+12887	Coiffe du serpent+7
+12888	Coiffe du serpent+8
+12889	Coiffe du serpent+9
+12890	Coiffe du serpent+10
+12891	Coiffe du serpent+11
+12892	Coiffe du serpent+12
+12893	Coiffe du serpent+13
+12894	Coiffe du serpent+14
+12895	Coiffe du serpent+15
 13000	Bouclier de bataille+0
 13001	Bouclier de bataille+1
 13002	Bouclier de bataille+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Bandage
 27125	Potion de bataille
 27126	Potion pouvoir du Dragon
+27127	Sang glacé de Balathor
 27128	Secret de Yutnori
 27201	Potion rouge (p)
 27202	Potion rouge (m)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Bon casque de vampire
 30343	Bon casque de vampire+
 30344	L'appel des sanctuaires
+30345	Flèche enflammée
 30346	Ticket de Battle Royale
 30500	Pointe à graver - rubis
 30501	Bague en or
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Matière obscure
 31082	Anneau de magma
 31083	Anneau de Samaël
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Eau lourde
 31086	Spores de champignon
-31087	NoNAme
-31088	NoNAme
+31087	Flamme d'esprit ardent
+31088	Potion de feu
 31089	NoNAme
-31090	NoNAme
+31090	Cœur de Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Peau de monstre algide
 31093	Roche inconnue
 31094	Morceau
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Pierre mystérieuse
 31262	Vernis serpent
 31263	Pierre d'affûtage d'Aqu.
+31264	Tendon de Balathor
+31265	Marteau givré
+31266	Ailes de Balathor
+31267	Corne de Balathor
+31268	Œil de Balathor
+31269	Écaille de Balathor
 31270	Essence de talisman
 33001	Insigne de Zi
 33002	Insigne de Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Gong du gardancêtre+
 40190	Éventail du gardancêtre+
 40191	Griffe du gardancêtre+
+40192	Épée du porte-fléau+
+40193	Dague du porte-fléau+
+40194	Arc du porte-fléau+
+40195	Espadon du porte-fléau+
+40196	Gong du porte-fléau+
+40197	Éventail du porte-fléau+
+40198	Griffe du porte-fléau+
 41000	Espace apparence d'arme
 41001	Costume de lapin (m)
 41002	Costume de hase (m)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Maillot de foot+ HUN (f)
 41658	Maillot Mondial ROU (m)
 41659	Maillot Mondial ROU (f)
-41660	Maillot Mondial ROU+ (m)
-41661	Maillot Mondial ROU+ (f)
+41660	Maillot de foot+ RO (m)
+41661	Maillot de foot+ RO (f)
 41662	Maillot Mondial POL (m)
 41663	Maillot Mondial POL (f)
 41664	Maillot de foot+ POL (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Armure du vainqueur+
 41918	Armure de la généreuse+
 41919	Armure de la vainqueure+
+41920	Torero rouge
+41921	Torero bleu
+41922	Torera rouge
+41923	Torera bleue
+41924	Torero rouge+
+41925	Torero bleu+
+41926	Torera rouge+
+41927	Torera bleue+
+41932	Prince d'Atlantide+
+41933	Guerrier d'Atlantide+
+41934	Princesse d'Atlantide+
+41935	Guerrière d'Atlantide+
+41936	Incube enflammé+
+41937	Incube nocturne+
+41938	Succube enflammé+
+41939	Succube nocturne+
+41940	Toge solaire Wukong+ (m)
+41941	Toge lunaire Wukong+ (m)
+41942	Toge solaire Wukong+ (f)
+41943	Toge lunaire Wukong+ (f)
+41952	Toge solaire Wukong (m)
+41953	Toge lunaire Wukong (m)
+41954	Toge solaire Wukong (f)
+41955	Toge lunaire Wukong (f)
 45001	Oreilles de hase (brun)
 45002	Oreilles de lapin (m)
 45003	Turban (h)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Couronne du vainqueur+
 45658	Couronne de généreuse+
 45659	Couronne de vainqueure+
+45660	Montera rouge (m)
+45661	Montera bleue (m)
+45662	Montera rouge (f)
+45663	Montera bleue (f)
+45664	Montera rouge+ (m)
+45665	Montera bleue+ (m)
+45666	Montera rouge+ (f)
+45667	Montera bleue+ (f)
+45672	Tiare d'Atlantide+ (m)
+45673	Casque d'Atlantide+ (m)
+45674	Tiare d'Atlantide+ (f)
+45675	Casque d'Atlantide+ (f)
+45676	Cornes enflammées+ (m)
+45677	Cornes nocturnes+ (m)
+45678	Cornes enflammées+ (f)
+45679	Cornes nocturnes+ (f)
+45680	Bra. solaire Wukong+ (m)
+45681	Bra. lunaire Wukong+ (m)
+45682	Bra. solaire Wukong+ (f)
+45683	Bra. lunaire Wukong+ (f)
+45696	Bra. solaire Wukong (m)
+45697	Bra. lunaire Wukong (m)
+45698	Bra. solaire Wukong (f)
+45699	Bra. lunaire Wukong (f)
 49001	Tenue d'aura ordinaire
 49002	Tenue d'aura sobre
 49003	Tenue d'aura noble
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Coffre de maître II
 50195	Coffre de maître III
 50196	Coffre de grand maître
-50197	NoNAme
+50197	Sacoche inconnue
 50198	NoNAme
 50199	NoNAme
 50200	Paquet
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Coffre : livr. de parade
 50324	Coffre : livre de bonus
 50325	Livre de précision
+50326	Manuel de Balathor
 50330	Liv. de quête (Prince 1)
 50331	Liv. de quête (Prince 2)
 50332	Liv. de quête (Prince 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Rosée verte
 50825	Rosée bleue
 50826	Rosée blanche
+50827	Rosée noire
 50830	Élixir force flamme
 50831	Élixir force gel
 50832	Élixir force du tonnerre
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Coffre de devin rouge
 50939	Coffre de devin bleu
 50940	Coffre de devin rose
+50941	Coffre de la crypte
 51001	Fragment d'énergie
 51002	Cristal d'énergie
 51501	Cor Draconis (brut)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Moa vaillant
 52120	Moa vaillant
 52202	Turboplanche de surf
+52204	Tempête de Wukong
+52205	Tonnerre de Wukong
 52701	Certificat de lion
 52702	Certificat de tigre
 52703	Certificat de sanglier
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Certificat de renne (f)
 52707	Certificat de Dragor
 52708	Certificat de moa
+52710	Orbe polymorphe : hwacha
 53001	Phœnix flamboyant
 53002	Faon
 53003	Phœnix de glace
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Krampus des neiges
 53354	Krampus du charbon
 53355	Petit krampus
+53356	Taureau noir
+53357	Taureau brun
+53358	Taureau docile
+53359	Pincemoi
+53360	Pincemi
+53362	Lilith
+53363	Helena
+53364	Lilith miniature
+53365	Loong doré
+53366	Loong argenté
+53367	Petit Loong
+53368	Petit Balathor
+53369	Balathor Junior
 53501	Cage Phœnix flamboyant
 53502	Coffre du faon
 53503	Cage de phœnix de glace
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Cage de Rufus des glaces
 53522	Nid de Sheldon
 53523	Clapier
-53526	NoNAme
+53526	Pepita Can
 53527	Cage tête de citrouille
 53528	Placard à balais
 53529	Glacière de Flocon
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Coffre de krampus givré
 53636	Coffre de krampus noir
 53637	Petit coffre de krampus
+53638	Boite à taureau noire
+53639	Boite à taureau marron
+53640	Petite boite à taureau
+53641	Boite de Pincemoi
+53642	Boite de Pincemi
+53643	Boite infernale : Lilith
+53644	Boite infernale d'Helena
+53645	Miniboite infernale
+53646	Autel doré du dragon
+53647	Autel argenté du dragon
+53648	Petit autel de dragon
 54041	NoNAme
 54042	NoNAme
 54043	Coffre d'apprenti I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Clé gelée
 70411	Coffre-dragon bl. (fac.)
 70412	Coffre-dragon bl. (dif.)
+70413	Coffre gelé de Balathor
+70414	Coffre gelé de Balathor+
 70422	Clé serpent
 70423	Éclat serpent enflammé
 70424	Éclat de serpent givré
@@ -10035,6 +10146,28 @@ VNUM	LOCALE_NAME
 70449	Clé de la damnation+
 70450	P. de Metin rédemption
 70451	Lot de flammes funestes
+70500	Écho de force +0
+70501	Écho de force +1
+70502	Écho de force +2
+70503	Écho de force +3
+70504	Écho de force +4
+70505	Écho d'aptitude +0
+70506	Écho d'aptitude +1
+70507	Écho d'aptitude +2
+70508	Écho d'aptitude +3
+70509	Écho d'aptitude +4
+70510	Essence de force +0
+70511	Essence de force +1
+70512	Essence de force +2
+70513	Essence de force +3
+70514	Essence de force +4
+70515	Essence d'aptitude +0
+70516	Essence d'aptitude +1
+70517	Essence d'aptitude +2
+70518	Essence d'aptitude +3
+70519	Essence d'aptitude +4
+70602	Renforcement d'écho
+70603	Éveil d'écho
 70604	Coffre de Coupe
 70605	Coffre à tickets
 70606	Trophée de Coupe
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Encyclo. Mercure (g)
 71217	Encyclo. Vénus (p)
 71218	Encyclo. Vénus (g)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Cheval de Kyzaghan
 71221	Paquet de cachemire
 71222	Dragon Nirvana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Sombre cheval de légion
 71277	Halia
 71278	Aquilos
+71280	Paleffroi lugubre
+71281	Paleffroi cruel
+71287	Ailes gelées de Balathor
+71288	Nocturnailes de Balathor
 72001	Anneau d'expérience 10h
 72002	Anneau d'exp. (30 min)
 72003	Anneau d'expérience (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Filon de jadéite mobile
 72355	Magasin premium privé
 72356	Magasin premium privé
+72359	Ticket (Balathor)
 72360	Parchemin du défi
 72701	Bottes du vent
 72702	Bottes du vent+ (éch.)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Moins d'endurance (30 %)
 72755	Licence d'extension
 72756	Pass butin
-72757	Ticket de protection
-72758	Renouveau de Primordis
 72760	Livre de berserker
 72761	Livre d'anti-magie
 72762	Livre d'accélération
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Catalyse-familier
 79658	4* Catalyse-familier
 79659	5* Catalyse-familier
+79666	Traqueur de monstres
+79667	Traqueur de personnages
+79668	Pierre de téléportation+
+79669	Pierre de téléportation
+79670	Bois rouge, partie 1
+79671	Bois rouge, partie 2
+79672	Bois rouge, partie 3
+79673	Bois rouge, partie 4
+79674	Bois rouge, partie 5
+79675	Grande vallée, partie 1
+79676	Grande vallée, partie 2
+79677	Grande vallée, partie 3
+79678	Grande vallée, partie 4
+79679	Grande vallée, partie 5
+79680	Terre des ogres partie 1
+79681	Terre des ogres partie 2
+79682	Terre des ogres partie 3
+79683	Terre des ogres partie 4
+79684	Terre des ogres partie 5
+79685	Donjon des araignées, P1
+79686	Donjon des araignées, P2
+79687	Donjon des araignées, P3
+79688	Donjon des araignées, P4
+79689	Donjon des araignées, P5
+79690	Donjon d. araignées 2 P1
+79691	Donjon d. araignées 2 P2
+79692	Donjon d. araignées 2 P3
+79693	Donjon d. araignées 2 P4
+79694	Donjon d. araignées 2 P5
+79695	Grotte de l'exil, P1
+79696	Grotte de l'exil, P2
+79697	Grotte de l'exil, P3
+79698	Grotte de l'exil, P4
+79699	Grotte de l'exil, P5
+79700	Grotte de l'exil 2, P1
+79701	Grotte de l'exil 2, P2
+79702	Grotte de l'exil 2, P3
+79703	Grotte de l'exil 2, P4
+79704	Grotte de l'exil 2, P5
+79705	Hasung Dong, partie 1
+79706	Hasung Dong, partie 2
+79707	Hasung Dong, partie 3
+79708	Hasung Dong, partie 4
+79709	Hasung Dong, partie 5
+79710	Jungsun Dong, partie 1
+79711	Jungsun Dong, partie 2
+79712	Jungsun Dong, partie 3
+79713	Jungsun Dong, partie 4
+79714	Jungsun Dong, partie 5
+79715	Sangsun Dong, partie 1
+79716	Sangsun Dong, partie 2
+79717	Sangsun Dong, partie 3
+79718	Sangsun Dong, partie 4
+79719	Sangsun Dong, partie 5
+79725	Donjon d. araignées 3 P1
+79726	Donjon d. araignées 3 P2
+79727	Donjon d. araignées 3 P3
+79728	Donjon d. araignées 3 P4
+79729	Donjon d. araignées 3 P5
+79730	Temple Ochao, partie 1
+79731	Temple Ochao, partie 2
+79732	Temple Ochao, partie 3
+79733	Temple Ochao, partie 4
+79734	Temple Ochao, partie 5
+79735	ST : Grotte de l'exil P1
+79736	ST : Grotte de l'exil P2
+79737	ST : Grotte de l'exil P3
+79738	ST : Grotte de l'exil P4
+79739	ST : Grotte de l'exil P5
+79740	ÉV : Grotte de l'exil P1
+79741	ÉV : Grotte de l'exil P2
+79742	ÉV : Grotte de l'exil P3
+79743	ÉV : Grotte de l'exil P4
+79744	ÉV : Grotte de l'exil P5
+79745	Grotte gnolle, partie 1
+79746	Grotte gnolle, partie 2
+79747	Grotte gnolle, partie 3
+79748	Grotte gnolle, partie 4
+79749	Grotte gnolle, partie 5
+79750	Grotte gnolle 2 partie 1
+79751	Grotte gnolle 2 partie 2
+79752	Grotte gnolle 2 partie 3
+79753	Grotte gnolle 2 partie 4
+79754	Grotte gnolle 2 partie 5
+79755	Grotte gnolle 3 partie 1
+79756	Grotte gnolle 3 partie 2
+79757	Grotte gnolle 3 partie 3
+79758	Grotte gnolle 3 partie 4
+79759	Grotte gnolle 3 partie 5
+79760	Temple du Serpent, P1
+79761	Temple du Serpent, P2
+79762	Temple du Serpent, P3
+79763	Temple du Serpent, P4
+79764	Temple du Serpent, P5
+79765	Citadelle d'Aquilon, P1
+79766	Citadelle d'Aquilon, P2
+79767	Citadelle d'Aquilon, P3
+79768	Citadelle d'Aquilon, P4
+79769	Citadelle d'Aquilon, P5
+79770	Descente d'Aquilon, P1
+79771	Descente d'Aquilon, P2
+79772	Descente d'Aquilon, P3
+79773	Descente d'Aquilon, P4
+79774	Descente d'Aquilon, P5
+79800	Carte : Bois rouge
+79801	Carte : Grande vallée
+79802	Carte : Terre des ogres
+79803	Carte : Donjon des arai.
+79804	Carte : Donjon des ar. 2
+79805	Carte : Grotte de l'exil
+79806	Carte : Gr. de l'exil 2
+79807	Carte : Hasung Dong
+79808	Carte : Jungsun Dong
+79809	Carte : Sangsun Dong
+79811	Carte : Donjon des ar. 3
+79812	Carte : Temple Ochao
+79813	Carte ST : Gr. de l'exil
+79814	Carte ÉV : Gr. de l'exil
+79815	Carte : Grotte gnolle
+79816	Carte : Grotte gnolle 2
+79817	Carte : Grotte gnolle 3
+79818	Carte : Temp. du Serpent
+79819	Carte : Citad. d'Aquilon
+79820	Carte : Desc. d'Aquilon
 80003	Barre d'arg. (50 000 Y.)
 80004	Barre arg. (100 000 Y.)
 80005	Lingot d'or (500 000 Y.)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Coffre d'invasion
 83073	Boîte cartes monst. Yoh.
 83074	Boîte cart. mon. platine
-83075	Coffre de baies amères
-83076	Coffre de baies dorées
 83077	Coffre du dieu dragon
+83078	Coffre au trésor SungMa
+83082	Coffre de SungMa
 83100	Récompense Seungryong
 83101	Récompense Désert Yongbi
 83102	Récompense Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Coffre de destruction
 83125	Coffre de destruction
 83126	Coffre de destruction
+83130	Coffre à choix infernal+
+83131	Coffre à choix : cornes+
+83132	Coffre : tenue Wukong+
+83133	Coffre bracelet Wukong+
+83134	Coffre : porte-fléau+
+83135	Coffre : tenue de Wukong
+83136	Coffre bracelet Wukong
+83137	Coffre d'ami festif+
+83138	Coffre choix tempétueux+
+83139	Coffre : livre compét+
 85001	Étole d'expert (simple)
 85002	Étole d'expert (fine)
 85003	Étole d'expert (noble)

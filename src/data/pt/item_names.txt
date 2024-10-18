@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Elmo Draco-Astral+13
 12874	Elmo Draco-Astral+14
 12875	Elmo Draco-Astral+15
+12880	Capuz de Serpente+0
+12881	Capuz de Serpente+1
+12882	Capuz de Serpente+2
+12883	Capuz de Serpente+3
+12884	Capuz de Serpente+4
+12885	Capuz de Serpente+5
+12886	Capuz de Serpente+6
+12887	Capuz de Serpente+7
+12888	Capuz de Serpente+8
+12889	Capuz de Serpente+9
+12890	Capuz de Serpente+10
+12891	Capuz de Serpente+11
+12892	Capuz de Serpente+12
+12893	Capuz de Serpente+13
+12894	Capuz de Serpente+14
+12895	Capuz de Serpente+15
 13000	Escudo de Batalha+0
 13001	Escudo de Batalha+1
 13002	Escudo de Batalha+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Ligadura
 27125	Poção de Batalha
 27126	Poção Força Dragão
+27127	Sangue Gelado Balathor
 27128	Segredo de Yut Nori
 27201	Poção Vermelha(P)
 27202	Poção Vermelha(M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Voucher Elmo Vampiro
 30343	Voucher Elmo Vampiro+
 30344	Pedido dos Santuários
+30345	Flecha de Fogo
 30346	Bilhete de Battle Royale
 30500	Faca de Gravura Rubi
 30501	Punho de Ouro
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Matéria Negra
 31082	Anel de Magma
 31083	Anel de Samael
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Água Pesada
 31086	Esporos de Cogumelo
-31087	NoNAme
-31088	NoNAme
+31087	Chama de Fantasma Chamas
+31088	Poção de Fogo
 31089	NoNAme
-31090	NoNAme
+31090	Coração Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Pele de Monstro de Gelo
 31093	Pedra Desconhecida
 31094	Fragmento
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Pedra Misteriosa
 31262	Polimento da Serpente
 31263	Pedra Amolar Vento Norte
+31264	Tendão de Balathor
+31265	Martelo Congelado
+31266	Asa de Balathor
+31267	Chifre de Balathor
+31268	Olho de Balathor
+31269	Escama de Balathor
 31270	Essência do Talismã
 33001	Insígnia Zi
 33002	Insígnia Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Campainha Ancestral+
 40190	Leque Ancestral+
 40191	Garras Ancestrais+
+40192	Espada Porta-Maldição+
+40193	Adaga Porta-Maldição+
+40194	Arco Porta-Maldição+
+40195	Esp. Lg. Porta-Maldição+
+40196	Campain. Porta-Maldição+
+40197	Leque Porta-Maldição+
+40198	Garras Porta-Maldição+
 41000	Placeholder Skin Arma
 41001	Disfarce Coelho (pardo)
 41002	Disfarce Bunny (pardo)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Equip. Futebol HUN+ (F)
 41658	Kit Mundial ROU (M)
 41659	Kit Mundial ROU (F)
-41660	Kit Mundial ROU+ (M)
-41661	Kit Mundial ROU+ (F)
+41660	Equip. Futebol ROU+ (M)
+41661	Equip. Futebol ROU+ (F)
 41662	Kit Mundial POL (M)
 41663	Kit Mundial POL (F)
 41664	Equip. Futebol POL+ (M)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Armadura Triunfal+ (M)
 41918	Armadura Benevolente+(F)
 41919	Armadura Triunfal+ (F)
+41920	Toureiro Vermelho
+41921	Toureiro Azul
+41922	Toureira Vermelha
+41923	Toureira Azul
+41924	Toureiro Vermelho+
+41925	Toureiro Azul+
+41926	Toureira Vermelha+
+41927	Toureira Azul+
+41932	Lorde da Atlântida+
+41933	Guerreiro da Atlântida+
+41934	Dama da Atlântida+
+41935	Guerreira da Atlântida+
+41936	Íncubo de Fogo+
+41937	Íncubo da Meia-noite+
+41938	Súcubo de Fogo+
+41939	Súcubo da Meia-noite+
+41940	Robe Solar de Wukong+(M)
+41941	Robe Lunar de Wukong+(M)
+41942	Robe Solar de Wukong+(F)
+41943	Robe Lunar de Wukong+(F)
+41952	Robe Solar de Wukong (M)
+41953	Robe Lunar de Wukong (M)
+41954	Robe Solar de Wukong (F)
+41955	Robe Lunar de Wukong (F)
 45001	Orelhas Bunny (Castanho)
 45002	Orelhas Coelho (pardas)
 45003	Turbante (M)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Coroa Trinfual+ (M)
 45658	Coroa Benevolente+ (F)
 45659	Coroa Trinfual+ (F)
+45660	Montera Vermelha (M)
+45661	Montera Azul (M)
+45662	Montera Vermelha (F)
+45663	Montera Azul (F)
+45664	Montera Vermelha+ (M)
+45665	Montera Azul+ (M)
+45666	Montera Vermelha+ (F)
+45667	Montera Azul+ (F)
+45672	Coroa da Atlântida+ (M)
+45673	Elmo da Atlântida+ (M)
+45674	Coroa da Atlântida+ (F)
+45675	Elmo da Atlântida+ (F)
+45676	Chifres de Fogo+ (M)
+45677	Chifres Meia-noite+ (M)
+45678	Chifres de Fogo+ (F)
+45679	Chifres Meia-noite+ (F)
+45680	Coroa Solar Wukong+ (M)
+45681	Coroa Lunar Wukong+ (M)
+45682	Coroa Solar Wukong+ (F)
+45683	Coroa Lunar Wukong+ (F)
+45696	Coroa Solar Wukong (M)
+45697	Coroa Lunar Wukong (M)
+45698	Coroa Solar Wukong (F)
+45699	Coroa Lunar Wukong (F)
 49001	Roupa da Aura Normal
 49002	Roupa da Aura Simples
 49003	Roupa da Aura Nobre
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Cofre do Mestre II
 50195	Cofre do Mestre III
 50196	Cofre do Grande Mestre
-50197	NoNAme
+50197	Saco Desconhecido
 50198	NoNAme
 50199	NoNAme
 50200	Pacote
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Cofre Livro da Guarda
 50324	Cofre Livro do Reforço
 50325	Livro da Precisão
+50326	Livro Habil. de Balathor
 50330	Livro da Missão(Lorde 1)
 50331	Livro da Missão(Lorde 2)
 50332	Livro da Missão(Lorde 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Orvalho Verde
 50825	Orvalho Azul
 50826	Orvalho Branco
+50827	Orvalho Negro
 50830	Elixir do Poder da Chama
 50831	Elixir do Poder do Gelo
 50832	Elixir Poder do Trovão
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Cofre Vidente Vermelho
 50939	Cofre Vidente Azul
 50940	Cofre Vidente Rosa
+50941	Cofre da Cripta
 51001	Fragmento de Energia
 51002	Cristal de Energia
 51501	Cor Draconis (Cru)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Moa Corajoso
 52120	Moa Corajoso
 52202	Turboprancha de Surf
+52204	Tempestade de Wukong
+52205	Trovão de Wukong
 52701	Certificado do Leão
 52702	Certificado do Tigre
 52703	Certificado do Javali
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Certificado da Rena (F)
 52707	Certificado do Dragor
 52708	Certificado do Moa
+52710	Mármore Polimorf. Hwacha
 53001	Fénix de Fogo
 53002	Cria de Rena
 53003	Fénix de Gelo
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Krampus da Neve
 53354	Krampus do Carvão
 53355	Krampus Pequeno
+53356	Touro Preto
+53357	Touro Castanho
+53358	Touro Domesticado
+53359	Beliscador
+53360	Pinças
+53362	Lilith
+53363	Helena
+53364	Mini Lilith
+53365	Loong Dourado
+53366	Loong Prateado
+53367	Loong Pequeno
+53368	Mini Balathor
+53369	Balathor Júnior
 53501	Gaiola da Fénix de Fogo
 53502	Cofre da Cria de Rena
 53503	Gaiola da Fénix de Gelo
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Jaula Rufus do Gelo
 53522	Ninho do Sheldon
 53523	Gaiola para Coelho
-53526	NoNAme
+53526	Pepita Can
 53527	Jaula Cabeça de Abóbora
 53528	Armário de Vassouras
 53529	Cofre Floco de Neve
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Cofre Gelado do Krampus
 53636	Cofre Sujo do Krampus
 53637	Cofre Pequeno do Krampus
+53638	Caixa do Touro Preto
+53639	Caixa do Touro Castanho
+53640	Caixa do Touro Pequena
+53641	Caixa do Beliscador
+53642	Caixa do Pinças
+53643	Cofre Infernal de Lilith
+53644	Cofre Infernal de Helena
+53645	Mini Cofre Infernal
+53646	Santuário Dragão Dourado
+53647	Santuário Dragão Prat.
+53648	Santuário Dragão Pequeno
 54041	NoNAme
 54042	NoNAme
 54043	Cofre de Aprendiz I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Chave Congelada
 70411	Cofre Dragão Br. (Leve)
 70412	Cofre Dragão Br. (Pesa.)
+70413	Cofre Gelado de Balathor
+70414	Cofre Gelado Balathor+
 70422	Chave da Serpente
 70423	Fragmento Serpente Fogo
 70424	Fragmento Serpente Gelo
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Chave da Condenação+
 70450	Pergam. Metin Salvação
 70451	Pacote Chamas da Morte
-70604	Cofre do Mundial
+70500	Eco de Força+0
+70501	Eco de Força+1
+70502	Eco de Força+2
+70503	Eco de Força+3
+70504	Eco de Força+4
+70505	Eco de Talento+0
+70506	Eco de Talento+1
+70507	Eco de Talento+2
+70508	Eco de Talento+3
+70509	Eco de Talento+4
+70510	Essência de Força+0
+70511	Essência de Força+1
+70512	Essência de Força+2
+70513	Essência de Força+3
+70514	Essência de Força+4
+70515	Essência de Talento+0
+70516	Essência de Talento+1
+70517	Essência de Talento+2
+70518	Essência de Talento+3
+70519	Essência de Talento+4
+70602	Melhorador de Ecos
+70603	Amplificador de Ecos
+70604	Cofre do Torneio
 70605	Cofre dos Bilhetes
-70606	Troféu do Mundial
-70607	Emblema do Mundial
+70606	Troféu do Torneio
+70607	Emblema do Torneio
 70608	Saco de Gaya
 70609	Bilhete de País
 70610	Bilhete de Apoio
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Enciclopédia Mercúrio(G)
 71217	Enciclopédia de Vénus(P)
 71218	Enciclopédia de Vénus(G)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Cavalo de Kyzaghan
 71221	Pacote de Caxemira
 71222	Dragão de Nirvana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Cavalo da Legião Negra
 71277	Halia
 71278	Aquilos
+71280	Corcel Inferno Sinistro
+71281	Corcel Inferno Horrível
+71287	Asa do Gelo de Balathor
+71288	Asa da Noite de Balathor
 72001	Anel de Experiência(10h)
 72002	Anel de Experiência(30m)
 72003	Anel de Experiência (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Veio de Jadite Portátil
 72355	Loja Premium Pessoal
 72356	Loja Premium Pessoal
+72359	Passagem (Balathor)
 72360	Pergaminho do Desafio
 72701	Sapatos de Vento
 72702	Sapatos de Vento+ (N)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Redução Resist. (30%)
 72755	Licença de Expansão
 72756	Passe de Espólios
-72757	Bilhete Antibombas
-72758	Reinicializa Primórdios
 72760	Livro do Enfurecido
 72761	Livro Anti-Magia
 72762	Livro da Celeridade
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	Runa de Forja Pet 3*
 79658	Runa de Forja Pet 4*
 79659	Runa de Forja Pet 5*
+79666	Encontra monstros
+79667	Encontra NPC
+79668	Pedra do Teleporte+
+79669	Pedra do Teleporte
+79670	Bosque Rubro, M1
+79671	Bosque Rubro, M2
+79672	Bosque Rubro, M3
+79673	Bosque Rubro, M4
+79674	Bosque Rubro, M5
+79675	Planície Seca, M1
+79676	Planície Seca, M2
+79677	Planície Seca, M3
+79678	Planície Seca, M4
+79679	Planície Seca, M5
+79680	Terra dos Gigantes, M1
+79681	Terra dos Gigantes, M2
+79682	Terra dos Gigantes, M3
+79683	Terra dos Gigantes, M4
+79684	Terra dos Gigantes, M5
+79685	Caverna das Aranhas, M1
+79686	Caverna das Aranhas, M2
+79687	Caverna das Aranhas, M3
+79688	Caverna das Aranhas, M4
+79689	Caverna das Aranhas, M5
+79690	Caverna Aranhas 2, M1
+79691	Caverna Aranhas 2, M2
+79692	Caverna Aranhas 2, M3
+79693	Caverna Aranhas 2, M4
+79694	Caverna Aranhas 2, M5
+79695	Gruta das Almas, M1
+79696	Gruta das Almas, M2
+79697	Gruta das Almas, M3
+79698	Gruta das Almas, M4
+79699	Gruta das Almas, M5
+79700	Gruta das Almas 2, M1
+79701	Gruta das Almas 2, M2
+79702	Gruta das Almas 2, M3
+79703	Gruta das Almas 2, M4
+79704	Gruta das Almas 2, M5
+79705	Hasun Dong, M1
+79706	Hasun Dong, M2
+79707	Hasun Dong, M3
+79708	Hasun Dong, M4
+79709	Hasun Dong, M5
+79710	Jungsun Dong, M1
+79711	Jungsun Dong, M2
+79712	Jungsun Dong, M3
+79713	Jungsun Dong, M4
+79714	Jungsun Dong, M5
+79715	Sangsun Dong, M1
+79716	Sangsun Dong, M2
+79717	Sangsun Dong, M3
+79718	Sangsun Dong, M4
+79719	Sangsun Dong, M5
+79725	Caverna Aranhas 3, M1
+79726	Caverna Aranhas 3, M2
+79727	Caverna Aranhas 3, M3
+79728	Caverna Aranhas 3, M4
+79729	Caverna Aranhas 3, M5
+79730	Templo dos Ochao, M1
+79731	Templo dos Ochao, M2
+79732	Templo dos Ochao, M3
+79733	Templo dos Ochao, M4
+79734	Templo dos Ochao, M5
+79735	FT: Gruta das Almas, M1
+79736	FT: Gruta das Almas, M2
+79737	FT: Gruta das Almas, M3
+79738	FT: Gruta das Almas, M4
+79739	FT: Gruta das Almas, M5
+79740	DT: Gruta das Almas, M1
+79741	DT: Gruta das Almas, M2
+79742	DT: Gruta das Almas, M3
+79743	DT: Gruta das Almas, M4
+79744	DT: Gruta das Almas, M5
+79745	Cavernas dos Gnoll, M1
+79746	Cavernas dos Gnoll, M2
+79747	Cavernas dos Gnoll, M3
+79748	Cavernas dos Gnoll, M4
+79749	Cavernas dos Gnoll, M5
+79750	Cavernas dos Gnoll 2, M1
+79751	Cavernas dos Gnoll 2, M2
+79752	Cavernas dos Gnoll 2, M3
+79753	Cavernas dos Gnoll 2, M4
+79754	Cavernas dos Gnoll 2, M5
+79755	Cavernas dos Gnoll 3, M1
+79756	Cavernas dos Gnoll 3, M2
+79757	Cavernas dos Gnoll 3, M3
+79758	Cavernas dos Gnoll 3, M4
+79759	Cavernas dos Gnoll 3, M5
+79760	Templo da Serpente, M1
+79761	Templo da Serpente, M2
+79762	Templo da Serpente, M3
+79763	Templo da Serpente, M4
+79764	Templo da Serpente, M5
+79765	Abrigo Vento Norte, M1
+79766	Abrigo Vento Norte, M2
+79767	Abrigo Vento Norte, M3
+79768	Abrigo Vento Norte, M4
+79769	Abrigo Vento Norte, M5
+79770	Descida Vento Norte, M1
+79771	Descida Vento Norte, M2
+79772	Descida Vento Norte, M3
+79773	Descida Vento Norte, M4
+79774	Descida Vento Norte, M5
+79800	Mapa: Bosque Rubro
+79801	Mapa: Planície Seca
+79802	Mapa: Terra dos Gigantes
+79803	Mapa: Caverna Aranhas
+79804	Mapa: Caverna Aranhas 2
+79805	Mapa: Gruta das Almas
+79806	Mapa: Gruta das Almas 2
+79807	Mapa: Hasun Dong
+79808	Mapa: Jungsun Dong
+79809	Mapa: Sangsun Dong
+79811	Mapa: Caverna Aranhas 3
+79812	Mapa: Templo dos Ochao
+79813	Mapa: FT: Gruta Almas
+79814	Mapa: DT: Gruta Almas
+79815	Mapa: Cavernas dos Gnoll
+79816	Mapa: Cavernas Gnoll 2
+79817	Mapa: Cavernas Gnoll 3
+79818	Mapa: Templo da Serpente
+79819	Mapa: Abrigo Vento Norte
+79820	Mapa: Descida Vento N.
 80003	Barra de Prata 50k Yang
 80004	Barra de Prata 100k Yang
 80005	Barra d'Ouro 500k Yang
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Cofre Invasão de Sung Ma
 83073	Caixa da Carta de Yohara
 83074	Caixa da Carta Platina
-83075	Cofre de Bagas Amargas
-83076	Cofre de Bagas de Ouro
 83077	Cofre do Deus Dragão
+83078	Caixa Tesouro de Sung Ma
+83082	Cofre de Sung Ma
 83100	Recompensa de Seungryong
 83101	Recompensa de Yongbi
 83102	Recompensa Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Cofre da Destruição
 83125	Cofre da Destruição
 83126	Cofre da Destruição
+83130	Caixa Seleção Infernal+
+83131	Caixa Seleção Chifres+
+83132	Caixa Sel. Robe Wukong+
+83133	Caixa Sel. Coroa Wukong+
+83134	Caixa Sel. P.-Maldição+
+83135	Caixa Sel. Robe Wukong
+83136	Caixa Sel. Coroa Wukong
+83137	Caixa Sel. Amigo Fest.+
+83138	Caixa Sel. Tempestade+
+83139	Caixa Sel. Livro de Hab.
 85001	Faixa de Lorde (Básica)
 85002	Faixa de Lorde (Fina)
 85003	Faixa de Lorde (Nobre)

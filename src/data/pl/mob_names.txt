@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Œwi¹tynia Enigma (stw.)
 4034	Œwi¹tynia Enigma (pow.)
 4035	Portal Enigma
-4101	Stra¿nik Apokalipsy Zi
-4102	Stra¿nik Apokalipsy Chou
-4103	Stra¿nik Apokalipsy Yin
-4104	Stra¿nik Apokalipsy Mao
-4105	Stra¿nik Apokalipsy Chen
-4106	Stra¿nik Apokalipsy Si
-4107	Stra¿nik Apokalipsy Wu
-4108	Stra¿nik Apokalipsy Wei
-4109	Stra¿nik Apokalipsy Shen
-4110	Stra¿nik Apokalipsy Yu
-4111	Stra¿nik Apokalipsy Xu
-4112	Stra¿nik Apokalipsy Hai
-4121	Stra¿nik Apokalipsy Zi
-4122	Stra¿nik Apokalipsy Chou
-4123	Stra¿nik Apokalipsy Yin
-4124	Stra¿nik Apokalipsy Mao
-4125	Stra¿nik Apokalipsy Chen
-4126	Stra¿nik Apokalipsy Si
-4127	Stra¿nik Apokalipsy Wu
-4128	Stra¿nik Apokalipsy Wei
-4129	Stra¿nik Apokalipsy Shen
-4130	Stra¿nik Apokalipsy Yu
-4131	Stra¿nik Apokalipsy Xu
-4132	Stra¿nik Apokalipsy Hai
-4141	Metin Zag³ady
-4142	Metin S¹du Ostatecznego
-4143	Metin Potêpienia
-4144	Metin Apokalipsy
-4145	Katogr Apokalipsy
-4146	Tajny Katogr Apokalipsy
-4147	Kappa Apokalipsy
-4148	Kappa G³êbiny Apokalipsy
-4149	Chuong Apokalipsy
-4150	Tajny Chuong Apokalipsy
-4151	Mag Apokalipsy
-4152	Tajny Mag Apokalipsy
 4153	Asmodeusz
 4154	Pos³aniec Ziemi
 4155	Pos³aniec Ziemi
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Smoczy Portal
 6514	Do Króla Smoków
 6515	Wyjœcie
-6516	Stra¿nik Primordisa
-6517	Z³oty Portal
-6518	Z³oty Monolit
-6519	Z³oty Monolit
-6520	Z³ota Palma
-6521	Handlarz karawanowy
-6522	Raptor
-6523	Rhino
-6524	Dilo
-6525	M³ody Tyrano
-6526	Ma³y Goldireks
-6527	Potê¿ny Goldireks
-6528	Dumny Goldireks
-6529	Pos¹g Primordisa
-6530	Wybuchowa Wie¿a
-6531	Wielki Tyrano
-6532	Pradawny Tyrano
 6686	Jin Bing
 6687	¯o³nierz Ki
 6688	¯o³nierz Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem P³n. Wiatru
 6894	Wielka Stopa
 6895	Wódz Wojenny P³n. Wiatru
+6896	Balathor
+6897	Balathor
+6898	Upiorny Wojownik
+6899	Upiorny £ucznik
+6900	Upiorne Echo
 7001	Goryli ¯o³nierz
 7002	Goryli JeŸdziec
 7003	Gimu Ma³pi ¯o³nierz
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Strefa Bitwy Gildii (P£)
 20489	Strefa Bitwy Gildii (PN)
 20490	Handlarz gildii
+20491	Przeklêta Kam. Tablica
+20492	Skarb Balathora
+20493	Hwacha
+20494	Masywna Lodowa Œciana
+20495	Zamro¿one Jajo Smoka
+20496	Zamro¿one Jajo Smoka
+20497	Ogniste Jajo Smoka
+20498	Pradawny Kryszta³ Lodu
+20499	Hwacha (przem.)
 20500	Jajo Smoka
 20501	Skrzynia Gaya
 20502	Stó³ do Yutnori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Sklep Gaya
 20505	Pa³eczki Yut
 20506	Stó³ do Schwytaj Króla
+20507	Kryszta³ Lodu
 20510	SZC: Duch Sura
 20511	SZC: Gardziel Am-heha
 20512	SZC: Nagrobek Taramora
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Œnie¿ny Krampus
 34189	Wêglowy Krampus
 34190	Ma³y Krampus
+34191	Czarny Byk
+34192	Br¹zowy Byk
+34193	Oswojony Byk
+34194	Skubcio
+34195	Szczypcio
+34197	Lilith
+34198	Helena
+34199	Minililith
+34200	Z³oty Long
+34201	Srebrny Long
+34202	Ma³y Long
+34203	Ma³y Balathor
+34204	Balathor Junior
+36000	Mroczny Rumak Piekie³
+36001	Okrutny Rumak Piekie³
+36005	Lod. Skrzyd³o Balathora
+36006	Skrzyd³o Nocy Balathora
 40003	Turbodeska Surfingowa
+40004	Burza Wukong
+40005	Grzmot Wukong
 60000	Zarz¹dca gildii
 60001	Zarz¹dca gildii
 60002	Zarz¹dca gildii

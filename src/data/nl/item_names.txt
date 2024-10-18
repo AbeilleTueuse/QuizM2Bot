@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Astrale Draak Helm+13
 12874	Astrale Draak Helm+14
 12875	Astrale Draak Helm+15
+12880	Serpentenkap+0
+12881	Serpentenkap+1
+12882	Serpentenkap+2
+12883	Serpentenkap+3
+12884	Serpentenkap+4
+12885	Serpentenkap+5
+12886	Serpentenkap+6
+12887	Serpentenkap+7
+12888	Serpentenkap+8
+12889	Serpentenkap+9
+12890	Serpentenkap+10
+12891	Serpentenkap+11
+12892	Serpentenkap+12
+12893	Serpentenkap+13
+12894	Serpentenkap+14
+12895	Serpentenkap+15
 13000	Strijd Schild+0
 13001	Strijd Schild+1
 13002	Strijd Schild+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Verbind
 27125	Gevechtsdrankje
 27126	Drakenkracht Brouwsel
+27127	Balathor's Vriesbloed
 27128	Yut Nori Geheim
 27201	Rood Brouwsel (K)
 27202	Rood Brouwsel (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vampier Helm Voucher
 30343	Vampier Helm Voucher+
 30344	Roep van de Altaren
+30345	Vuur Pijl
 30346	Battle Royale Ticket
 30500	Robijnen Graveermes
 30501	Gouden Gesp
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Zwarte Materie
 31082	Magma Ring
 31083	Ring van Samael
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Zwaar Water
 31086	Paddenstoelsporen
-31087	NoNAme
-31088	NoNAme
+31087	Vlam Spook Vlam
+31088	Vuur Brouwsel
 31089	NoNAme
-31090	NoNAme
+31090	Nemere's Hart
 31091	NoNAme
-31092	NoNAme
+31092	IJsmonster Huid
 31093	Onbekende Steen
 31094	Scherf
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Mysterieuze Steen
 31262	Serpentenpoets
 31263	Noordewind Wetsteen
+31264	Balathor's Pees
+31265	Bevroren Hamer
+31266	Balathor's Vleugel
+31267	Balathor's Hoorn
+31268	Balathor's Oog
+31269	Balathor's Schub
 31270	Talisman Essentie
 33001	Zi Embleem
 33002	Chou Embleem
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Voorouderlijke Bel+
 40190	Voorouderlijke Waaier+
 40191	Voorouderlijke Klauwen+
+40192	Vloekbrenger Zwaard+
+40193	Vloekbrenger Dolk+
+40194	Vloekbrenger Boog+
+40195	Vloekbrenger Grootzw.+
+40196	Vloekbrenger Bel+
+40197	Vloekbrenger Waaier+
+40198	Vloekbrenger Klauwen+
 41000	Wapen Skin Plaatshouder
 41001	Hazenkostuum (bruin)
 41002	Konijntjes kostuum (br)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	HUN Voetbal Outfit+ (v)
 41658	ROU Wereldbekerset (M)
 41659	ROU Wereldbekerset (V)
-41660	ROU Wereldbekerset+ (M)
-41661	ROU Wereldbekerset+ (V)
+41660	ROE Voetbal Outfit+ (m)
+41661	ROE Voetbal Outfit+ (v)
 41662	POL Wereldbekerset (M)
 41663	POL Wereldbekerset (V)
 41664	POL Voetbal Outfit+ (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Triomfaal Pantser+ (m)
 41918	Goedaardig Pantser+ (v)
 41919	Triomfaal Pantser+ (v)
+41920	Rode Torero
+41921	Blauwe Torero
+41922	Rode Torera
+41923	Blauwe Torera
+41924	Rode Torero+
+41925	Blauwe Torero+
+41926	Rode Torera+
+41927	Blauwe Torera+
+41932	Heer van Atlantis+
+41933	Strijd. v. Atlantis+ (m)
+41934	Vrouwe van Atlantis+
+41935	Strijd. v. Atlantis+ (v)
+41936	Vuur Incubus+
+41937	Middernacht Incubus+
+41938	Vuur Succubus+
+41939	Middernacht Succubus+
+41940	Wukong's Zonnegew.+ (m)
+41941	Wukong's Maangew.+ (m)
+41942	Wukong's Zonnegew.+ (v)
+41943	Wukong's Maangew.+ (v)
+41952	Wukong's Zonnegewaad (m)
+41953	Wukong's Maangewaad (m)
+41954	Wukong's Zonnegewaad (v)
+41955	Wukong's Maangewaad (v)
 45001	Konijnenoortjes (bruin)
 45002	Hazenoren (bruin)
 45003	Hoofddoek (M)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Triomfale Kroon+ (m)
 45658	Goedaardige Kroon+ (v)
 45659	Triomfale Kroon+ (v)
+45660	Rode Montera (m)
+45661	Blauwe Montera (m)
+45662	Rode Montera (v)
+45663	Blauwe Montera (v)
+45664	Rode Montera+ (m)
+45665	Blauwe Montera+ (m)
+45666	Rode Montera+ (v)
+45667	Blauwe Montera+ (v)
+45672	Atlantis Kroon+ (m)
+45673	Atlantis Helm+ (m)
+45674	Atlantis Kroon+ (v)
+45675	Atlantis Helm+ (v)
+45676	Vuur Hoorns+ (m)
+45677	Middernacht Hoorns+ (m)
+45678	Vuur Hoorns+ (v)
+45679	Middernacht Hoorns+ (v)
+45680	Wukong's Zonnekroon+ (m)
+45681	Wukong's Maankroon+ (m)
+45682	Wukong's Zonnekroon+ (v)
+45683	Wukong's Maankroon+ (v)
+45696	Wukong's Zonnekroon (m)
+45697	Wukong's Maankroon (m)
+45698	Wukong's Zonnekroon (v)
+45699	Wukong's Maankroon (v)
 49001	Gewone Aura Outfit
 49002	Simpele Aura Outfit
 49003	Edele Aura Outfit
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Meester Kist II
 50195	Meester Kist III
 50196	Grootmeester Kist
-50197	NoNAme
+50197	Onbekende Zak
 50198	NoNAme
 50199	NoNAme
 50200	Bundel
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Beschermingsboek Kist
 50324	Boost-boek Kist
 50325	Boek van Precisie
+50326	Balathor's Skill Boek
 50330	Missieboek (Heerser 1)
 50331	Missieboek (Heerser 2)
 50332	Missieboek (Heerser 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Groene Dauw
 50825	Blauwe Dauw
 50826	Witte Dauw
+50827	Zwarte Dauw
 50830	Vlamkracht Elixer
 50831	Vorstkracht Elixer
 50832	Donderkracht Elixer
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Rode Ziener Kist
 50939	Blauwe Ziener Kist
 50940	Roze Ziener Kist
+50941	Crypt Kist
 51001	Energie Fragment
 51002	Energie Kristal
 51501	Cor Draconis (Ruw)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Dappere Moa
 52120	Dappere Moa
 52202	Turbo Reddingsplank
+52204	Wukong's Storm
+52205	Wukong's Donder
 52701	Leeuw Certificaat
 52702	Tijger Certificaat
 52703	Wild Zwijn Certificaat
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Rendier Certificaat (v)
 52707	Dragor Certificaat
 52708	Moa Certificaat
+52710	Hwacha Metamorfose Bol
 53001	Vuurfeniks
 53002	Rendier Kalf
 53003	IJs Feniks
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Sneeuw Krampus
 53354	Kolen Krampus
 53355	Kleine Krampus
+53356	Zwarte Stier
+53357	Bruine Stier
+53358	Tamme Stier
+53359	Pincher
+53360	Snapper
+53362	Lilith
+53363	Helena
+53364	Mini-Lilith
+53365	Gouden Loong
+53366	Zilveren Loong
+53367	Kleine Loong
+53368	Mini Balathor
+53369	Balathor Jr
 53501	Vuurfeniks Kooi
 53502	Rendier Kalf Kist
 53503	IJs Feniks Kooi
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Vorst Rufus Kooi
 53522	Sheldons Nest
 53523	Konijnenkooi
-53526	NoNAme
+53526	Pepita Can
 53527	Pompoenhoofd Kooi
 53528	Bezemkast
 53529	Sneeuwvlokje's Vrieskist
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Bevroren Krampus Kist
 53636	Roetige Krampus Kist
 53637	Kleine Krampus Kist
+53638	Zwarte Stier Kist
+53639	Bruine Stier Kist
+53640	Kleine Stier Kist
+53641	Pincher's Krabbenkist
+53642	Snapper's Krabbenkist
+53643	Lilith's Hellekist
+53644	Helena's Hellekist
+53645	Mini Hellekist
+53646	Gouden Drakenaltaar
+53647	Zilveren Drakenaltaar
+53648	Klein Drakenaltaar
 54041	NoNAme
 54042	NoNAme
 54043	Leerling Kist 1
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Bevroren Sleutel
 70411	Witte Drakenkist (Licht)
 70412	Witte Drakenkist (Zwaar)
+70413	Balathor's Vorstkist
+70414	Balathor's Vorstkist+
 70422	Serpentensleutel
 70423	Vuur Serpentenscherf
 70424	IJs Serpentenscherf
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Verdoemenis Sleutel+
 70450	Verlossing Metin Geschr.
 70451	Vlam des Doods Bundel
-70604	Wereldkampioenschapskist
+70500	Echo van Kracht+0
+70501	Echo van Kracht+1
+70502	Echo van Kracht+2
+70503	Echo van Kracht+3
+70504	Echo van Kracht+4
+70505	Echo van Talent+0
+70506	Echo van Talent+1
+70507	Echo van Talent+2
+70508	Echo van Talent+3
+70509	Echo van Talent+4
+70510	Essentie van Kracht+0
+70511	Essentie van Kracht+1
+70512	Essentie van Kracht+2
+70513	Essentie van Kracht+3
+70514	Essentie van Kracht+4
+70515	Essentie van Talent+0
+70516	Essentie van Talent+1
+70517	Essentie van Talent+2
+70518	Essentie van Talent+3
+70519	Essentie van Talent+4
+70602	Echo Verbeteraar
+70603	Echo Versterker
+70604	Toernooi Kist
 70605	Ticketkist
-70606	Wereldkampioen. beker
-70607	Wereldkampioen. Embleem
+70606	Europese Toernooi Trofee
+70607	Europ. Toernooi Embleem
 70608	Gaya Zak
 70609	Landticket
 70610	Aanmoedigingsticket
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Mercurius Encyclo. (G)
 71217	Venus Encyclopedie (K)
 71218	Venus Encyclopedie (G)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Kyzaghan's Paard
 71221	Kashmir Bundel
 71222	Nirvana Draak
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Duistere Legionairspaard
 71277	Halia
 71278	Aquilos
+71280	Sinister Helleros
+71281	Gruwelijk Helleros
+71287	Balathor's Ijsvleugel
+71288	Balathor's Nachtvleugel
 72001	Ervarings Ring (10u)
 72002	Ervarings Ring (30m)
 72003	Ervarings Ring (3u)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Draagbare Jadiet Ader
 72355	Persoonl. Premium Shop
 72356	Pers. Premium Shop
+72359	Vrijbiljet (Balathor)
 72360	Uitdaging Geschrift
 72701	Windschoenen
 72702	Windschoenen+ (ruilbaar)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Uit. verm. Red. (30%)
 72755	Uitbreidingslicentie.
 72756	Buit Pas
-72757	Bomvrij Ticket
-72758	Primordis Reset
 72760	Berserker Boek
 72761	Anti-Magie Boek
 72762	Haast Boek
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Huisdierrune
 79658	4* Huisdierrune
 79659	5* Huisdierrune
+79666	Monster Vinder
+79667	NPC Vinder
+79668	Teleportatiesteen+
+79669	Teleportatiesteen
+79670	Rode Bos, K1
+79671	Rode Bos, K2
+79672	Rode Bos, K3
+79673	Rode Bos, K4
+79674	Rode Bos, K5
+79675	Slangenveld, K1
+79676	Slangenveld, K2
+79677	Slangenveld, K3
+79678	Slangenveld, K4
+79679	Slangenveld, K5
+79680	Reuzen Land, K1
+79681	Reuzen Land, K2
+79682	Reuzen Land, K3
+79683	Reuzen Land, K4
+79684	Reuzen Land, K5
+79685	Spinnenkerker, K1
+79686	Spinnenkerker, K2
+79687	Spinnenkerker, K3
+79688	Spinnenkerker, K4
+79689	Spinnenkerker, K5
+79690	Spinnenkerker 2, K1
+79691	Spinnenkerker 2, K2
+79692	Spinnenkerker 2, K3
+79693	Spinnenkerker 2, K4
+79694	Spinnenkerker 2, K5
+79695	Grot der Verbanning, K1
+79696	Grot der Verbanning, K2
+79697	Grot der Verbanning, K3
+79698	Grot der Verbanning, K4
+79699	Grot der Verbanning, K5
+79700	Grot der Verban. 2, K1
+79701	Grot der Verban. 2, K2
+79702	Grot der Verban. 2, K3
+79703	Grot der Verban. 2, K4
+79704	Grot der Verban. 2, K5
+79705	Hasun Dong, K1
+79706	Hasun Dong, K2
+79707	Hasun Dong, K3
+79708	Hasun Dong, K4
+79709	Hasun Dong, K5
+79710	Jungsun Dong, K1
+79711	Jungsun Dong, K2
+79712	Jungsun Dong, K3
+79713	Jungsun Dong, K4
+79714	Jungsun Dong, K5
+79715	Sangsun Dong, K1
+79716	Sangsun Dong, K2
+79717	Sangsun Dong, K3
+79718	Sangsun Dong, K4
+79719	Sangsun Dong, K5
+79725	Spinnenkerker 3, K1
+79726	Spinnenkerker 3, K2
+79727	Spinnenkerker 3, K3
+79728	Spinnenkerker 3, K4
+79729	Spinnenkerker 3, K5
+79730	Tempel van de Ochao, K1
+79731	Tempel van de Ochao, K2
+79732	Tempel van de Ochao, K3
+79733	Tempel van de Ochao, K4
+79734	Tempel van de Ochao, K5
+79735	TS: Grot der Verban., K1
+79736	TS: Grot der Verban., K2
+79737	TS: Grot der Verban., K3
+79738	TS: Grot der Verban., K4
+79739	TS: Grot der Verban., K5
+79740	RX: Grot der Verban., K1
+79741	RX: Grot der Verban., K2
+79742	RX: Grot der Verban., K3
+79743	RX: Grot der Verban., K4
+79744	RX: Grot der Verban., K5
+79745	Gnol Grotten, K1
+79746	Gnol Grotten, K2
+79747	Gnol Grotten, K3
+79748	Gnol Grotten, K4
+79749	Gnol Grotten, K5
+79750	Gnol Grotten 2, K1
+79751	Gnol Grotten 2, K2
+79752	Gnol Grotten 2, K3
+79753	Gnol Grotten 2, K4
+79754	Gnol Grotten 2, K5
+79755	Gnol Grotten 3, K1
+79756	Gnol Grotten 3, K2
+79757	Gnol Grotten 3, K3
+79758	Gnol Grotten 3, K4
+79759	Gnol Grotten 3, K5
+79760	Serpententempel, K1
+79761	Serpententempel, K2
+79762	Serpententempel, K3
+79763	Serpententempel, K4
+79764	Serpententempel, K5
+79765	Noordew. Schuilpl., K1
+79766	Noordew. Schuilpl., K2
+79767	Noordew. Schuilpl., K3
+79768	Noordew. Schuilpl., K4
+79769	Noordew. Schuilpl., K5
+79770	Noordewind Afdaling, K1
+79771	Noordewind Afdaling, K2
+79772	Noordewind Afdaling, K3
+79773	Noordewind Afdaling, K4
+79774	Noordewind Afdaling, K5
+79800	Kaart: Rode Bos
+79801	Kaart: Slangenveld
+79802	Kaart: Reuzen land
+79803	Kaart: Spinnenkerker
+79804	Kaart: Spinnenkerker 2
+79805	Kaart: Grot der Verban.
+79806	Kaart: Grot d. Verban. 2
+79807	Kaart: Hasun Dong
+79808	Kaart: Jungsun Dong
+79809	Kaart: Sangsun Dong
+79811	Kaart: Spinnenkerker 3
+79812	Kaart: Tempel v/d Ochao
+79813	Kaart: TS: Grot d. Ver.
+79814	Kaart: RX: Grot d. Ver.
+79815	Kaart: Gnol Grotten
+79816	Kaart: Gnol Grotten 2
+79817	Kaart: Gnol Grotten 3
+79818	Kaart: Serpententempel
+79819	Kaart: Noordew. Schuilp.
+79820	Kaart: Noordew. Afdaling
 80003	Zilv. Plak(50.000Yang)
 80004	Zilv. Plak(100.000Yang)
 80005	Goudstaaf (500.000 Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Sung Ma Invasiekist
 83073	Yohara Monsterkaart Doos
 83074	Plat. Monsterkaart Doos
-83075	Bitterbeskist
-83076	Goudbeskist
 83077	Draken God Kist
+83078	Sung Ma's Schatkist
+83082	Sung Ma's Kist
 83100	Seungryong Beloningsk.
 83101	Yongbi Beloningskist
 83102	Kuahlo Dong Beloningsk.
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Vernietigingskist
 83125	Vernietigingskist
 83126	Vernietigingskist
+83130	Helse Keuzekist+
+83131	Gehoornde Keuzekist+
+83132	Wukong's Gewaad K. Kist+
+83133	Wukong's Kroon K. Kist+
+83134	Vloekbrenger Keuzekist+
+83135	Wukong's Gewaad K. Kist
+83136	Wukong's Kroon K. Kist
+83137	Feestel. Vriend K. Kist+
+83138	Stormachtige Keuzekist+
+83139	Vaardighedenboek K. Kist
 85001	Heersergordel (basis)
 85002	Heersergordel (fijn)
 85003	Heersergordel (nobel)

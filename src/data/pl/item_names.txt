@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	He³m Smoka Nieba+13
 12874	He³m Smoka Nieba+14
 12875	He³m Smoka Nieba+15
+12880	Wê¿owy Czepiec+0
+12881	Wê¿owy Czepiec+1
+12882	Wê¿owy Czepiec+2
+12883	Wê¿owy Czepiec+3
+12884	Wê¿owy Czepiec+4
+12885	Wê¿owy Czepiec+5
+12886	Wê¿owy Czepiec+6
+12887	Wê¿owy Czepiec+7
+12888	Wê¿owy Czepiec+8
+12889	Wê¿owy Czepiec+9
+12890	Wê¿owy Czepek+10
+12891	Wê¿owy Czepek+11
+12892	Wê¿owy Czepek+12
+12893	Wê¿owy Czepek+13
+12894	Wê¿owy Czepek+14
+12895	Wê¿owy Czepek+15
 13000	Bojowa Tarcza+0
 13001	Bojowa Tarcza+1
 13002	Bojowa Tarcza+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Opatrunek
 27125	Mikstura Pojedynku
 27126	Mikstura Mocy Smoka
+27127	Lodowata Krew Balathora
 27128	Tajemnica Yutnori
 27201	Czerwona Mikstura (M)
 27202	Czerwona Mikstura (Œ)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Bon na He³m Wampirów
 30343	Bon na He³m Wampirów+
 30344	Wezwanie Relikwiarzy
+30345	P³on¹ca Strza³a
 30346	Bilet Battle Royale
 30500	Rubinowy Ozdobny Nó¿
 30501	Z³ota Sprz¹czka
@@ -6817,14 +6835,14 @@ VNUM	LOCALE_NAME
 31082	Pierœcieñ Magmy
 31083	Pierœcieñ Samaela
 31084	Deszczowy Olejek
-31085	NoNAme
+31085	Ciê¿ka Woda
 31086	Zarodniki Grzybów
-31087	NoNAme
-31088	NoNAme
+31087	P³omieñ Ognistego Ducha
+31088	Eliksir Ognia
 31089	NoNAme
-31090	NoNAme
+31090	Serce Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Skr. Skóry MroŸn. Potw.
 31093	Nieznany Kamieñ
 31094	Od³amek
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Tajemniczy Kamieñ
 31262	Politura Wê¿owa
 31263	Kamieñ Szlif. P³n. W.
+31264	Œciêgno Balathora
+31265	Zroszony M³ot
+31266	Skrzyd³o Balathora
+31267	Róg Balathora
+31268	Oko Balathora
+31269	£uska Balathora
 31270	Esencja Talizmanu
 33001	Insygnia Zi
 33002	Insygnia Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Dzwon Str. Przodków+
 40190	Wachlarz Str. Przodków+
 40191	Szpony Str. Przodków+
+40192	Miecz Nosiciela Kl¹twy+
+40193	Sztylet Nos. Kl¹twy+
+40194	£uk Nosiciela Kl¹twy+
+40195	Dwur. Miecz Nos. Kl¹twy+
+40196	Dzwonek Nos. Kl¹twy+
+40197	Wachlarz Nos. Kl¹twy+
+40198	Pazur Nosiciela Kl¹twy+
 41000	Symbol wizerunku broni
 41001	Kostium Zaj¹ca (br¹z.)
 41002	Kostium Zaj¹czka (br¹z.)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Koszulka Futbol.+HUN (k)
 41658	Koszulka MŒ ROU (m)
 41659	Koszulka MŒ ROU (k)
-41660	Koszulka MŒ ROU+ (m)
-41661	Koszulka MŒ ROU+ (k)
+41660	Kosz. Futbol.+ ROU (m)
+41661	Kosz. Futbol.+ ROU (k)
 41662	Koszulka MŒ POL (m)
 41663	Koszulka MŒ POL (k)
 41664	Koszulka Futbol.+POL (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Zbroja Zwyciêskiego+
 41918	Zbroja Szczodrej+
 41919	Zbroja Zwyciêskiej+
+41920	Czerwony Toreador
+41921	Niebieski Toreador
+41922	Czerwona Toreadorka
+41923	Niebieska Toreadorka
+41924	Czerwony Toreador+
+41925	Niebieski Toreador+
+41926	Czerwona Toreadorka+
+41927	Niebieska Toreadorka+
+41932	Ksi¹¿ê Atlantydy+
+41933	Wojownik Atlantydy+
+41934	Ksiê¿niczka Atlantydy+
+41935	Wojowniczka Atlantydy+
+41936	Inkub P³omieni+
+41937	Inkub Nocy+
+41938	Sukkub P³omieni+
+41939	Sukkub Nocy+
+41940	S³on. Szata Wukong+ (m)
+41941	Ksiê¿. Szata Wukong+ (m)
+41942	S³on. Szata Wukong+ (k)
+41943	Ksiê¿. Szata Wukong+ (k)
+41952	S³on. Szata Wukong (m)
+41953	Ksiê¿. Szata Wukong (m)
+41954	S³on. Szata Wukong (k)
+41955	Ksiê¿. Szata Wukong (k)
 45001	Uszy Zaj¹czka (br¹zowe)
 45002	Uszy Zaj¹ca (br¹z.)
 45003	Chusta (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Korona Zwyciêskiego+
 45658	Korona Szczodrej+
 45659	Korona Zwyciêskiej+
+45660	Czerwona Montera (m)
+45661	Niebieska Montera (m)
+45662	Czerwona Montera (k)
+45663	Niebieska Montera (k)
+45664	Czerwona Montera+ (m)
+45665	Niebieska Montera+ (m)
+45666	Czerwona Montera+ (k)
+45667	Niebieska Montera+ (k)
+45672	Korona Atlantydy+ (m)
+45673	He³m Atlantydy+ (m)
+45674	Korona Atlantydy+ (k)
+45675	He³m Atlantydy+ (k)
+45676	P³on¹ce Rogi+ (m)
+45677	Rogi Skrzyd³a Nocy+ (m)
+45678	P³on¹ce Rogi+ (k)
+45679	Rogi Skrzyd³a Nocy+ (k)
+45680	S³on. Brans. Wukong+ (m)
+45681	Ksiê¿. Bran. Wukong+ (m)
+45682	S³on. Brans. Wukong+ (k)
+45683	Ksiê¿. Bran. Wukong+ (k)
+45696	S³on. Bran. Wukong (m)
+45697	Ksiê¿. Bran. Wukong (m)
+45698	S³on. Bran. Wukong (k)
+45699	Ksiê¿. Bran. Wukong (k)
 49001	Zwyczajna Szata Aury
 49002	Prosta Szata Aury
 49003	Szlachetna Szata Aury
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Skrzynia Mistrza II
 50195	Skrzynia Mistrza III
 50196	Skrzynia Arcymistrza
-50197	NoNAme
+50197	Nieznany Worek
 50198	NoNAme
 50199	NoNAme
 50200	Tobó³
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Skrzynia Ksi¹g: Riposta
 50324	Skrzynia Ksi¹g: Dopalacz
 50325	Ksiêga Precyzji
+50326	Ksiêga Um. Balathora
 50330	Ksiêga Misji (Ksi¹¿ê 1)
 50331	Ksiêga Misji (Ksi¹¿ê 2)
 50332	Ksiêga Misji (Ksi¹¿ê 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Zielona Rosa
 50825	Niebieska Rosa
 50826	Bia³a Rosa
+50827	Czarna Rosa
 50830	Eliksir Ognistej Mocy
 50831	Eliksir MroŸnej Mocy
 50832	Eliksir Piorunowej Mocy
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Czerw. Skrzynia Proroka
 50939	Nieb. Skrzynia Proroka
 50940	Ró¿owa Skrzynia Proroka
+50941	Skrzynia Krypty
 51001	Od³amek Energii
 51002	Kryszta³ Energii
 51501	Cor Draconis (surowe)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Chrobry Moa
 52120	Chrobry Moa
 52202	Turbodeska Surfingowa
+52204	Burza Wukong
+52205	Grzmot Wukong
 52701	Œwiadectwo Lwa
 52702	Œwiadectwo Tygrysa
 52703	Œwiadectwo Dzika
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Œwiadectwo Renifera (¿)
 52707	Certyfikat Dragora
 52708	Œwiadectwo Moy
+52710	Kula Polimorfii Hwachy
 53001	Ognisty Feniks
 53002	Reniferek
 53003	Lodowy Feniks
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Œnie¿ny Krampus
 53354	Wêglowy Krampus
 53355	Ma³y Krampus
+53356	Czarny Byk
+53357	Br¹zowy Byk
+53358	Oswojony Byk
+53359	Skubcio
+53360	Szczypcio
+53362	Lilith
+53363	Helena
+53364	Minililith
+53365	Z³oty Long
+53366	Srebrny Long
+53367	Ma³y Long
+53368	Ma³y Balathor
+53369	Balathor Junior
 53501	Klatka Ognistego Feniksa
 53502	Skrzynia Reniferka
 53503	Klatka Lodowego Feniksa
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Klatka MroŸnego Rufusa
 53522	Gniazdo Sheldona
 53523	Zajêcza Klatka
-53526	NoNAme
+53526	Pepita Can
 53527	Klatka Dyniowej G³ówki
 53528	Komórka na Miot³y
 53529	Skrzynka P³atka Œniegu
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Lod. Skrzynia Krampusa
 53636	Okopc. Skrz. Krampusa
 53637	Ma³a Skrzynia Krampusa
+53638	Czarne Pude³ko Byka
+53639	Br¹zowe Pude³ko Byka
+53640	Ma³e Pude³ko Byka
+53641	Krabie Pude³ko Skubcia
+53642	Krabie Pude³ko Szczypcia
+53643	Piekielna Skrz. Lilith
+53644	Piekielna Skrz. Heleny
+53645	Piekielna Miniskrzynia
+53646	Z³oty Relikwiarz Smoka
+53647	Srebrny Relikwiarz Smoka
+53648	Ma³y Relikwiarz Smoka
 54041	NoNAme
 54042	NoNAme
 54043	Skrzynia Ucznia I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Zamarzniêty Klucz
 70411	B. Smocza Skrz. (s³aby)
 70412	B. Smocza Skrz. (silny)
+70413	MroŸna Skrz. Balathora
+70414	MroŸna Skrz. Balathora+
 70422	Klucz Wê¿owy
 70423	Od³amek Wê¿a Ognia
 70424	Od³amek Wê¿a Lodu
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Klucz Potêpienia+
 70450	Zwój Metina Zbawienia
 70451	Pakiet Trupich P³omieni
+70500	Echo Si³y +0
+70501	Echo Si³y +1
+70502	Echo Si³y +2
+70503	Echo Si³y +3
+70504	Echo Si³y +4
+70505	Echo Umiejêtnoœci +0
+70506	Echo Umiejêtnoœci +1
+70507	Echo Umiejêtnoœci +2
+70508	Echo Umiejêtnoœci +3
+70509	Echo Umiejêtnoœci +4
+70510	Esencja Si³y +0
+70511	Esencja Si³y +1
+70512	Esencja Si³y +2
+70513	Esencja Si³y +3
+70514	Esencja Si³y +4
+70515	Esencja Umiejêtnoœci +0
+70516	Esencja Umiejêtnoœci +1
+70517	Esencja Umiejêtnoœci +2
+70518	Esencja Umiejêtnoœci +3
+70519	Esencja Umiejêtnoœci +4
+70602	Wzmocnienie Echa
+70603	Przebudzenie Echa
 70604	Skrzynia mistrzowska
 70605	Skrzynia biletowa
 70606	Trofeum mistrzowskie
-70607	Mistrzowski emblemat
+70607	Emblemat mistrzowski
 70608	Sakiewka z Gaya
 70609	Bilet krajowy
 70610	Bilet kibicowski
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Encyklop. Merkurego (D)
 71217	Encyklopedia Wenus (M)
 71218	Encyklopedia Wenus (D)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Koñ Kyzaghana
 71221	Szpula Kaszmiru
 71222	Smok Nirwana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Mroczny Legionowy Koñ
 71277	Halia
 71278	Aquilos
+71280	Mroczny Rumak Piekie³
+71281	Okrutny Rumak Piekie³
+71287	Lod. Skrzyd³o Balathora
+71288	Skrzyd³o Nocy Balathora
 72001	Pierœcieñ Doœwiad. (10h)
 72002	Pierœcieñ Doœwiad. (30m)
 72003	Pierœcieñ Doœwiad. (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Przenoœna ¯y³a Jadeitu
 72355	Osobisty Sklepik Premium
 72356	Osobisty Sklepik Premium
+72359	Przepustka (Balathor)
 72360	Zwój Wyzwania
 72701	Buty Wiatru
 72702	Buty Wiatru+ (do handlu)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Redukcja Wytrzym. (30%)
 72755	Licencja Rozszerzenia
 72756	Przepustka £upu
-72757	Bilet przeciwwybuchowy
-72758	Nowy Pocz¹tek Primordisa
 72760	Ksiêga Berserka
 72761	Ksiêga Antymagii
 72762	Ksiêga Przyspieszenia
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Runa Wyk. Prz. d. Zw.
 79658	4* Runa Wyk. Prz. d. Zw.
 79659	5* Runa Wyk. Prz. d. Zw.
+79666	Wyszukiwarka potworów
+79667	Wyszukiwarka postaci
+79668	Kamieñ Teleportacji+
+79669	Kamieñ Teleportacji
+79670	Czerwony Las, czêœæ 1
+79671	Czerwony Las, czêœæ 2
+79672	Czerwony Las, czêœæ 3
+79673	Czerwony Las, czêœæ 4
+79674	Czerwony Las, czêœæ 5
+79675	Wê¿owe Pole, czêœæ 1
+79676	Wê¿owe Pole, czêœæ 2
+79677	Wê¿owe Pole, czêœæ 3
+79678	Wê¿owe Pole, czêœæ 4
+79679	Wê¿owe Pole, czêœæ 5
+79680	Kraina Gigantów, czêœæ 1
+79681	Kraina Gigantów, czêœæ 2
+79682	Kraina Gigantów, czêœæ 3
+79683	Kraina Gigantów, czêœæ 4
+79684	Kraina Gigantów, czêœæ 5
+79685	Loch Paj¹ków, czêœæ 1
+79686	Loch Paj¹ków, czêœæ 2
+79687	Loch Paj¹ków, czêœæ 3
+79688	Loch Paj¹ków, czêœæ 4
+79689	Loch Paj¹ków, czêœæ 5
+79690	Loch Paj¹ków 2, czêœæ 1
+79691	Loch Paj¹ków 2, czêœæ 2
+79692	Loch Paj¹ków 2, czêœæ 3
+79693	Loch Paj¹ków 2, czêœæ 4
+79694	Loch Paj¹ków 2, czêœæ 5
+79695	Grota Wygnañców, czêœæ 1
+79696	Grota Wygnañców, czêœæ 2
+79697	Grota Wygnañców, czêœæ 3
+79698	Grota Wygnañców, czêœæ 4
+79699	Grota Wygnañców, czêœæ 5
+79700	Grota Wygn. 2, czêœæ 1
+79701	Grota Wygn. 2, czêœæ 2
+79702	Grota Wygn. 2, czêœæ 3
+79703	Grota Wygn. 2, czêœæ 4
+79704	Grota Wygn. 2, czêœæ 5
+79705	Hasun Dong, czêœæ 1
+79706	Hasun Dong, czêœæ 2
+79707	Hasun Dong, czêœæ 3
+79708	Hasun Dong, czêœæ 4
+79709	Hasun Dong, czêœæ 5
+79710	Jungsun Dong, czêœæ 1
+79711	Jungsun Dong, czêœæ 2
+79712	Jungsun Dong, czêœæ 3
+79713	Jungsun Dong, czêœæ 4
+79714	Jungsun Dong, czêœæ 5
+79715	Sangsun Dong, czêœæ 1
+79716	Sangsun Dong, czêœæ 2
+79717	Sangsun Dong, czêœæ 3
+79718	Sangsun Dong, czêœæ 4
+79719	Sangsun Dong, czêœæ 5
+79725	Loch Paj¹ków 3, czêœæ 1
+79726	Loch Paj¹ków 3, czêœæ 2
+79727	Loch Paj¹ków 3, czêœæ 3
+79728	Loch Paj¹ków 3, czêœæ 4
+79729	Loch Paj¹ków 3, czêœæ 5
+79730	Œwi¹tynia Ochao, czêœæ 1
+79731	Œwi¹tynia Ochao, czêœæ 2
+79732	Œwi¹tynia Ochao, czêœæ 3
+79733	Œwi¹tynia Ochao, czêœæ 4
+79734	Œwi¹tynia Ochao, czêœæ 5
+79735	SZC: Grota Wygn., cz. 1
+79736	SZC: Grota Wygn., cz. 2
+79737	SZC: Grota Wygn., cz. 3
+79738	SZC: Grota Wygn., cz. 4
+79739	SZC: Grota Wygn., cz. 5
+79740	PB: Grota Wygn., czêœæ 1
+79741	PB: Grota Wygn., czêœæ 2
+79742	PB: Grota Wygn., czêœæ 3
+79743	PB: Grota Wygn., czêœæ 4
+79744	PB: Grota Wygn., czêœæ 5
+79745	Jaskinie Gnolli, czêœæ 1
+79746	Jaskinie Gnolli, czêœæ 2
+79747	Jaskinie Gnolli, czêœæ 3
+79748	Jaskinie Gnolli, czêœæ 4
+79749	Jaskinie Gnolli, czêœæ 5
+79750	Jaskinie Gnolli 2, cz. 1
+79751	Jaskinie Gnolli 2, cz. 2
+79752	Jaskinie Gnolli 2, cz. 3
+79753	Jaskinie Gnolli 2, cz. 4
+79754	Jaskinie Gnolli 2, cz. 5
+79755	Jaskinie Gnolli 3, cz. 1
+79756	Jaskinie Gnolli 3, cz. 2
+79757	Jaskinie Gnolli 3, cz. 3
+79758	Jaskinie Gnolli 3, cz. 4
+79759	Jaskinie Gnolli 3, cz. 5
+79760	Œwi¹tynia Wê¿y, czêœæ 1
+79761	Œwi¹tynia Wê¿y, czêœæ 2
+79762	Œwi¹tynia Wê¿y, czêœæ 3
+79763	Œwi¹tynia Wê¿y, czêœæ 4
+79764	Œwi¹tynia Wê¿y, czêœæ 5
+79765	Sch. Pó³n. Wiatru, cz. 1
+79766	Sch. Pó³n. Wiatru, cz. 2
+79767	Sch. Pó³n. Wiatru, cz. 3
+79768	Sch. Pó³n. Wiatru, cz. 4
+79769	Sch. Pó³n. Wiatru, cz. 5
+79770	Zej. Pó³n. Wiatru, cz. 1
+79771	Zej. Pó³n. Wiatru, cz. 2
+79772	Zej. Pó³n. Wiatru, cz. 3
+79773	Zej. Pó³n. Wiatru, cz. 4
+79774	Zej. Pó³n. Wiatru, cz. 5
+79800	Mapa: Czerwony Las
+79801	Mapa: Wê¿owe Pole
+79802	Mapa: Kraina Gigantów
+79803	Mapa: Loch Paj¹ków
+79804	Mapa: Loch Paj¹ków 2
+79805	Mapa: Grota Wygnañców
+79806	Mapa: Grota Wygnañców 2
+79807	Mapa: Hasun Dong
+79808	Mapa: Jungsun Dong
+79809	Mapa: Sangsun Dong
+79811	Mapa: Loch Paj¹ków 3
+79812	Mapa: Œwi¹tynia Ochao
+79813	Mapa: SZC: Grota Wygn.
+79814	Mapa: PB: Grota Wygn.
+79815	Mapa: Jaskinie Gnolli
+79816	Mapa: Jaskinie Gnolli 2
+79817	Mapa: Jaskinie Gnolli 3
+79818	Mapa: Œwi¹tynia Wê¿y
+79819	Mapa: Sch. Pó³n. Wiatru
+79820	Mapa: Zej. Pó³n. Wiatru
 80003	Sreb. Sztab. (50k Yang)
 80004	Sreb. Sztab. (100k Yang)
 80005	Z³ota Sztab.(500k Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Skrzynia Inwazji SungMa
 83073	Pude³ko Kart Potw.Yohara
 83074	Platyn. Pud. Kart Potw.
-83075	Skrzynia jagód gorycz.
-83076	Skrzynia z³otych jagód
 83077	Skrzynia Boga Smoków
+83078	Szkatu³ka SungMa
+83082	Skrzynia SungMa
 83100	Nagroda Dol. Seungryong
 83101	Nagroda Pustyni Yongbi
 83102	Nagroda Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Skrzynia Zniszczenia
 83125	Skrzynia Zniszczenia
 83126	Skrzynia Zniszczenia
+83130	Piekielna Skrz. Wyboru+
+83131	Skrzynia Wyboru Rogów+
+83132	Skrz. Wyb. Szaty Wuk.+
+83133	Skrz. Wyb. Bran. Wuk.+
+83134	Skrz. Wyb. Nos. Kl¹twy+
+83135	Skrz. Wyb. Szaty Wuk.
+83136	Skrz. Wyb. Bran. Wuk.
+83137	Skrz. Wyb. Œw. Prz.+
+83138	Burzowa Skrzynia Wyboru+
+83139	Skrz. Wyb. Ksiêgi Umiej.
 85001	Szarfa W³adcy (prosta)
 85002	Szarfa W³adcy (dostojna)
 85003	Szarfa W³adcy (zacna)

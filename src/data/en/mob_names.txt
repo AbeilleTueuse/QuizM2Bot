@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Enigma Temple (build)
 4034	Enigma Temple (repeat)
 4035	Enigma Portal
-4101	Doomsday Zi Guardian
-4102	Doomsday Chou Guardian
-4103	Doomsday Yin Guardian
-4104	Doomsday Mao Guardian
-4105	Doomsday Chen Guardian
-4106	Doomsday Si Guardian
-4107	Doomsday Wu Guardian
-4108	Doomsday Wei Guardian
-4109	Doomsday Shen Guardian
-4110	Doomsday You Guardian
-4111	Doomsday Xu Guardian
-4112	Doomsday Hai Guardian
-4121	Doomsday Zi Guardian
-4122	Doomsday Chou Guardian
-4123	Doomsday Yin Guardian
-4124	Doomsday Mao Guardian
-4125	Doomsday Chen Guardian
-4126	Doomsday Si Guardian
-4127	Doomsday Wu Guardian
-4128	Doomsday Wei Guardian
-4129	Doomsday Shen Guardian
-4130	Doomsday You Guardian
-4131	Doomsday Xu Guardian
-4132	Doomsday Hai Guardian
-4141	Metin of Armageddon
-4142	Metin of Doomsday
-4143	Metin of the Cataclysm
-4144	Metin of the Apocalypse
-4145	Doomsday Henkog
-4146	Arcane Doomsday Henkog
-4147	Doomsday Kappa
-4148	Doomsday Deep Sea Kappa
-4149	Doomsday Chuong
-4150	Arcane Doomsday Chuong
-4151	Doomsday Warlock
-4152	Arcane Doomsday Warlock
 4153	Asmodeus
 4154	Earth Emissary
 4155	Earth Emissary
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Dragon Portal
 6514	To Dragon King
 6515	Exit
-6516	Primordis Guardian
-6517	Golden Portal
-6518	Golden Monolith
-6519	Golden Monolith
-6520	Golden Palm
-6521	Caravan Trader
-6522	Raptor
-6523	Rhinosaurus
-6524	Dilophosaurus
-6525	Young Rex
-6526	Small Goldirex
-6527	Mighty Goldirex
-6528	Noble Goldirex
-6529	Primordis Statue
-6530	Bomb Tower
-6531	Adult Rex
-6532	Ancient Rex
 6686	Jin Bing
 6687	Soldier Ki
 6688	Soldier Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Northwind Golem
 6894	Bigfoot
 6895	Northwind War Chief
+6896	Balathor
+6897	Balathor
+6898	Spectral Warrior
+6899	Spectral Archer
+6900	Spectral Echo
 7001	Apesoldier
 7002	Aperider
 7003	Gimu Apesoldier
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Guild Battle Zone (S)
 20489	Guild Battle Zone (N)
 20490	Guild Merchant
+20491	Cursed Stone Tablet
+20492	Balathor's Treasure
+20493	Hwacha
+20494	Solid Ice Wall
+20495	Frozen Dragon Egg
+20496	Frozen Dragon Egg
+20497	Flaming Dragon Egg
+20498	Ancient Ice Crystal
+20499	Hwacha (Transformed)
 20500	Dragon Egg
 20501	Gaya Chest
 20502	Yut Nori Table
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya Market
 20505	Yut Sticks
 20506	Catch the King Table
+20507	Eternal Ice Crystal
 20510	TR: Ghost of a Sura
 20511	TR: Am-heh Gorge
 20512	TR: Taramor Gravestone
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Snow Krampus
 34189	Coal Krampus
 34190	Tiny Krampus
+34191	Black Bull
+34192	Brown Bull
+34193	Tame Bull
+34194	Pincher
+34195	Snapper
+34197	Lilith
+34198	Helena
+34199	Mini-Lilith
+34200	Golden Loong
+34201	Silver Loong
+34202	Small Loong
+34203	Mini Balathor
+34204	Balathor Jr
+36000	Sinister Hellsteed
+36001	Gruesome Hellsteed
+36005	Balathor's Icewing
+36006	Balathor's Nightwing
 40003	Turbo Surfboard
+40004	Wukong's Storm
+40005	Wukong's Thunder
 60000	Guild Manager
 60001	Guild Manager
 60002	Guild Manager

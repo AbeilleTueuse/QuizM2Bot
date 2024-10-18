@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Casco dragón celeste+13
 12874	Casco dragón celeste+14
 12875	Casco dragón celeste+15
+12880	Capucha serpiente+0
+12881	Capucha serpiente+1
+12882	Capucha serpiente+2
+12883	Capucha serpiente+3
+12884	Capucha serpiente+4
+12885	Capucha serpiente+5
+12886	Capucha serpiente+6
+12887	Capucha serpiente+7
+12888	Capucha serpiente+8
+12889	Capucha serpiente+9
+12890	Capucha serpiente+10
+12891	Capucha serpiente+11
+12892	Capucha serpiente+12
+12893	Capucha serpiente+13
+12894	Capucha serpiente+14
+12895	Capucha serpiente+15
 13000	Escudo de Batalla +0
 13001	Escudo de Batalla +1
 13002	Escudo de Batalla +2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Vendaje
 27125	Poción de batalla
 27126	Poción Fuerza Dragón
+27127	Balathor: Sangre gélida
 27128	Secreto de Iutnori
 27201	Poción roja (P)
 27202	Poción roja (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vale Casco de vampiro
 30343	Vale Casco de vampiro+
 30344	Llamada del Santuario
+30345	Flecha inflamable
 30346	Tique de Battle Royale
 30500	Buril de Rubí
 30501	Abrazadera de Oro
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Materia negra
 31082	Anillo magmático
 31083	Anillo de Samael
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Agua pesada
 31086	Esporas de seta
-31087	NoNAme
-31088	NoNAme
+31087	Llama de espíritu ígneo
+31088	Poción de fuego
 31089	NoNAme
-31090	NoNAme
+31090	Corazón de Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Pellejo de hielimaña
 31093	Piedra desconocida
 31094	Fragmento
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Piedra misteriosa
 31262	Barniz serpentino
 31263	Piedra afilar tramontana
+31264	Tendón de Balathor
+31265	Martillo escarchado
+31266	Alas de Balathor
+31267	Cuerno de Balathor
+31268	Ojo de Balathor
+31269	Escama de Balathor
 31270	Esencia de talismán
 33001	Insignia del Zi
 33002	Insignia del Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Campana de antepasados+
 40190	Abanico de antepasados+
 40191	Garra de antepasados+
+40192	Espada de Heraldo fatal+
+40193	Daga de Heraldo fatal+
+40194	Arco de Heraldo fatal+
+40195	Mandoble Heraldo fatal+
+40196	Campana Heraldo fatal+
+40197	Abanico Heraldo fatal+
+40198	Garra de Heraldo fatal+
 41000	Aquí un aspecto de arma
 41001	Atuendo conejo (marrón)
 41002	Atuendo conejita (ma.)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Camiseta fútbol+ HUN (f)
 41658	Camiseta ROU (m)
 41659	Camiseta ROU (f)
-41660	Camiseta ROU+ (m)
-41661	Camiseta ROU+ (f)
+41660	Camiseta fútbol+ ROU (m)
+41661	Camiseta fútbol+ ROU (f)
 41662	Camiseta POL (m)
 41663	Camiseta POL (f)
 41664	Camiseta fútbol+ POL (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Armadura del Victorioso+
 41918	Armadura de la Generosa+
 41919	Armadura de Victoriosa+
+41920	Torero rojo
+41921	Torero azul
+41922	Torera roja
+41923	Torera azul
+41924	Torero rojo+
+41925	Torero azul+
+41926	Torera roja+
+41927	Torera azul+
+41932	Príncipe atlante+
+41933	Guerrero atlante+
+41934	Princesa atlante+
+41935	Guerrera atlante+
+41936	Íncubo llameante+
+41937	Íncubo nocturno+
+41938	Súcubo llameante+
+41939	Súcubo nocturno+
+41940	At. solar de Wukong+ (m)
+41941	At. lunar de Wukong+ (m)
+41942	At. solar de Wukong+ (f)
+41943	At. lunar de Wukong+ (f)
+41952	At. solar de Wukong (m)
+41953	At. lunar de Wukong (m)
+41954	At. solar de Wukong (f)
+41955	At. lunar de Wukong (f)
 45001	Orejas conejita (marrón)
 45002	Orejas conejo (marrón)
 45003	Pañuelo (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Corona del Victorioso+
 45658	Corona de la Generosa+
 45659	Corona de la Victoriosa+
+45660	Montera roja (m)
+45661	Montera azul (m)
+45662	Montera roja (f)
+45663	Montera azul (f)
+45664	Montera roja+ (m)
+45665	Montera azul+ (m)
+45666	Montera roja+ (f)
+45667	Montera azul+ (f)
+45672	Corona atlante+ (m)
+45673	Casco atlante+ (m)
+45674	Corona atlante+ (f)
+45675	Casco atlante+ (f)
+45676	Cornam. llameante+ (m)
+45677	Cornam. nocturna+ (m)
+45678	Cornam. llameante+ (f)
+45679	Cornam. nocturna+ (f)
+45680	Braz. sol. Wukong+ (m)
+45681	Braz. lun. Wukong+ (m)
+45682	Braz. sol. Wukong+ (f)
+45683	Braz. lun. Wukong+ (f)
+45696	Braz. sol. Wukong (m)
+45697	Braz. lun. Wukong (m)
+45698	Braz. sol. Wukong (f)
+45699	Braz. lun. Wukong (f)
 49001	Vestimenta de aura común
 49002	Vestim. de aura sencilla
 49003	Vestim. de aura noble
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Baúl de Maestro II
 50195	Baúl de Maestro III
 50196	Baúl de Gran Maestro
-50197	NoNAme
+50197	Bolsa desconocida
 50198	NoNAme
 50199	NoNAme
 50200	Paquete
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Baúl libros contraataque
 50324	Baúl libros potenciación
 50325	Manual de la precisión
+50326	Manual Hab. Balathor
 50330	Libro misión (Prínc.1)
 50331	Libro misión (Prínc.2)
 50332	Libro misión (Prínc.3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Rocío verde
 50825	Rocío azul
 50826	Rocío blanco
+50827	Rocío negro
 50830	Elixir fuerza llamas
 50831	Elixir fuerza escarcha
 50832	Elixir fuerza trueno
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Baúl vidente rojo
 50939	Baúl vidente azul
 50940	Baúl vidente rosa
+50941	Baúl de la cripta
 51001	Fragmento de energía
 51002	Cristal de Energía
 51501	Cor Draconis (en bruto)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Moa valeroso
 52120	Moa valeroso
 52202	Turbotabla de surf
+52204	Tormenta de Wukong
+52205	Trueno de Wukong
 52701	Título de León
 52702	Título de Tigre
 52703	Título de Jabalí
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Título de Reno (h)
 52707	Título de Dragor
 52708	Título de Moa
+52710	Bola Polimorfa de Hwacha
 53001	Fénix de fuego
 53002	Cría de reno
 53003	Fénix de hielo
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Krampus de las nieves
 53354	Krampus del carbón
 53355	Krampus pequeño
+53356	Toro negro
+53357	Toro marrón
+53358	Toro manso
+53359	Neifi
+53360	Swiki
+53362	Lilith
+53363	Helena
+53364	Mini-Lilith
+53365	Long dorado
+53366	Long plateado
+53367	Long pequeño
+53368	Minibalathor
+53369	Pequeño Balathor
 53501	Jaula del fénix de fuego
 53502	Baúl de la Cría de reno
 53503	Jaula del Fénix de Hielo
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Jaula de rufus escarcha
 53522	Nido de Sheldon
 53523	Jaula de conejos
-53526	NoNAme
+53526	Pepita Can
 53527	Jaula calabeza
 53528	Armario de las escobas
 53529	Arcón helado Copito
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Baúl de Krampus gélido
 53636	Baúl de Krampus tiznado
 53637	Baúl de Krampus pequeño
+53638	Caja astada negra
+53639	Caja astada marrón
+53640	Caja astada pequeña
+53641	Caja cangrejo de Neifi
+53642	Caja cangrejo de Swiki
+53643	Baúl infernal de Lilith
+53644	Baúl infernal de Helena
+53645	Baúl infernal mini
+53646	Altar dragoniano dorado
+53647	Altar dragon. plateado
+53648	Altar dragoniano pequeño
 54041	NoNAme
 54042	NoNAme
 54043	Baúl de aprendiz I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Llave helada
 70411	Baúl dragón tramon. (F)
 70412	Baúl dragón tramon. (D)
+70413	Baúl gélido de Balathor
+70414	Baúl gélido de Balathor+
 70422	Llave serpentina
 70423	Fragmento serp. fuego
 70424	Fragmento serp. hielo
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Llave de condena+
 70450	Perg. Metin de salvación
 70451	Fardo de los muertos
-70604	Baúl del Mundial
+70500	Eco de la fuerza +0
+70501	Eco de la fuerza +1
+70502	Eco de la fuerza +2
+70503	Eco de la fuerza +3
+70504	Eco de la fuerza +4
+70505	Eco del poder +0
+70506	Eco del poder +1
+70507	Eco del poder +2
+70508	Eco del poder +3
+70509	Eco del poder +4
+70510	Esencia de la fuerza +0
+70511	Esencia de la fuerza +1
+70512	Esencia de la fuerza +2
+70513	Esencia de la fuerza +3
+70514	Esencia de la fuerza +4
+70515	Esencia del poder +0
+70516	Esencia del poder +1
+70517	Esencia del poder +2
+70518	Esencia del poder +3
+70519	Esencia del poder +4
+70602	Refuerzo del eco
+70603	Despertar del eco
+70604	Baúl del Campeonato
 70605	Baúl de tique
-70606	Trofeo del Mundial
-70607	Emblema del Mundial
+70606	Trofeo del Campeonato
+70607	Emblema del Campeonato
 70608	Bolsa de Gaya
 70609	Tique de país
 70610	Tique de vítores
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Enciclo. de Mercurio (G)
 71217	Enciclop. de Venus (P)
 71218	Enciclop. de Venus (G)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Caballo de Kyzaghan
 71221	Paquete de cachemira
 71222	Dragón nirvana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Caballo de legión oscuro
 71277	Halia
 71278	Aquilos
+71280	Corcel infernal tenebr.
+71281	Corcel infernal terrible
+71287	Ala helada de Balathor
+71288	Ala nocturna de Balathor
 72001	Anillo de exp. (10 h)
 72002	Anillo de exp. (30 min)
 72003	Anillo de exp. (3 h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Filón jadita manejable
 72355	Tienda prémium personal
 72356	Tienda prémium personal
+72359	Tique entrada (Balathor)
 72360	Pergamino del desafío
 72701	Zapatos viento
 72702	Zapatos viento+ (com.)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Reducción resist. (30 %)
 72755	Licencia de ampliación
 72756	Pase de botines
-72757	Tique polvoprotector
-72758	Reinicio de Primordis
 72760	Manual de bersérker
 72761	Manual rompemagia
 72762	Manual de aceleración
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	Runa forjada 3: mascota
 79658	Runa forjada 4: mascota
 79659	Runa forjada 5: mascota
+79666	Buscador de monstruos
+79667	Buscador de personajes
+79668	Piedra teletransporte+
+79669	Piedra teletransporte
+79670	Bosque Rojo, pt 1
+79671	Bosque Rojo, pt 2
+79672	Bosque Rojo, pt 3
+79673	Bosque Rojo, pt 4
+79674	Bosque Rojo, pt 5
+79675	Campo Serp., pt 1
+79676	Campo Serp., pt 2
+79677	Campo Serp., pt 3
+79678	Campo Serp., pt 4
+79679	Campo Serp., pt 5
+79680	Tierra de Gigantes, pt 1
+79681	Tierra de Gigantes, pt 2
+79682	Tierra de Gigantes, pt 3
+79683	Tierra de Gigantes, pt 4
+79684	Tierra de Gigantes, pt 5
+79685	Mazmorra Arañas, pt 1
+79686	Mazmorra Arañas, pt 2
+79687	Mazmorra Arañas, pt 3
+79688	Mazmorra Arañas, pt 4
+79689	Mazmorra Arañas, pt 5
+79690	Mazmorra Arañas 2, pt 1
+79691	Mazmorra Arañas 2, pt 2
+79692	Mazmorra Arañas 2, pt 3
+79693	Mazmorra Arañas 2, pt 4
+79694	Mazmorra Arañas 2, pt 5
+79695	Gruta del Ex., parte 1
+79696	Gruta del Ex., parte 2
+79697	Gruta del Ex., parte 3
+79698	Gruta del Ex., parte 4
+79699	Gruta del Ex., parte 5
+79700	Gr. del Ex. 2, parte 1
+79701	Gr. del Ex. 2, parte 2
+79702	Gr. del Ex. 2, parte 3
+79703	Gr. del Ex. 2, parte 4
+79704	Gr. del Ex. 2, parte 5
+79705	Hasun Dong, parte 1
+79706	Hasun Dong, parte 2
+79707	Hasun Dong, parte 3
+79708	Hasun Dong, parte 4
+79709	Hasun Dong, parte 5
+79710	Jungsun Dong, parte 1
+79711	Jungsun Dong, parte 2
+79712	Jungsun Dong, parte 3
+79713	Jungsun Dong, parte 4
+79714	Jungsun Dong, parte 5
+79715	Sangsun Dong, pt 1
+79716	Sangsun Dong, pt 2
+79717	Sangsun Dong, pt 3
+79718	Sangsun Dong, pt 4
+79719	Sangsun Dong, pt 5
+79725	Mazmorra Arañas 3, pt 1
+79726	Mazmorra Arañas 3, pt 2
+79727	Mazmorra Arañas 3, pt 3
+79728	Mazmorra Arañas 3, pt 4
+79729	Mazmorra Arañas 3, pt 5
+79730	Templo de los Ochao, p 1
+79731	Templo de los Ochao, p 2
+79732	Templo de los Ochao, p 3
+79733	Templo de los Ochao, p 4
+79734	Templo de los Ochao, p 5
+79735	ET: Gr. del Ex. parte 1
+79736	ET: Gr. del Ex. parte 2
+79737	ET: Gr. del Ex. parte 3
+79738	ET: Gr. del Ex. parte 4
+79739	ET: Gr. del Ex. parte 5
+79740	IM: Gr. del Ex. parte 1
+79741	IM: Gr. del Ex. parte 2
+79742	IM: Gr. del Ex. parte 3
+79743	IM: Gr. del Ex. parte 4
+79744	IM: Gr. del Ex. parte 5
+79745	Cuevas Gnoll, parte 1
+79746	Cuevas Gnoll, parte 2
+79747	Cuevas Gnoll, parte 3
+79748	Cuevas Gnoll, parte 4
+79749	Cuevas Gnoll, parte 5
+79750	Cuevas Gnoll 2, parte 1
+79751	Cuevas Gnoll 2, parte 2
+79752	Cuevas Gnoll 2, parte 3
+79753	Cuevas Gnoll 2, parte 4
+79754	Cuevas Gnoll 2, parte 5
+79755	Cuevas Gnoll 3, parte 1
+79756	Cuevas Gnoll 3, parte 2
+79757	Cuevas Gnoll 3, parte 3
+79758	Cuevas Gnoll 3, parte 4
+79759	Cuevas Gnoll 3, parte 5
+79760	Templo Serp., pt 1
+79761	Templo Serp., pt 2
+79762	Templo Serp., pt 3
+79763	Templo Serp., pt 4
+79764	Templo Serp., pt 5
+79765	Caverna Tramontana, pt 1
+79766	Caverna Tramontana, pt 2
+79767	Caverna Tramontana, pt 3
+79768	Caverna Tramontana, pt 4
+79769	Caverna Tramontana, pt 5
+79770	Bajada Tramontana, pt 1
+79771	Bajada Tramontana, pt 2
+79772	Bajada Tramontana, pt 3
+79773	Bajada Tramontana, pt 4
+79774	Bajada Tramontana, pt 5
+79800	Mapa: Bosque Rojo
+79801	Mapa: Campo Serpiente
+79802	Mapa: Tierra de Gigantes
+79803	Mapa: Mazmorra de Arañas
+79804	Mapa: Mazmorra Arañas 2
+79805	Mapa: Gruta del Ex.
+79806	Mapa: Gruta del Ex. 2
+79807	Mapa: Hasun Dong
+79808	Mapa: Jungsun Dong
+79809	Mapa: Sangsun Dong
+79811	Mapa: Mazmorra Arañas 3
+79812	Mapa: Templo de Ochao
+79813	Mapa: ET: Gr. del Ex.
+79814	Mapa: IM: Gr. del Ex.
+79815	Mapa: Cuevas Gnoll
+79816	Mapa: Cuevas Gnoll 2
+79817	Mapa: Cuevas Gnoll 3
+79818	Mapa: Templo Serpentino
+79819	Mapa: Caverna Tramontana
+79820	Mapa: Bajada Tramontana
 80003	Barra Plata (50k Yang)
 80004	Barra Plata (100k Yang)
 80005	Barra Oro (500k Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Baúl invasión de Sung Ma
 83073	Caja cartas mons. Yohara
 83074	Caja platino cart. mons.
-83075	Baúl de frutos ácidos
-83076	Baúl de frutos dorados
 83077	Baúl del Dios Dragón
+83078	Caja del tesoro - SungMa
+83082	Baúl de SungMa
 83100	Recomp. Valle Seungr.
 83101	Recomp. Desierto Yongbi
 83102	Recompensa Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Baúl de la Destrucción
 83125	Baúl de la Destrucción
 83126	Baúl de la Destrucción
+83130	Baúl selección infernal+
+83131	Baúl selección astado+
+83132	Baúl selec. at. Wukong+
+83133	Baúl selec. bra. Wukong+
+83134	Baúl selección heraldo+
+83135	Baúl selec. at. Wukong
+83136	Baúl selec. bra. Wukong
+83137	Baúl selec. comp. fest.+
+83138	Baúl selec. mont. brava+
+83139	Baúl selec. manual hábil
 85001	Estola señorial (simple)
 85002	Estola señorial (eleg.)
 85003	Estola señorial (noble)

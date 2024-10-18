@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Astral Drage Hjelm+13
 12874	Astral Drage Hjelm+14
 12875	Astral Drage Hjelm+15
+12880	Slangens Hætte+0
+12881	Slangens Hætte+1
+12882	Slangens Hætte+2
+12883	Slangens Hætte+3
+12884	Slangens Hætte+4
+12885	Slangens Hætte+5
+12886	Slangens Hætte+6
+12887	Slangens Hætte+7
+12888	Slangens Hætte+8
+12889	Slangens Hætte+9
+12890	Slangens Hætte+10
+12891	Slangens Hætte+11
+12892	Slangens Hætte+12
+12893	Slangens Hætte+13
+12894	Slangens Hætte+14
+12895	Slangens Hætte+15
 13000	Krigsskjold +0
 13001	Krigsskjold +1
 13002	Krigsskjold +2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Bandage
 27125	Kamp Eliksir
 27126	Dragekrafts Eliksir
+27127	Balathor's Frostblod
 27128	Yut Nori Hemmelighed
 27201	Rød Eliksir (L)
 27202	Rød Eliksir (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vampyr Hjelm Kupon
 30343	Vampyr Hjelm Kupon+
 30344	Kaldet fra Helligdommene
+30345	Ildpil
 30346	Battle Royale Billet
 30500	Rubin indgraveret kniv
 30501	Guld spænde
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Sort substans
 31082	Magmas ring
 31083	Samaels ring
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Tungt Vand
 31086	Svampe sporer
-31087	NoNAme
-31088	NoNAme
+31087	Flamme. Flamme Spøgelse
+31088	Ild Eliksir
 31089	NoNAme
-31090	NoNAme
+31090	Nemere's Hjerte
 31091	NoNAme
-31092	NoNAme
+31092	Is Monster Hud
 31093	Ukendt sten
 31094	Skår
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Mystisk Sten
 31262	Slange Polering
 31263	Nordvinds Vådslibesten
+31264	Balathor's Sene
+31265	Frosset Hammer
+31266	Balathor's Vinge
+31267	Balathor's Horn
+31268	Balathor's Øje
+31269	Balathor's Skala
 31270	Talisman Essens
 33001	Zi Emblem
 33002	Chou Emblem
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Forfædrenes Klokke+
 40190	Forfædrenes Vifte+
 40191	Forfædrenes Kløer+
+40192	Forbandelsesbrin. Sværd+
+40193	Forbandelsesbring. Dolk+
+40194	Forbandelsesbri. Sløjfe+
+40195	Forbandelses. Storsværd+
+40196	Forbandelsesbri. Klokke+
+40197	Forbandelsesbrin. Vifte+
+40198	Forbandelsesbrin. Kløer+
 41000	Våben-skin pladsholder
 41001	Hare kostume (brun)
 41002	Kanin kostume (brun)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	HUN Fodbold Outfit+ (k)
 41658	ROU VM Sæt (m)
 41659	ROU VM Sæt (k)
-41660	ROU VM Sæt+ (m)
-41661	ROU VM Sæt+ (k)
+41660	ROU Fodbold Outfit+ (m)
+41661	ROU Fodbold Outfit+ (k)
 41662	POL VM Sæt (m)
 41663	POL VM Sæt (k)
 41664	POL Fodbold Outfit+ (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Triumferende Rust.+ (m)
 41918	Velvillige Rustning+ (k)
 41919	Triumferende Rust.+ (k)
+41920	Rød Torero
+41921	Blå Torero
+41922	Rød Torera
+41923	Blå Torera
+41924	Rød Torero+
+41925	Blå Torero+
+41926	Rød Torera+
+41927	Blå Torera+
+41932	Atlantis Herre+
+41933	Atlantis Kriger+ (m)
+41934	Atlantis Dame+
+41935	Atlantis Kriger+ (k)
+41936	Ild Incubus+
+41937	Midnats Incubus+
+41938	Ild Succubus+
+41939	Midnats Succubus+
+41940	Wukong's Sol Klæd.+ (m)
+41941	Wukong's Måne Klæd.+ (m)
+41942	Wukong's Sol Klæd.+ (k)
+41943	Wukong's Måne Klæd.+ (k)
+41952	Wukong's Sol Klæd. (m)
+41953	Wukong's Måne Klæd. (m)
+41954	Wukong's Sol Klæd. (k)
+41955	Wukong's Måne Klæd. (k)
 45001	Brune kanin ører (brun)
 45002	Hare ører (brun)
 45003	Hovedbeklædning (M)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Triumferende Krone+ (m)
 45658	Velvillige Krone+ (k)
 45659	Triumferende Krone+ (k)
+45660	Rød Montera (m)
+45661	Blå Montera (m)
+45662	Rød Montera (k)
+45663	Blå Montera (k)
+45664	Rød Montera+ (m)
+45665	Blå Montera+ (m)
+45666	Rød Montera+ (k)
+45667	Blå Montera+ (k)
+45672	Atlantis Krone+ (m)
+45673	Atlantis Hjelm+ (m)
+45674	Atlantis Krone+ (k)
+45675	Atlantis Hjelm+ (k)
+45676	Ild Horn+ (m)
+45677	Midnats Horn+ (m)
+45678	Ild Horn+ (k)
+45679	Midnats Horn+ (k)
+45680	Wukong's Sol Krone+ (m)
+45681	Wukong's Måne Krone+ (m)
+45682	Wukong's Sol Krone+ (k)
+45683	Wukong's Måne Krone+ (k)
+45696	Wukong's Sol Krone (m)
+45697	Wukong's Måne Krone (m)
+45698	Wukong's Sol Krone (k)
+45699	Wukong's Måne Krone (k)
 49001	Almindelig Aura Outfit
 49002	Simpel Aura Outfit
 49003	Adelig Aura Outfit
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Stormester kiste II
 50195	Stormester kiste III
 50196	Stormester kiste
-50197	NoNAme
+50197	Ukendt Taske
 50198	NoNAme
 50199	NoNAme
 50200	Bundt
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Beskyttelsesbog kiste
 50324	Boost bog kiste
 50325	Præcisions Bog
+50326	Balathor's Færdighedsbog
 50330	Missionsbog (Lord 1)
 50331	Missionsbog (Lord 2)
 50332	Missionsbog (Lord 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Grøn dug
 50825	Blå dug
 50826	Hvid dug
+50827	Sort Dug
 50830	Ildens Kraft Eliksir
 50831	Frostens Kraft Eliksir
 50832	Tordens Kraft Eliksir
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Rød Seers Kiste
 50939	Blå Seers Kiste
 50940	Lyserød Seers Kiste
+50941	Krypt Kiste
 51001	Energi Fragment
 51002	Energi Krystal
 51501	Cor Draconis (uslebet)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Tapper Moa
 52120	Tapper Moa
 52202	Turbo Surfbræt
+52204	Wukong's Storm
+52205	Wukong's Torden
 52701	Løve Certifikat
 52702	Tiger Certifikat
 52703	Vildsvin Certifikat
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Rensdyr Certifikat (f)
 52707	Dragor certifikat
 52708	Moa certifikat
+52710	Hwacha Forvandlingskugle
 53001	Ild Føniks
 53002	Rensdyr Kalv
 53003	Is-Føniks
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Sne Krampus
 53354	Kul Krampus
 53355	Lille Bitte Krampus
+53356	Sort Tyr
+53357	Brun Tyr
+53358	Tæm Tyr
+53359	Pincher
+53360	Snapper
+53362	Lilith
+53363	Helena
+53364	Mini-Lilith
+53365	Guld Loong
+53366	Sølv Loong
+53367	Lille Loong
+53368	Lille Balathor
+53369	Balathor Jr
 53501	Ild Føniks Bur
 53502	Rensdyr Kalv Kiste
 53503	Is Føniks Bur
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Frost Rufus Bur
 53522	Sheldons rede
 53523	Kanin bur
-53526	NoNAme
+53526	Pepita Can
 53527	Græskarhoved Bur
 53528	Kosteskab
 53529	Snefnug kiste
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Frossen Krampus Kiste
 53636	Sodet Krampus Kiste
 53637	Lille Bitte Krampus Kis.
+53638	Sorte Tyr Boks
+53639	Brune Tyr Boks
+53640	Lille Tyr Boks
+53641	Pincher's Krabbe Boks
+53642	Snapper's Krabbe Boks
+53643	Lilith's Helvedes Kiste
+53644	Helena's Helvedes Kiste
+53645	Mini Helvedes Kiste
+53646	Gylden Drage Skrin
+53647	Sølv Drage Skrin
+53648	Lille Drage Skrin
 54041	NoNAme
 54042	NoNAme
 54043	Lærlinge kiste I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Frossen Nøgle
 70411	Hvid Drage Kiste (Let)
 70412	Hvid Drage Kiste (Tung)
+70413	Balathor's Frost Kiste
+70414	Balathor's Frost Kiste+
 70422	Slange Nøgle
 70423	Ild Slange Skår
 70424	Is Slange Skår
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Fordømmelses Nøgle+
 70450	Frelsens Metin Dokument
 70451	Døds Flamme Bundt
-70604	VM Kiste
+70500	Ekkoens Styrke+0
+70501	Ekkoens Styrke+1
+70502	Ekkoens Styrke+2
+70503	Ekkoens Styrke+3
+70504	Ekkoens Styrke+4
+70505	Ekkoens Talent+0
+70506	Ekkoens Talent+1
+70507	Ekkoens Talent+2
+70508	Ekkoens Talent+3
+70509	Ekkoens Talent+4
+70510	Styrkens Essens+0
+70511	Styrkens Essens+1
+70512	Styrkens Essens+2
+70513	Styrkens Essens+3
+70514	Styrkens Essens+4
+70515	Talentens Essens+0
+70516	Talentens Essens+1
+70517	Talentens Essens+2
+70518	Talentens Essens+3
+70519	Talentens Essens+4
+70602	Ekko Forstærker
+70603	Ekko Forstærker
+70604	Turnerings Kiste
 70605	Billet Kiste
-70606	VM Trofæet
-70607	VM Emblemet
+70606	Turnerings Trofæ
+70607	Turnerings Emblem
 70608	Gaya Taske
 70609	Lands Billet
 70610	Heppe Billet
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Merkur Leksikon (S)
 71217	Venus Leksikon (L)
 71218	Venus Leksikon (L)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Kyzaghans Hest
 71221	Kashmir Bundt.
 71222	Nirvana Drage
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Mørk Legion Hest
 71277	Halia
 71278	Aquilos
+71280	Skummel Helvedeshest
+71281	Grusom Helvedeshest
+71287	Balathor's Isvinge
+71288	Balathor's Natvinge
 72001	Erfaringsring (10t)
 72002	Erfaringsring (30m)
 72003	Erfaringsring (3t)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Portabel Jadite Vene
 72355	Personlig Premiums Butik
 72356	Personlig Premiums Butik
+72359	Passage Dokument (Bala.)
 72360	Udfordrings Dokument
 72701	Vindsko
 72702	Vindsko+ (omsættelig)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Udhold. Reduktion (30%)
 72755	Udvidelses Licens
 72756	Bytte Pas
-72757	Bombesikker Billet
-72758	Primordis Nulstilling
 72760	Bersærker Bog
 72761	Anti-Magi Bog
 72762	Hastighedsbog
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Kæledyrs Catalyst
 79658	4* Kæledyrs Catalyst
 79659	5* Kæledyrs Catalyst
+79666	Monster Finder
+79667	NPC Finder
+79668	Teleporterings Sten+
+79669	Teleporterings Sten
+79670	Rød Skov, M1
+79671	Rød Skov, M2
+79672	Rød Skov, M3
+79673	Rød Skov, M4
+79674	Rød Skov, M5
+79675	Slangeområde, M1
+79676	Slangeområde, M2
+79677	Slangeområde, M3
+79678	Slangeområde, M4
+79679	Slangeområde, M5
+79680	Kæmpernes Land, M1
+79681	Kæmpernes Land, M2
+79682	Kæmpernes Land, M3
+79683	Kæmpernes Land, M4
+79684	Kæmpernes Land, M5
+79685	Edderkoppe Grotten, M1
+79686	Edderkoppe Grotten, M2
+79687	Edderkoppe Grotten, M3
+79688	Edderkoppe Grotten, M4
+79689	Edderkoppe Grotten, M5
+79690	Edderkoppe Grotten 2, M1
+79691	Edderkoppe Grotten 2, M2
+79692	Edderkoppe Grotten 2, M3
+79693	Edderkoppe Grotten 2, M4
+79694	Edderkoppe Grotten 2, M5
+79695	Forbandelsens Grotte, M1
+79696	Forbandelsens Grotte, M2
+79697	Forbandelsens Grotte, M3
+79698	Forbandelsens Grotte, M4
+79699	Forbandelsens Grotte, M5
+79700	Forbandel. Grotte 2, M1
+79701	Forbandel. Grotte 2, M2
+79702	Forbandel. Grotte 2, M3
+79703	Forbandel. Grotte 2, M4
+79704	Forbandel. Grotte 2, M5
+79705	Hasun Dong, M1
+79706	Hasun Dong, M2
+79707	Hasun Dong, M3
+79708	Hasun Dong, M4
+79709	Hasun Dong, M5
+79710	Jungsun Dong, M1
+79711	Jungsun Dong, M2
+79712	Jungsun Dong, M3
+79713	Jungsun Dong, M4
+79714	Jungsun Dong, M5
+79715	Sangsun Dong, M1
+79716	Sangsun Dong, M2
+79717	Sangsun Dong, M3
+79718	Sangsun Dong, M4
+79719	Sangsun Dong, M5
+79725	Edderkoppe Grotten 3, M1
+79726	Edderkoppe Grotten 3, M2
+79727	Edderkoppe Grotten 3, M3
+79728	Edderkoppe Grotten 3, M4
+79729	Edderkoppe Grotten 3, M5
+79730	Ochao Templet, M1
+79731	Ochao Templet, M2
+79732	Ochao Templet, M3
+79733	Ochao Templet, M4
+79734	Ochao Templet, M5
+79735	TS: Forband. Grotte, M1
+79736	TS: Forband. Grotte, M2
+79737	TS: Forband. Grotte, M3
+79738	TS: Forband. Grotte, M4
+79739	TS: Forband. Grotte, M5
+79740	GO: Forband. Grotte, M1
+79741	GO: Forband. Grotte, M2
+79742	GO: Forband. Grotte, M3
+79743	GO: Forband. Grotte, M4
+79744	GO: Forband. Grotte, M5
+79745	Gnoll Huler, M1
+79746	Gnoll Huler, M2
+79747	Gnoll Huler, M3
+79748	Gnoll Huler, M4
+79749	Gnoll Huler, M5
+79750	Gnoll Huler 2, M1
+79751	Gnoll Huler 2, M2
+79752	Gnoll Huler 2, M3
+79753	Gnoll Huler 2, M4
+79754	Gnoll Huler 2, M5
+79755	Gnoll Huler 3, M1
+79756	Gnoll Huler 3, M2
+79757	Gnoll Huler 3, M3
+79758	Gnoll Huler 3, M4
+79759	Gnoll Huler 3, M5
+79760	Slange Templet, M1
+79761	Slange Templet, M2
+79762	Slange Templet, M3
+79763	Slange Templet, M4
+79764	Slange Templet, M5
+79765	Nordvindslyet, M1
+79766	Nordvindslyet, M2
+79767	Nordvindslyet, M3
+79768	Nordvindslyet, M4
+79769	Nordvindslyet, M5
+79770	Nordvindsnedstig., M1
+79771	Nordvindsnedstig., M2
+79772	Nordvindsnedstig., M3
+79773	Nordvindsnedstig., M4
+79774	Nordvindsnedstig., M5
+79800	Kort: Rød Skov
+79801	Kort: Slangeområde
+79802	Kort: Kæmpernes Land
+79803	Kort: Edderkoppe Grotten
+79804	Kort: Edder. Grotten 2
+79805	Kort: Forbandel. Grotte
+79806	Kort: Forband. Grotte 2
+79807	Kort: Hasun Dong
+79808	Kort: Jungsun Dong
+79809	Kort: Sangsun Dong
+79811	Kort: Edder. Grotten 3
+79812	Kort: Ochao Templet
+79813	Kort: TS: For. Grotte
+79814	Kort: GO: For. Grotte
+79815	Kort: Gnoll Huler
+79816	Kort: Gnoll Huler 2
+79817	Kort: Gnoll Huler 3
+79818	Kort: Slange Tempel
+79819	Kort: Nordvindslyet
+79820	Kort: Nordvindsnedstig.
 80003	Sølv bar (50.000 Yang)
 80004	Sølv bar (100.000 Yang)
 80005	Guldbarre (500.000Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Sung Ma Invasions Kiste
 83073	Yo. Monster Korts Boks
 83074	Plat. Monster Korts Boks
-83075	Bitterbærs Kiste
-83076	Guldbærs Kiste
 83077	Dragegudens Kiste
+83078	Sung Ma's Skattekiste
+83082	Sung Ma's Kiste
 83100	Seung. Belønnings Kiste
 83101	Yongbi Belønnings Kiste
 83102	Kua. D. Belønnings Kiste
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Ødelæggelses Kiste
 83125	Ødelæggelses Kiste
 83126	Ødelæggelses Kiste
+83130	Helvedes Udvalgs Boks+
+83131	Hornede Udvalgs Boks+
+83132	Wukong's Klæd. Ud. Boks+
+83133	Wukong's Krone Ud. Boks+
+83134	Forbandelses. Ud. Boks+
+83135	Wukong's Klæd. Ud. Boks
+83136	Wukong's Krone Ud. Boks
+83137	Festlig Vens Ud. Boks+
+83138	Stormende Udvalgs Boks+
+83139	Færdighedsbog Ud. Boks
 85001	Lord bånd(basis)
 85002	Lord bælte (fin)
 85003	Lord bælte (nobel)

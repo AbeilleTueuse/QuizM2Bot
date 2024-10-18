@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Tempio Enigma (crea)
 4034	Tempio Enigma (rip.)
 4035	Portale Enigma
-4101	Guardiano finale Zi
-4102	Guardiano finale Chou
-4103	Guardiano finale Yin
-4104	Guardiano finale Mao
-4105	Guardiano finale Chen
-4106	Guardiano finale Si
-4107	Guardiano finale Wu
-4108	Guardiano finale Wei
-4109	Guardiano finale Shen
-4110	Guardiano finale Yu
-4111	Guardiano finale Xu
-4112	Guardiano finale Hai
-4121	Guardiano finale Zi
-4122	Guardiano finale Chou
-4123	Guardiano finale Yin
-4124	Guardiano finale Mao
-4125	Guardiano finale Chen
-4126	Guardiano finale Si
-4127	Guardiano finale Wu
-4128	Guardiano finale Wei
-4129	Guardiano finale Shen
-4130	Guardiano finale Yu
-4131	Guardiano finale Xu
-4132	Guardiano finale Hai
-4141	Metin del tramonto
-4142	Metin della fine
-4143	Metin della dannazione
-4144	Metin dell'apocalisse
-4145	Boiorco finale
-4146	Boiorco finale arcano
-4147	Kappa finale
-4148	Kappa finale abissale
-4149	Chuong finale
-4150	Chuong finale arcano
-4151	Mago finale
-4152	Mago finale arcano
 4153	Asmodeus
 4154	Araldo della terra
 4155	Araldo della terra
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Portale del Drago
 6514	Si va dal Re Drago
 6515	Uscita
-6516	Guardiano Primordium
-6517	Portale d'Oro
-6518	Monolite d'Oro
-6519	Monolite d'Oro
-6520	Palma d'Oro
-6521	Carovaniere
-6522	Raptor
-6523	Rino
-6524	Dilo
-6525	Tiranno giovane
-6526	Goldirex piccolo
-6527	Goldirex potente
-6528	Goldirex sublime
-6529	Statua Primordium
-6530	Torre esplosiva
-6531	Tiranno grande
-6532	Tiranno antico
 6686	Jin Bing
 6687	Soldato Ki
 6688	Soldato Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem boreale
 6894	Bigfoot
 6895	Condottiero boreale
+6896	Balathor
+6897	Balathor
+6898	Guerriero spettrale
+6899	Arciere spettrale
+6900	Eco spettrale
 7001	Scimmia Soldato
 7002	Scimmia Cavaliere
 7003	Scimmia soldato Gimu
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Zona Scontro gilde (S)
 20489	Zona Scontro gilde (N)
 20490	Mercante delle gilde
+20491	Tav. di pietra maledetta
+20492	Tesoro di Balathor
+20493	Hwacha
+20494	Grande muro di ghiaccio
+20495	Uovo di drago congelato
+20496	Uovo di drago congelato
+20497	Uovo di drago infuocato
+20498	Cr. di ghiaccio antico
+20499	Hwacha (trasf.)
 20500	Uovo di drago
 20501	Baule di Gaya
 20502	Tavolo da Yutnori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Negozio di Gaya
 20505	Bastoncini Yut.
 20506	Tavolo di Trova il re
+20507	Cr. di ghiaccio eterno
 20510	FT: Spirito di un sura
 20511	FT: Fauci di Am-heh
 20512	FT: Lapide di Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Krampus Neve
 34189	Krampus Carbone
 34190	Krampus piccolo
+34191	Toro nero
+34192	Toro marrone
+34193	Toro docile
+34194	Tenaglia
+34195	Pinza
+34197	Lilith
+34198	Helena
+34199	Mini Lilith
+34200	Long Oro
+34201	Long Argento
+34202	Piccolo Long
+34203	Mini Balathor
+34204	Balathor Junior
+36000	Destriero inf. terribile
+36001	Destriero inf. crudele
+36005	Alaghiaccio di Balathor
+36006	Alanotte di Balathor
 40003	Turbo-surf
+40004	Tempesta Wukong
+40005	Tuono Wukong
 60000	Amministratore gilda
 60001	Amministratore gilda
 60002	Amministratore gilda

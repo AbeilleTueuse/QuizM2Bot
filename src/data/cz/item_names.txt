@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Helma astrál. draka+13
 12874	Helma astrál. draka+14
 12875	Helma astrál. draka+15
+12880	Hadí kutna+0
+12881	Hadí kutna+1
+12882	Hadí kutna+2
+12883	Hadí kutna+3
+12884	Hadí kutna+4
+12885	Hadí kutna+5
+12886	Hadí kutna+6
+12887	Hadí kutna+7
+12888	Hadí kutna+8
+12889	Hadí kutna+9
+12890	Hadí kutna+10
+12891	Hadí kutna+11
+12892	Hadí kutna+12
+12893	Hadí kutna+13
+12894	Hadí kutna+14
+12895	Hadí kutna+15
 13000	Bitevní štít+0
 13001	Bitevní štít+1
 13002	Bitevní štít+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Obvaz
 27125	Váleènı lektvar
 27126	Lektvar draèí moci
+27127	Balathorova zmrzlá krev
 27128	Tajemství Yutnori
 27201	Èervenı lektvar (M)
 27202	Èervenı lektvar (S)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Poukaz na Upíøí helmu
 30343	Poukaz+ na Upíøí helmu
 30344	Volání oltáøù
+30345	Ohnivı šíp
 30346	Propustka na Král. bitvu
 30500	Nù vykládanı rubíny
 30501	Zlatá svorka
@@ -6817,14 +6835,14 @@ VNUM	LOCALE_NAME
 31082	Magmovı prsten
 31083	Samaelùv prsten
 31084	Svìcená voda
-31085	NoNAme
+31085	Tìká voda
 31086	Spóry houby
-31087	NoNAme
-31088	NoNAme
+31087	Plamen Ducha plamenù
+31088	Ohnivı lektvar
 31089	NoNAme
-31090	NoNAme
+31090	Nemerovo srdce
 31091	NoNAme
-31092	NoNAme
+31092	Kùe ledové pøíšery
 31093	Neznámı kámen
 31094	Fragment
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Tajemnı kámen
 31262	Hadí leštìnka
 31263	Brousek Northwindu
+31264	Balathorova šlacha
+31265	Namrzlé kladivo
+31266	Balathorovo køídlo
+31267	Balathorùv roh
+31268	Balathorovo oko
+31269	Balathorova šupina
 31270	Esence talismanu
 33001	Insignie Zi
 33002	Insignie Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Zvon pøedkù+
 40190	Vìjíø pøedkù+
 40191	Drápy pøedkù+
+40192	Meè Cursebringera+
+40193	Dıka Cursebringera+
+40194	Luk Cursebringera+
+40195	Velkı meè Cursebringera+
+40196	Zvon Cursebringera+
+40197	Vìjíø Cursebringera+
+40198	Drápy Cursebringera+
 41000	Zástupce vzhledu zbranì
 41001	Králièí kostım (hnìdı)
 41002	Zajeèí kostım (hnìdı)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	HUN Fotbalovı úbor+ ()
 41658	Sada pro MS - ROU (m)
 41659	Sada pro MS - ROU ()
-41660	Sada pro MS - ROU+ (m)
-41661	Sada pro MS - ROU+ ()
+41660	ROU Fotbalovı úbor+ (m)
+41661	ROU Fotbalovı úbor+ ()
 41662	Sada pro MS - POL (M)
 41663	Sada pro MS - POL ()
 41664	POL Fotbalovı úbor+ (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Triumfální brnìní+ (m)
 41918	Benevolentní brnìní+ ()
 41919	Triumfální brnìní+ ()
+41920	Èervenı toreador
+41921	Modrı toreador
+41922	Èervená toreadorka
+41923	Modrá toreadorka
+41924	Èervenı toreador+
+41925	Modrı toreador+
+41926	Èervená toreadorka+
+41927	Modrá toreadorka+
+41932	Pán Atlantidy+
+41933	Váleèník Atlantidy+ (m)
+41934	Paní Atlantidy+
+41935	Váleènice Atlantidy+ ()
+41936	Ohnivı incubus+
+41937	Pùlnoèní incubus+
+41938	Ohnivı succubus+
+41939	Pùlnoèní succubus+
+41940	Wukongova slu. róba+ (m)
+41941	Wukongova mìs. róba+ (m)
+41942	Wukongova slu. róba+ ()
+41943	Wukongova mìs. róba+ ()
+41952	Wukongova slu. róba (m)
+41953	Wukongova mìs. róba (m)
+41954	Wukongova slu. róba ()
+41955	Wukongova mìs. róba ()
 45001	Zajeèí uši (hnìdé)
 45002	Králièí uši (hnìdé)
 45003	Pokrıvka hlavy (M)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Triumfální koruna+ (m)
 45658	Benevolentní koruna+ ()
 45659	Triumfální koruna+ ()
+45660	Èervená montera (m)
+45661	Modrá montera (m)
+45662	Èervená montera ()
+45663	Modrá montera ()
+45664	Èervená montera+ (m)
+45665	Modrá montera+ (m)
+45666	Èervená montera+ ()
+45667	Modrá montera+ ()
+45672	Koruna Atlantidy+ (m)
+45673	Helma Atlantidy+ (m)
+45674	Koruna Atlantidy+ ()
+45675	Helma Atlantidy+ ()
+45676	Ohnivé rohy+ (m)
+45677	Pùlnoèní rohy+ (m)
+45678	Ohnivé rohy+ ()
+45679	Pùlnoèní rohy+ ()
+45680	Wukongova sl. koruna+(m)
+45681	Wukongova mìs.koruna+(m)
+45682	Wukongova sl. koruna+()
+45683	Wukongova mìs.koruna+()
+45696	Wukongova sl. koruna (m)
+45697	Wukongova mìs.koruna (m)
+45698	Wukongova sl. koruna ()
+45699	Wukongova mìs.koruna ()
 49001	Bìnı kostım s aurou
 49002	Prostı kostım s aurou.
 49003	Vznešenı kostım s aurou
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Truhla mistra II
 50195	Truhla mistra III
 50196	Truhla velmistra
-50197	NoNAme
+50197	Neznámı vak
 50198	NoNAme
 50199	NoNAme
 50200	Mìšec
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Truhla Knihy ochrany
 50324	Truhla Knihy zesílení
 50325	Kniha Pøesnosti
+50326	Balathorova kniha
 50330	Kniha misí (Lord 1)
 50331	Kniha misí (Lord 2)
 50332	Kniha misí (Lord 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Zelená rosa
 50825	Modrá rosa
 50826	Bílá rosa
+50827	Èerné rosa
 50830	Elixír Síly ohnì
 50831	Elixír Síly ledu
 50832	Elixír Síly blesku
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Èervená truhla vìštce
 50939	Modrá truhla vìštce
 50940	Rùová truhla vìštce
+50941	Truhla krypty
 51001	Fragment energie
 51002	Energetickı krystal
 51501	Cor Draconis (surové)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Odvánı Moa
 52120	Odvánı Moa
 52202	Turbo surfovací prkno
+52204	Wukongova bouøe
+52205	Wukongùv hrom
 52701	Lví certifikát
 52702	Tygøí certifikát
 52703	Kanèí certifikát
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Sobí certifikát ()
 52707	Certifikát Dragora
 52708	Moùv certifikát
+52710	Kulièka promìny Hwacha
 53001	Ohnivı fénix
 53002	Sobí mládì
 53003	Ledovı fénix
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Snìnı Krampus
 53354	Uhelnı Krampus
 53355	Malı Krampus
+53356	Èernı bık
+53357	Hnìdı bık
+53358	Krotkı bık
+53359	Pincher
+53360	Snapper
+53362	Lilith
+53363	Helena
+53364	Mini Lilith
+53365	Zlatı drak
+53366	Støíbrnı drak
+53367	Malı drak
+53368	Mini Balathor
+53369	Balathor Jr
 53501	Klec Ohnivého fénixe
 53502	Truhla Sobího mládìte
 53503	Klec ledového Fénixe
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Klec Mrazivého Rufuse
 53522	Sheldonovo hnízdo
 53523	Králièí klec
-53526	NoNAme
+53526	Pepita Can
 53527	Klec Hlavy dınì
 53528	Skøíò na košata
 53529	Truhla Snìhové vloèky
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Truhla ledového krampuse
 53636	Truhla uhelného krampuse
 53637	Truhla malého krampuse
+53638	Skøíòka Èerného bıka
+53639	Skøíòka hnìdého bıka
+53640	Skøíòka malého bıka
+53641	Truhla Pinchera
+53642	Truhla Snappera
+53643	Pekelná truhla Lilith
+53644	Pekelná truhla Heleny
+53645	Mini pekelná truhla
+53646	Zlatı draèí oltáø
+53647	Støíbrnı draèí oltáø
+53648	Malı draèí oltáø
 54041	NoNAme
 54042	NoNAme
 54043	Truhla uèedníka I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Zmrzlı klíè
 70411	Truh. bíl. draka (lehká)
 70412	Truh. bíl. draka (teká)
+70413	Balathorova ledová bedna
+70414	Balathorova led. bedna+
 70422	Hadí klíè
 70423	Ohnivı hadí støep
 70424	Ledovı hadí støep
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Klíè Prokletí+
 70450	Pergamen Metinu Spásy
 70451	Balíèek Plamenù smrti
-70604	Truhla MS ve fotbale
+70500	Ozvìna Síly+0
+70501	Ozvìna Síly+1
+70502	Ozvìna Síly+2
+70503	Ozvìna Síly+3
+70504	Ozvìna Síly+4
+70505	Ozvìna Talentu+0
+70506	Ozvìna Talentu+1
+70507	Ozvìna Talentu+2
+70508	Ozvìna Talentu+3
+70509	Ozvìna Talentu+4
+70510	Esence Síly+0
+70511	Esence Síly+1
+70512	Esence Síly+2
+70513	Esence Síly+3
+70514	Esence Síly+4
+70515	Esence Talentu+0
+70516	Esence Talentu+1
+70517	Esence Talentu+2
+70518	Esence Talentu+3
+70519	Esence Talentu+4
+70602	Vylepšovaè Odmìny
+70603	Zesilovaè Ozvìny
+70604	Truhla turnaje
 70605	Truhla s lístky
-70606	Cena MS ve fotbale
-70607	Emblém MS ve fotbale
+70606	Cena turnaje
+70607	Emblém turnaje
 70608	Gaya brašna
 70609	Lístek zemì
 70610	Lístek podpory
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Encyklopedie Merkuru (V)
 71217	Encyklopedie Venuše (M)
 71218	Encyklopedie Venuše (V)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Kyzaghanùv kùò
 71221	Kašmírovı mìšec
 71222	Drak Nirvány
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Temnı kùò legie
 71277	Halia
 71278	Aquilos
+71280	Zlovìstnı pekelnı oø
+71281	Pøíšernı pekelnı oø
+71287	Balathorovo led. køídlo
+71288	Balathorovo noèní køídlo
 72001	Prsten zkušeností (10h)
 72002	Prsten zkušeností (30m)
 72003	Prsten zkušeností (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Pøenosná Nefritová íla
 72355	Osobní prémiovı obchod
 72356	Osobní prémiovı obchod
+72359	Propustka (Balathor)
 72360	Pergamen vızvy
 72701	Vìtrné boty
 72702	Vìtrné boty+ (obchod.)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Sníení vytrv. (30 %)
 72755	Licence na rozšíøení
 72756	Pas koøisti
-72757	Lístek proti bombám
-72758	Reset Primordis
 72760	Kniha berserkera
 72761	Antimagická kniha
 72762	Kniha rychlosti
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Kováøská runa mazlíkù
 79658	4* Kováøská runa mazlíkù
 79659	5* Kováøská runa mazlíkù
+79666	Hledání pøíšer
+79667	Hledání NPC
+79668	Teleportaèní kámen+
+79669	Teleportaèní kámen
+79670	Èervenı les, M1
+79671	Èervenı les, M2
+79672	Èervenı les, M3
+79673	Èervenı les, M4
+79674	Èervenı les, M5
+79675	Hadí pole, M1
+79676	Hadí pole, M2
+79677	Hadí pole, M3
+79678	Hadí pole, M4
+79679	Hadí pole, M5
+79680	Zemì obrù, M1
+79681	Zemì obrù, M2
+79682	Zemì obrù, M3
+79683	Zemì obrù, M4
+79684	Zemì obrù, M5
+79685	Pavouèí bludištì, M1
+79686	Pavouèí bludištì, M2
+79687	Pavouèí bludištì, M3
+79688	Pavouèí bludištì, M4
+79689	Pavouèí bludištì, M5
+79690	Pavouèí bludištì 2, M1
+79691	Pavouèí bludištì 2, M2
+79692	Pavouèí bludištì 2, M3
+79693	Pavouèí bludištì 2, M4
+79694	Pavouèí bludištì 2, M5
+79695	Jeskynì vyhnanství, M1
+79696	Jeskynì vyhnanství, M2
+79697	Jeskynì vyhnanství, M3
+79698	Jeskynì vyhnanství, M4
+79699	Jeskynì vyhnanství, M5
+79700	Jeskynì vyhnanství 2, M1
+79701	Jeskynì vyhnanství 2, M2
+79702	Jeskynì vyhnanství 2, M3
+79703	Jeskynì vyhnanství 2, M4
+79704	Jeskynì vyhnanství 2, M5
+79705	Hasun Dong, M1
+79706	Hasun Dong, M2
+79707	Hasun Dong, M3
+79708	Hasun Dong, M4
+79709	Hasun Dong, M5
+79710	Jungsun Dong, M1
+79711	Jungsun Dong, M2
+79712	Jungsun Dong, M3
+79713	Jungsun Dong, M4
+79714	Jungsun Dong, M5
+79715	Sangsun Dong, M1
+79716	Sangsun Dong, M2
+79717	Sangsun Dong, M3
+79718	Sangsun Dong, M4
+79719	Sangsun Dong, M5
+79725	Pavouèí bludištì 3, M1
+79726	Pavouèí bludištì 3, M2
+79727	Pavouèí bludištì 3, M3
+79728	Pavouèí bludištì 3, M4
+79729	Pavouèí bludištì 3, M5
+79730	Chrám Ochao, M1
+79731	Chrám Ochao, M2
+79732	Chrám Ochao, M3
+79733	Chrám Ochao, M4
+79734	Chrám Ochao, M5
+79735	ÈT: Jeskynì vyhn., M1
+79736	ÈT: Jeskynì vyhn., M2
+79737	ÈT: Jeskynì vyhn., M3
+79738	ÈT: Jeskynì vyhn., M4
+79739	ÈT: Jeskynì vyhn., M5
+79740	BO: Jeskynì vyhn., M1
+79741	BO: Jeskynì vyhn., M2
+79742	BO: Jeskynì vyhn., M3
+79743	BO: Jeskynì vyhn., M4
+79744	BO: Jeskynì vyhn., M5
+79745	Jeskynì Gnollù , M1
+79746	Jeskynì Gnollù , M2
+79747	Jeskynì Gnollù , M3
+79748	Jeskynì Gnollù , M4
+79749	Jeskynì Gnollù , M5
+79750	Jeskynì Gnollù 2, M1
+79751	Jeskynì Gnollù 2, M2
+79752	Jeskynì Gnollù 2, M3
+79753	Jeskynì Gnollù 2, M4
+79754	Jeskynì Gnollù 2, M5
+79755	Jeskynì Gnollù 3, M1
+79756	Jeskynì Gnollù 3, M2
+79757	Jeskynì Gnollù 3, M3
+79758	Jeskynì Gnollù 3, M4
+79759	Jeskynì Gnollù 3, M5
+79760	Hadí chrám, M1
+79761	Hadí chrám, M2
+79762	Hadí chrám, M3
+79763	Hadí chrám, M4
+79764	Hadí chrám, M5
+79765	Útoèištì Northwind, M1
+79766	Útoèištì Northwind, M2
+79767	Útoèištì Northwind, M3
+79768	Útoèištì Northwind, M4
+79769	Útoèištì Northwind, M5
+79770	Svah Northwind, M1
+79771	Svah Northwind, M2
+79772	Svah Northwind, M3
+79773	Svah Northwind, M4
+79774	Svah Northwind, M5
+79800	Mapa: Èervenı les
+79801	Mapa: Hadí pole
+79802	Mapa: Zemì obrù
+79803	Mapa: Pavouèí bludištì
+79804	Mapa: Pavouèí bludištì 2
+79805	Mapa: Jeskynì vyhnanství
+79806	Mapa: Jeskynì vyhn. 2
+79807	Mapa: Hasun Dong
+79808	Mapa: Jungsun Dong
+79809	Mapa: Sangsun Dong
+79811	Mapa: Pavouèí bludištì 3
+79812	Mapa: Chrám Ochao
+79813	Mapa: ÈT: Jeskynì vyhn.
+79814	Mapa: BO: Jeskynì vyhn.
+79815	Mapa: Jeskynì Gnollù
+79816	Mapa: Jeskynì Gnollù 2
+79817	Mapa: Jeskynì Gnollù 3
+79818	Mapa: Hadí chrám
+79819	Mapa: Útoèištì Northwind
+79820	Mapa: Svah Northwind
 80003	Prut støíbra(50.000Yang)
 80004	Prut støíbra(100000Yang)
 80005	Prut zlata (500.000Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Truhla Invaze Sung Ma
 83073	Tr. Karty pøíšery Yohary
 83074	Plat. tr. K. pøí. Yohary
-83075	Truhla Hoøkıch bobulí
-83076	Truhla Zlatıch bobulí
 83077	Truhla draèího boha
+83078	Pokladnice Sung Ma
+83082	Truhla Sung Ma
 83100	Truhla odmìny Seungryong
 83101	Truhla odmìny Yongbi
 83102	Truh. odmìny Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Truhla Destruction
 83125	Truhla Destruction
 83126	Truhla Destruction
+83130	Pekelná bedna volby+
+83131	Rohatá bedna volby+
+83132	Bedna volby Wuk. róby+
+83133	Bedna volby Wuk. koruny+
+83134	Truhla volby Cursebr.+
+83135	Bedna volby Wuk. róby
+83136	Bedna volby Wuk. koruny
+83137	Truhla volby spoleèníka+
+83138	Bouølivá bedna volby+
+83139	Truhla volby knihy sch.
 85001	Šerpa lorda (obyèejná)
 85002	Šerpa lorda (jemná)
 85003	Šerpa lorda (noblesní)

@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Enigma-Tempel (erstel.)
 4034	Enigma-Tempel (wiederh.)
 4035	Enigma-Portal
-4101	Endzeit-Wächter Zi
-4102	Endzeit-Wächter Chou
-4103	Endzeit-Wächter Yin
-4104	Endzeit-Wächterin Mao
-4105	Endzeit-Wächter Chen
-4106	Endzeit-Wächterin Si
-4107	Endzeit-Wächter Wu
-4108	Endzeit-Wächter Wei
-4109	Endzeit-Wächter Shen
-4110	Endzeit-Wächter Yu
-4111	Endzeit-Wächter Xu
-4112	Endzeit-Wächter Hai
-4121	Endzeit-Wächter Zi
-4122	Endzeit-Wächter Chou
-4123	Endzeit-Wächter Yin
-4124	Endzeit-Wächterin Mao
-4125	Endzeit-Wächter Chen
-4126	Endzeit-Wächterin Si
-4127	Endzeit-Wächter Wu
-4128	Endzeit-Wächter Wei
-4129	Endzeit-Wächter Shen
-4130	Endzeit-Wächter Yu
-4131	Endzeit-Wächter Xu
-4132	Endzeit-Wächter Hai
-4141	Metin des Untergangs
-4142	Metin der Endzeit
-4143	Metin der Verdammnis
-4144	Metin der Apokalyse
-4145	Endzeit-Henkog
-4146	Arkaner Endzeit-Henkog
-4147	Endzeit-Kappa
-4148	Endzeit-Tiefsee-Kappa
-4149	Endzeit-Chuong
-4150	Arkaner Endzeit-Chuong
-4151	Endzeit-Magier
-4152	Arkaner Endzeit-Magier
 4153	Asmodeus
 4154	Bote der Erde
 4155	Bote der Erde
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Drachenportal
 6514	Zum Drachenkönig
 6515	Ausgang
-6516	Primordis-Wächter
-6517	Goldenes Portal
-6518	Goldener Monolith
-6519	Goldener Monolith
-6520	Goldene Palme
-6521	Karawanenhändler
-6522	Raptor
-6523	Rhino
-6524	Dilo
-6525	Junger Tyranno
-6526	Kleiner Goldirex
-6527	Mächtiger Goldirex
-6528	Erhabener Goldirex
-6529	Primordis-Statue
-6530	Sprengturm
-6531	Großer Tyranno
-6532	Uralter Tyranno
 6686	Jin bing
 6687	Soldat Ki
 6688	Soldat Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Nordwind-Golem
 6894	Bigfoot
 6895	Nordwind-Kriegshäuptling
+6896	Balathor
+6897	Balathor
+6898	Geisterhafter Krieger
+6899	Geisterhafter Schütze
+6900	Geisterhaftes Echo
 7001	Affensoldat
 7002	Affenreiter
 7003	Gimu Affensoldat
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Gildenschlacht-Zone (S)
 20489	Gildenschlacht-Zone (N)
 20490	Gildenhändler
+20491	Verfluchte Steintafel
+20492	Balathors Schatz
+20493	Hwacha
+20494	Massive Eiswand
+20495	Gefrorenes Drachenei
+20496	Gefrorenes Drachenei
+20497	Feuriges Drachenei
+20498	Uralter Eiskristall
+20499	Hwacha (verw.)
 20500	Drachenei
 20501	Gayatruhe
 20502	Yutnori-Tisch
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gayahandel
 20505	Yut-Stäbe
 20506	Schnapp den König-Tisch
+20507	Ewiger Eiskristall
 20510	ZR: Geist eines Sura
 20511	ZR: Schlund des Am-heh
 20512	ZR: Grabstein d. Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Schnee-Krampus
 34189	Kohlen-Krampus
 34190	Kleiner Krampus
+34191	Schwarzer Stier
+34192	Brauner Stier
+34193	Zahmer Stier
+34194	Kneifi
+34195	Zwicki
+34197	Lilith
+34198	Helena
+34199	Mini-Lilith
+34200	Goldener Long
+34201	Silberner Long
+34202	Kleiner Long
+34203	Kleiner Balathor
+34204	Balathor Jr.
+36000	Finsteres Höllenross
+36001	Grausames Höllenross
+36005	Balathors Eisschwinge
+36006	Balathors Nachtschwinge
 40003	Turbo-Surfboard
+40004	Wukongs Sturm
+40005	Wukongs Donner
 60000	Gildenverwalter
 60001	Gildenverwalter
 60002	Gildenverwalter

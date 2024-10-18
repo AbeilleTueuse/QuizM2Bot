@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Templo Enigma (crear)
 4034	Templo Enigma (repetir)
 4035	Portal Enigma
-4101	Guardián Zi apocalíptico
-4102	Guardián Chou apocalíp.
-4103	Guardián Yin apocalíp.
-4104	Guardiana Mao apocalíp.
-4105	Guardián Chen apocalíp.
-4106	Guardiana Si apocalíp.
-4107	Guardián Wu apocalíptico
-4108	Guardián Wei apocalíp.
-4109	Guardián Shen apocalíp.
-4110	Guardián Yu apocalíptico
-4111	Guardián Xu apocalíptico
-4112	Guardián Hai apocalíp.
-4121	Guardián Zi apocalíptico
-4122	Guardián Chou apocalíp.
-4123	Guardián Yin apocalíp.
-4124	Guardiana Mao apocalíp.
-4125	Guardián Chen apocalíp.
-4126	Guardiana Si apocalíp.
-4127	Guardián Wu apocalíptico
-4128	Guardián Wei apocalíp.
-4129	Guardián Shen apocalíp.
-4130	Guardián Yu apocalíptico
-4131	Guardián Xu apocalíptico
-4132	Guardián Hai apocalíp.
-4141	Metin del hundimiento
-4142	Metin del final
-4143	Metin de la condena
-4144	Metin del apocalipsis
-4145	Verdogro apocalíptico
-4146	Verdogro apocalíp. arc.
-4147	Kappa apocalíptico
-4148	Kappa abisal apocalíp.
-4149	Chuong apocalíptico
-4150	Chuong apocalíp. arcano
-4151	Mago apocalíptico
-4152	Chuong apocalíp. arcano
 4153	Asmodeus
 4154	Mensajero de la tierra
 4155	Mensajero de la tierra
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Portal dragontino
 6514	Hacia el Rey dragón
 6515	Salida
-6516	Guardia de Primordis
-6517	Portal dorado
-6518	Monolito dorado
-6519	Monolito dorado
-6520	Palma dorada
-6521	Mercader ambulante
-6522	Raptor
-6523	Rino
-6524	Dilo
-6525	Tirano joven
-6526	Rex dorado pequeño
-6527	Rex dorado fuerte
-6528	Rex dorado superior
-6529	Estatua de Primordis
-6530	Polvorín
-6531	Tirano grande
-6532	Tirano ancestral
 6686	Jin Bing
 6687	Soldado Ki
 6688	Soldado Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Gólem de tramontana
 6894	Sasquatch
 6895	Adalid de tramontana
+6896	Balathor
+6897	Balathor
+6898	Guerrero espectral
+6899	Arquero espectral
+6900	Eco espectral
 7001	Soldado Mono
 7002	Jinete Mono
 7003	Soldado Mono Gimu
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Batalla Gremial: Zona S
 20489	Batalla Gremial: Zona N
 20490	Mercader gremial
+20491	Losa maldita
+20492	Tesoro de Balathor
+20493	Hwacha
+20494	Muro helado inmenso
+20495	Huevo dragón helado
+20496	Huevo dragón helado
+20497	Huevo dragón ardiente
+20498	Cristal hielo ancestral
+20499	Hwacha (polim.)
 20500	Huevo de dragón
 20501	Baúl de Gaya
 20502	Mesa de Iutnori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Mercado de Gaya
 20505	Palos iut
 20506	Mesa de Atrapa al rey
+20507	Cristal de hielo eterno
 20510	ET: Espíritu de un Sura
 20511	ET: Abismo de Am-heh
 20512	ET: Lápida de Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Krampus de las nieves
 34189	Krampus del carbón
 34190	Krampus pequeño
+34191	Toro negro
+34192	Toro marrón
+34193	Toro manso
+34194	Neifi
+34195	Swiki
+34197	Lilith
+34198	Helena
+34199	Mini-Lilith
+34200	Long dorado
+34201	Long plateado
+34202	Long pequeño
+34203	Minibalathor
+34204	Pequeño Balathor
+36000	Corcel infernal tenebr.
+36001	Corcel infernal terrible
+36005	Ala helada de Balathor
+36006	Ala nocturna de Balathor
 40003	Turbotabla de surf
+40004	Tormenta de Wukong
+40005	Trueno de Wukong
 60000	Administrador de gremio
 60001	Administrador de gremio
 60002	Administrador de gremio

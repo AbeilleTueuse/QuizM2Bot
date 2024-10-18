@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Temple Énigma (1re)
 4034	Temple Énigma (répét.)
 4035	Portail énigmatique
-4101	Gardien Zi funeste
-4102	Gardien Chou funeste
-4103	Gardien Yin funeste
-4104	Gardien Mao funeste
-4105	Gardien Chen funeste
-4106	Gardien Si funeste
-4107	Gardien Wu funeste
-4108	Gardien Wei funeste
-4109	Gardien Shen funeste
-4110	Gardien Yu funeste
-4111	Gardien Xu funeste
-4112	Gardien Hai funeste
-4121	Gardien Zi funeste
-4122	Gardien Chou funeste
-4123	Gardien Yin funeste
-4124	Gardien Mao funeste
-4125	Gardien Chen funeste
-4126	Gardien Si funeste
-4127	Gardien Wu funeste
-4128	Gardien Wei funeste
-4129	Gardien Shen funeste
-4130	Gardien Yu funeste
-4131	Gardien Xu funeste
-4132	Gardien Hai funeste
-4141	Metin du déclin
-4142	Metin de la solitude
-4143	Metin de la damnation
-4144	Metin de l'apocalypse
-4145	Bourrogre funeste
-4146	Bourrogre funeste secret
-4147	Kappa funeste
-4148	Kappa abyssal funeste
-4149	Chuong funeste
-4150	Chuong funeste secret
-4151	Mage funeste
-4152	Mage funeste secret
 4153	Asmodeus
 4154	Messager de la Terre
 4155	Messager de la Terre
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Portail dragon
 6514	Au roi dragon
 6515	Sortie
-6516	Gardien de Primordis
-6517	Portail doré
-6518	Monolithe doré
-6519	Monolithe doré
-6520	Palmier doré
-6521	Marchand caravanier
-6522	Rapace
-6523	Rhino
-6524	Dilo
-6525	Jeune Tyranno
-6526	Petit Dorixex
-6527	Puissant Dorixex
-6528	Dorixex majestueux
-6529	Statue de Primordis
-6530	Tour explosive
-6531	Grand Tyranno
-6532	Tyranno ancestral
 6686	Jin bing
 6687	Soldat Ki
 6688	Soldat Ki
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem d'Aquilon
 6894	Bigfoot
 6895	Chef guerrier d'Aquilon
+6896	Balathor
+6897	Balathor
+6898	Guerrier fantomatique
+6899	Archer fantomatique
+6900	Écho fantomatique
 7001	Singe Soldat
 7002	Singe monté
 7003	Singe gimu Soldat
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Zone de bataille (G)(S)
 20489	Zone de bataille (G)(N)
 20490	Marchand (G)
+20491	Tablette maudite
+20492	Trésor de Balathor
+20493	Hwacha
+20494	Rempart glacé
+20495	Œuf de dragon givré
+20496	Œuf de dragon givré
+20497	Œuf de dragon ardent
+20498	Cristal de glace ancien
+20499	Hwacha (util.)
 20500	Œuf de dragon
 20501	Coffre de Gayas
 20502	Table de Yutnori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Bourse aux Gayas
 20505	Bâtons de Yutnori
 20506	Table de Chasse au roi
+20507	Cristal de glace éternel
 20510	ST : esprit d'un Sura
 20511	ST : gorges d'Am-Heh
 20512	ST : tombe de Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Krampus des neiges
 34189	Krampus du charbon
 34190	Petit krampus
+34191	Taureau noir
+34192	Taureau brun
+34193	Taureau docile
+34194	Pincemoi
+34195	Pincemi
+34197	Lilith
+34198	Helena
+34199	Lilith miniature
+34200	Loong doré
+34201	Loong argenté
+34202	Petit Loong
+34203	Petit Balathor
+34204	Balathor Junior
+36000	Paleffroi lugubre
+36001	Paleffroi cruel
+36005	Ailes gelées de Balathor
+36006	Nocturnailes de Balathor
 40003	Turboplanche de surf
+40004	Tempête de Wukong
+40005	Tonnerre de Wukong
 60000	Chef de guilde
 60001	Chef de guilde
 60002	Chef de guilde

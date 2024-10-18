@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Templo Enigma (criar)
 4034	Templo Enigma (repetir)
 4035	Portal do Enigma
-4101	Guardião Zi Apocalipse
-4102	Guardião Chou Apocalipse
-4103	Guardião Yin Apocalipse
-4104	Guardião Mao Apocalipse
-4105	Guardião Chen Apocalipse
-4106	Guardião Si Apocalipse
-4107	Guardião Wu Apocalipse
-4108	Guardião Wei Apocalipse
-4109	Guardião Shen Apocalipse
-4110	Guardião You Apocalipse
-4111	Guardião Xu Apocalipse
-4112	Guardião Hai Apocalipse
-4121	Guardião Zi Apocalipse
-4122	Guardião Chou Apocalipse
-4123	Guardião Yin Apocalipse
-4124	Guardião Mao Apocalipse
-4125	Guardião Chen Apocalipse
-4126	Guardião Si Apocalipse
-4127	Guardião Wu Apocalipse
-4128	Guardião Wei Apocalipse
-4129	Guardião Shen Apocalipse
-4130	Guardião You Apocalipse
-4131	Guardião Xu Apocalipse
-4132	Guardião Hai Apocalipse
-4141	Metin do Armagedão
-4142	Metin do Juízo Final
-4143	Metin do Cataclismo
-4144	Metin do Apocalipse
-4145	Henkog do Apocalipse
-4146	Henkog Arcano Apocalipse
-4147	Kappa do Apocalipse
-4148	Kappa Prof. Apocalipse
-4149	Chuong do Apocalipse
-4150	Chuong Arcano Apocalipse
-4151	Bruxo do Apocalipse
-4152	Bruxo Arcano Apocalipse
 4153	Asmodeus
 4154	Emissário da Terra
 4155	Emissário da Terra
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Portal do Dragão
 6514	Para o Rei Dragão
 6515	Sair
-6516	Guardião dos Primórdios
-6517	Portal Dourado
-6518	Monólito Dourado
-6519	Monólito Dourado
-6520	Palmeira Dourada
-6521	Comerciante da Caravana
-6522	Raptor
-6523	Rhinosaurus
-6524	Dilophosaurus
-6525	Rex Jovem
-6526	Goldirex Pequeno
-6527	Goldirex Poderoso
-6528	Goldirex Nobre
-6529	Estátua dos Primórdios
-6530	Torre de Bombas
-6531	Rex Adulto
-6532	Rex Antigo
 6686	Jin Bing
 6687	Soldado Ki
 6688	Soldado Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem Vento do Norte
 6894	Pé-Grande
 6895	Chefe Guerra Vento Norte
+6896	Balathor
+6897	Balathor
+6898	Guerreiro Espectral
+6899	Arqueiro Espectral
+6900	Eco Espectral
 7001	Macaco Soldado
 7002	Macaco Cavaleiro
 7003	Macaco Soldado Gimu
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Zona Batalha Guilds (S)
 20489	Zona Batalha Guilds (N)
 20490	Mercador de Guild
+20491	Tabuleta Pedra Maldita
+20492	Tesouro de Balathor
+20493	Hwacha
+20494	Muro de Gelo Sólido
+20495	Ovo de Dragão Congelado
+20496	Ovo de Dragão Congelado
+20497	Ovo de Dragão Ardente
+20498	Cristal de Gelo Antigo
+20499	Hwacha (Transformação)
 20500	Ovo de Dragão
 20501	Cofre de Gaya
 20502	Tabuleiro de Yut Nori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Mercado de Gaya
 20505	Paus de Yut
 20506	Apanha o Rei - Tabuleiro
+20507	Cristal de Gelo Eterno
 20510	FT: Fantasma de um Sura
 20511	FT: Desfiladeiro Am-heh
 20512	FT: Lápide de Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Krampus da Neve
 34189	Krampus do Carvão
 34190	Krampus Pequeno
+34191	Touro Preto
+34192	Touro Castanho
+34193	Touro Domesticado
+34194	Beliscador
+34195	Pinças
+34197	Lilith
+34198	Helena
+34199	Mini Lilith
+34200	Loong Dourado
+34201	Loong Prateado
+34202	Loong Pequeno
+34203	Mini Balathor
+34204	Balathor Júnior
+36000	Corcel Inferno Sinistro
+36001	Corcel Inferno Horrível
+36005	Asa do Gelo de Balathor
+36006	Asa da Noite de Balathor
 40003	Turboprancha de Surf
+40004	Tempestade de Wukong
+40005	Trovão de Wukong
 60000	Gestor da Guild
 60001	Gestor da Guild
 60002	Gestor da Guild

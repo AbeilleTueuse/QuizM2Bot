@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Coif Dragon Astral +13
 12874	Coif Dragon Astral +14
 12875	Coif Dragon Astral +15
+12880	Glugã ªarpe+0
+12881	Glugã ªarpe+1
+12882	Glugã ªarpe+2
+12883	Glugã ªarpe+3
+12884	Glugã ªarpe+4
+12885	Glugã ªarpe+5
+12886	Glugã ªarpe+6
+12887	Glugã ªarpe+7
+12888	Glugã ªarpe+8
+12889	Glugã ªarpe+9
+12890	Glugã ªarpe+10
+12891	Glugã ªarpe+11
+12892	Glugã ªarpe+12
+12893	Glugã ªarpe+13
+12894	Glugã ªarpe+14
+12895	Glugã ªarpe+15
 13000	Scut de luptã+0
 13001	Scut de luptã+1
 13002	Scut de luptã+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Bandaj
 27125	Licoare de Luptã
 27126	Licoare Putere Dragon
+27127	Sânge Îngheþat Balathor
 27128	Secretul Yut Nori
 27201	Licoare Rosie (S)
 27202	Licoare Rosie (M)
@@ -6033,7 +6050,7 @@ VNUM	LOCALE_NAME
 27883	Peºte Auriu Prãjit
 27884	Cap de ªarpe Prãjit
 27885	Crap Rãpitor Prãjit
-27886	Rege Crab Roºu Mort
+27886	Rege Crab Roºu prãjit
 27887	Yabby Prãjit
 27888	Peºte Solar Prãjit
 27889	Caras Prãjit
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Voucher Coif Vampir
 30343	Voucher Coif Vampir+
 30344	Chemarea Altarelor
+30345	Sãgeatã de Foc
 30346	Tichet Bãtãlia Roialã
 30500	Cutit Gravat Rubin
 30501	Clema de Aur
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Materie Neagra
 31082	Inel Magma
 31083	Inelul lui Samael
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Apã Durã
 31086	Spori de Ciuperci
-31087	NoNAme
-31088	NoNAme
+31087	Flacãrã Spiritul Focului
+31088	Licoare de Foc
 31089	NoNAme
-31090	NoNAme
+31090	Inima lui Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Piele Monstru de Gheaþã
 31093	Piatra Necunoscuta
 31094	Ciob
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Piatrã Misterioasã
 31262	Lustru ªarpe
 31263	Tocilã Nordicã
+31264	Tendonul lui Balathor
+31265	Ciocan Îngheþat
+31266	Aripa lui Balathor
+31267	Cornul lui Balathor
+31268	Ochiul lui Balathor
+31269	Solzii lui Balathor
 31270	Esenþã Talisman
 33001	Insignã Zi
 33002	Insignã Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Clopot Ancestral+
 40190	Evantai Ancestral+
 40191	Gheare Ancestrale+
+40192	Sabie Blestematã+
+40193	Pumnal Blestemat+
+40194	Arc Blestemat+
+40195	Sabie Mare Blestematã+
+40196	Clopot Blestemat+
+40197	Evantai Blestemat+
+40198	Gheare Blestemate+
 41000	Loc Accesoriu Armã
 41001	Costum de Iepure (maro)
 41002	Costum de Iepuras (maro)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Costum Fotbal HUN+ (f)
 41658	ROU World Cup Kit (m)
 41659	ROU World Cup Kit (f)
-41660	ROU World Cup Kit+ (m)
-41661	ROU World Cup Kit+ (f)
+41660	Costum Fotbal ROU+ (m)
+41661	Costum Fotbal ROU+ (f)
 41662	POL World Cup Kit (m)
 41663	POL World Cup Kit (f)
 41664	Costum Fotbal POL+ (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Armurã Triumfalã+ (m)
 41918	Armurã Protectoare+ (f)
 41919	Armurã Triumfalã+ (f)
+41920	Torero Roºu
+41921	Torero Albastru
+41922	Torera Roºu
+41923	Torera Albastru
+41924	Torero Roºu+
+41925	Torero Albastru+
+41926	Torera Roºu+
+41927	Torera Albastru+
+41932	Lord Atlantida+
+41933	Rãzboinic Atlantida+ (m)
+41934	Doamnã Atlantida+
+41935	Rãzboinic Atlantida+ (f)
+41936	Incubus de Foc+
+41937	Incubus Întunecat+
+41938	Succubus de Foc+
+41939	Succubus Întunecat+
+41940	Robã Soare Wukong+ (m)
+41941	Robã Lunã Wukong+ (m)
+41942	Robã Soare Wukong+ (f)
+41943	Robã Lunã Wukong+ (f)
+41952	Robã Soare Wukong (m)
+41953	Robã Lunã Wukong (m)
+41954	Robã Soare Wukong (f)
+41955	Robã Lunã Wukong (f)
 45001	Urechi de Iepuras (maro)
 45002	Urechi de Iepure (maro)
 45003	Bandana (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Coroanã Triumfalã+ (m)
 45658	Coroanã Protectoare+ (f)
 45659	Coroanã Triumfalã+ (f)
+45660	Montera Roºu (m)
+45661	Montera Albastru (m)
+45662	Montera Roºu (f)
+45663	Montera Albastru (f)
+45664	Montera Roºu+ (m)
+45665	Montera Albastru+ (m)
+45666	Montera Roºu+ (f)
+45667	Montera Albastru+ (f)
+45672	Coroanã Atlantida+ (m)
+45673	Coif Atlantida+ (m)
+45674	Coroanã Atlantida+ (f)
+45675	Coif Atlantida+ (f)
+45676	Coarne de Foc+ (m)
+45677	Coarne Nocturne+ (m)
+45678	Coarne de Foc+ (f)
+45679	Coarne Nocturne+ (f)
+45680	Coroanã Soare Wukong+(m)
+45681	Coroanã Lunã Wukong+ (m)
+45682	Coroanã Soare Wukong+(f)
+45683	Coroanã Lunã Wukong+ (f)
+45696	Coroanã Soare Wukong (m)
+45697	Coroanã Lunã Wukong (m)
+45698	Coroanã Soare Wukong (f)
+45699	Coroanã Lunã Wukong (f)
 49001	Costum Aura Comun
 49002	Costum Aura Simplu
 49003	Costum Aura Nobil
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Cufãr Master II
 50195	Cufãr Master III
 50196	Cufãr Mare Maestru
-50197	NoNAme
+50197	Pachet Necunoscut
 50198	NoNAme
 50199	NoNAme
 50200	Mãnunchi
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Cufãr Cãrti Respingere
 50324	Cufãr Cãrþi Ajutor
 50325	Cartea Preciziei
+50326	Carte Abilitãþi Balathor
 50330	Cartea Misiunii (Lord 1)
 50331	Cartea Misiunii (Lord 2)
 50332	Cartea Misiunii (Lord 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Rouã verde
 50825	Rouã albastrã
 50826	Rouã albã
+50827	Rouã Neagrã
 50830	Elixir Putere Foc
 50831	Elixir Putere Gheaþã
 50832	Elixir Putere Tunet
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Cufãr Profet Roºu
 50939	Cufãr Profet Albastru
 50940	Cufãr Profet Roz
+50941	Cufãr Criptã
 51001	Fragment de Energie
 51002	Cristal de Energie
 51501	Cor Draconis (Brut)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Moa Curajos
 52120	Moa Curajos
 52202	Placã de Surf Turbo
+52204	Furtunã Wukong
+52205	Tunet Wukong
 52701	Autorizaþie pt Leu
 52702	Autorizaþie pt Tigru
 52703	Autorizaþie pt Mistreþ
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Autorizaþie pt Ren (f)
 52707	Certificat Dragor
 52708	Certificat Moa
+52710	Marmurã Transform Hwacha
 53001	Phoenix de Foc
 53002	Ren Tânãr
 53003	Phoenix de Gheaþã
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Krampus Zãpadã
 53354	Krampus Cãrbune
 53355	Krampus Mic
+53356	Taur Negru
+53357	Taur Maro
+53358	Taur Îmblânzit
+53359	Pincher
+53360	Snapper
+53362	Lilith
+53363	Helena
+53364	Mica Lilith
+53365	Loong Auriu
+53366	Loong Argintiu
+53367	Micul Loong
+53368	Mini Balathor
+53369	Balathor Jr
 53501	Cuºcã Phoenix de Foc
 53502	Cufãr Ren Tânãr
 53503	Cuºcã Phoenix de Gheaþã
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Cuºcã Rufus de Gheaþã
 53522	Ascunzatoare Sheldon
 53523	Cusca de Iepure
-53526	NoNAme
+53526	Pepita Can
 53527	Cusca Cap de Dovleac
 53528	Dulap cu Maturi
 53529	Cufãr Fulg de Nea
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Cufãr Krampus Îngheþat
 53636	Cufãr Krampus Cãrbune
 53637	Cufãr Krampus Mic
+53638	Cutie Taur Negru
+53639	Cutie Taur Maro
+53640	Cutie Taur Mic
+53641	Cutie Crab Pincher
+53642	Cutie Crab Snapper
+53643	Cufãrul lui Lilith
+53644	Cufãrul Helenei
+53645	Mini Cufãr Iad
+53646	Altar Dragon Auriu
+53647	Altar Dragon Argintiu
+53648	Altar Dragon Mic
 54041	NoNAme
 54042	NoNAme
 54043	Cufãr Începãtor I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Cheie Îngheþatã
 70411	Cufãr Dragon Alb (Uºor)
 70412	Cufãr Dragon Alb (Greu)
+70413	Cufãr Îngheþat Balathor
+70414	Cufãr Îngheþat Balathor+
 70422	Cheie ªarpe
 70423	Ciob Cap ªarpe de Foc
 70424	Ciob Cap ªarpe de Gheaþã
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Cheia Condamnaþilor+
 70450	Pergament Metin Salvare
 70451	Mãnunchi Flacãra Morþii
-70604	Cufãr Cupa Mondialã
+70500	Ecoul Puterii+0
+70501	Ecoul Puterii+1
+70502	Ecoul Puterii+2
+70503	Ecoul Puterii+3
+70504	Ecoul Puterii+4
+70505	Ecoul Talentului+0
+70506	Ecoul Talentului+1
+70507	Ecoul Talentului+2
+70508	Ecoul Talentului+3
+70509	Ecoul Talentului+4
+70510	Esenþa Puterii+0
+70511	Esenþa Puterii+1
+70512	Esenþa Puterii+2
+70513	Esenþa Puterii+3
+70514	Esenþa Puterii+4
+70515	Esenþa Talentului+0
+70516	Esenþa Talentului+1
+70517	Esenþa Talentului+2
+70518	Esenþa Talentului+3
+70519	Esenþa Talentului+4
+70602	Îmbunãtãþire Ecou
+70603	Amplificare Ecou
+70604	Cufãr Turneu
 70605	Cufãr Tichet
-70606	Trofeu Cupa Mondialã
-70607	Emblemã Cupa Mondialã
+70606	Trofeu Turneu
+70607	Emblemã Turneu
 70608	Sac Gaya
 70609	Tichet Þarã
 70610	Tichet Susþinere
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Enciclopedie Mercur (L)
 71217	Enciclopedie Venus (S)
 71218	Enciclopedie Venus (L)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Calul lui Kyzaghan
 71221	Mãnunchi de Kaºmir
 71222	Dragon Nirvana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Cal Legionar Întunecat
 71277	Halia
 71278	Aquilos
+71280	Cal Sinistru
+71281	Cal Macabru
+71287	Aripi Îngheþate Balathor
+71288	Aripi Negre Balathor
 72001	Inelul Experienþei (10h)
 72002	Inelul Experienþei (30m)
 72003	Inelul Experienþei (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Filon Beril Portabil
 72355	Magazin Premium Personal
 72356	Magazin Premium Personal
+72359	Permis de Trecere (BLTH)
 72360	Pergament Provocare
 72701	Papuci de Vant
 72702	Papuci de Vant+ (comert)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Reducere Rezist. (30%)
 72755	Licenþã de Extindere
 72756	Permis de Pradã
-72757	Tichet Anti-Bombe
-72758	Reset Primordis
 72760	Carte Berserker
 72761	Carte Anti-Magie
 72762	Carte Grabã
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Catalizator Însoþitor
 79658	4* Catalizator Însoþitor
 79659	5* Catalizator Însoþitor
+79666	Cãutare Monstru
+79667	Cãutare NPC
+79668	Piatrã Teleport+
+79669	Piatrã Teleport
+79670	Pãdurea Roºie, M1
+79671	Pãdurea Roºie, M2
+79672	Pãdurea Roºie, M3
+79673	Pãdurea Roºie, M4
+79674	Pãdurea Roºie, M5
+79675	Valea ªerpilor, M1
+79676	Valea ªerpilor, M2
+79677	Valea ªerpilor, M3
+79678	Valea ªerpilor, M4
+79679	Valea ªerpilor, M5
+79680	Tãrâmul Giganþilor, M1
+79681	Tãrâmul Giganþilor, M2
+79682	Tãrâmul Giganþilor, M3
+79683	Tãrâmul Giganþilor, M4
+79684	Tãrâmul Giganþilor, M5
+79685	Temniþa Pãianjenilor, M1
+79686	Temniþa Pãianjenilor, M2
+79687	Temniþa Pãianjenilor, M3
+79688	Temniþa Pãianjenilor, M4
+79689	Temniþa Pãianjenilor, M5
+79690	Temniþa Pãianjenilor2,M1
+79691	Temniþa Pãianjenilor2,M2
+79692	Temniþa Pãianjenilor2,M3
+79693	Temniþa Pãianjenilor2,M4
+79694	Temniþa Pãianjenilor2,M5
+79695	Grota Exilului , M1
+79696	Grota Exilului , M2
+79697	Grota Exilului , M3
+79698	Grota Exilului , M4
+79699	Grota Exilului , M5
+79700	Grota Exilului 2, M1
+79701	Grota Exilului 2, M2
+79702	Grota Exilului 2, M3
+79703	Grota Exilului 2, M4
+79704	Grota Exilului 2, M5
+79705	Hasun Dong, M1
+79706	Hasun Dong, M2
+79707	Hasun Dong, M3
+79708	Hasun Dong, M4
+79709	Hasun Dong, M5
+79710	Jungsun Dong, M1
+79711	Jungsun Dong, M2
+79712	Jungsun Dong, M3
+79713	Jungsun Dong, M4
+79714	Jungsun Dong, M5
+79715	Sangsun Dong, M1
+79716	Sangsun Dong, M2
+79717	Sangsun Dong, M3
+79718	Sangsun Dong, M4
+79719	Sangsun Dong, M5
+79725	Temniþa Pãianjenilor3,M1
+79726	Temniþa Pãianjenilor3,M2
+79727	Temniþa Pãianjenilor3,M3
+79728	Temniþa Pãianjenilor3,M4
+79729	Temniþa Pãianjenilor3,M5
+79730	Templul Ochao, M1
+79731	Templul Ochao, M2
+79732	Templul Ochao, M3
+79733	Templul Ochao, M4
+79734	Templul Ochao, M5
+79735	TR: Grota Exilului, M1
+79736	TR: Grota Exilului, M2
+79737	TR: Grota Exilului, M3
+79738	TR: Grota Exilului, M4
+79739	TR: Grota Exilului, M5
+79740	RX: Grota Exilului, M1
+79741	RX: Grota Exilului, M2
+79742	RX: Grota Exilului, M3
+79743	RX: Grota Exilului, M4
+79744	RX: Grota Exilului, M5
+79745	Peºterile Gnoll , M1
+79746	Peºterile Gnoll , M2
+79747	Peºterile Gnoll , M3
+79748	Peºterile Gnoll , M4
+79749	Peºterile Gnoll , M5
+79750	Peºterile Gnoll 2, M1
+79751	Peºterile Gnoll 2, M2
+79752	Peºterile Gnoll 2, M3
+79753	Peºterile Gnoll 2, M4
+79754	Peºterile Gnoll 2, M5
+79755	Peºterile Gnoll 3, M1
+79756	Peºterile Gnoll 3, M2
+79757	Peºterile Gnoll 3, M3
+79758	Peºterile Gnoll 3, M4
+79759	Peºterile Gnoll 3, M5
+79760	Templul ªarpelui, M1
+79761	Templul ªarpelui, M2
+79762	Templul ªarpelui, M3
+79763	Templul ªarpelui, M4
+79764	Templul ªarpelui, M5
+79765	Adãpost Nordic, M1
+79766	Adãpost Nordic, M2
+79767	Adãpost Nordic, M3
+79768	Adãpost Nordic, M4
+79769	Adãpost Nordic, M5
+79770	Coasta Nordicã, M1
+79771	Coasta Nordicã, M2
+79772	Coasta Nordicã, M3
+79773	Coasta Nordicã, M4
+79774	Coasta Nordicã, M5
+79800	Hartã: Pãdurea Roºie
+79801	Hartã: Valea Serpilor
+79802	Hartã: Tãrâm Giganþi
+79803	Hartã: Temniþa Pãianjen
+79804	Hartã: Temniþa Pãianjen2
+79805	Hartã: Grota Exilului
+79806	Hartã: Grota Exilului 2
+79807	Hartã: Hasun Dong
+79808	Hartã: Jungsun Dong
+79809	Hartã: Sangsun Dong
+79811	Hartã: Temniþa Pãianjen3
+79812	Hartã: Templul Ochao
+79813	Hartã: TR: Grota Exil
+79814	Hartã: RX: Grota Exil
+79815	Hartã: Peºterile Gnoll
+79816	Hartã: Peºterile Gnoll 2
+79817	Hartã: Peºterile Gnoll 3
+79818	Hartã: Templul ªarpelui
+79819	Hartã: Adãpost Nordic
+79820	Hartã: Coasta Nordicã
 80003	Lingou argint(50.000Yang
 80004	Lingou argint(100.000Y)
 80005	Lingou aur(500.000 Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Cufãr Invazie Sung Ma
 83073	Cutie Yohara Card Monstr
 83074	Cutie Platinã Card Monst
-83075	Cufãr Fructe Amare
-83076	Cufãr Fructe Aurii
 83077	Cufãr Zeul Dragon
+83078	Cufãr Comori Sung Ma
+83082	Cufãr Sung Ma
 83100	Cufãr Recomp. Seungryong
 83101	Cufãr Recomp. Yongbi
 83102	Cufãr Recomp Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Cufãr Distrugere
 83125	Cufãr Distrugere
 83126	Cufãr Distrugere
+83130	Cutie Infernalã+
+83131	Cutie Coarne+
+83132	Cutie Robã Wukong+
+83133	Cutie Coroanã Wukong+
+83134	Cutie Blestematã+
+83135	Cutie Robã Wukong
+83136	Cutie Coroanã Wukong
+83137	Cutie Festivã+
+83138	Cutie Vijelioasã+
+83139	Cutie Carte Abilitãþi
 85001	Esarfa Lord (normala)
 85002	Esarfa Lord (fina)
 85003	Esarfa Lord (nobila)

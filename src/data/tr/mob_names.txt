@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Enigma Tapýnaðý (oluþt.)
 4034	Enigma Tapýn. (tekr.)
 4035	Enigma portalý
-4101	Son devir bekçisi Zi
-4102	Son devir bekçisi Chou
-4103	Son devir bekçisi Yin
-4104	Son devir bekçisi Mao
-4105	Son devir bekçisi Chen
-4106	Son devir bekçisi Si
-4107	Son devir bekçisi Wu
-4108	Son devir bekçisi Wei
-4109	Son devir bekçisi Shen
-4110	Son devir bekçisi Yu
-4111	Son devir bekçisi Xu
-4112	Son devir bekçisi Hai
-4121	Son devir bekçisi Zi
-4122	Son devir bekçisi Chou
-4123	Son devir bekçisi Yin
-4124	Son devir bekçisi Mao
-4125	Son devir bekçisi Chen
-4126	Son devir bekçisi Si
-4127	Son devir bekçisi Wu
-4128	Son devir bekçisi Wei
-4129	Son devir bekçisi Shen
-4130	Son devir bekçisi Yu
-4131	Son devir bekçisi Xu
-4132	Son devir bekçisi Hai
-4141	Çöküþ Metini
-4142	Kimsesizlik Metini
-4143	Lanet kapýsý
-4144	Kýyamet Metini
-4145	Son devir Henkogu
-4146	Son devir Henkogu
-4147	Son devir Kappasý
-4148	Son devir okyanus Kappa
-4149	Son devir Chuongu
-4150	Arkan son devir Chuong
-4151	Son devir büyücüsü
-4152	Arkan son devir büyücüsü
 4153	Asmodeus
 4154	Toprak Elçisi
 4155	Toprak Elçisi
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Ejderha portalý
 6514	Ejderha kralýna git
 6515	Çýkýþ
-6516	Primordis Bekçi
-6517	Altýn Portal
-6518	Altýn Monolit
-6519	Altýn Monolit
-6520	Altýn Palmiye
-6521	Kervan Tüccarý
-6522	Raptor
-6523	Rino
-6524	Dilo
-6525	Genç Tyranno
-6526	Küçük Altýnrex
-6527	Kudretli Altýnrex
-6528	Görkemli Altýnrex
-6529	Primordis Heykeli
-6530	Patlayýcý Kule
-6531	Büyük Tyranno
-6532	Yaþlý Tyranno
 6686	Jin bing
 6687	Er Ki
 6688	Er Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Kuzey Rüzgarý Golemi
 6894	Bigfoot
 6895	Kuzey R. savaþ reisi
+6896	Balathor
+6897	Balathor
+6898	Hayalet savaþçý
+6899	Hayalet okçu
+6900	Hayalet yanký
 7001	Maymun Asker
 7002	Maymun Binici
 7003	Gimu Maymun Asker
@@ -2484,7 +2436,7 @@ VNUM	LOCALE_NAME
 20422	Ejderha Yumurtasý
 20423	Ruh Kristali Simyacýsý
 20424	Yakut Simyacýsý
-20425	Lal Simyacýsý
+20425	Grena Simyacýsý
 20426	Zümrüt Simyacýsý
 20427	Safir Simyacýsý
 20428	Turmalin Simyacýsý
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Lonca Savaþý Bölgesi (G)
 20489	Lonca Savaþý Bölgesi (K)
 20490	Lonca Tüccarý
+20491	Lanetli taþ levha
+20492	Balathor'un hazinesi
+20493	Hwacha
+20494	Devasa buz duvarý
+20495	Donmuþ ejderha yumurtasý
+20496	Donmuþ ejderha yumurtasý
+20497	Ateþli ejderha yumurtasý
+20498	Antik buz kristali
+20499	Hwacha (dönüþmüþ)
 20500	Ejderha Yumurtasý
 20501	Gaya Sandýðý
 20502	Yutnori Masasý
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya Maðazasý
 20505	Yut Çubuklarý
 20506	Kralý yakala masasý
+20507	Ebedi buz kristali
 20510	ZÇ: Sura Ruhu
 20511	ZÇ: Am-heh Yutaðý
 20512	ZÇ: Taramor mezar taþý
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Kar Krampus
 34189	Kömür Krampus
 34190	Küçük Krampus
+34191	Siyah boða
+34192	Kahverengi boða
+34193	Uysal boða
+34194	Çimdik
+34195	Kýskaç
+34197	Lilith
+34198	Helena
+34199	Mini Lilith
+34200	Altýn Long
+34201	Gümüþ Long
+34202	Küçük Long
+34203	Küçük Balathor
+34204	Balathor Junior
+36000	Kara Cehennem Atý
+36001	Zalim Cehennem Atý
+36005	Balathor'un buz kýlýcý
+36006	Balathor'un gece kýlýcý
 40003	Turbo sörf tahtasý
+40004	Wukong'un Fýrtýnasý
+40005	Wukong'un Gürlemesi
 60000	Lonca yöneticisi
 60001	Lonca yöneticisi
 60002	Lonca yöneticisi

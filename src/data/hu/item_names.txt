@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Égi sárkány sisak+13
 12874	Égi sárkány sisak+14
 12875	Égi sárkány sisak+15
+12880	Szerpent csuklya+0
+12881	Szerpent csuklya+1
+12882	Szerpent csuklya+2
+12883	Szerpent csuklya+3
+12884	Szerpent csuklya+4
+12885	Szerpent csuklya+5
+12886	Szerpent csuklya+6
+12887	Szerpent csuklya+7
+12888	Szerpent csuklya+8
+12889	Szerpent csuklya+9
+12890	Szerpent csuklya+10
+12891	Szerpent csuklya+11
+12892	Szerpent csuklya+12
+12893	Szerpent csuklya+13
+12894	Szerpent csuklya+14
+12895	Szerpent csuklya+15
 13000	csatapajzs+0
 13001	csatapajzs+1
 13002	csatapajzs+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Kötés
 27125	Harci ital
 27126	Sárkányerõ bájital
+27127	Balathor fagyos vére
 27128	Yut Nori titka
 27201	Vörös ital (kicsi)
 27202	Vörös ital (közepes)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vámpír sisak utalvány
 30343	Vámpír sisak utalvány+
 30344	Szentélyek hívása
+30345	Tûznyíl
 30346	Battle Royale jegy
 30500	Rubin metszetû kés
 30501	Arany kapocs
@@ -6817,14 +6835,14 @@ VNUM	LOCALE_NAME
 31082	Magmagyûrû
 31083	Samael gyûrûje
 31084	Dicsfény tinktúra
-31085	NoNAme
+31085	Nehézvíz
 31086	Gombaspórák
-31087	NoNAme
-31088	NoNAme
+31087	Lángszellem láng
+31088	Tûz bájital
 31089	NoNAme
-31090	NoNAme
+31090	Nemere szíve
 31091	NoNAme
-31092	NoNAme
+31092	Jégszörny bõr
 31093	Ismeretlen kõ
 31094	Töredék
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Titokzatos kõ
 31262	Szerpent tisztító
 31263	Északszél köszörûkõ
+31264	Balathor ina
+31265	Fagyos kalapács
+31266	Balathor szárnya
+31267	Balathor szarva
+31268	Balathor szeme
+31269	Balathor pikkelye
 31270	Talizmán esszencia
 33001	Zi jelvény
 33002	Chou jelvény
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Õsi harang+
 40190	Õsi legyezõ+
 40191	Õsi karom+
+40192	Átokhozó kard+
+40193	Átokhozó tõr+
+40194	Átokhozó íj+
+40195	Átokhozó nagy kard+
+40196	Átokhozó harang+
+40197	Átokhozó legyezõ+
+40198	Átokhozó karom+
 41000	Fegyver-kinézet helyõrzõ
 41001	Nyúl jelmez (barna)
 41002	Nyuszi jelmez (barna)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	HUN futball mez+ (n)
 41658	ROU VB-mez (f)
 41659	ROU VB-mez (n)
-41660	ROU VB-mez+ (f)
-41661	ROU VB-mez+ (n)
+41660	ROU futball mez+ (f)
+41661	ROU futball mez+ (n)
 41662	POL VB-mez (f)
 41663	POL VB-mez (n)
 41664	POL futball mez+ (f)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Dicsõség páncélja+ (f)
 41918	Jóság páncélja+ (n)
 41919	Dicsõség páncélja+ (n)
+41920	Vörös torreádor
+41921	Kék torreádor
+41922	Vörös torreádornõ
+41923	Kék torreádornõ
+41924	Vörös torreádor+
+41925	Kék torreádor+
+41926	Vörös torreádornõ+
+41927	Kék torreádornõ+
+41932	Atlantisz ura+
+41933	Atlantisz harcosa+ (f)
+41934	Atlantisz hölgye+
+41935	Atlantisz harcosa+ (n)
+41936	Tûz inkubusz+
+41937	Éj inkubusz+
+41938	Tûz szukkubusz+
+41939	Éj szukkubusz+
+41940	Wukong napköpenye+ (f)
+41941	Wukong holdköpenye+ (f)
+41942	Wukong napköpenye+ (n)
+41943	Wukong holdköpenye+ (n)
+41952	Wukong napköpenye (f)
+41953	Wukong holdköpenye (f)
+41954	Wukong napköpenye (n)
+41955	Wukong holdköpenye (n)
 45001	Nyuszifül (barna)
 45002	Nyúlfül (barna)
 45003	Fejkendõ (F)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Dicsõség koronája+ (f)
 45658	Jóság koronája+ (n)
 45659	Dicsõség koronája+ (n)
+45660	Vörös montera (f)
+45661	Kék montera (f)
+45662	Vörös montera (n)
+45663	Kék montera (n)
+45664	Vörös montera+ (f)
+45665	Kék montera+ (f)
+45666	Vörös montera+ (n)
+45667	Kék montera+ (n)
+45672	Atlantisz korona+ (f)
+45673	Atlantisz sisak+ (f)
+45674	Atlantisz korona+ (n)
+45675	Atlantisz sisak+ (n)
+45676	Tûzszarv+ (f)
+45677	Éjszarv+ (f)
+45678	Tûzszarv+ (n)
+45679	Éjszarv+ (n)
+45680	Wukong napkoronája+ (f)
+45681	Wukong holdkoronája+ (f)
+45682	Wukong napkoronája+ (n)
+45683	Wukong holdkoronája+ (n)
+45696	Wukong napkoronája (f)
+45697	Wukong holdkoronája (f)
+45698	Wukong napkoronája (n)
+45699	Wukong holdkoronája (n)
 49001	Közönséges aura öltözék
 49002	Egyszerû aura öltözék
 49003	Nemes aura öltözék
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Mester ládája II
 50195	Mester ládája III
 50196	Nagymester ládája
-50197	NoNAme
+50197	Ismeretlen táska
 50198	NoNAme
 50199	NoNAme
 50200	Csomó
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Elhárító könyv láda
 50324	Fokozó könyv láda
 50325	Pontosság könyve
+50326	Balathor készségkönyve
 50330	Missziókönyv (Lord 1)
 50331	Missziókönyv (Lord 2)
 50332	Missziókönyv (Lord 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Zöld harmat
 50825	Kék harmat
 50826	Fehér harmat
+50827	Fekete harmat
 50830	Lángok ereje elixír
 50831	Fagy ereje elixír
 50832	Mennydörgés ereje elixír
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Vörös látók ládája
 50939	Kék látók ládája
 50940	Rózsaszín látók ládája
+50941	Kripta láda
 51001	Energia-töredék
 51002	Energia-kristály
 51501	Cor Draconis (Nyers)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Szelídített Moa
 52120	Szelídített Moa
 52202	Turbó szörfdeszka
+52204	Wukong vihara
+52205	Wukong mennydörgése
 52701	Oroszlán tanúsítvány
 52702	Tigris tanúsítvány
 52703	Vadkan tanúsítvány
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Rénszarvas tanúsítv. (n)
 52707	Dragor tanúsítvány
 52708	Moa tanúsítvány
+52710	Tûzkocsi átváltozt. gömb
 53001	Tûzfõnix
 53002	Rénszarvasgida
 53003	Jégfõnix
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Hó krampusz
 53354	Szén krampusz
 53355	Kis krampusz
+53356	Fekete bika
+53357	Barna bika
+53358	Szelíd bika
+53359	Olly
+53360	Krabi
+53362	Lilit
+53363	Heléna
+53364	Mini Lilit
+53365	Arany lóng
+53366	Ezüst lóng
+53367	Kicsi lóng
+53368	Mini Balathor
+53369	Kis Balathor
 53501	Tûzfõnix-kalitka
 53502	Rénszarvasgida láda
 53503	Jégfõnix kalitka
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Fagyos Rufusz ketrec
 53522	Sheldon fészke
 53523	Nyúlketrec
-53526	NoNAme
+53526	Pepita Can
 53527	Tökfej-ketrec
 53528	Seprûs szekrény
 53529	Hópehely-hûtõláda
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Fagyos krampusz láda
 53636	Kormos krampusz láda
 53637	Kis krampusz láda
+53638	Fekete bika doboz
+53639	Barna bika doboz
+53640	Kis bika doboz
+53641	Olly rák doboz
+53642	Krabi rák doboz
+53643	Lilit pokolládája
+53644	Heléna pokolládája
+53645	Mini pokolláda
+53646	Arany sárkány szentély
+53647	Ezüst sárkány szentély
+53648	Kicsi sárkány szentély
 54041	NoNAme
 54042	NoNAme
 54043	Gyakornok láda I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Fagyos kulcs
 70411	Fehér sárkány láda (kö.)
 70412	Fehér sárkány láda (ne.)
+70413	Balathor fagyládája
+70414	Balathor fagyládája+
 70422	Szerpent kulcs
 70423	Tûz szerpent töredék
 70424	Jég szerpent töredék
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Kárhozat kulcs+
 70450	Megváltás Metin tekercs
 70451	Halálláng csomag
-70604	Futball világb. láda
+70500	Erõ visszhangja+0
+70501	Erõ visszhangja+1
+70502	Erõ visszhangja+2
+70503	Erõ visszhangja+3
+70504	Erõ visszhangja+4
+70505	Tehetség visszhangja+0
+70506	Tehetség visszhangja+1
+70507	Tehetség visszhangja+2
+70508	Tehetség visszhangja+3
+70509	Tehetség visszhangja+4
+70510	Erõ esszenciája+0
+70511	Erõ esszenciája+1
+70512	Erõ esszenciája+2
+70513	Erõ esszenciája+3
+70514	Erõ esszenciája+4
+70515	Tehetség esszenciája+0
+70516	Tehetség esszenciája+1
+70517	Tehetség esszenciája+2
+70518	Tehetség esszenciája+3
+70519	Tehetség esszenciája+4
+70602	Visszhang növelõ
+70603	Visszhang erõsítõ
+70604	Bajnokság láda
 70605	Jegy láda
-70606	Futball világb. trófea
-70607	Futball világb. jelkép
+70606	Bajnokság trófea
+70607	Bajnokság jelkép
 70608	Gaya táska
 70609	Ország jegy
 70610	Szurkolói jegy
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Merkúr lexikon (nagy)
 71217	Vénusz lexikon (kicsi)
 71218	Vénusz lexikon (nagy)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Kyzaghan lova
 71221	Kasmír csomó
 71222	Nirvana sárkány
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Sötét légiós ló
 71277	Halia
 71278	Aquilosz
+71280	Baljós pokolló
+71281	Rémisztõ pokolló
+71287	Balathor jégszárnyasa
+71288	Balathor éjszárnyasa
 72001	Tapasztalat gyûrû (10h)
 72002	Tapasztalat gyûrû (30m)
 72003	Tapasztalat gyûrû (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Szállítható Jadit ér
 72355	Prémium magánbolt
 72356	Prémium magánbolt
+72359	Balathor belép. engedély
 72360	Kihívás tekercs
 72701	Szélcipõ
 72702	Szél cipõ+ (átadható)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Állókép. csökkentés(30%)
 72755	Bõvítési engedély
 72756	Zsákmány jegy
-72757	Bombabiztos jegy
-72758	Õsi visszaállító
 72760	Vad harcos könyve
 72761	Ellenmágia könyve
 72762	Sietség könyve
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Kedvenc kovácsrúna
 79658	4* Kedvenc kovácsrúna
 79659	5* Kedvenc kovácsrúna
+79666	Szörny keresõ
+79667	NPC keresõ
+79668	Teleport kõ+
+79669	Teleport kõ
+79670	Vörös erdõ, T1
+79671	Vörös erdõ, T2
+79672	Vörös erdõ, T3
+79673	Vörös erdõ, T4
+79674	Vörös erdõ, T5
+79675	Kígyórét, T1
+79676	Kígyórét, T2
+79677	Kígyórét, T3
+79678	Kígyórét, T4
+79679	Kígyórét, T5
+79680	Óriások földje, T1
+79681	Óriások földje, T2
+79682	Óriások földje, T3
+79683	Óriások földje, T4
+79684	Óriások földje, T5
+79685	Pók kazamata, T1
+79686	Pók kazamata, T2
+79687	Pók kazamata, T3
+79688	Pók kazamata, T4
+79689	Pók kazamata, T5
+79690	Pók kazamata 2, T1
+79691	Pók kazamata 2, T2
+79692	Pók kazamata 2, T3
+79693	Pók kazamata 2, T4
+79694	Pók kazamata 2, T5
+79695	Számûzött barlangja, T1
+79696	Számûzött barlangja, T2
+79697	Számûzött barlangja, T3
+79698	Számûzött barlangja, T4
+79699	Számûzött barlangja, T5
+79700	Számûzött barlangja 2 T1
+79701	Számûzött barlangja 2 T2
+79702	Számûzött barlangja 2 T3
+79703	Számûzött barlangja 2 T4
+79704	Számûzött barlangja 2 T5
+79705	Hasun Dong, T1
+79706	Hasun Dong, T2
+79707	Hasun Dong, T3
+79708	Hasun Dong, T4
+79709	Hasun Dong, T5
+79710	Jungsun Dong, T1
+79711	Jungsun Dong, T2
+79712	Jungsun Dong, T3
+79713	Jungsun Dong, T4
+79714	Jungsun Dong, T5
+79715	Sangsun Dong, T1
+79716	Sangsun Dong, T2
+79717	Sangsun Dong, T3
+79718	Sangsun Dong, T4
+79719	Sangsun Dong, T5
+79725	Pók kazamata 3, T1
+79726	Pók kazamata 3, T2
+79727	Pók kazamata 3, T3
+79728	Pók kazamata 3, T4
+79729	Pók kazamata 3, T5
+79730	Ochao temploma, T1
+79731	Ochao temploma, T2
+79732	Ochao temploma, T3
+79733	Ochao temploma, T4
+79734	Ochao temploma, T5
+79735	IH: Számûzött barl., T1
+79736	IH: Számûzött barl., T2
+79737	IH: Számûzött barl., T3
+79738	IH: Számûzött barl., T4
+79739	IH: Számûzött barl., T5
+79740	MV: Számûzött barl., T1
+79741	MV: Számûzött barl., T2
+79742	MV: Számûzött barl., T3
+79743	MV: Számûzött barl., T4
+79744	MV: Számûzött barl., T5
+79745	Gnoll barlang, T1
+79746	Gnoll barlang, T2
+79747	Gnoll barlang, T3
+79748	Gnoll barlang, T4
+79749	Gnoll barlang, T5
+79750	Gnoll barlang 2, T1
+79751	Gnoll barlang 2, T2
+79752	Gnoll barlang 2, T3
+79753	Gnoll barlang 2, T4
+79754	Gnoll barlang 2, T5
+79755	Gnoll barlang 3, T1
+79756	Gnoll barlang 3, T2
+79757	Gnoll barlang 3, T3
+79758	Gnoll barlang 3, T4
+79759	Gnoll barlang 3, T5
+79760	Szerpent templom, T1
+79761	Szerpent templom, T2
+79762	Szerpent templom, T3
+79763	Szerpent templom, T4
+79764	Szerpent templom, T5
+79765	Északszél búvóhely, T1
+79766	Északszél búvóhely, T2
+79767	Északszél búvóhely, T3
+79768	Északszél búvóhely, T4
+79769	Északszél búvóhely, T5
+79770	Északszél lejárat, T1
+79771	Északszél lejárat, T2
+79772	Északszél lejárat, T3
+79773	Északszél lejárat, T4
+79774	Északszél lejárat, T5
+79800	Térkép: Vörös erdõ
+79801	Térkép: Kígyórét
+79802	Térkép: Óriások földje
+79803	Térkép: Pók kazamata
+79804	Térkép: Pók kazamata 2
+79805	Térkép: Számûzött bar.
+79806	Térkép: Számûzött bar. 2
+79807	Térkép: Hasun Dong
+79808	Térkép: Jungsun Dong
+79809	Térkép: Sangsun Dong
+79811	Térkép: Pók kazamata 3
+79812	Térkép: Ochao temploma
+79813	Térkép: IH: Számûzött b.
+79814	Térkép: MV: Számûzött b.
+79815	Térkép: Gnoll barlang
+79816	Térkép: Gnoll barlang 2
+79817	Térkép: Gnoll barlang 3
+79818	Térkép: Szerpent templom
+79819	Térkép: Északszél búvóh.
+79820	Térkép: Északszél lejár.
 80003	Ezüst rúd (50.000 Yang)
 80004	Ezüst rúd (100.000 Yang)
 80005	Aranyrúd (500.000 Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Sung Ma inváziós láda
 83073	Yohara szörnyk. doboz
 83074	Platina szörnyk. doboz
-83075	Keserûbogyó láda
-83076	Aranybogyó láda
 83077	Sárkányisten láda
+83078	Sung Ma kincsesládája
+83082	Sung Ma ládája
 83100	Seungryong jutalom láda
 83101	Yongbi jutalom láda
 83102	Kuahlo Dong jutalom láda
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Pusztítás láda
 83125	Pusztítás láda
 83126	Pusztítás láda
+83130	Pokoli válogatás-doboz+
+83131	Szarv válogatás-doboz+
+83132	Wukong köp. vál. doboz+
+83133	Wukong kor. vál. doboz+
+83134	Átokhozó vál. doboz+
+83135	Wukong köp. vál. doboz
+83136	Wukong kor. vál. doboz
+83137	Ünnepi barát vál. doboz+
+83138	Viharos válogatás doboz+
+83139	Készségkönyv vál. doboz
 85001	Lord pánt (alap)
 85002	Lord pánt (finom)
 85003	Lord pánt (nemes)

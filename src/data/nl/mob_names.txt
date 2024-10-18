@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Enigma Tempel (bouwen)
 4034	Enigma Tempel (herh.)
 4035	Enigma Portaal
-4101	Onheilsdag Zi Wachter
-4102	Onheilsdag Chou Wachter
-4103	Onheilsdag Yin Wachter
-4104	Onheilsdag Mao Wachter
-4105	Onheilsdag Chen Wachter
-4106	Onheilsdag Si Wachter
-4107	Onheilsdag Wu Wachter
-4108	Onheilsdag Wei Wachter
-4109	Onheilsdag Shen Wachter
-4110	Onheilsdag You Wachter
-4111	Onheilsdag Xu Wachter
-4112	Onheilsdag Hai Wachter
-4121	Onheilsdag Zi Wachter
-4122	Onheilsdag Chou Wachter
-4123	Onheilsdag Yin Wachter
-4124	Onheilsdag Mao Wachter
-4125	Onheilsdag Chen Wachter
-4126	Onheilsdag Si Wachter
-4127	Onheilsdag Wu Wachter
-4128	Onheilsdag Wei Wachter
-4129	Onheilsdag Shen Wachter
-4130	Onheilsdag You Wachter
-4131	Onheilsdag Xu Wachter
-4132	Onheilsdag Hai Wachter
-4141	Metin van Armageddon
-4142	Metin van de Onheilsdag
-4143	Metin van de Rampspoed
-4144	Metin van de Apocalyps
-4145	Onheilsdag Henkog
-4146	Aloude Onheilsdag Henkog
-4147	Onheilsdag Kappa
-4148	Onheilsdag Diepzee Kappa
-4149	Onheilsdag Chuong
-4150	Aloude Onheilsdag Chuong
-4151	Onheilsdag Heksenmeester
-4152	Aloude Onheilsdag Heks.
 4153	Asmodeus
 4154	Afgezant van Aarde
 4155	Afgezant van Aarde
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Drakenportaal
 6514	Naar Drakenkoning
 6515	Verlaten
-6516	Primordis Wachter
-6517	Gouden Portaal
-6518	Gouden Monoliet
-6519	Gouden Monoliet
-6520	Gouden Palm
-6521	Caravaan Handelaar
-6522	Raptor
-6523	Rhinosaurus
-6524	Dilophosaurus
-6525	Jonge Rex
-6526	Kleine Goldirex
-6527	Machtige Goldirex
-6528	Nobele Goldirex
-6529	Primordis Standbeeld
-6530	Bommentoren
-6531	Volwassen Rex
-6532	Aloude Rex
 6686	Jin Bing
 6687	Soldaat Ki
 6688	Soldaat Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Noordewind Golem
 6894	Bigfoot
 6895	Noordewind Oorlogsleider
+6896	Balathor
+6897	Balathor
+6898	Spectrale Krijger
+6899	Spectrale Boogschutter
+6900	Spectrale Echo
 7001	Aap Soldaat
 7002	Aap Rijder
 7003	Gimu Aap Soldaat
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Gildegevecht-zone (Z)
 20489	Gildegevecht-zone (N)
 20490	Gilde Handelaar
+20491	Vervloekte Stenen Tablet
+20492	Balathor's Schat
+20493	Hwacha
+20494	Massieve IJswand
+20495	Bevroren Drakenei
+20496	Bevroren Drakenei
+20497	Brandend Drakenei
+20498	Oude IJskristallen
+20499	Hwacha (Getransformeerd)
 20500	Draken Ei
 20501	Gaya Kist
 20502	Yut Nori Tafel
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya Markt
 20505	Yut Staven
 20506	Van de Koning Tafel
+20507	Eeuwige IJskristallen
 20510	TS: Geest van een Sura
 20511	TS: Am-heh Verslinder
 20512	TS: Taramor's Grafsteen
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Sneeuw Krampus
 34189	Kolen Krampus
 34190	Kleine Krampus
+34191	Zwarte Stier
+34192	Bruine Stier
+34193	Tamme Stier
+34194	Pincher
+34195	Snapper
+34197	Lilith
+34198	Helena
+34199	Mini-Lilith
+34200	Gouden Loong
+34201	Zilveren Loong
+34202	Kleine Loong
+34203	Mini Balathor
+34204	Balathor Jr
+36000	Sinister Helleros
+36001	Gruwelijk Helleros
+36005	Balathor's Ijsvleugel
+36006	Balathor's Nachtvleugel
 40003	Turbo Reddingsplank
+40004	Wukong's Storm
+40005	Wukong's Donder
 60000	Gilde Beheerder
 60001	Gilde Beheerder
 60002	Gilde Beheerder

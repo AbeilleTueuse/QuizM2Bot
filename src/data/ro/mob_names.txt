@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Templul Enigma (constr.)
 4034	Templul Enigma (repetã)
 4035	Portal Enigma
-4101	Gardian Judecãþii Zi
-4102	Gardian Judecãþii Chou
-4103	Gardian Judecãþii Yin
-4104	Gardian Judecãþii Mao
-4105	Gardian Judecãþii Chen
-4106	Gardian Judecãþii Si
-4107	Gardian Judecãþii Wu
-4108	Gardian Judecãþii Wei
-4109	Gardian Judecãþii Shen
-4110	Gardian Judecãþii You
-4111	Gardian Judecãþii Xu
-4112	Gardian Judecãþii Hai
-4121	Gardian Judecãþii Zi
-4122	Gardian Judecãþii Chou
-4123	Gardian Judecãþii Yin
-4124	Gardian Judecãþii Mao
-4125	Gardian Judecãþii Chen
-4126	Gardian Judecãþii Si
-4127	Gardian Judecãþii Wu
-4128	Gardian Judecãþii Wei
-4129	Gardian Judecãþii Shen
-4130	Gardian Judecãþii You
-4131	Gardian Judecãþii Xu
-4132	Gardian Judecãþii Hai
-4141	Metinul Armageddon
-4142	Metinul Judecãþii
-4143	Metinul Cataclysm
-4144	Metinul Apocalipsei
-4145	Judele Henkog
-4146	Judele Henkog Arcane
-4147	Judele Kappa
-4148	Judele Kappa Adâncuri
-4149	Judele Chuong
-4150	Judele Chuong Arcane
-4151	Judele Vrãjitor
-4152	Judele Vrãjitor Arcane
 4153	Asmodeus
 4154	Emisarul Pãmântului
 4155	Emisarul Pãmântului
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Portal Dragon
 6514	La Regele Dragon
 6515	Ieºire
-6516	Gardian Primordis
-6517	Portal Auriu
-6518	Monolit Auriu
-6519	Monolit Auriu
-6520	Lauri Aurii
-6521	Caravanã Comerþ
-6522	Raptor
-6523	Rhinosaur
-6524	Dilophosaur
-6525	Rex Tânãr
-6526	Goldirex Mic
-6527	Goldirex Puternic
-6528	Goldirex Nobil
-6529	Statuie Primordis
-6530	Turn Canonadã
-6531	Rex Adult
-6532	Rex Antic
 6686	Jin Bing
 6687	Soldat Ki
 6688	Soldat Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem Nord
 6894	Bigfoot
 6895	Cãpetenie Nord
+6896	Balathor
+6897	Balathor
+6898	Rãzboinic Spectral
+6899	Arcaº Spectral
+6900	Ecou Spectral
 7001	Maimuta Soldat
 7002	Maimuta Jocheu
 7003	Maimuta Soldat Gimu
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Zonã Bãtãlie Breaslã (S)
 20489	Zonã Bãtãlie Breaslã (N)
 20490	Negustor Breaslã
+20491	Tablã Piatrã Blestematã
+20492	Comoara lui Balathor
+20493	Hwacha
+20494	Zid Piatrã Îngheþat
+20495	Ou Dragon Îngheþat
+20496	Ou Dragon Îngheþat
+20497	Ou Dragon Fierbinte
+20498	Cristal Vechi Îngheþat
+20499	Hwacha (Transformat)
 20500	Ou Dragon
 20501	Cufãr Gaya
 20502	Tablã Yut Nori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Piaþã Gaya
 20505	Beþe Yut Nori
 20506	Masa Prinde Regele
+20507	Cristal Etern de Gheaþã
 20510	TR: Fantoma unui Sura
 20511	TR: Marele Am-heh
 20512	TR: Mormânt Taramor
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Krampus Zãpadã
 34189	Krampus Cãrbune
 34190	Krampus Mic
+34191	Taur Negru
+34192	Taur Maro
+34193	Taur Îmblânzit
+34194	Pincher
+34195	Snapper
+34197	Lilith
+34198	Helena
+34199	Mica Lilith
+34200	Loong Auriu
+34201	Loong Argintiu
+34202	Micul Loong
+34203	Mini Balathor
+34204	Balathor Jr
+36000	Cal Sinistru
+36001	Cal Macabru
+36005	Aripi Îngheþate Balathor
+36006	Aripi Negre Balathor
 40003	Placã de Surf Turbo
+40004	Furtunã Wukong
+40005	Tunet Wukong
 60000	ªef Breaslã
 60001	ªef Breaslã
 60002	ªef Breaslã

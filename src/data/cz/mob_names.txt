@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Chrám Enigmy (tvorba)
 4034	Chrám Enigmy (opakovat)
 4035	Portál Enigmy
-4101	Stráce soudného dne Zi
-4102	Stráce soud. dne Chou
-4103	Stráce soudného dne Yin
-4104	Stráce soudného dne Mao
-4105	Stráce soud. dne Chen
-4106	Stráce soudného dne Si
-4107	Stráce soudného dne Wu
-4108	Stráce soudného dne Wei
-4109	Stráce soud. dne Shen
-4110	Stráce soudného dne You
-4111	Stráce soudného dne Xu
-4112	Stráce soudného dne Hai
-4121	Stráce soudného dne Zi
-4122	Stráce soud. dne Chou
-4123	Stráce soudného dne Yin
-4124	Stráce soudného dne Mao
-4125	Stráce soud. dne Chen
-4126	Stráce soudného dne Si
-4127	Stráce soudného dne Wu
-4128	Stráce soudného dne Wei
-4129	Stráce soud. dne Shen
-4130	Stráce soudného dne You
-4131	Stráce soudného dne Xu
-4132	Stráce soudného dne Hai
-4141	Metin poslední bitvy
-4142	Metin Soudného dne
-4143	Metin potopy
-4144	Metin potopy
-4145	Henkog Soudného dne
-4146	Taj. Henkog Soudného dne
-4147	Kappa Soudného dne
-4148	Kappa z hlubin Soud. dne
-4149	Chuong Soudného dne
-4150	Taj. Chuong Soudného dne
-4151	Warlock Soudného dne
-4152	Taj. Warlock Soud. dne
 4153	Asmodeus
 4154	Posel Zemì
 4155	Posel Zemì
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Draèí portál
 6514	K draèímu králi
 6515	Ukonèit
-6516	Stráce Primordis
-6517	Zlatı portál
-6518	Zlatı monolit
-6519	Zlatı monolit
-6520	Zlatá palma
-6521	Potulnı obchodník
-6522	Ještìr
-6523	Rhinosaurus
-6524	Dilophosaurus
-6525	Mladı Rex
-6526	Malı Goldirex
-6527	Mocnı Goldirex
-6528	Vznešenı Goldirex
-6529	Socha Primordis
-6530	Bombová vì
-6531	Dospìlı Rex
-6532	Starovìkı Rex
 6686	Jin Bing
 6687	Voják Ki
 6688	Voják Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Golem Northwindu
 6894	Bigfoot
 6895	Vojevùdce Northwindu
+6896	Balathor
+6897	Balathor
+6898	Spektrální váleèník
+6899	Spektrální lukostøelec
+6900	Spektrální ozvìna
 7001	Opièí voják
 7002	Opièí jezdec
 7003	Opièí voják Gimu
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Zóna bitvy cechu (J)
 20489	Zóna bitvy cechu (S)
 20490	Cechovní obchodník
+20491	Prokletá kamenná tabulka
+20492	Balathorùv poklad
+20493	Hwacha
+20494	Pevná ledová zeï
+20495	Vejce ledového draka
+20496	Vejce ledového draka
+20497	Vejce ohnivého draka
+20498	Starovìkı ledovı køišál
+20499	Hwacha (promìna)
 20500	Draèí vejce
 20501	Gaya truhla
 20502	Stùl na Yutnori
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya trištì
 20505	Tyèka Yut
 20506	Stùl Chy krále
+20507	Vìènı ledovı køišál
 20510	ÈT: Duch sury
 20511	ÈT: Str Am-heh
 20512	ÈT: Taramorùv náh. kámen
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Snìnı Krampus
 34189	Uhelnı Krampus
 34190	Malı Krampus
+34191	Èernı bık
+34192	Hnìdı bık
+34193	Krotkı bık
+34194	Pincher
+34195	Snapper
+34197	Lilith
+34198	Helena
+34199	Mini Lilith
+34200	Zlatı drak
+34201	Støíbrnı drak
+34202	Malı drak
+34203	Mini Balathor
+34204	Balathor Jr
+36000	Zlovìstnı pekelnı oø
+36001	Pøíšernı pekelnı oø
+36005	Balathorovo led. køídlo
+36006	Balathorovo noèní køídlo
 40003	Turbo surfovací prkno
+40004	Wukongova bouøe
+40005	Wukongùv hrom
 60000	Správce cechu
 60001	Správce cechu
 60002	Správce cechu

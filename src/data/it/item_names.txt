@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Elmo Drago celeste+13
 12874	Elmo Drago celeste+14
 12875	Elmo Drago celeste+15
+12880	Cuffia Serpens+0
+12881	Cuffia Serpens+1
+12882	Cuffia Serpens+2
+12883	Cuffia Serpens+3
+12884	Cuffia Serpens+4
+12885	Cuffia Serpens+5
+12886	Cuffia Serpens+6
+12887	Cuffia Serpens+7
+12888	Cuffia Serpens+8
+12889	Cuffia Serpens+9
+12890	Cuffia Serpens+10
+12891	Cuffia Serpens+11
+12892	Cuffia Serpens+12
+12893	Cuffia Serpens+13
+12894	Cuffia Serpens+14
+12895	Cuffia Serpens+15
 13000	Scudo da Battaglia+0
 13001	Scudo da Battaglia+1
 13002	Scudo da Battaglia+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Benda
 27125	Pozione da battaglia
 27126	Pozione Forza del drago
+27127	Sangue gelido Balathor
 27128	Segreto dello Yutnori
 27201	Pozione rossa (P)
 27202	Pozione rossa (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Bonus Elmo da vampiro
 30343	Bonus Elmo da vampiro+
 30344	Chiamata dei Santuari
+30345	Freccia infuocata
 30346	Battle Royale Ticket
 30500	Coltello Intaglio Rubino
 30501	Fascetta d'Oro
@@ -6817,14 +6835,14 @@ VNUM	LOCALE_NAME
 31082	Anello di magma
 31083	Anello di Samael
 31084	Tintura Nimbus
-31085	NoNAme
+31085	Acqua pesante
 31086	Spore micetiche
-31087	NoNAme
-31088	NoNAme
+31087	Fiamma Spirito del fuoco
+31088	Pozione focosa
 31089	NoNAme
-31090	NoNAme
+31090	Cuore di Nemere
 31091	NoNAme
-31092	NoNAme
+31092	Brandelli di Gelomostro
 31093	Pietra sconosciuta
 31094	Frammento
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Pietra misteriosa
 31262	Lucido Serpens
 31263	Mola boreale
+31264	Tendine di Balathor
+31265	Martello ric. di brina
+31266	Ali di Balathor
+31267	Corno di Balathor
+31268	Occhio di Balathor
+31269	Scaglia di Balathor
 31270	Essenza Talismano
 33001	Insegna di Zi
 33002	Insegna di Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Campana Guardiantica+
 40190	Ventaglio Guardiantica+
 40191	Artigli Guardiantica+
+40192	Spada Port. di maled.+
+40193	Pugnale Port. di maled.+
+40194	Arco Port. di maled.+
+40195	Spadone Port. di maled.+
+40196	Campana Port. di maled.+
+40197	Ventaglio Port. maled.+
+40198	Artiglio Port. maled.+
 41000	Segnaposto skin armi
 41001	Coniglio (marrone)
 41002	Coniglietta (marrone)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Maglia Calcio+ HUN (f)
 41658	Maglia Mondiali ROU (m)
 41659	Maglia Mondiali ROU (f)
-41660	Maglia Mondiali ROU+ (m)
-41661	Maglia Mondiali ROU+ (f)
+41660	Maglia Calcio+ RUM (m)
+41661	Maglia Calcio+ RUM (f)
 41662	Maglia POL (m)
 41663	Maglia POL (f)
 41664	Maglia Calcio+ POL (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Armatura Vittoria(m)+
 41918	Armatura Generosità(f)+
 41919	Armatura Vittoria(f)+
+41920	Torero rosso
+41921	Torero blu
+41922	Torera rossa
+41923	Torera blu
+41924	Torero rosso+
+41925	Torero blu+
+41926	Torera rossa+
+41927	Torera blu+
+41932	Principe Atlantide+
+41933	Guerriero Atlantide+
+41934	Principessa Atlantide+
+41935	Guerriera Atlantide+
+41936	Incubus Fiamme+
+41937	Incubus Notte+
+41938	Succubus Fiamme+
+41939	Succubus Notte+
+41940	Veste Sole Wukong+ (m)
+41941	Veste Luna Wukong+ (m)
+41942	Veste Sole Wukong+ (f)
+41943	Veste Luna Wukong+ (f)
+41952	Veste Sole Wukong (m)
+41953	Veste Luna Wukong (m)
+41954	Veste Sole Wukong (f)
+41955	Veste Luna Wukong (f)
 45001	Orecchie F marroni
 45002	Orecchie marroni per lui
 45003	Foulard (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Corona Vittoria(m)+
 45658	Corona Generosità(f)+
 45659	Corona Vittoria(f)+
+45660	Montera rossa (m)
+45661	Montera blu (m)
+45662	Montera rossa (f)
+45663	Montera blu (f)
+45664	Montera rossa+ (m)
+45665	Montera blu+ (m)
+45666	Montera rossa+ (f)
+45667	Montera blu+ (f)
+45672	Corona Atlantide+ (m)
+45673	Elmo Atlantide+ (m)
+45674	Corona Atlantide+ (f)
+45675	Elmo Atlantide+ (f)
+45676	Corna infuocate+ (m)
+45677	Corna Alanotte+ (m)
+45678	Corna infuocate+ (f)
+45679	Corna Alanotte+ (f)
+45680	Cerchio Sole Wukong+ (m)
+45681	Cerchio Luna Wukong+ (m)
+45682	Cerchio Sole Wukong+ (f)
+45683	Cerchio Luna Wukong+ (f)
+45696	Cerchio Sole Wukong (m)
+45697	Cerchio Luna Wukong (m)
+45698	Cerchio Sole Wukong (f)
+45699	Cerchio Luna Wukong (f)
 49001	Veste Aura comune
 49002	Veste Aura semplice
 49003	Veste Aura pregiata
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Baule Maestro II
 50195	Baule Maestro III
 50196	Baule Gran Maestro
-50197	NoNAme
+50197	Sacchetto sconosciuto
 50198	NoNAme
 50199	NoNAme
 50200	Fagotto
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Contratt. Baule libri
 50324	Boost Baule libri
 50325	Libro Precisione
+50326	Libro abilità Balathor
 50330	Libro missione (Prin. 1)
 50331	Libro missione (Prin. 2)
 50332	Libro missione (Prin. 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Rugiada verde
 50825	Rugiada blu
 50826	Rugiada bianca
+50827	Rugiada nera
 50830	Elisir Forza del fuoco
 50831	Elisir Forza del gelo
 50832	Elisir Forza del tuono
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Scrigno Veggenza rosso
 50939	Scrigno Veggenza blu
 50940	Scrigno Veggenza rosa
+50941	Scrigno della cripta
 51001	Scaglia di energia
 51002	Cristallo di energia
 51501	Cor draconis (grezzo)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Moa coraggioso
 52120	Moa coraggioso
 52202	Turbo-surf
+52204	Tempesta Wukong
+52205	Tuono Wukong
 52701	Certificato Leone
 52702	Certificato Tigre
 52703	Certificato Cinghiale
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Certificato Renna (f)
 52707	Certificato Dragor
 52708	Certificato Moa
+52710	Sfera Trasf. in Hwacha
 53001	Fenice di fuoco
 53002	Baby-renna
 53003	Fenice di ghiaccio
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Krampus Neve
 53354	Krampus Carbone
 53355	Krampus piccolo
+53356	Toro nero
+53357	Toro marrone
+53358	Toro docile
+53359	Tenaglia
+53360	Pinza
+53362	Lilith
+53363	Helena
+53364	Mini Lilith
+53365	Long Oro
+53366	Long Argento
+53367	Piccolo Long
+53368	Mini Balathor
+53369	Balathor Junior
 53501	Gabbia Fenice di fuoco
 53502	Baule Baby-renna
 53503	Gabbia Fenice Ghiaccio
@@ -9709,7 +9807,7 @@ VNUM	LOCALE_NAME
 53521	Gabbia Rufus gelido
 53522	Nido di Sheldon
 53523	Gabbia conigli
-53526	NoNAme
+53526	Pepita Can
 53527	Gabbia Testa di zucca
 53528	Ripostiglio delle scope
 53529	Freezer di Fiocchetto
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Scrigno Krampus gelido
 53636	Scrigno Krampus sporco
 53637	Scrigno Krampus piccolo
+53638	Scatola Toro nero
+53639	Scatola Toro marrone
+53640	Scatola Toro piccola
+53641	Box granchio Tenaglia
+53642	Box granchio Pinza
+53643	Scrigno Inferno Lilith
+53644	Scrigno Inferno Helena
+53645	Mini Scrigno Inferno
+53646	Santuario Drago Oro
+53647	Santuario Drago Argento
+53648	Mini Santuario Drago
 54041	NoNAme
 54042	NoNAme
 54043	Baule Apprendista I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Chiave ghiacciata
 70411	Baule DragoBianco facile
 70412	Baule DragoBianco diff.
+70413	Scrigno glac. Balathor
+70414	Scrigno glac. Balathor+
 70422	Chiave Serpens
 70423	Scheggia Serpens Fuoco
 70424	Scheggia Serp. Ghiaccio
@@ -10035,6 +10146,28 @@ VNUM	LOCALE_NAME
 70449	Chiave Damnatio+
 70450	Pergam. Metin Salvezza
 70451	Set Fiamma letale
+70500	Eco della forza +0
+70501	Eco della forza +1
+70502	Eco della forza +2
+70503	Eco della forza +3
+70504	Eco della forza +4
+70505	Eco della capacità +0
+70506	Eco della capacità +1
+70507	Eco della capacità +2
+70508	Eco della capacità +3
+70509	Eco della capacità +4
+70510	Essenza della forza +0
+70511	Essenza della forza +1
+70512	Essenza della forza +2
+70513	Essenza della forza +3
+70514	Essenza della forza +4
+70515	Essenza d. capacità +0
+70516	Essenza d. capacità +1
+70517	Essenza d. capacità +2
+70518	Essenza d. capacità +3
+70519	Essenza d. capacità +4
+70602	Potenziamento dell'eco
+70603	Risveglio dell'eco
 70604	Scrigno Campionato
 70605	Scrigno Biglietto
 70606	Trofeo Campionato
@@ -10244,7 +10377,7 @@ VNUM	LOCALE_NAME
 71216	Enciclop. Mercurio (G)
 71217	Enciclopedia Venere (P)
 71218	Enciclopedia Venere (G)
-71219	NoNAme
+71219	Invigorating Potion
 71220	Cavallo Kyzaghan
 71221	Fagotto di cashmere
 71222	Drago Nirvana
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Cavallo Legione oscuro
 71277	Halia
 71278	Aquilos
+71280	Destriero inf. terribile
+71281	Destriero inf. crudele
+71287	Alaghiaccio di Balathor
+71288	Alanotte di Balathor
 72001	Anello esperienza (10h)
 72002	Anello esperienza (30m)
 72003	Anello esperienza (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Fonte di giada
 72355	Negozio Premium Privato
 72356	Negozio Premium Privato
+72359	B. pass. (Balathor)
 72360	Papiro della sfida
 72701	Scarpe del Vento
 72702	Scarpe d. Vento+ (comm.)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Riduci resistenza (30%)
 72755	Licenza Ampliamento
 72756	Pass bottino
-72757	Biglietto Antiesplosione
-72758	Nuovo inizio Primordium
 72760	Libro del berserker
 72761	Libro anti-magia
 72762	Libro dell'accelerazione
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* RunaFabbro Pet
 79658	4* RunaFabbro Pet
 79659	5* RunaFabbro Pet
+79666	Trova-mostri
+79667	Trova-personaggi
+79668	Pietra teletrasporto+
+79669	Pietra teletrasporto
+79670	Bosco Rosso, 1
+79671	Bosco Rosso, 2
+79672	Bosco Rosso, 3
+79673	Bosco Rosso, 4
+79674	Bosco Rosso, 5
+79675	Campo Serpi, 1
+79676	Campo Serpi, 2
+79677	Campo Serpi, 3
+79678	Campo Serpi, 4
+79679	Campo Serpi, 5
+79680	Terra Giganti, 1
+79681	Terra Giganti, 2
+79682	Terra Giganti, 3
+79683	Terra Giganti, 4
+79684	Terra Giganti, 5
+79685	Sotterraneo Ragni, 1
+79686	Sotterraneo Ragni, 2
+79687	Sotterraneo Ragni, 3
+79688	Sotterraneo Ragni, 4
+79689	Sotterraneo Ragni, 5
+79690	Sotterraneo Ragni 2, 1
+79691	Sotterraneo Ragni 2, 2
+79692	Sotterraneo Ragni 2, 3
+79693	Sotterraneo Ragni 2, 4
+79694	Sotterraneo Ragni 2, 5
+79695	Grotta Esilio, 1
+79696	Grotta Esilio, 2
+79697	Grotta Esilio, 3
+79698	Grotta Esilio, 4
+79699	Grotta Esilio, 5
+79700	Grotta Esilio 2, 1
+79701	Grotta Esilio 2, 2
+79702	Grotta Esilio 2, 3
+79703	Grotta Esilio 2, 4
+79704	Grotta Esilio 2, 5
+79705	Hasun Dong, 1
+79706	Hasun Dong, 2
+79707	Hasun Dong, 3
+79708	Hasun Dong, 4
+79709	Hasun Dong, 5
+79710	Jungsun Dong, 1
+79711	Jungsun Dong, 2
+79712	Jungsun Dong, 3
+79713	Jungsun Dong, 4
+79714	Jungsun Dong, 5
+79715	Sangsun Dong, 1
+79716	Sangsun Dong, 2
+79717	Sangsun Dong, 3
+79718	Sangsun Dong, 4
+79719	Sangsun Dong, 5
+79725	Sotterraneo Ragni 3, 1
+79726	Sotterraneo Ragni 3, 2
+79727	Sotterraneo Ragni 3, 3
+79728	Sotterraneo Ragni 3, 4
+79729	Sotterraneo Ragni 3, 5
+79730	Tempio degli Ochao, 1
+79731	Tempio degli Ochao, 2
+79732	Tempio degli Ochao, 3
+79733	Tempio degli Ochao, 4
+79734	Tempio degli Ochao, 5
+79735	FT: Grotta Esilio, 1
+79736	FT: Grotta Esilio, 2
+79737	FT: Grotta Esilio, 3
+79738	FT: Grotta Esilio, 4
+79739	FT: Grotta Esilio, 5
+79740	RSV: Grotta Esilio, 1
+79741	RSV: Grotta Esilio, 2
+79742	RSV: Grotta Esilio, 3
+79743	RSV: Grotta Esilio, 4
+79744	RSV: Grotta Esilio, 5
+79745	Caverne Gnoll, 1
+79746	Caverne Gnoll, 2
+79747	Caverne Gnoll, 3
+79748	Caverne Gnoll, 4
+79749	Caverne Gnoll, 5
+79750	Caverne Gnoll 2, 1
+79751	Caverne Gnoll 2, 2
+79752	Caverne Gnoll 2, 3
+79753	Caverne Gnoll 2, 4
+79754	Caverne Gnoll 2, 5
+79755	Caverne Gnoll 3, 1
+79756	Caverne Gnoll 3, 2
+79757	Caverne Gnoll 3, 3
+79758	Caverne Gnoll 3, 4
+79759	Caverne Gnoll 3, 5
+79760	Templum Serpens, 1
+79761	Templum Serpens, 2
+79762	Templum Serpens, 3
+79763	Templum Serpens, 4
+79764	Templum Serpens, 5
+79765	Rifugio Boreale, 1
+79766	Rifugio Boreale, 2
+79767	Rifugio Boreale, 3
+79768	Rifugio Boreale, 4
+79769	Rifugio Boreale, 5
+79770	Pendio Boreale, 1
+79771	Pendio Boreale, 2
+79772	Pendio Boreale, 3
+79773	Pendio Boreale, 4
+79774	Pendio Boreale, 5
+79800	Mappa: Bosco Rosso
+79801	Mappa: Campo Serpi
+79802	Mappa: Terra dei Giganti
+79803	Mappa: Sotterraneo Ragni
+79804	Map.: Sott. Ragni 2
+79805	Mappa: Grotta Esilio
+79806	Mappa: Grotta Esilio 2
+79807	Mappa: Hasun Dong
+79808	Mappa: Jungsun Dong
+79809	Mappa: Sangsun Dong
+79811	Map.: Sott. Ragni 3
+79812	Map.: Tempio degli Ochao
+79813	Mappa: FT: Grotta Esilio
+79814	M: RSV: Grotta Esilio, 5
+79815	Mappa: Caverne Gnoll
+79816	Mappa: Caverne Gnoll 2
+79817	Mappa: Caverne Gnoll 3
+79818	Mappa: Templum Serpens
+79819	Mappa: Rifugio Boreale
+79820	Mappa: Pendio Boreale
 80003	Ling. d'Arg.(50000Yang)
 80004	Ling. d'Arg.(100000Yang)
 80005	Ling. d'Oro(500000Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Scrigno Invasione SungMa
 83073	Box Carta mostro Yohara
 83074	Box Platino Carta mostro
-83075	Scrigno Bacche amare
-83076	Scrigno Bacche d'oro
 83077	Scrigno Dio Drago
+83078	Forziere di SungMa
+83082	Scrigno di SungMa
 83100	Ric. Seungryong
 83101	Ric. Yongbi
 83102	Ric. Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Baule Distruzione
 83125	Baule Distruzione
 83126	Baule Distruzione
+83130	Scr. Sc. infernale+
+83131	Scrigno Scelta Corna+
+83132	Scr. Sc. Veste Wukong+
+83133	Scr. Sc. Cerchio Wukong+
+83134	Scr. Sc. Port. maled.+
+83135	Scr. Sc. Veste Wukong
+83136	Scr. Sc. Cerchio Wukong
+83137	Scr. Sc. Comp. festivo+
+83138	Scr. Scelta tempestoso+
+83139	Sc. Libro delle abilità
 85001	Stola Signore semplice
 85002	Stola Signore sottile
 85003	Stola Signore nobile

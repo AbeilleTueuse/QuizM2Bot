@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Gådens Tempel (byg)
 4034	Gådens Tempel (gentag)
 4035	Gådens Portal
-4101	Dommedag Zi Vagt
-4102	Dommedag Chou Vagt
-4103	Dommedag Yin Vagt
-4104	Dommedag Mao Vagt
-4105	Dommedag Chen Vagt
-4106	Dommedag Si Vagt
-4107	Dommedag Wu Vagt
-4108	Dommedag Wei Vagt
-4109	Dommedag Shen Vagt
-4110	Dommedag You Vagt
-4111	Dommedag Xu Vagt
-4112	Dommedag Hai Vagt
-4121	Dommedag Zi Vagt
-4122	Dommedag Chou Vagt
-4123	Dommedag Yin Vagt
-4124	Dommedag Mao Vagt
-4125	Dommedag Chen Vagt
-4126	Dommedag Si Vagt
-4127	Dommedag Wu Vagt
-4128	Dommedag Wei Vagt
-4129	Dommedag Shen Vagt
-4130	Dommedag You Vagt
-4131	Dommedag Xu Vagt
-4132	Dommedag Hai Vagt
-4141	Ragnarok Metin
-4142	Dommedags Metin
-4143	Kataklysme Metin
-4144	Dommedags Metin
-4145	Dommedags Henkog
-4146	Mystisk Dommedags Henkog
-4147	Dommedags Kappa
-4148	Domme. Dyb Havets Kappa
-4149	Dommedags Chuong
-4150	Mystisk Dommedags Chuong
-4151	Dommedags Troldmand
-4152	Mystisk Domme. Troldmand
 4153	Asmodeus
 4154	Jordens Udsendte
 4155	Jordens Udsendte
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Drage Portal
 6514	Til Drage Kongen
 6515	Afslut
-6516	Primordis Vagt
-6517	Gylden Portal
-6518	Gylden Monolit
-6519	Gylden Monolit
-6520	Gylden Palme
-6521	Karavane Forhandler
-6522	Rovfugl
-6523	Rhinosaurus
-6524	Dilophosaurus
-6525	Ung Rex
-6526	Lille Goldirex
-6527	Mægtig Goldirex
-6528	Ædel Goldirex
-6529	Primordis Statue
-6530	Bombe Tårn
-6531	Voksen Rex
-6532	Ældgammel Rex
 6686	Jin Bing
 6687	Soldat Ki
 6688	Soldat Mao
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Nordvinds Golem
 6894	Bigfoot
 6895	Nordvinds Krigs Chef
+6896	Balathor
+6897	Balathor
+6898	Spektral Kriger
+6899	Spektral Bueskytte
+6900	Spektral Ekko
 7001	Abe-soldat
 7002	Abe-rytter
 7003	Gimu abe-soldat
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Ordens Kamp Zone (S)
 20489	Ordens Kamp Zone (N)
 20490	Ordens Købmand
+20491	Forbandet Sten Tavle
+20492	Balathor's Skat
+20493	Hwacha
+20494	Solid Isvæg
+20495	Frosset Drage Æg
+20496	Frosset Drage Æg
+20497	Flammende Drage Æg
+20498	Ældgammel Is Krystal
+20499	Hwacha (Transformeret)
 20500	Drage Æg
 20501	Gaya Kiste
 20502	Yut Nori Bord
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya Marked
 20505	Yut Pinde
 20506	Fang Kongen Bordet
+20507	Evig Is Krystal
 20510	TS: Ånden af en Sura
 20511	TS: Am-heh Gorge
 20512	TS: Taramor Gravstenen
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Sne Krampus
 34189	Kul Krampus
 34190	Lille Bitte Krampus
+34191	Sort Tyr
+34192	Brun Tyr
+34193	Tæm Tyr
+34194	Pincher
+34195	Snapper
+34197	Lilith
+34198	Helena
+34199	Mini-Lilith
+34200	Guld Loong
+34201	Sølv Loong
+34202	Lille Loong
+34203	Lille Balathor
+34204	Balathor Jr
+36000	Skummel Helvedeshest
+36001	Grusom Helvedeshest
+36005	Balathor's Isvinge
+36006	Balathor's Natvinge
 40003	Turbo Surfbræt
+40004	Wukong's Storm
+40005	Wukong's Torden
 60000	Ordens Manager
 60001	Ordens Manager
 60002	Ordens Manager

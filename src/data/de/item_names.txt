@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Himmelsdrachenhelm+13
 12874	Himmelsdrachenhelm+14
 12875	Himmelsdrachenhelm+15
+12880	Schlangenhaube+0
+12881	Schlangenhaube+1
+12882	Schlangenhaube+2
+12883	Schlangenhaube+3
+12884	Schlangenhaube+4
+12885	Schlangenhaube+5
+12886	Schlangenhaube+6
+12887	Schlangenhaube+7
+12888	Schlangenhaube+8
+12889	Schlangenhaube+9
+12890	Schlangenhaube+10
+12891	Schlangenhaube+11
+12892	Schlangenhaube+12
+12893	Schlangenhaube+13
+12894	Schlangenhaube+14
+12895	Schlangenhaube+15
 13000	Schlachtschild+0
 13001	Schlachtschild+1
 13002	Schlachtschild+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Verband
 27125	Gefechtstrank
 27126	Trank der Drachenmacht
+27127	Balathors eisiges Blut
 27128	Yutnori-Geheimnis
 27201	Roter Trank (K)
 27202	Roter Trank (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Bon für Vampir-Helm
 30343	Bon für Vampir-Helm+
 30344	Ruf der Schreine
+30345	Flammender Pfeil
 30346	Battle-Royale-Ticket
 30500	Rubin-Gravurmesser
 30501	Goldschelle
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Mysteriöser Stein
 31262	Schlangenpolitur
 31263	Nordwindschleifstein
+31264	Balathors Sehne
+31265	Reifbedeckter Hammer
+31266	Balathors Flügel
+31267	Balathors Horn
+31268	Balathors Auge
+31269	Balathors Schuppe
 31270	Talisman-Essenz
 33001	Insigne des Zi
 33002	Insigne des Chou
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Ahnenwächter-Glocke+
 40190	Ahnenwächter-Fächer+
 40191	Ahnenwächter-Krallen+
+40192	Fluchbringer-Schwert+
+40193	Fluchbringer-Dolch+
+40194	Fluchbringer-Bogen+
+40195	Fluchbringer-Zweihänder+
+40196	Fluchbringer-Glocke+
+40197	Fluchbringer-Fächer+
+40198	Fluchbringer-Klaue+
 41000	Platzhalter Waffenskin
 41001	Hasenkostüm (braun)
 41002	Häschenkostüm (braun)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Fußballtrikot+ HUN (w)
 41658	WM-Trikot ROU (m)
 41659	WM-Trikot ROU (w)
-41660	WM-Trikot ROU+ (m)
-41661	WM-Trikot ROU+ (w)
+41660	Fußballtrikot+ ROU (m)
+41661	Fußballtrikot+ ROU (w)
 41662	WM-Trikot POL (m)
 41663	WM-Trikot POL (w)
 41664	Fußballtrikot+ POL (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Rüstung des Siegreichen+
 41918	Rüstung der Großzügigen+
 41919	Rüstung der Siegreichen+
+41920	Roter Torero
+41921	Blauer Torero
+41922	Rote Torera
+41923	Blaue Torera
+41924	Roter Torero+
+41925	Blauer Torero+
+41926	Rote Torera+
+41927	Blaue Torera+
+41932	Atlantisfürst+
+41933	Atlantiskrieger+
+41934	Atlantisfürstin+
+41935	Atlantiskriegerin+
+41936	Flammen-Inkubus+
+41937	Nacht-Inkubus+
+41938	Flammen-Sukkubus+
+41939	Nacht-Sukkubus+
+41940	Wukongs Sonnengew.+ (m)
+41941	Wukongs Mondgew.+ (m)
+41942	Wukongs Sonnengew.+ (w)
+41943	Wukongs Mondgew.+ (w)
+41952	Wukongs Sonnengew. (m)
+41953	Wukongs Mondgew. (m)
+41954	Wukongs Sonnengew. (w)
+41955	Wukongs Mondgew. (w)
 45001	Häschenohren (braun)
 45002	Hasenohren (braun)
 45003	Kopftuch (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Krone des Siegreichen+
 45658	Krone der Großzügigen+
 45659	Krone der Siegreichen+
+45660	Rote Montera (m)
+45661	Blaue Montera (m)
+45662	Rote Montera (w)
+45663	Blaue Montera (w)
+45664	Rote Montera+ (m)
+45665	Blaue Montera+ (m)
+45666	Rote Montera+ (w)
+45667	Blaue Montera+ (w)
+45672	Atlantiskrone+ (m)
+45673	Atlantishelm+ (m)
+45674	Atlantiskrone+ (w)
+45675	Atlantishelm+ (w)
+45676	Flammende Hörner+ (m)
+45677	Nachtschw. Hörner+ (m)
+45678	Flammende Hörner+ (w)
+45679	Nachtschw. Hörner+ (w)
+45680	Wukongs Sonnenreif+ (m)
+45681	Wukongs Mondreif+ (m)
+45682	Wukongs Sonnenreif+ (w)
+45683	Wukongs Mondreif+ (w)
+45696	Wukongs Sonnenreif (m)
+45697	Wukongs Mondreif (m)
+45698	Wukongs Sonnenreif (w)
+45699	Wukongs Mondreif (w)
 49001	Gewöhnliches Auragewand
 49002	Schlichtes Auragewand
 49003	Edles Auragewand
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Büchertruhe Konter
 50324	Büchertruhe Boost
 50325	Buch der Präzision
+50326	Balathors Fertigkeitsb.
 50330	Missionsbuch (Fürst 1)
 50331	Missionsbuch (Fürst 2)
 50332	Missionsbuch (Fürst 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Grüner Tau
 50825	Blauer Tau
 50826	Weißer Tau
+50827	Schwarzer Tau
 50830	Flammenkraft-Elixier
 50831	Frostkraft-Elixier
 50832	Donnerkraft-Elixier
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Rote Sehertruhe
 50939	Blaue Sehertruhe
 50940	Rosa Sehertruhe
+50941	Truhe der Krypta
 51001	Energiesplitter
 51002	Energiekristall
 51501	Cor Draconis (Roh)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Tapferer Moa
 52120	Tapferer Moa
 52202	Turbo-Surfboard
+52204	Wukongs Sturm
+52205	Wukongs Donner
 52701	Löwen-Urkunde
 52702	Tiger-Urkunde
 52703	Keiler-Urkunde
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Rentier-Urkunde (w)
 52707	Dragor-Urkunde
 52708	Moa-Urkunde
+52710	Hwacha-Verwandlungskugel
 53001	Feuerphönix
 53002	Rentierjunges
 53003	Eisphönix
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Schnee-Krampus
 53354	Kohlen-Krampus
 53355	Kleiner Krampus
+53356	Schwarzer Stier
+53357	Brauner Stier
+53358	Zahmer Stier
+53359	Kneifi
+53360	Zwicki
+53362	Lilith
+53363	Helena
+53364	Mini-Lilith
+53365	Goldener Long
+53366	Silberner Long
+53367	Kleiner Long
+53368	Kleiner Balathor
+53369	Balathor Jr.
 53501	Feuerphönix-Käfig
 53502	Truhe des Rentierjungen
 53503	Eisphönix-Käfig
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Eiskalte Krampus-Truhe
 53636	Rußige Krampus-Truhe
 53637	Kleine Krampus-Truhe
+53638	Schwarze Stierbox
+53639	Braune Stierbox
+53640	Kleine Stierbox
+53641	Kneifis Krabbenbox
+53642	Zwickis Krabbenbox
+53643	Liliths Höllentruhe
+53644	Helenas Höllentruhe
+53645	Mini-Höllentruhe
+53646	Goldener Drachenschrein
+53647	Silberner Drachenschrein
+53648	Kleiner Drachenschrein
 54041	Wolfmantruhe lvl60
 54042	Kiste aus der wolfman equ
 54043	Lehrlingstruhe I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Gefrorener Schlüssel
 70411	W. Drachentruhe (Leicht)
 70412	W. Drachentruhe (Schwer)
+70413	Balathors Frosttruhe
+70414	Balathors Frosttruhe+
 70422	Schlangenschlüssel
 70423	Feuerschlangenscherbe
 70424	Eisschlangenscherbe
@@ -10035,6 +10146,28 @@ VNUM	LOCALE_NAME
 70449	Verdammnis-Schlüssel+
 70450	Rolle d. Erlösungs-Metin
 70451	Totenflammen-Bündel
+70500	Echo der Stärke +0
+70501	Echo der Stärke +1
+70502	Echo der Stärke +2
+70503	Echo der Stärke +3
+70504	Echo der Stärke +4
+70505	Echo des Könnens +0
+70506	Echo des Könnens +1
+70507	Echo des Könnens +2
+70508	Echo des Könnens +3
+70509	Echo des Könnens +4
+70510	Essenz der Stärke +0
+70511	Essenz der Stärke +1
+70512	Essenz der Stärke +2
+70513	Essenz der Stärke +3
+70514	Essenz der Stärke +4
+70515	Essenz des Könnens +0
+70516	Essenz des Könnens +1
+70517	Essenz des Könnens +2
+70518	Essenz des Könnens +3
+70519	Essenz des Könnens +4
+70602	Echoverstärkung
+70603	Echoerweckung
 70604	Meisterschafts-Truhe
 70605	Ticket-Truhe
 70606	Meisterschafts-Trophäe
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Dunkles Legionspferd
 71277	Halia
 71278	Aquilos
+71280	Finsteres Höllenross
+71281	Grausames Höllenross
+71287	Balathors Eisschwinge
+71288	Balathors Nachtschwinge
 72001	Erfahrungsring (10h)
 72002	Erfahrungsring (30m)
 72003	Erfahrungsring (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Tragbare Jeditader
 72355	Pers. Premiumladen
 72356	Pers. Premiumladen
+72359	Passierschein (Balathor)
 72360	Schr. d. Herausforderung
 72701	Windschuhe
 72702	Windschuhe+ (handelbar)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Ausdauerreduktion (30 %)
 72755	Erweiterungs-Lizenz
 72756	Loot-Pass
-72757	Sprengschutz-Ticket
-72758	Primordis-Neuanfang
 72760	Berserker-Buch
 72761	Magiebruch-Buch
 72762	Beschleunigungs-Buch
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Pet-Schmiederune
 79658	4* Pet-Schmiederune
 79659	5* Pet-Schmiederune
+79666	Monsterfinder
+79667	Charakterfinder
+79668	Teleportationsstein+
+79669	Teleportationsstein
+79670	Roter Wald, Teil 1
+79671	Roter Wald, Teil 2
+79672	Roter Wald, Teil 3
+79673	Roter Wald, Teil 4
+79674	Roter Wald, Teil 5
+79675	Schlangenfeld, Teil 1
+79676	Schlangenfeld, Teil 2
+79677	Schlangenfeld, Teil 3
+79678	Schlangenfeld, Teil 4
+79679	Schlangenfeld, Teil 5
+79680	Land d. Riesen, Teil 1
+79681	Land d. Riesen, Teil 2
+79682	Land d. Riesen, Teil 3
+79683	Land d. Riesen, Teil 4
+79684	Land d. Riesen, Teil 5
+79685	Spinnendungeon, Teil 1
+79686	Spinnendungeon, Teil 2
+79687	Spinnendungeon, Teil 3
+79688	Spinnendungeon, Teil 4
+79689	Spinnendungeon, Teil 5
+79690	Spinnendungeon 2, Teil 1
+79691	Spinnendungeon 2, Teil 2
+79692	Spinnendungeon 2, Teil 3
+79693	Spinnendungeon 2, Teil 4
+79694	Spinnendungeon 2, Teil 5
+79695	Grotte d. Verb., Teil 1
+79696	Grotte d. Verb., Teil 2
+79697	Grotte d. Verb., Teil 3
+79698	Grotte d. Verb., Teil 4
+79699	Grotte d. Verb., Teil 5
+79700	Gr. d. Verb. 2, Teil 1
+79701	Gr. d. Verb. 2, Teil 2
+79702	Gr. d. Verb. 2, Teil 3
+79703	Gr. d. Verb. 2, Teil 4
+79704	Gr. d. Verb. 2, Teil 5
+79705	Hasun Dong, Teil 1
+79706	Hasun Dong, Teil 2
+79707	Hasun Dong, Teil 3
+79708	Hasun Dong, Teil 4
+79709	Hasun Dong, Teil 5
+79710	Jungsun Dong, Teil 1
+79711	Jungsun Dong, Teil 2
+79712	Jungsun Dong, Teil 3
+79713	Jungsun Dong, Teil 4
+79714	Jungsun Dong, Teil 5
+79715	Sangsun Dong, Teil 1
+79716	Sangsun Dong, Teil 2
+79717	Sangsun Dong, Teil 3
+79718	Sangsun Dong, Teil 4
+79719	Sangsun Dong, Teil 5
+79725	Spinnendungeon 3, Teil 1
+79726	Spinnendungeon 3, Teil 2
+79727	Spinnendungeon 3, Teil 3
+79728	Spinnendungeon 3, Teil 4
+79729	Spinnendungeon 3, Teil 5
+79730	Tempel der Ochao, Teil 1
+79731	Tempel der Ochao, Teil 2
+79732	Tempel der Ochao, Teil 3
+79733	Tempel der Ochao, Teil 4
+79734	Tempel der Ochao, Teil 5
+79735	ZR: Gr. d. Verb., Teil 1
+79736	ZR: Gr. d. Verb., Teil 2
+79737	ZR: Gr. d. Verb., Teil 3
+79738	ZR: Gr. d. Verb., Teil 4
+79739	ZR: Gr. d. Verb., Teil 5
+79740	EW: Gr. d. Verb., Teil 1
+79741	EW: Gr. d. Verb., Teil 2
+79742	EW: Gr. d. Verb., Teil 3
+79743	EW: Gr. d. Verb., Teil 4
+79744	EW: Gr. d. Verb., Teil 5
+79745	Gnollhöhlen, Teil 1
+79746	Gnollhöhlen, Teil 2
+79747	Gnollhöhlen, Teil 3
+79748	Gnollhöhlen, Teil 4
+79749	Gnollhöhlen, Teil 5
+79750	Gnollhöhlen 2, Teil 1
+79751	Gnollhöhlen 2, Teil 2
+79752	Gnollhöhlen 2, Teil 3
+79753	Gnollhöhlen 2, Teil 4
+79754	Gnollhöhlen 2, Teil 5
+79755	Gnollhöhlen 3, Teil 1
+79756	Gnollhöhlen 3, Teil 2
+79757	Gnollhöhlen 3, Teil 3
+79758	Gnollhöhlen 3, Teil 4
+79759	Gnollhöhlen 3, Teil 5
+79760	Schlangentempel, Teil 1
+79761	Schlangentempel, Teil 2
+79762	Schlangentempel, Teil 3
+79763	Schlangentempel, Teil 4
+79764	Schlangentempel, Teil 5
+79765	Nordwindhort, Teil 1
+79766	Nordwindhort, Teil 2
+79767	Nordwindhort, Teil 3
+79768	Nordwindhort, Teil 4
+79769	Nordwindhort, Teil 5
+79770	Nordwindabstieg, Teil 1
+79771	Nordwindabstieg, Teil 2
+79772	Nordwindabstieg, Teil 3
+79773	Nordwindabstieg, Teil 4
+79774	Nordwindabstieg, Teil 5
+79800	Karte: Roter Wald
+79801	Karte: Schlangenfeld
+79802	Karte: Land der Riesen
+79803	Karte: Spinnendungeon
+79804	Karte: Spinnendungeon 2
+79805	Karte: Grotte d. Verb.
+79806	Karte: Grotte d. Verb. 2
+79807	Karte: Hasun Dong
+79808	Karte: Jungsun Dong
+79809	Karte: Sangsun Dong
+79811	Karte: Spinnendungeon 3
+79812	Karte: Tempel der Ochao
+79813	Karte: ZR: Gr. d. Verb.
+79814	Karte: EW: Gr. d. Verb.
+79815	Karte: Gnollhöhlen
+79816	Karte: Gnollhöhlen 2
+79817	Karte: Gnollhöhlen 3
+79818	Karte: Schlangentempel
+79819	Karte: Nordwindhort
+79820	Karte: Nordwindabstieg
 80003	Silberbarren(50.000Yang)
 80004	Silberbarren(100000Yang)
 80005	Goldbarren(500.000Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	SungMa-Invasionstruhe
 83073	Yohara-Monsterkartenbox
 83074	Monsterkartenplatinbox
-83075	Bitterbeeren-Truhe
-83076	Goldbeeren-Truhe
 83077	Drachengott-Truhe
+83078	SungMa-Schatztruhe
+83082	SungMa-Truhe
 83100	Belohnung T. v. Seungr.
 83101	Belohnung Yongbi-Wüste
 83102	Belohnung Kuahlo Dong
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Truhe der Zerstörung
 83125	Truhe der Zerstörung
 83126	Truhe der Zerstörung
+83130	Höllische Auswahltruhe+
+83131	Hörner-Auswahltr.+
+83132	Wuk. Gewand-Auswahltr.+
+83133	Wuk. Reif-Auswahltruhe+
+83134	Fluchbringer-Auswahltr.+
+83135	Wuk. Gewand-Auswahltruhe
+83136	Wuk. Reif-Auswahltruhe
+83137	Festtagsfreund-Auswahl.+
+83138	Stürmische Auswahltruhe+
+83139	Fertigkeitsbuch-Auswahl.
 85001	Herrscherband (einfach)
 85002	Herrscherband (fein)
 85003	Herrscherband (edel)

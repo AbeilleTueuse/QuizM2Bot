@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Astral Dragon Helmet+13
 12874	Astral Dragon Helmet+14
 12875	Astral Dragon Helmet+15
+12880	Serpent's Cowl+0
+12881	Serpent's Cowl+1
+12882	Serpent's Cowl+2
+12883	Serpent's Cowl+3
+12884	Serpent's Cowl+4
+12885	Serpent's Cowl+5
+12886	Serpent's Cowl+6
+12887	Serpent's Cowl+7
+12888	Serpent's Cowl+8
+12889	Serpent's Cowl+9
+12890	Serpent's Cowl+10
+12891	Serpent's Cowl+11
+12892	Serpent's Cowl+12
+12893	Serpent's Cowl+13
+12894	Serpent's Cowl+14
+12895	Serpent's Cowl+15
 13000	Battle Shield+0
 13001	Battle Shield+1
 13002	Battle Shield+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Bandage
 27125	Battle Potion
 27126	Dragon Force Potion
+27127	Balathor's Frost Blood
 27128	Yut Nori Secret
 27201	Red Potion (S)
 27202	Red Potion (M)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vampire Helmet Voucher
 30343	Vampire Helmet Voucher+
 30344	Call of the Shrines
+30345	Fire Arrow
 30346	Battle Royale Ticket
 30500	Ruby Engraving Knife
 30501	Gold Clasp
@@ -6817,14 +6835,14 @@ VNUM	LOCALE_NAME
 31082	Magma Ring
 31083	Ring of Samael
 31084	Nimbus Tincture
-31085	NoNAme
+31085	Heavy Water
 31086	Mushroom Spores
-31087	NoNAme
-31088	NoNAme
+31087	Flame Ghost Flame
+31088	Fire Potion
 31089	NoNAme
-31090	NoNAme
+31090	Nemere's Heart
 31091	NoNAme
-31092	NoNAme
+31092	Ice Monster Skin
 31093	Unknown Stone
 31094	Shard
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Mysterious Stone
 31262	Serpent Polish
 31263	Northwind Whetstone
+31264	Balathor's Tendon
+31265	Frosted Hammer
+31266	Balathor's Wing
+31267	Balathor's Horn
+31268	Balathor's Eye
+31269	Balathor's Scale
 31270	Talisman Essence
 33001	Zi Insignia
 33002	Chou Insignia
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Ancestral Bell+
 40190	Ancestral Fan+
 40191	Ancestral Claws+
+40192	Cursebringer Sword+
+40193	Cursebringer Dagger+
+40194	Cursebringer Bow+
+40195	Cursebringer Greatsword+
+40196	Cursebringer Bell+
+40197	Cursebringer Fan+
+40198	Cursebringer Claws+
 41000	Weapon Skin Placeholder
 41001	Rabbit Costume (brown)
 41002	Bunny Costume (brown)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	HUN Football Outfit+ (f)
 41658	ROU World Cup Kit (m)
 41659	ROU World Cup Kit (f)
-41660	ROU World Cup Kit+ (m)
-41661	ROU World Cup Kit+ (f)
+41660	ROU Football Outfit+ (m)
+41661	ROU Football Outfit+ (f)
 41662	POL World Cup Kit (m)
 41663	POL World Cup Kit (f)
 41664	POL Football Outfit+ (m)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Triumphal Armour+ (m)
 41918	Benevolent Armour+ (f)
 41919	Triumphal Armour+ (f)
+41920	Red Torero
+41921	Blue Torero
+41922	Red Torera
+41923	Blue Torera
+41924	Red Torero+
+41925	Blue Torero+
+41926	Red Torera+
+41927	Blue Torera+
+41932	Lord of Atlantis+
+41933	Warrior of Atlantis+ (m)
+41934	Lady of Atlantis+
+41935	Warrior of Atlantis+ (f)
+41936	Fire Incubus+
+41937	Midnight Incubus+
+41938	Fire Succubus+
+41939	Midnight Succubus+
+41940	Wukong's Sun Robe+ (m)
+41941	Wukong's Moon Robe+ (m)
+41942	Wukong's Sun Robe+ (f)
+41943	Wukong's Moon Robe+ (f)
+41952	Wukong's Sun Robe (m)
+41953	Wukong's Moon Robe (m)
+41954	Wukong's Sun Robe (f)
+41955	Wukong's Moon Robe (f)
 45001	Bunny Ears (brown)
 45002	Rabbit Ears (brown)
 45003	Headdress (m)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Triumphal Crown+ (m)
 45658	Benevolent Crown+ (f)
 45659	Triumphal Crown+ (f)
+45660	Red Montera (m)
+45661	Blue Montera (m)
+45662	Red Montera (f)
+45663	Blue Montera (f)
+45664	Red Montera+ (m)
+45665	Blue Montera+ (m)
+45666	Red Montera+ (f)
+45667	Blue Montera+ (f)
+45672	Atlantis Crown+ (m)
+45673	Atlantis Helmet+ (m)
+45674	Atlantis Crown+ (f)
+45675	Atlantis Helmet+ (f)
+45676	Fire Horns+ (m)
+45677	Midnight Horns+ (m)
+45678	Fire Horns+ (f)
+45679	Midnight Horns+ (f)
+45680	Wukong's Sun Crown+ (m)
+45681	Wukong's Moon Crown+ (m)
+45682	Wukong's Sun Crown+ (f)
+45683	Wukong's Moon Crown+ (f)
+45696	Wukong's Sun Crown (m)
+45697	Wukong's Moon Crown (m)
+45698	Wukong's Sun Crown (f)
+45699	Wukong's Moon Crown (f)
 49001	Ordinary Aura Outfit
 49002	Simple Aura Outfit
 49003	Noble Aura Outfit
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Master Chest II
 50195	Master Chest III
 50196	Grand Master Chest
-50197	NoNAme
+50197	Unknown Bag
 50198	NoNAme
 50199	NoNAme
 50200	Bundle
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Ward Book Chest
 50324	Boost Book Chest
 50325	Book of Precision
+50326	Balathor's Skill Book
 50330	Mission Book (Lord 1)
 50331	Mission Book (Lord 2)
 50332	Mission Book (Lord 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Green Dew
 50825	Blue Dew
 50826	White Dew
+50827	Black Dew
 50830	Power of Flame Elixir
 50831	Power of Frost Elixir
 50832	Power of Thunder Elixir
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Red Seer Chest
 50939	Blue Seer Chest
 50940	Pink Seer Chest
+50941	Crypt Chest
 51001	Energy Fragment
 51002	Energy Crystal
 51501	Cor Draconis (Rough)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Valiant Moa
 52120	Valiant Moa
 52202	Turbo Surfboard
+52204	Wukong's Storm
+52205	Wukong's Thunder
 52701	Lion Certificate
 52702	Tiger Certificate
 52703	Wild Boar Certificate
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	Reindeer Certificate (f)
 52707	Dragor Certificate
 52708	Moa Certificate
+52710	Hwacha Polymorph Marble
 53001	Fire Phoenix
 53002	Reindeer Calf
 53003	Ice Phoenix
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Snow Krampus
 53354	Coal Krampus
 53355	Tiny Krampus
+53356	Black Bull
+53357	Brown Bull
+53358	Tame Bull
+53359	Pincher
+53360	Snapper
+53362	Lilith
+53363	Helena
+53364	Mini-Lilith
+53365	Golden Loong
+53366	Silver Loong
+53367	Small Loong
+53368	Mini Balathor
+53369	Balathor Jr
 53501	Fire Phoenix Cage
 53502	Reindeer Calf Chest
 53503	Ice Phoenix Cage
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Frozen Krampus Chest
 53636	Sooty Krampus Chest
 53637	Tiny Krampus Chest
+53638	Black Bull Box
+53639	Brown Bull Box
+53640	Small Bull Box
+53641	Pincher's Crab Box
+53642	Snapper's Crab Box
+53643	Lilith's Hell Chest
+53644	Helena's Hell Chest
+53645	Mini Hell Chest
+53646	Golden Dragon Shrine
+53647	Silver Dragon Shrine
+53648	Small Dragon Shrine
 54041	NoNAme
 54042	NoNAme
 54043	Apprentice Chest I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Frozen Key
 70411	Wh. Dragon Chest (Light)
 70412	Wh. Dragon Chest (Heavy)
+70413	Balathor's Frost Chest
+70414	Balathor's Frost Chest+
 70422	Serpent Key
 70423	Fire Serpent Shard
 70424	Ice Serpent Shard
@@ -10035,10 +10146,32 @@ VNUM	LOCALE_NAME
 70449	Damnation Key+
 70450	Salvation Metin Scroll
 70451	Death Flame Bundle
-70604	World Cup Chest
+70500	Echo of Strength+0
+70501	Echo of Strength+1
+70502	Echo of Strength+2
+70503	Echo of Strength+3
+70504	Echo of Strength+4
+70505	Echo of Talent+0
+70506	Echo of Talent+1
+70507	Echo of Talent+2
+70508	Echo of Talent+3
+70509	Echo of Talent+4
+70510	Essence of Strength+0
+70511	Essence of Strength+1
+70512	Essence of Strength+2
+70513	Essence of Strength+3
+70514	Essence of Strength+4
+70515	Essence of Talent+0
+70516	Essence of Talent+1
+70517	Essence of Talent+2
+70518	Essence of Talent+3
+70519	Essence of Talent+4
+70602	Echo Enhancer
+70603	Echo Amplifier
+70604	Tournament Chest
 70605	Ticket Chest
-70606	World Cup Trophy
-70607	World Cup Emblem
+70606	Tournament Trophy
+70607	Tournament Emblem
 70608	Gaya Bag
 70609	Country Ticket
 70610	Cheering Ticket
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Dark Legion Horse
 71277	Halia
 71278	Aquilos
+71280	Sinister Hellsteed
+71281	Gruesome Hellsteed
+71287	Balathor's Icewing
+71288	Balathor's Nightwing
 72001	Experience Ring (10h)
 72002	Experience Ring (30m)
 72003	Experience Ring (3h)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Portable Jadite Vein
 72355	Personal Premium Shop
 72356	Personal Premium Shop
+72359	Passage Ticket (Balath.)
 72360	Challenge Scroll
 72701	Wind Shoes
 72702	Wind Shoes+ (tradeable)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Endur. Reduction (30%)
 72755	Expansion Licence
 72756	Loot Pass
-72757	Bombproof Ticket
-72758	Primordis Reset
 72760	Berserker Book
 72761	Anti-Magic Book
 72762	Haste Book
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Pet Catalyst
 79658	4* Pet Catalyst
 79659	5* Pet Catalyst
+79666	Monster Finder
+79667	NPC Finder
+79668	Teleport Stone+
+79669	Teleport Stone
+79670	Red Forest, M1
+79671	Red Forest, M2
+79672	Red Forest, M3
+79673	Red Forest, M4
+79674	Red Forest, M5
+79675	Snakefield, M1
+79676	Snakefield, M2
+79677	Snakefield, M3
+79678	Snakefield, M4
+79679	Snakefield, M5
+79680	Land of Giants, M1
+79681	Land of Giants, M2
+79682	Land of Giants, M3
+79683	Land of Giants, M4
+79684	Land of Giants, M5
+79685	Spider Dungeon, M1
+79686	Spider Dungeon, M2
+79687	Spider Dungeon, M3
+79688	Spider Dungeon, M4
+79689	Spider Dungeon, M5
+79690	Spider Dungeon 2, M1
+79691	Spider Dungeon 2, M2
+79692	Spider Dungeon 2, M3
+79693	Spider Dungeon 2, M4
+79694	Spider Dungeon 2, M5
+79695	Grotto of Exile, M1
+79696	Grotto of Exile, M2
+79697	Grotto of Exile, M3
+79698	Grotto of Exile, M4
+79699	Grotto of Exile, M5
+79700	Grotto of Exile 2, M1
+79701	Grotto of Exile 2, M2
+79702	Grotto of Exile 2, M3
+79703	Grotto of Exile 2, M4
+79704	Grotto of Exile 2, M5
+79705	Hasun Dong, M1
+79706	Hasun Dong, M2
+79707	Hasun Dong, M3
+79708	Hasun Dong, M4
+79709	Hasun Dong, M5
+79710	Jungsun Dong, M1
+79711	Jungsun Dong, M2
+79712	Jungsun Dong, M3
+79713	Jungsun Dong, M4
+79714	Jungsun Dong, M5
+79715	Sangsun Dong, M1
+79716	Sangsun Dong, M2
+79717	Sangsun Dong, M3
+79718	Sangsun Dong, M4
+79719	Sangsun Dong, M5
+79725	Spider Dungeon 3, M1
+79726	Spider Dungeon 3, M2
+79727	Spider Dungeon 3, M3
+79728	Spider Dungeon 3, M4
+79729	Spider Dungeon 3, M5
+79730	Temple of the Ochao, M1
+79731	Temple of the Ochao, M2
+79732	Temple of the Ochao, M3
+79733	Temple of the Ochao, M4
+79734	Temple of the Ochao, M5
+79735	TR: Grotto of Exile, M1
+79736	TR: Grotto of Exile, M2
+79737	TR: Grotto of Exile, M3
+79738	TR: Grotto of Exile, M4
+79739	TR: Grotto of Exile, M5
+79740	RX: Grotto of Exile, M1
+79741	RX: Grotto of Exile, M2
+79742	RX: Grotto of Exile, M3
+79743	RX: Grotto of Exile, M4
+79744	RX: Grotto of Exile, M5
+79745	Gnoll Caves, M1
+79746	Gnoll Caves, M2
+79747	Gnoll Caves, M3
+79748	Gnoll Caves, M4
+79749	Gnoll Caves, M5
+79750	Gnoll Caves 2, M1
+79751	Gnoll Caves 2, M2
+79752	Gnoll Caves 2, M3
+79753	Gnoll Caves 2, M4
+79754	Gnoll Caves 2, M5
+79755	Gnoll Caves 3, M1
+79756	Gnoll Caves 3, M2
+79757	Gnoll Caves 3, M3
+79758	Gnoll Caves 3, M4
+79759	Gnoll Caves 3, M5
+79760	Serpent Temple, M1
+79761	Serpent Temple, M2
+79762	Serpent Temple, M3
+79763	Serpent Temple, M4
+79764	Serpent Temple, M5
+79765	Northwind Shelter, M1
+79766	Northwind Shelter, M2
+79767	Northwind Shelter, M3
+79768	Northwind Shelter, M4
+79769	Northwind Shelter, M5
+79770	Northwind Descent, M1
+79771	Northwind Descent, M2
+79772	Northwind Descent, M3
+79773	Northwind Descent, M4
+79774	Northwind Descent, M5
+79800	Map: Red Forest
+79801	Map: Snakefield
+79802	Map: Land of Giants
+79803	Map: Spider Dungeon
+79804	Map: Spider Dungeon 2
+79805	Map: Grotto of Exile
+79806	Map: Grotto of Exile 2
+79807	Map: Hasun Dong
+79808	Map: Jungsun Dong
+79809	Map: Sangsun Dong
+79811	Map: Spider Dungeon 3
+79812	Map: Temple of the Ochao
+79813	Map: TR: Grotto of Exile
+79814	Map: RX: Grotto of Exile
+79815	Map: Gnoll Caves
+79816	Map: Gnoll Caves 2
+79817	Map: Gnoll Caves 3
+79818	Map: Serpent Temple
+79819	Map: Northwind Shelter
+79820	Map: Northwind Descent
 80003	Silver Bar (50,000 Yang)
 80004	Silver Bar(100,000 Yang)
 80005	Gold Bar (500,000 Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	Sung Ma Invasion Chest
 83073	Yohara Monster Card Box
 83074	Plat. Monster Card Box
-83075	Bitterberry Chest
-83076	Goldberry Chest
 83077	Dragon God Chest
+83078	Sung Ma's Treasure Chest
+83082	Sung Ma's Chest
 83100	Seungryong Reward Chest
 83101	Yongbi Reward Chest
 83102	Kuahlo Dong Reward Chest
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Destruction Chest
 83125	Destruction Chest
 83126	Destruction Chest
+83130	Hellish Selection Box+
+83131	Horned Selection Box+
+83132	Wukong's Robe Sel. Box+
+83133	Wukong's Crown Sel. Box+
+83134	Cursebringer Sel. Box+
+83135	Wukong's Robe Sel. Box
+83136	Wukong's Crown Sel. Box
+83137	Festive Friend Sel. Box+
+83138	Stormy Selection Box+
+83139	Skill Book Selection Box
 85001	Lord Sash (basic)
 85002	Lord Sash (fine)
 85003	Lord Sash (noble)

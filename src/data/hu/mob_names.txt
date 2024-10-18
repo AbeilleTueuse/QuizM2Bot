@@ -730,42 +730,6 @@ VNUM	LOCALE_NAME
 4033	Enigma templom (épít)
 4034	Enigma templom (ismét)
 4035	Enigma portál
-4101	Világvége Zi õrzõ
-4102	Világvége Chou õrzõ
-4103	Világvége Yin õrzõ
-4104	Világvége Mao õrzõ
-4105	Világvége Chen õrzõ
-4106	Világvége Si õrzõ
-4107	Világvége Wu õrzõ
-4108	Világvége Wei õrzõ
-4109	Világvége Shen õrzõ
-4110	Világvége You õrzõ
-4111	Világvége Xu õrzõ
-4112	Világvége Hai õrzõ
-4121	Világvége Zi õrzõ
-4122	Világvége Chou õrzõ
-4123	Világvége Yin õrzõ
-4124	Világvége Mao õrzõ
-4125	Világvége Chen õrzõ
-4126	Világvége Si õrzõ
-4127	Világvége Wu õrzõ
-4128	Világvége Wei õrzõ
-4129	Világvége Shen õrzõ
-4130	Világvége You õrzõ
-4131	Világvége Xu õrzõ
-4132	Világvége Hai õrzõ
-4141	Armageddon Metinje
-4142	Világvége Metinje
-4143	Kataklizma Metinje
-4144	Apokalipszis Metinje
-4145	Világvége Henkog
-4146	Titokz. világvége Henkog
-4147	Világvége kappa
-4148	Világvége mélyvízi kappa
-4149	Világvége Chuong
-4150	Titokz. világvége Chuong
-4151	Világvége varázsló
-4152	Tit. világvége varázsló
 4153	Asmodeus
 4154	Föld követe
 4155	Föld követe
@@ -1072,23 +1036,6 @@ VNUM	LOCALE_NAME
 6513	Sárkány portál
 6514	A sárkánykirályhoz
 6515	Kilépés
-6516	Õsi õr
-6517	Arany portál
-6518	Arany monolit
-6519	Arany monolit
-6520	Arany pálma
-6521	Karaván kereskedõ
-6522	Raptor
-6523	Rinoszaurusz
-6524	Dilofoszaurusz
-6525	Fiatal rex
-6526	Kis aranyrex
-6527	Hatalmas aranyrex
-6528	Nemes aranyrex
-6529	Õsi szobor
-6530	Bomba torony
-6531	Felnõtt rex
-6532	Õsi rex
 6686	Jin Bing
 6687	Ki katona
 6688	Mao katona
@@ -1246,6 +1193,11 @@ VNUM	LOCALE_NAME
 6893	Északszél gólem
 6894	Nagylábú
 6895	Északszél hadvezér
+6896	Balathor
+6897	Balathor
+6898	Fantom harcos
+6899	Fantom íjász
+6900	Fantom visszhang
 7001	Majomkatona
 7002	Majomlovas
 7003	Gimu majomkatona
@@ -2546,6 +2498,15 @@ VNUM	LOCALE_NAME
 20488	Céh harc zóna (D)
 20489	Céh harc zóna (É)
 20490	Céh kereskedõ
+20491	Elátkozott kõtábla
+20492	Balathor kincse
+20493	Tûzkocsi
+20494	Kemény jégfal
+20495	Fagyott sárkánytojás
+20496	Fagyott sárkánytojás
+20497	Lángoló sárkánytojás
+20498	Õsi jégkristály
+20499	Tûzkocsi (átváltozva)
 20500	Sárkánytojás
 20501	Gaya láda
 20502	Yut Nori asztal
@@ -2553,6 +2514,7 @@ VNUM	LOCALE_NAME
 20504	Gaya piac
 20505	Yut pálcikák
 20506	Kapd el a Királyt asztal
+20507	Örök jégkristály
 20510	IH: Egy Sura szelleme
 20511	IH: Am-heh szurdok
 20512	IH: Taramor sírköve
@@ -2880,7 +2842,26 @@ VNUM	LOCALE_NAME
 34188	Hó krampusz
 34189	Szén krampusz
 34190	Kis krampusz
+34191	Fekete bika
+34192	Barna bika
+34193	Szelíd bika
+34194	Olly
+34195	Krabi
+34197	Lilit
+34198	Heléna
+34199	Mini Lilit
+34200	Arany lóng
+34201	Ezüst lóng
+34202	Kicsi lóng
+34203	Mini Balathor
+34204	Kis Balathor
+36000	Baljós pokolló
+36001	Rémisztõ pokolló
+36005	Balathor jégszárnyasa
+36006	Balathor éjszárnyasa
 40003	Turbó szörfdeszka
+40004	Wukong vihara
+40005	Wukong mennydörgése
 60000	Céh-adminisztrátor
 60001	Céh-adminisztrátor
 60002	Céh-adminisztrátor

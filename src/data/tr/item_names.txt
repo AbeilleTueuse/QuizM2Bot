@@ -4008,6 +4008,22 @@ VNUM	LOCALE_NAME
 12873	Gök ejderhasý kaský+13
 12874	Gök ejderhasý kaský+14
 12875	Gök ejderhasý kaský+15
+12880	Yýlan baþlýðý+0
+12881	Yýlan baþlýðý+1
+12882	Yýlan baþlýðý+2
+12883	Yýlan baþlýðý+3
+12884	Yýlan baþlýðý+4
+12885	Yýlan baþlýðý+5
+12886	Yýlan baþlýðý+6
+12887	Yýlan baþlýðý+7
+12888	Yýlan baþlýðý+8
+12889	Yýlan baþlýðý+9
+12890	Yýlan baþlýðý+10
+12891	Yýlan baþlýðý+11
+12892	Yýlan baþlýðý+12
+12893	Yýlan baþlýðý+13
+12894	Yýlan baþlýðý+14
+12895	Yýlan baþlýðý+15
 13000	Savaþ Kalkaný+0
 13001	Savaþ Kalkaný+1
 13002	Savaþ Kalkaný+2
@@ -5899,6 +5915,7 @@ VNUM	LOCALE_NAME
 27124	Bandaj
 27125	Muharebe Ýksiri
 27126	Ejderha Gücü Ýksiri
+27127	Balathor'un buzlu kaný
 27128	Yutnori gizemi
 27201	Kýrmýzý Ýksir (K)
 27202	Kýrmýzý Ýksir (O)
@@ -6584,6 +6601,7 @@ VNUM	LOCALE_NAME
 30342	Vampir Baþlýðý Fiþi
 30343	Vampir Baþlýðý Fiþi+
 30344	Tapýnaklarýn Çaðrýsý
+30345	Alevli ok
 30346	Battle Royale bileti
 30500	Yakut Oyma Býçaðý
 30501	Altýn Kenet
@@ -6816,15 +6834,15 @@ VNUM	LOCALE_NAME
 31081	Kara Madde
 31082	Magma Çemberi
 31083	Samael'in Yüzüðü
-31084	NoNAme
-31085	NoNAme
+31084	Nimbus Tincture
+31085	Aðýr su
 31086	Mantar Hücresi
-31087	NoNAme
-31088	NoNAme
+31087	Ateþ ruhu alevi
+31088	Ateþ iksiri
 31089	NoNAme
-31090	NoNAme
+31090	Nemere'nin kalbi
 31091	NoNAme
-31092	NoNAme
+31092	B. canavarý deri parçasý
 31093	Bilinmeyen Taþ
 31094	Parçacýk
 31095	NoNAme
@@ -6968,6 +6986,12 @@ VNUM	LOCALE_NAME
 31261	Gizemli taþ
 31262	Yýlan cilasý
 31263	Kuzey Rüzgarý çarký
+31264	Balathor'un tendonu
+31265	Don kaplý çekiç
+31266	Balathor'un kanadý
+31267	Balathor'un boynuzu
+31268	Balathor'un gözü
+31269	Balathor'un pulu
 31270	Týlsým özü
 33001	Zi Niþaný
 33002	Chou Niþaný
@@ -7255,6 +7279,13 @@ VNUM	LOCALE_NAME
 40189	Ata bekçisi çaný+
 40190	Ata bekçisi yelpazesi+
 40191	Ata bekçisi pençesi+
+40192	Lanetli kýlýç+
+40193	Lanetli hançer+
+40194	Lanetli ok+
+40195	Lanetli çift el+
+40196	Lanetli çan+
+40197	Lanetli yelpaze+
+40198	Lanetli pençe+
 41000	Silah görünümü yer tutar
 41001	Tavþan Kostümü e (kahve)
 41002	Tavþancýk kostümü (kv)
@@ -7861,8 +7892,8 @@ VNUM	LOCALE_NAME
 41657	Futbol Formasý+ HUN (k)
 41658	DÞ Formasý ROU (e)
 41659	DÞ Formasý ROU (k)
-41660	DÞ Formasý ROU+ (e)
-41661	DÞ Formasý ROU+ (k)
+41660	Futbol Formasý+ ROU (e)
+41661	Futbol Formasý+ ROU (k)
 41662	DÞ Formasý POL (e)
 41663	DÞ Formasý POL (k)
 41664	Futbol Formasý+ POL (e)
@@ -8121,6 +8152,30 @@ VNUM	LOCALE_NAME
 41917	Muzaffer Zýrhý+
 41918	Cömertlerin Zýrhý+
 41919	Muzafferlerin Zýrhý+
+41920	Kýrmýzý torero
+41921	Mavi torero
+41922	Kýrmýzý diþi torero
+41923	Mavi diþi torero
+41924	Kýrmýzý torero+
+41925	Mavi torero+
+41926	Kýrmýzý diþi torero+
+41927	Mavi diþi torero+
+41932	Atlantis prensi+
+41933	Atlantis savaþçýsý+
+41934	Atlantis prensesi+
+41935	Atlantis k. savaþçýsý+
+41936	Alev Incubus+
+41937	Gece Incubusu+
+41938	Alev Succubus+
+41939	Gece Succubusu+
+41940	Wukong'un Gnþ. Elb.+ (e)
+41941	Wukong'un Ay Elb.+ (e)
+41942	Wukong'un Gnþ. Elb.+ (k)
+41943	Wukong'un Ay Elb.+ (k)
+41952	Wukong'un Gnþ. Elb. (e)
+41953	Wukong'un Ay Elb. (e)
+41954	Wukong'un Gnþ. Elb. (k)
+41955	Wukong'un Ay Elb. (k)
 45001	Tavþancýk kulaklarý (kv)
 45002	Tavþan Kulaðý e (kahve)
 45003	Baþlýk (e)
@@ -8737,6 +8792,30 @@ VNUM	LOCALE_NAME
 45657	Muzaffer Tacý+
 45658	Cömertlerin Tacý+
 45659	Muzafferlerin Tacý+
+45660	Kýrmýzý montera (e)
+45661	Mavi montera (e)
+45662	Kýrmýzý montera (k)
+45663	Mavi montera (k)
+45664	Kýrmýzý montera+ (e)
+45665	Mavi montera+ (e)
+45666	Kýrmýzý montera+ (k)
+45667	Mavi montera+ (k)
+45672	Atlantis tacý+ (e)
+45673	Atlantis kaský+ (e)
+45674	Atlantis tacý+ (k)
+45675	Atlantis kaský+ (k)
+45676	Alevli boynuzlar+ (e)
+45677	Gece syh. boynuzlar+ (e)
+45678	Alevli boynuzlar+ (k)
+45679	Gece syh. boynuzlar+ (k)
+45680	Wukong'un Gnþ. Hlk.+ (e)
+45681	Wukong'un Ay Hlk.+ (e)
+45682	Wukong'un Gnþ. Hlk.+ (k)
+45683	Wukong'un Ay Hlk.+ (k)
+45696	Wukong'un Gnþ. Hlk. (e)
+45697	Wukong'un Ay Hlk. (e)
+45698	Wukong'un Gnþ. Hlk. (k)
+45699	Wukong'un Ay Hlk. (k)
 49001	Genel Aura Giysisi
 49002	Sade Aura Giysisi
 49003	Soylu Aura Giysisi
@@ -8920,7 +8999,7 @@ VNUM	LOCALE_NAME
 50194	Usta Sandýðý II
 50195	Usta Sandýðý III
 50196	Büyük Üstat Sandýðý
-50197	NoNAme
+50197	Bilinmeyen torba
 50198	NoNAme
 50199	NoNAme
 50200	Paket
@@ -9001,6 +9080,7 @@ VNUM	LOCALE_NAME
 50323	Kitap Sandýðý Misilleme
 50324	Kitap Sandýð Güçlendirme
 50325	Tamlýðýn kitabý
+50326	Balathor'un Beceri K.
 50330	Görev Kitabý (Prens 1)
 50331	Görev Kitabý (Prens 2)
 50332	Görev Kitabý (Prens 3)
@@ -9202,6 +9282,7 @@ VNUM	LOCALE_NAME
 50824	Yeþil Þebnem
 50825	Mavi Þebnem
 50826	Beyaz Þebnem
+50827	Siyah þebnem
 50830	Alev gücü özütü
 50831	Ayaz gücü özütü
 50832	Þimþek gücü özütü
@@ -9250,6 +9331,7 @@ VNUM	LOCALE_NAME
 50938	Kýrmýzý kahin sandýðý
 50939	Mavi kahin sandýðý
 50940	Pembe kahin sandýðý
+50941	Mahzen sandýðý
 51001	Enerji Parçasý
 51002	Enerji Kristali
 51501	Cor Draconis (iþlenmemþ)
@@ -9519,6 +9601,8 @@ VNUM	LOCALE_NAME
 52119	Cesur Moa
 52120	Cesur Moa
 52202	Turbo sörf tahtasý
+52204	Wukong'un Fýrtýnasý
+52205	Wukong'un Gürlemesi
 52701	Aslan Sertifikasý
 52702	Kaplan Sertifikasý
 52703	Yaban Domuzu Sertifikasý
@@ -9527,6 +9611,7 @@ VNUM	LOCALE_NAME
 52706	RenGeyiði Sertifikasý(k)
 52707	Ejdercik Sertifikasý
 52708	Moa Sertifikasý
+52710	Hwacha Dönüþüm Küresi
 53001	Ateþ Ankasý
 53002	Ren geyiði yavrusu
 53003	Buz Ankasý
@@ -9687,6 +9772,19 @@ VNUM	LOCALE_NAME
 53353	Kar Krampus
 53354	Kömür Krampus
 53355	Küçük Krampus
+53356	Siyah boða
+53357	Kahverengi boða
+53358	Uysal boða
+53359	Çimdik
+53360	Kýskaç
+53362	Lilith
+53363	Helena
+53364	Mini Lilith
+53365	Altýn Long
+53366	Gümüþ Long
+53367	Küçük Long
+53368	Küçük Balathor
+53369	Balathor Junior
 53501	Ateþ Ankasý Kafesi
 53502	Ren Geyiði Yavrusu Sand.
 53503	Buz Ankasý Kafesi
@@ -9819,6 +9917,17 @@ VNUM	LOCALE_NAME
 53635	Buzlu Krampus sandýðý
 53636	Ýsli Krampus sandýðý
 53637	Küçük Krampus sandýðý
+53638	Siyah boða kutusu
+53639	Kahverengi boða kutusu
+53640	Küçük boða kutusu
+53641	Çimdik'in yengeç kutusu
+53642	Kýskaç'ýn yengeç kutusu
+53643	Lilith'in Cehennem San.
+53644	Helena'nýn Cehennem San.
+53645	Mini Cehennem Sandýðý
+53646	Altýn ejderha sunaðý
+53647	Gümüþ ejderha sunaðý
+53648	Küçük ejderha sunaðý
 54041	NoNAme
 54042	NoNAme
 54043	Çýrak Sandýðý I
@@ -10011,6 +10120,8 @@ VNUM	LOCALE_NAME
 70410	Donmuþ anahtar
 70411	B. ejderha kutusu (haf.)
 70412	B. ejderha kutusu (aðýr)
+70413	Balathor'un ayaz sandýðý
+70414	Balathor'un ayaz sand.+
 70422	Yýlan anahtarý
 70423	Ateþ yýlaný parçasý
 70424	Buz yýlaný parçasý
@@ -10035,6 +10146,28 @@ VNUM	LOCALE_NAME
 70449	Lanetlenme Anahtarý+
 70450	Kurtuluþ Metini rulosu
 70451	Ölü Alev Destesi
+70500	Güç Yankýsý +0
+70501	Güç Yankýsý +1
+70502	Güç Yankýsý +2
+70503	Güç Yankýsý +3
+70504	Güç Yankýsý +4
+70505	Beceri Yankýsý +0
+70506	Beceri Yankýsý +1
+70507	Beceri Yankýsý +2
+70508	Beceri Yankýsý +3
+70509	Beceri Yankýsý +4
+70510	Güç Özütü +0
+70511	Güç Özütü +1
+70512	Güç Özütü +2
+70513	Güç Özütü +3
+70514	Güç Özütü +4
+70515	Beceri Özütü +0
+70516	Beceri Özütü +1
+70517	Beceri Özütü +2
+70518	Beceri Özütü +3
+70519	Beceri Özütü +4
+70602	Yanký takviyesi
+70603	Yanký uyanýþý
 70604	Þampiyonluk Sandýðý
 70605	Bilet Sandýðý
 70606	Þampiyonluk Kupasý
@@ -10304,6 +10437,10 @@ VNUM	LOCALE_NAME
 71276	Karanlýk lejyon atý
 71277	Halia
 71278	Aquilos
+71280	Kara Cehennem Atý
+71281	Zalim Cehennem Atý
+71287	Balathor'un buz kýlýcý
+71288	Balathor'un gece kýlýcý
 72001	Tecrübe yüzüðü (10 sa.)
 72002	Tecrübe yüzüðü (30 dk.)
 72003	Tecrübe yüzüðü (3 sa.)
@@ -10414,6 +10551,7 @@ VNUM	LOCALE_NAME
 72354	Taþýnab. jedit cevheri
 72355	Kiþ. Premium dükkan
 72356	Kiþisel premium dükkan
+72359	Geçit bileti (Balathor)
 72360	Zorluk parþömeni
 72701	Rüzgarýn Ayakkabýlarý
 72702	Rüzgar ayakb.+(tcrt var)
@@ -10446,8 +10584,6 @@ VNUM	LOCALE_NAME
 72754	Dayanýklýlýk düþ. (%30)
 72755	Geniþletme lisansý
 72756	Yaðma kartý
-72757	Patlayýcý koruma bileti
-72758	Primordis yeniden baþl.
 72760	Berserker Kitabý
 72761	Büyü Bozma Kitabý
 72762	Hýzlandýrma Kitabý
@@ -10873,6 +11009,130 @@ VNUM	LOCALE_NAME
 79657	3* Pet Demirci runiði
 79658	4* Pet Demirci runiði
 79659	5* Pet Demirci runiði
+79666	Canavar bulucu
+79667	Karakter bulucu
+79668	Iþýnlanma taþý+
+79669	Iþýnlanma taþý
+79670	Kýrmýzý Orman, Bölüm 1
+79671	Kýrmýzý Orman, Bölüm 2
+79672	Kýrmýzý Orman, Bölüm 3
+79673	Kýrmýzý Orman, Bölüm 4
+79674	Kýrmýzý Orman, Bölüm 5
+79675	Yýlan Vadisi, Bölüm 1
+79676	Yýlan Vadisi, Bölüm 2
+79677	Yýlan Vadisi, Bölüm 3
+79678	Yýlan Vadisi, Bölüm 4
+79679	Yýlan Vadisi, Bölüm 5
+79680	Devler Diyarý, Bölüm 1
+79681	Devler Diyarý, Bölüm 2
+79682	Devler Diyarý, Bölüm 3
+79683	Devler Diyarý, Bölüm 4
+79684	Devler Diyarý, Bölüm 5
+79685	Örümcek Zindaný, Bölüm 1
+79686	Örümcek Zindaný, Bölüm 2
+79687	Örümcek Zindaný, Bölüm 3
+79688	Örümcek Zindaný, Bölüm 4
+79689	Örümcek Zindaný, Bölüm 5
+79690	Örümcek Zindaný 2, B. 1
+79691	Örümcek Zindaný 2, B. 2
+79692	Örümcek Zindaný 2, B. 3
+79693	Örümcek Zindaný 2, B. 4
+79694	Örümcek Zindaný 2, B. 5
+79695	Sürgün Mðr., Bölüm 1
+79696	Sürgün Mðr., Bölüm 2
+79697	Sürgün Mðr., Bölüm 3
+79698	Sürgün Mðr., Bölüm 4
+79699	Sürgün Mðr., Bölüm 5
+79700	Sürgün Mðr. 2, Bölüm 1
+79701	Sürgün Mðr. 2, Bölüm 2
+79702	Sürgün Mðr. 2, Bölüm 3
+79703	Sürgün Mðr. 2, Bölüm 4
+79704	Sürgün Mðr. 2, Bölüm 5
+79705	Hasun Dong, Bölüm 1
+79706	Hasun Dong, Bölüm 2
+79707	Hasun Dong, Bölüm 3
+79708	Hasun Dong, Bölüm 4
+79709	Hasun Dong, Bölüm 5
+79710	Jungsun Dong, Bölüm 1
+79711	Jungsun Dong, Bölüm 2
+79712	Jungsun Dong, Bölüm 3
+79713	Jungsun Dong, Bölüm 4
+79714	Jungsun Dong, Bölüm 5
+79715	Sangsun Dong, Bölüm 1
+79716	Sangsun Dong, Bölüm 2
+79717	Sangsun Dong, Bölüm 3
+79718	Sangsun Dong, Bölüm 4
+79719	Sangsun Dong, Bölüm 5
+79725	Örümcek Zindaný 3, B. 1
+79726	Örümcek Zindaný 3, B. 2
+79727	Örümcek Zindaný 3, B. 3
+79728	Örümcek Zindaný 3, B. 4
+79729	Örümcek Zindaný 3, B. 5
+79730	Ochao Tapýnaðý, Bölüm 1
+79731	Ochao Tapýnaðý, Bölüm 2
+79732	Ochao Tapýnaðý, Bölüm 3
+79733	Ochao Tapýnaðý, Bölüm 4
+79734	Ochao Tapýnaðý, Bölüm 5
+79735	ZÇ: Sürgün Mðr., Bölüm 1
+79736	ZÇ: Sürgün Mðr., Bölüm 2
+79737	ZÇ: Sürgün Mðr., Bölüm 3
+79738	ZÇ: Sürgün Mðr., Bölüm 4
+79739	ZÇ: Sürgün Mðr., Bölüm 5
+79740	TS: Sürgün Mðr., Bölüm 1
+79741	TS: Sürgün Mðr., Bölüm 2
+79742	TS: Sürgün Mðr., Bölüm 3
+79743	TS: Sürgün Mðr., Bölüm 4
+79744	TS: Sürgün Mðr., Bölüm 5
+79745	Gnoll Mðr., Bölüm 1
+79746	Gnoll Mðr., Bölüm 2
+79747	Gnoll Mðr., Bölüm 3
+79748	Gnoll Mðr., Bölüm 4
+79749	Gnoll Mðr., Bölüm 5
+79750	Gnoll Mðr. 2, Bölüm 1
+79751	Gnoll Mðr. 2, Bölüm 2
+79752	Gnoll Mðr. 2, Bölüm 3
+79753	Gnoll Mðr. 2, Bölüm 4
+79754	Gnoll Mðr. 2, Bölüm 5
+79755	Gnoll Mðr. 3, Bölüm 1
+79756	Gnoll Mðr. 3, Bölüm 2
+79757	Gnoll Mðr. 3, Bölüm 3
+79758	Gnoll Mðr. 3, Bölüm 4
+79759	Gnoll Mðr. 3, Bölüm 5
+79760	Yýlan Tapýnaðý, Bölüm 1
+79761	Yýlan Tapýnaðý, Bölüm 2
+79762	Yýlan Tapýnaðý, Bölüm 3
+79763	Yýlan Tapýnaðý, Bölüm 4
+79764	Yýlan Tapýnaðý, Bölüm 5
+79765	Kuzey Rüzgarý Z., B 1
+79766	Kuzey Rüzgarý Z., B 2
+79767	Kuzey Rüzgarý Z., B 3
+79768	Kuzey Rüzgarý Z., B 4
+79769	Kuzey Rüzgarý Z., B 5
+79770	Kuzey Rüzgarý Ýniþi, B 1
+79771	Kuzey Rüzgarý Ýniþi, B 2
+79772	Kuzey Rüzgarý Ýniþi, B 3
+79773	Kuzey Rüzgarý Ýniþi, B 4
+79774	Kuzey Rüzgarý Ýniþi, B 5
+79800	Harita: Kýzýl Orman
+79801	Harita: Yýlan Vadisi
+79802	Harita: Devler Diyarý
+79803	Harita: Örümcek Zindaný
+79804	Harita: Örümcek Z. 2
+79805	Harita: Sürgün Mðr.
+79806	Harita: Sürgün Mðr. 2
+79807	Harita: Hasun Dong
+79808	Harita: Jungsun Dong
+79809	Harita: Sangsun Dong
+79811	Harita: Örümcek Z. 3
+79812	Harita: Ochao Tapýnaðý
+79813	Harita: ZÇ: Sürgün Mðr.
+79814	Harita: TS: Sürgün Mðr.
+79815	Harita: Gnoll Maðaralarý
+79816	Harita: Gnoll Mðr. 2
+79817	Harita: Gnoll Mðr. 3
+79818	Harita: Yýlan Tapýnaðý
+79819	Harita: Kuzey Rüzgarý Z.
+79820	Harita: Kuzey Rüzgarý Ý.
 80003	Gümüþ Bar(50.000Yang)
 80004	Gümüþ Bar(100.000Yang)
 80005	Altýn Külçe(500.000Yang)
@@ -11009,9 +11269,9 @@ VNUM	LOCALE_NAME
 83072	SungMa Ýstila Sandýðý
 83073	Yohara canavar kartý ku.
 83074	Canavar kartý plat. kut.
-83075	Acý dut sandýðý
-83076	Altýn dut sandýðý
 83077	Ejderha tanrýsý sandýðý
+83078	SungMa hazine sandýðý
+83082	SungMa sandýðý
 83100	Seungryong Vadisi ödülü
 83101	Yongbi Çölü ödülü
 83102	Kuahlo Dong ödülü
@@ -11039,6 +11299,16 @@ VNUM	LOCALE_NAME
 83124	Yýkým sandýðý
 83125	Yýkým sandýðý
 83126	Yýkým sandýðý
+83130	Cehennem seçim sandýðý+
+83131	Boynuzlu seçim sandýðý+
+83132	Wuk. elb. seçim sandýðý+
+83133	Wuk. hlk. seçim sandýðý
+83134	Lanetli seçim sandýðý+
+83135	Wuk. elb. seçim sandýðý
+83136	Wuk. hlk. seçim sandýðý+
+83137	Bayram arkadaþý seçimi+
+83138	Fýrtýnalý seçim sandýðý+
+83139	Beceri kitabý seçimi.
 85001	Hakim Kuþaðý (basit)
 85002	Hakim Kuþaðý (zarif)
 85003	Hakim Kuþaðý (asil)
