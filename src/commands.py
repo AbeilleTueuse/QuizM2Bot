@@ -55,6 +55,8 @@ class QuizCog(Cog):
         ),
     ):
         """Start a quiz."""
+        await interaction.response.defer()
+
         if self.quiz_manager.has_active_quiz(interaction.channel_id):
             await interaction.send("A quiz is already in progress in this channel.")
             return
@@ -424,9 +426,7 @@ class QuizCog(Cog):
             await interaction.send("There are no leaderboard on this server yet.")
 
         else:
-            embed = nextcord.Embed(
-                title="Elo leaderboard 🏆", color=0x33A5FF
-            )
+            embed = nextcord.Embed(title="Elo leaderboard 🏆", color=0x33A5FF)
             winner = next(leaderboard, None)
 
             if winner is not None:
