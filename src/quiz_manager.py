@@ -74,7 +74,7 @@ class Question:
         self.check_answer_count = 0
         self.hint_shown = 0
         self.first_message: nextcord.Message = None
-        self.first_message_timestamp : float = None
+        self.first_message_timestamp: float = None
         self.last_message: nextcord.Message = None
         self.last_hint_message: nextcord.Message = None
 
@@ -114,7 +114,7 @@ class Question:
             lang: self._get_hint_shuffle(answer)
             for lang, answer in self.answers.items()
         }
-    
+
     def add_first_message(self, message: nextcord.Message):
         self.last_message = message
         self.first_message = message
@@ -323,7 +323,6 @@ class Quiz:
         self.waiting_for_answer = False
         self.is_running = False
 
-
     @tasks.loop(seconds=1)
     async def next_question_timer(
         self, message: nextcord.Message, embed: nextcord.Embed
@@ -351,11 +350,27 @@ class QuizManager:
         self._questions = self._get_questions()
         self.config_manager = cm()
         self._game_names = GameNames(langs_data=cm.LANGS_DATA)
+        self._check_questions()
         self.total_questions = self._questions.shape[0]
         self.quizzes_in_progress: dict[int, Quiz] = {}
 
     def _get_questions(self):
         return pd.read_csv(QUESTIONS_PATH, sep=",", index_col=[cm.VNUM])
+
+    def _check_questions(self):
+        item_vnums = self._game_names.item_names.index
+        mob_vnums = self._game_names.mob_names.index
+
+        item_questions = self._questions[
+            (self._questions[cm.IS_MONSTER] == 0)
+            & (self._questions.index.isin(item_vnums))
+        ]
+        monster_questions = self._questions[
+            (self._questions[cm.IS_MONSTER] == 1)
+            & (self._questions.index.isin(mob_vnums))
+        ]
+
+        self._questions = pd.concat([item_questions, monster_questions])
 
     def has_active_quiz(self, channel_id: int):
         if channel_id not in self.quizzes_in_progress:
