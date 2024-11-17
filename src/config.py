@@ -35,7 +35,7 @@ class ConfigurationManager:
 
     FUZZ_THRESHOLD = {
         STRICT: 100,
-        PERMISSIVE: 97,
+        PERMISSIVE: 96,
         VERY_PERMISSIVE: 94,
     }
 
