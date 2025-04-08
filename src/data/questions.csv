@@ -246,7 +246,7 @@ vnum,is_monster,image_name1,image_name2,year
 53232,0,Bebehuashin.png,Bebehuashinapparence.png,2015
 30617,0,Agate.png,,2015
 40124,0,Arcelfique+.png,,2015
-30339,0,Bondapparencedarme.png,,2015
+30335,0,Bondapparencedarme.png,,2015
 30339,0,Bondapparencedarme+.png,,2015
 53538,0,Autelderobin.png,,2015
 53543,0,Autelderobin.png,,2016
@@ -303,7 +303,6 @@ vnum,is_monster,image_name1,image_name2,year
 25121,0,Chrysantheme.png,,2018
 53540,0,Autelderobin.png,,2018
 54705,0,Coffredelhydre.png,,2018
-50333,0,Parchemindulieu.png,,2022
 56000,0,Sceauappaloosa.png,Appaloosaapparence.png,2018
 53265,0,Astrabelle.png,Astrabelleapparence.png,2018
 30630,0,Ailesdedragon.png,,2018
@@ -497,8 +496,8 @@ vnum,is_monster,image_name1,image_name2,year
 21924,0,Baiserdelfe.png,,2024
 21974,0,Baiserdelfe.png,,2024
 21935,0,Justicierdesveuves.png,,2024
-0,0,Cledeladamnation.png,,2024
-0,0,Cledeladamnation+.png,,2024
+70448,0,Cledeladamnation.png,,2024
+70449,0,Cledeladamnation+.png,,2024
 30040,0,Feuille.png,,2010
 30088,0,Morceaudeglace.png,,2010
 12480,0,Heaumesanglant.png,,2010
@@ -835,7 +834,6 @@ vnum,is_monster,image_name1,image_name2,year
 23030,0,Gantsprotecteurs.png,,2020
 23010,0,Gantsdagilite.png,,2020
 23020,0,Gantsblindes.png,,2020
-55070,0,Aptitudemonturecoffree.png,,2021
 83021,0,Coffredecimusor.png,,2021
 83020,0,Coffredecimusargent.png,,2021
 31253,0,Coffredemaitregnoll.png,,2021
